@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/* =========================================
+   Base Styles (기본 설정)
+========================================= */
+body {
+    font-family: 'Pretendard', sans-serif;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: #4C4948; /* main-font 컬러 기본 적용 */
+    background-color: #FFFFFF; 
+}
+
+/* =========================================
+   Typography Classes (16px = 1rem 기준)
+========================================= */
+
+/* Headings */
+.ft-54 { font-size: 3.375rem; font-weight: 700; } /* 54px, Bold */
+.ft-48 { font-size: 3rem; font-weight: 700; }     /* 48px, Bold */
+.ft-32 { font-size: 2rem; font-weight: 600; }     /* 32px, SemiBold */
+.ft-28 { font-size: 1.75rem; font-weight: 400; }  /* 28px, Regular */
+
+/* Body & Caption */
+.ft-20 { font-size: 1.25rem; font-weight: 400; }  /* 20px, Regular */
+.ft-20-sb { font-size: 1.25rem; font-weight: 600; } /* 20px, SemiBold (강조용) */
+.ft-18 { font-size: 1.125rem; font-weight: 400; } /* 18px, Regular */
+
+
+/* =========================================
+   Color Classes (텍스트 & 배경 유틸리티)
+========================================= */
+
+/* 1. Text Colors (폰트 컬러용) */
+.color-main { color: #4C4948; }
+.color-point { color: #1E2022; }
+.color-orange { color: #D4734A; }
+
+/* 2. Background Colors (배경 컬러용) */
+.bg-light-gray { background-color: #F6F6F6; }
+.bg-deep-base { background-color: #1E2022; }
+.bg-warm-white { background-color: #F8F5F0; }
+.bg-point-orange { background-color: #D4734A; }
+.bg-sub-orange { background-color: #BC8F76; }
