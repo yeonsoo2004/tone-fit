@@ -16,15 +16,15 @@ body {
 ========================================= */
 
 /* Headings */
-.ft-54 { font-size: 3.375rem; font-weight: 700; } /* 54px, Bold */
-.ft-48 { font-size: 3rem; font-weight: 700; }     /* 48px, Bold */
-.ft-32 { font-size: 2rem; font-weight: 600; }     /* 32px, SemiBold */
-.ft-28 { font-size: 1.75rem; font-weight: 400; }  /* 28px, Regular */
+.ft-54-b { font-size: 3.375rem; font-weight: 700; } /* 54px, Bold */
+.ft-48-b { font-size: 3rem; font-weight: 700; }     /* 48px, Bold */
+.ft-32-b { font-size: 2rem; font-weight: 600; }     /* 32px, SemiBold */
+.ft-28-r { font-size: 1.75rem; font-weight: 400; }  /* 28px, Regular */
 
 /* Body & Caption */
-.ft-20 { font-size: 1.25rem; font-weight: 400; }  /* 20px, Regular */
+.ft-20-r { font-size: 1.25rem; font-weight: 400; }  /* 20px, Regular */
 .ft-20-sb { font-size: 1.25rem; font-weight: 600; } /* 20px, SemiBold (강조용) */
-.ft-18 { font-size: 1.125rem; font-weight: 400; } /* 18px, Regular */
+.ft-18-r { font-size: 1.125rem; font-weight: 400; } /* 18px, Regular */
 
 
 /* =========================================
@@ -42,3 +42,43 @@ body {
 .bg-warm-white { background-color: #F8F5F0; }
 .bg-point-orange { background-color: #D4734A; }
 .bg-sub-orange { background-color: #BC8F76; }
+
+/* =========================================
+   Layout & Flex Classes (레이아웃 & 정렬)
+========================================= */
+
+/* 기본 Flex 설정 */
+.d-flex { 
+    display: flex; 
+}
+.flex-col { 
+    flex-direction: column; /* 세로 정렬로 변경할 때 사용 */
+}
+
+/* 가로 정렬 (주축 정렬 - 가로 방향일 때) */
+.jc-start { justify-content: flex-start; }  /* 왼쪽 정렬 */
+.jc-center { justify-content: center; }     /* 가운데 정렬 */
+.jc-end { justify-content: flex-end; }      /* 오른쪽 정렬 */
+.jc-between { justify-content: space-between; } /* 양끝 배치 */
+
+/* 세로 정렬 (교차축 정렬 - 가로 방향일 때 위아래 위치) */
+.ai-start { align-items: flex-start; }      /* 위로 붙임 */
+.ai-center { align-items: center; }         /* 세로 중앙 정렬 */
+.ai-end { align-items: flex-end; }          /* 아래로 붙임 */
+
+
+/* =========================================
+   Gap Classes (여백 유틸리티, 16px = 1rem 기준)
+========================================= */
+
+/* 섹션과 섹션 사이 */
+.gap-130 { gap: 8.125rem; } /* 130px */
+
+/* 카드와 카드 사이 */
+.gap-100 { gap: 6.25rem; }  /* 100px */
+
+/* 타이틀과 콘텐츠 사이 */
+.gap-50 { gap: 3.125rem; }  /* 50px */
+
+/* 텍스트 사이 / 버튼 사이 */
+.gap-20 { gap: 1.25rem; }   /* 20px */
