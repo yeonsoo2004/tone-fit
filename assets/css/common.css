@@ -86,3 +86,44 @@ body {
 
 /* 텍스트 사이 (메인-서브 타이틀) / 버튼 사이 */
 .gap-20 { gap: 1.25rem; }   /* 20px */
+
+
+/* =========================================
+   Layout & Grid System (PC 기준 1440px)
+========================================= */
+/* 공통 이너 컨테이너 (모든 섹션의 콘텐츠를 정중앙 1440px로 잡아줌) */
+.inner {
+   max-width: 1440px;
+   width: 100%;
+   margin: 0 auto;
+   /* 브라우저 창이 1440px보다 작아질 때 내용이 벽에 붙지 않도록 최소한의 좌우 여백 추가 */
+   padding: 0 24px; 
+}
+
+/* 12단 그리드 시스템 공통 클래스 */
+.grid-wrap {
+   display: grid;
+   grid-template-columns: repeat(12, 1fr); /* 12개의 단을 동일한 비율(1fr)로 분배 */
+   gap: 24px; /* 피그마에 설정된 Gutter 값 적용 */
+}
+
+/* 💡 반응형(Tablet, Mobile)을 위한 미디어 쿼리 세팅 (필요 시 수치 조정)
+ 태블릿(보통 1024px 이하)에서는 8단이나 6단으로,
+ 모바일(보통 768px 이하)에서는 4단이나 1단으로 떨어지도록 설정합니다.
+*/
+@media screen and (max-width: 1024px) {
+   .grid-wrap {
+       grid-template-columns: repeat(8, 1fr); /* 태블릿은 8단으로 변경 */
+       gap: 20px; /* 간격도 살짝 줄여줌 */
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .grid-wrap {
+       grid-template-columns: repeat(4, 1fr); /* 모바일은 4단으로 변경 */
+       gap: 16px;
+   }
+   .inner {
+       padding: 0 16px; /* 모바일 좌우 여백 */
+   }
+}
