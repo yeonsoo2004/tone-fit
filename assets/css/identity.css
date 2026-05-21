@@ -1,0 +1,1143 @@
+/* =========================================
+   Identity Page (subpage/identity.html)
+========================================= */
+
+.mt-10 {
+    margin-top: 0.625rem;
+}
+
+.mb-10 {
+    margin-bottom: 0.625rem;
+}
+
+.mb-20 {
+    margin-bottom: 1.25rem;
+}
+
+.mb-40 {
+    margin-bottom: 2.5rem;
+}
+
+.mb-80 {
+    margin-bottom: 5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.identity-kv-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/identity-kv.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.identity-kv-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.identity-kv-section .inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.identity-kv-section .kv-title {
+    line-height: 1.2;
+    margin: 0;
+}
+
+.identity-kv-section .kv-desc {
+    max-width: 40rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .identity-kv-section .kv-title {
+        font-size: 2.625rem;
+    }
+
+    .identity-kv-section .kv-desc {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .identity-kv-section .kv-title {
+        font-size: 2rem;
+    }
+
+    .identity-kv-section .kv-desc {
+        font-size: 0.9375rem;
+        max-width: 100%;
+    }
+
+    .identity-kv-section .inner {
+        gap: 1rem;
+    }
+}
+
+
+/* =========================================
+   Identity – Vision Section
+========================================= */
+
+.identity-vision-section .vision-title {
+    text-align: center;
+    margin: 0 0 5rem;
+    line-height: 1.2;
+}
+
+.identity-vision-section .vision-content-wrap {
+    gap: 4rem;
+}
+
+.identity-vision-section .vision-item {
+    flex-shrink: 0;
+}
+
+.identity-vision-section .circle-container {
+    position: relative;
+    width: 23.4375rem;
+    height: 23.4375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.identity-vision-section .dotted-circle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.identity-vision-section .circle-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.identity-vision-section .circle-text h3 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.identity-vision-section .circle-text p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.identity-vision-section .vision-connector {
+    gap: 0.875rem;
+    flex-shrink: 0;
+}
+
+.identity-vision-section .vision-connector .dot {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #D4734A;
+}
+
+.identity-vision-section .vision-bottom-text {
+    margin: 6.25rem 0 0;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.identity-vision-section .vision-bottom-text strong {
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) {
+    .identity-vision-section .vision-title {
+        margin-bottom: 3.75rem;
+        font-size: 2.625rem;
+    }
+
+    .identity-vision-section .vision-content-wrap {
+        gap: 2.5rem;
+    }
+
+    .identity-vision-section .circle-container {
+        width: 18.75rem;
+        height: 18.75rem;
+    }
+
+    .identity-vision-section .circle-text h3 {
+        font-size: 1.75rem;
+    }
+
+    .identity-vision-section .circle-text p {
+        font-size: 1rem;
+    }
+
+    .identity-vision-section .vision-bottom-text {
+        margin-top: 5rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .identity-vision-section .vision-title {
+        margin-bottom: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .identity-vision-section .vision-content-wrap {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .identity-vision-section .circle-container {
+        width: 16.25rem;
+        height: 16.25rem;
+    }
+
+    .identity-vision-section .vision-connector {
+        gap: 0.625rem;
+    }
+
+    .identity-vision-section .vision-connector .dot {
+        width: 0.4375rem;
+        height: 0.4375rem;
+    }
+
+    .identity-vision-section .vision-bottom-text {
+        margin-top: 3.75rem;
+        font-size: 0.9375rem;
+    }
+}
+
+
+/* =========================================
+   Identity – Split Grid Sections (Feature & Market)
+========================================= */
+.identity-feature-section {
+    background-color: #F6F6F6;
+}
+.identity-feature-section .color-point,
+.identity-market-section .color-point,
+.identity-pet-section .color-point {
+    color: #D4734A;
+}
+
+.identity-feature-section .grid-wrap,
+.identity-market-section .grid-wrap,
+.identity-pet-section .grid-wrap {
+    align-items: center;
+}
+
+.identity-feature-section .text-col,
+.identity-feature-section .img-col,
+.identity-market-section .text-col,
+.identity-market-section .img-col,
+.identity-pet-section .text-col,
+.identity-pet-section .img-col {
+    grid-column: span 6;
+}
+
+.identity-feature-section .feature-title,
+.identity-market-section .market-title,
+.identity-pet-section .pet-title {
+    margin-top: 0;
+    line-height: 1.3;
+}
+
+.identity-pet-section .sub-title {
+    display: block;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.identity-feature-section .text-col > p,
+.identity-market-section .text-col > p {
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+.identity-feature-section .stats-wrap,
+.identity-market-section .stats-wrap {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.identity-feature-section .stat-item,
+.identity-market-section .stat-item {
+    flex: 1;
+    min-width: 0;
+}
+
+.identity-feature-section .stat-item strong,
+.identity-market-section .stat-item strong {
+    display: block;
+    margin: 0;
+    line-height: 1;
+}
+
+.identity-feature-section .stat-item span,
+.identity-market-section .stat-item span {
+    display: block;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.identity-feature-section .img-col,
+.identity-market-section .img-col {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.identity-pet-section .img-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.identity-pet-section .pet-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.identity-pet-section .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+}
+
+.identity-pet-section .feature-item {
+    width: 100%;
+}
+
+.identity-pet-section .icon-box {
+    flex-shrink: 0;
+    width: 4.0625rem;
+    height: 4.0625rem;
+    border-radius: 0.9375rem;
+}
+
+.identity-pet-section .icon-box img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.identity-pet-section .text-box h3 {
+    margin-top: 0;
+    line-height: 1.4;
+}
+
+.identity-pet-section .text-box p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.identity-feature-section .feature-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.identity-market-section .market-graph {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (max-width: 1024px) {
+    .identity-feature-section .text-col,
+    .identity-feature-section .img-col,
+    .identity-market-section .text-col,
+    .identity-market-section .img-col,
+    .identity-pet-section .text-col,
+    .identity-pet-section .img-col {
+        grid-column: span 12;
+    }
+
+    .identity-feature-section .feature-title,
+    .identity-market-section .market-title,
+    .identity-pet-section .pet-title {
+        font-size: 2.625rem;
+    }
+
+    .identity-feature-section .text-col > p,
+    .identity-market-section .text-col > p {
+        font-size: 1rem;
+    }
+
+    .identity-feature-section .img-col,
+    .identity-market-section .img-col {
+        justify-content: center;
+        margin-top: 2.5rem;
+    }
+
+    .identity-pet-section .img-col {
+        margin-top: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .identity-feature-section .feature-title,
+    .identity-market-section .market-title,
+    .identity-pet-section .pet-title {
+        font-size: 2rem;
+    }
+
+    .identity-feature-section .text-col > p,
+    .identity-market-section .text-col > p {
+        font-size: 0.9375rem;
+    }
+
+    .identity-pet-section .icon-box {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 0.75rem;
+    }
+
+    .identity-pet-section .icon-box img {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    .identity-pet-section .text-box h3 {
+        font-size: 1.125rem;
+    }
+
+    .identity-pet-section .text-box p {
+        font-size: 0.9375rem;
+    }
+
+    .identity-pet-section .img-col {
+        margin-top: 2rem;
+    }
+
+    .identity-feature-section .stats-wrap,
+    .identity-market-section .stats-wrap {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .identity-feature-section .stat-item,
+    .identity-market-section .stat-item {
+        flex: 1 1 calc(33.333% - 0.6875rem);
+    }
+
+    .identity-feature-section .img-col,
+    .identity-market-section .img-col {
+        margin-top: 2rem;
+    }
+
+    .identity-feature-section .feature-video,
+    .identity-market-section .market-graph {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================
+   Identity – Why Section
+========================================= */
+
+.identity-why-section .why-title,
+.identity-why-section .why-desc {
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+.identity-why-section .why-title {
+    line-height: 1.2;
+}
+
+.identity-why-section .comparison-wrap {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.identity-why-section .img-before,
+.identity-why-section .img-after {
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+}
+
+.identity-why-section .why-img {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.identity-why-section .img-before h3,
+.identity-why-section .img-after h3 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.identity-why-section .img-before p,
+.identity-why-section .img-after p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.identity-why-section .vs-circle {
+    flex-shrink: 0;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.identity-why-section .vs-text {
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1;
+}
+
+@media screen and (max-width: 1024px) {
+    .identity-why-section .why-title {
+        font-size: 2.625rem;
+    }
+
+    .identity-why-section .why-desc {
+        font-size: 1rem;
+    }
+
+    .identity-why-section .comparison-wrap {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .identity-why-section .why-title {
+        font-size: 2rem;
+    }
+
+    .identity-why-section .why-desc {
+        font-size: 0.9375rem;
+        margin-bottom: 3.75rem;
+    }
+
+    .identity-why-section .comparison-wrap {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1.5rem;
+    }
+
+    .identity-why-section .img-before,
+    .identity-why-section .img-after {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   Identity – Analysis Process Section
+========================================= */
+
+.identity-analysis-section .color-point {
+    color: #D4734A;
+}
+
+.identity-analysis-section .analysis-title,
+.identity-analysis-section .analysis-desc {
+    margin-top: 0;
+}
+
+.identity-analysis-section .analysis-title {
+    line-height: 1.3;
+}
+
+.identity-analysis-section .analysis-desc {
+    line-height: 1.6;
+}
+
+.identity-analysis-section .step-item {
+    position: relative;
+    grid-column: span 3;
+    width: 100%;
+}
+
+.identity-analysis-section .step-badge {
+    position: absolute;
+    top: 2.1875rem;
+    left: 50%;
+    z-index: 3;
+    flex-shrink: 0;
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 50%;
+    color: #FFFFFF;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+}
+
+.identity-analysis-section .step-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 28.125rem;
+    margin-top: 2.1875rem;
+    padding: 3rem 1.25rem 2rem;
+    background-color: #FFFFFF;
+    border-radius: 1.25rem;
+    box-shadow: 0 0.25rem 1.5rem rgba(30, 32, 34, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.identity-analysis-section .step-card:hover {
+    transform: translateY(-0.625rem);
+    box-shadow: 0 0.75rem 2rem rgba(30, 32, 34, 0.12);
+}
+
+.identity-analysis-section .icon-wrap {
+    flex-shrink: 0;
+    width: 11.25rem;
+    height: 11.25rem;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 0 0.25rem 1rem rgba(30, 32, 34, 0.1);
+}
+
+.identity-analysis-section .icon-wrap img {
+    width: 6.125rem;
+    height: auto;
+    max-height: 8.125rem;
+    object-fit: contain;
+}
+
+.identity-analysis-section .card-title,
+.identity-analysis-section .card-desc,
+.identity-analysis-section .card-footer {
+    margin: 0;
+    width: 100%;
+}
+
+.identity-analysis-section .card-title {
+    line-height: 1.4;
+}
+
+.identity-analysis-section .card-desc {
+    line-height: 1.6;
+}
+
+.identity-analysis-section .card-footer {
+    display: block;
+    margin-top: auto;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+@media screen and (max-width: 1024px) {
+    .identity-analysis-section .analysis-title {
+        font-size: 2.625rem;
+    }
+
+    .identity-analysis-section .analysis-desc {
+        font-size: 1rem;
+    }
+
+    .identity-analysis-section .analysis-steps-wrap {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .identity-analysis-section .step-item {
+        grid-column: span 6;
+    }
+
+    .identity-analysis-section .step-card {
+        height: auto;
+        min-height: 26rem;
+    }
+
+    .identity-analysis-section .icon-wrap {
+        width: 9.375rem;
+        height: 9.375rem;
+    }
+
+    .identity-analysis-section .icon-wrap img {
+        width: 6.875rem;
+        max-height: 6.875rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .identity-analysis-section .analysis-title {
+        font-size: 2rem;
+    }
+
+    .identity-analysis-section .analysis-desc {
+        font-size: 0.9375rem;
+        margin-bottom: 3.75rem;
+    }
+
+    .identity-analysis-section .analysis-steps-wrap {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .identity-analysis-section .step-item {
+        grid-column: span 12;
+    }
+
+    .identity-analysis-section .step-card {
+        height: auto;
+        min-height: 22rem;
+        padding: 2.75rem 1rem 1.75rem;
+    }
+
+    .identity-analysis-section .step-badge {
+        width: 3.75rem;
+        height: 3.75rem;
+    }
+
+    .identity-analysis-section .icon-wrap {
+        width: 8.75rem;
+        height: 8.75rem;
+    }
+
+    .identity-analysis-section .icon-wrap img {
+        width: 6.25rem;
+        max-height: 6.25rem;
+    }
+}
+
+
+/* =========================================
+   Identity – Experience Section
+========================================= */
+
+.identity-experience-section .grid-wrap {
+    align-items: center;
+}
+
+.identity-experience-section .img-col,
+.identity-experience-section .text-col {
+    grid-column: span 6;
+}
+
+.identity-experience-section .img-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.identity-experience-section .img-wrap {
+    width: 100%;
+}
+
+.identity-experience-section .img-wrap img {
+    width: 100%;
+    max-width: 37.5rem;
+    height: auto;
+    display: block;
+}
+
+.identity-experience-section .notice-text {
+    margin: 0.75rem 0 0;
+    font-size: 0.875rem;
+    color: #9A9A9A;
+    line-height: 1.5;
+}
+
+.identity-experience-section .text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.identity-experience-section .exp-title {
+    margin-top: 0;
+    line-height: 1.3;
+}
+
+.identity-experience-section .exp-desc {
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 1024px) {
+    .identity-experience-section .img-col,
+    .identity-experience-section .text-col {
+        grid-column: span 12;
+    }
+
+    .identity-experience-section .img-wrap img {
+        max-width: 100%;
+    }
+
+    .identity-experience-section .text-col {
+        margin-top: 2.5rem;
+    }
+
+    .identity-experience-section .exp-title {
+        font-size: 2.25rem;
+    }
+
+    .identity-experience-section .exp-desc {
+        font-size: 1.125rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .identity-experience-section .text-col {
+        margin-top: 2rem;
+    }
+
+    .identity-experience-section .exp-title {
+        font-size: 1.75rem;
+    }
+
+    .identity-experience-section .exp-desc {
+        font-size: 1rem;
+    }
+
+    .identity-experience-section .notice-text {
+        font-size: 0.8125rem;
+    }
+}
+
+
+/* =========================================
+   Identity – Counting Section
+========================================= */
+
+.identity-counting-section {
+    background-color: #D4734A;
+    color: #FFFFFF;
+}
+
+.identity-counting-section .counting-head,
+.identity-counting-section .counting-sub {
+    margin-top: 0;
+    color: #FFFFFF;
+}
+
+.identity-counting-section .counting-head {
+    line-height: 1.2;
+}
+
+.identity-counting-section .counting-sub {
+    line-height: 1.6;
+}
+
+.identity-counting-section .count-item {
+    grid-column: span 3;
+    padding: 1.5rem 1rem;
+}
+
+.identity-counting-section .count-item:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.identity-counting-section .count-title {
+    display: block;
+    margin-top: 0;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+
+.identity-counting-section .count-desc {
+    margin: 0;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 1024px) {
+    .identity-counting-section .counting-head {
+        font-size: 2.625rem;
+    }
+
+    .identity-counting-section .counting-sub {
+        font-size: 1rem;
+    }
+
+    .identity-counting-section .counting-wrap {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .identity-counting-section .count-item {
+        grid-column: span 6;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .identity-counting-section .count-item:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .identity-counting-section .count-item:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .identity-counting-section .count-title {
+        font-size: 2.625rem;
+    }
+
+    .identity-counting-section .count-desc {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .identity-counting-section .counting-head {
+        font-size: 2rem;
+    }
+
+    .identity-counting-section .counting-sub {
+        font-size: 0.9375rem;
+        margin-bottom: 3.75rem;
+    }
+
+    .identity-counting-section .count-item {
+        grid-column: span 12;
+        padding: 1.25rem 0;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .identity-counting-section .count-item:nth-child(odd) {
+        border-right: none;
+    }
+
+    .identity-counting-section .count-item:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .identity-counting-section .count-title {
+        font-size: 2rem;
+    }
+
+    .identity-counting-section .count-desc {
+        font-size: 0.9375rem;
+    }
+}
+
+
+/* =========================================
+   Identity – Season Content Section
+========================================= */
+
+.identity-season-section {
+    overflow-x: hidden;
+}
+
+.identity-season-section .inner {
+    overflow: visible;
+}
+
+.identity-season-section .grid-wrap {
+    align-items: stretch;
+    overflow: visible;
+}
+
+.identity-season-section .text-col {
+    grid-column: 1 / span 4;
+    align-self: stretch;
+    justify-content: space-between;
+    height: auto;
+    min-height: 100%;
+}
+
+.identity-season-section .text-col-upper {
+    flex-shrink: 0;
+}
+
+.identity-season-section .slider-col {
+    grid-column: 6 / -1;
+    align-self: stretch;
+    justify-content: space-between;
+    height: auto;
+    min-height: 100%;
+    min-width: 0;
+    overflow: visible;
+    clip-path: inset(-6.25rem -100vw -6.25rem 0);
+    margin-right: calc(50% - 50vw);
+    width: calc(100% + (50vw - 50%));
+}
+
+.identity-season-section .season-title {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.identity-season-section .text-col-upper > p {
+    margin: 0;
+}
+
+.identity-season-section .season-stats-wrap {
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.identity-season-section .stat-badge {
+    padding: 0.625rem 1.25rem;
+    background-color: #FFFFFF;
+    border: 1px solid #D4734A;
+    border-radius: 3.125rem;
+}
+
+.identity-season-section .stat-badge .label {
+    display: block;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.identity-season-section .frame-img-box {
+    flex-shrink: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.identity-season-section .frame-img-box img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.identity-season-section .season-swiper,
+.identity-season-section .season-swiper.swiper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    overflow: visible !important;
+    padding-bottom: 0;
+}
+
+.identity-season-section .season-swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.identity-season-section .season-swiper .swiper-slide {
+    max-height: 31.25rem;
+    height: 31.25rem;
+    /* border-radius: 0.625rem; */
+    overflow: hidden;
+}
+
+.identity-season-section .season-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    /* border-radius: 0.625rem; */
+}
+
+.identity-season-section .season-swiper .swiper-pagination {
+    position: relative;
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: 0.25rem;
+    margin: 1.875rem 0 0;
+    background-color: #E5E5E5;
+    border-radius: 0.125rem;
+}
+
+.identity-season-section .season-swiper .swiper-pagination-progressbar-fill {
+    background-color: #D4734A;
+    border-radius: 0.125rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .identity-season-section .grid-wrap {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .identity-season-section .text-col,
+    .identity-season-section .slider-col {
+        grid-column: span 12;
+        height: auto;
+        min-height: 0;
+    }
+
+    .identity-season-section .text-col {
+        gap: 2rem;
+    }
+
+    .identity-season-section .season-title {
+        font-size: 2.625rem;
+    }
+
+    .identity-season-section .slider-col {
+        margin-top: 2.5rem;
+        margin-right: 0;
+        width: 100%;
+        clip-path: none;
+        justify-content: flex-start;
+    }
+
+    .identity-season-section .season-swiper,
+    .identity-season-section .season-swiper.swiper {
+        flex: none;
+        overflow: hidden !important;
+    }
+
+    .identity-season-section .season-swiper .swiper-slide {
+        max-height: 25rem;
+        height: 25rem;
+    }
+
+    .identity-season-section .season-swiper .swiper-pagination {
+        margin-top: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .identity-season-section .season-title {
+        font-size: 2rem;
+    }
+
+    .identity-season-section .slider-col {
+        margin-top: 2rem;
+    }
+
+    .identity-season-section .season-stats-wrap {
+        gap: 0.75rem;
+    }
+
+    .identity-season-section .stat-badge {
+        padding: 0.5rem 1rem;
+    }
+
+    .identity-season-section .stat-badge .label {
+        font-size: 0.9375rem;
+        white-space: normal;
+    }
+
+    .identity-season-section .season-swiper .swiper-slide {
+        max-height: 20rem;
+        height: 20rem;
+    }
+
+    .identity-season-section .season-swiper .swiper-pagination {
+        margin-top: 1.25rem;
+    }
+}
