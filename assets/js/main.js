@@ -1,3 +1,4 @@
+
 (function () {
     const header = document.querySelector('.header');
     if (!header) return;
@@ -51,6 +52,7 @@
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
 })();
+
 
 // MotionPathPlugin 등록
 // gsap.registerPlugin(MotionPathPlugin);

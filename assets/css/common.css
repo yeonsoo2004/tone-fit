@@ -72,12 +72,6 @@ body {
    Gap Classes (여백 유틸리티, 16px = 1rem 기준)
 ========================================= */
 
-/* 섹션 상·하 패딩 (130px) */
-.py-130 {
-    padding-top: 8.125rem;
-    padding-bottom: 8.125rem;
-}
-
 /* 카드와 카드 사이 */
 .gap-100 { gap: 6.25rem; }  /* 100px */
 
@@ -92,26 +86,13 @@ body {
 
 
 /* =========================================
-   Spacing (타이틀 · LNB · 콘텐츠 간격 지침)
+   Spacing Classes (섹션 여백 유틸리티)
 ========================================= */
 
-/* 메인타이틀 + 서브타이틀 (20px) */
-.title-group {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-/* 타이틀(그룹) ↔ 아래 콘텐츠 (80px) */
-.title-to-content {
-    margin-bottom: 5rem;
-}
-
-/* 타이틀 ↔ LNB ↔ 콘텐츠 각 블록 사이 (50px) */
-.head-content-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 3.125rem;
+/* 섹션 상하 패딩 (130px) */
+.py-130 {
+    padding-top: 8.125rem;
+    padding-bottom: 8.125rem;
 }
 
 
@@ -142,6 +123,14 @@ body {
        grid-template-columns: repeat(8, 1fr); /* 태블릿은 8단으로 변경 */
        gap: 20px; /* 간격도 살짝 줄여줌 */
    }
+
+   .py-130 {
+       padding-top: 5rem;
+       padding-bottom: 5rem;
+   }
+
+   .ft-32-b { font-size: 1.75rem; }  /* 28px */
+   .ft-18-r { font-size: 1rem; }     /* 16px */
 }
 
 @media screen and (max-width: 768px) {
@@ -157,4 +146,7 @@ body {
        padding-top: 3.75rem;
        padding-bottom: 3.75rem;
    }
+
+   .ft-32-b { font-size: 1.5rem; }   /* 24px */
+   .ft-18-r { font-size: 0.9375rem; } /* 15px */
 }
