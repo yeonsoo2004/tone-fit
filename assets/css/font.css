@@ -2,3 +2,12 @@
 
 /* 1. 프리텐다드 폰트 불러오기 (CDN) */
 @import url("../font/pretendard.min.css");
+
+/* 2. 잘난고딕 폰트 */
+@font-face {
+    font-family: 'jalnan gothic ttf';
+    src: url('../font/JalnanGothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

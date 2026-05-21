@@ -20,6 +20,7 @@ body {
 .ft-48-b { font-size: 3rem; font-weight: 700; }     /* 48px, Bold */
 .ft-32-b { font-size: 2rem; font-weight: 600; }     /* 32px, SemiBold */
 .ft-28-r { font-size: 1.75rem; font-weight: 400; }  /* 28px, Regular */
+.title{font-family: 'jalnan gothic ttf', sans-serif; font-weight: 400;}
 
 /* Body & Caption */
 .ft-20-r { font-size: 1.25rem; font-weight: 400; }  /* 20px, Regular */
