@@ -1,0 +1,65 @@
+/* =========================================
+   Brand Identity Page (identity.html)
+========================================= */
+
+.identity-kv-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/identity-kv.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.identity-kv-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.identity-kv-section .inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.identity-kv-section .kv-title {
+    line-height: 1.2;
+    margin: 0;
+}
+
+.identity-kv-section .kv-desc {
+    max-width: 40rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .identity-kv-section .kv-title {
+        font-size: 2.625rem;
+    }
+
+    .identity-kv-section .kv-desc {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .identity-kv-section .kv-title {
+        font-size: 2rem;
+    }
+
+    .identity-kv-section .kv-desc {
+        font-size: 0.9375rem;
+        max-width: 100%;
+    }
+
+    .identity-kv-section .inner {
+        gap: 1rem;
+    }
+}
