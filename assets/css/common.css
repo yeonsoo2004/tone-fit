@@ -72,9 +72,6 @@ body {
    Gap Classes (여백 유틸리티, 16px = 1rem 기준)
 ========================================= */
 
-/* 섹션과 섹션 사이 */
-.gap-130 { gap: 8.125rem; } /* 130px */
-
 /* 카드와 카드 사이 */
 .gap-100 { gap: 6.25rem; }  /* 100px */
 
@@ -86,6 +83,17 @@ body {
 
 /* 텍스트 사이 (메인-서브 타이틀) / 버튼 사이 */
 .gap-20 { gap: 1.25rem; }   /* 20px */
+
+
+/* =========================================
+   Spacing Classes (섹션 여백 유틸리티)
+========================================= */
+
+/* 섹션 상하 패딩 (130px) */
+.py-130 {
+    padding-top: 8.125rem;
+    padding-bottom: 8.125rem;
+}
 
 
 /* =========================================
@@ -116,6 +124,14 @@ body {
        grid-template-columns: repeat(8, 1fr); /* 태블릿은 8단으로 변경 */
        gap: 20px; /* 간격도 살짝 줄여줌 */
    }
+
+   .py-130 {
+       padding-top: 5rem;
+       padding-bottom: 5rem;
+   }
+
+   .ft-32-b { font-size: 1.75rem; }  /* 28px */
+   .ft-18-r { font-size: 1rem; }     /* 16px */
 }
 
 @media screen and (max-width: 768px) {
@@ -126,4 +142,12 @@ body {
    .inner {
        padding: 0 16px; /* 모바일 좌우 여백 */
    }
+
+   .py-130 {
+       padding-top: 3.75rem;
+       padding-bottom: 3.75rem;
+   }
+
+   .ft-32-b { font-size: 1.5rem; }   /* 24px */
+   .ft-18-r { font-size: 0.9375rem; } /* 15px */
 }
