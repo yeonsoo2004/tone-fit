@@ -72,8 +72,11 @@ body {
    Gap Classes (여백 유틸리티, 16px = 1rem 기준)
 ========================================= */
 
-/* 섹션과 섹션 사이 */
-.gap-130 { gap: 8.125rem; } /* 130px */
+/* 섹션 상·하 패딩 (130px) */
+.py-130 {
+    padding-top: 8.125rem;
+    padding-bottom: 8.125rem;
+}
 
 /* 카드와 카드 사이 */
 .gap-100 { gap: 6.25rem; }  /* 100px */
@@ -84,8 +87,32 @@ body {
 /* 타이틀과 콘텐츠 사이 (기본) */
 .gap-50 { gap: 3.125rem; }  /* 50px */
 
-/* 텍스트 사이 (메인-서브 타이틀) / 버튼 사이 */
+/* 텍스트 사이 (메인-서브 타이틀) / 버튼 사이 / LNB 탭 사이 */
 .gap-20 { gap: 1.25rem; }   /* 20px */
+
+
+/* =========================================
+   Spacing (타이틀 · LNB · 콘텐츠 간격 지침)
+========================================= */
+
+/* 메인타이틀 + 서브타이틀 (20px) */
+.title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* 타이틀(그룹) ↔ 아래 콘텐츠 (80px) */
+.title-to-content {
+    margin-bottom: 5rem;
+}
+
+/* 타이틀 ↔ LNB ↔ 콘텐츠 각 블록 사이 (50px) */
+.head-content-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;
+}
 
 
 /* =========================================
@@ -97,7 +124,6 @@ body {
    width: 100%;
    margin: 0 auto;
    /* 브라우저 창이 1440px보다 작아질 때 내용이 벽에 붙지 않도록 최소한의 좌우 여백 추가 */
-   padding: 0 24px; 
 }
 
 /* 12단 그리드 시스템 공통 클래스 */
@@ -125,5 +151,10 @@ body {
    }
    .inner {
        padding: 0 16px; /* 모바일 좌우 여백 */
+   }
+
+   .py-130 {
+       padding-top: 3.75rem;
+       padding-bottom: 3.75rem;
    }
 }

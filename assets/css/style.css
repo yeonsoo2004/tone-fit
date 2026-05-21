@@ -47,14 +47,12 @@
 }
 
 .header-container {
-    --header-padding-x: 2.5rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto auto;
     align-items: start;
     column-gap: 2.5rem;
-    padding: var(--header-divider-gap) var(--header-padding-x) 0;
-    max-width: 1400px;
+    padding: var(--header-divider-gap) 0 0;
     margin: 0 auto;
     overflow: visible;
 }
@@ -191,10 +189,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 6.25rem 2.5rem;
     width: 100%;
     height: 100vh;
     min-height: 37.5rem;
+    box-sizing: border-box;
     background-image: url('../images/kv-bg-img.jpg');
     background-size: cover;
     background-position: center;
@@ -268,11 +266,6 @@
    4. ABOUT SECTION
 ========================================= */
 
-.feature {
-    padding: 100px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
 
 .feature-grid {
     display: grid;
@@ -304,7 +297,188 @@
 }
 
 
-/* FRANCHISE SECTION */
+/* =========================================
+   FRANCHISE PROMOTION SECTION
+========================================= */
+
+.franchise-promotion {
+    width: 100%;
+    margin-top: 6.25rem;
+}
+
+.franchise-layout {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    grid-template-rows: auto 188px auto;
+    column-gap: 3rem;
+    align-items: stretch;
+}
+
+.franchise-texts {
+    grid-column: 1;
+    grid-row: 1;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 5rem;
+}
+
+.franchise-texts h3 {
+    margin: 0;
+    color: #4C4948;
+}
+
+.franchise-texts p {
+    margin: 0;
+}
+
+.franchise-side-label {
+    grid-column: 3;
+    grid-row: 1;
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba(76, 73, 72, 0.45);
+    align-self: start;
+}
+
+.franchise-benefits {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    height: 188px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.franchise-benefit-item {
+    flex: 0 0 auto;
+}
+
+.franchise-benefit-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 188px;
+    height: 188px;
+    padding: 1rem;
+    border: 1px solid #4C4948;
+    border-radius: 50%;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.franchise-benefit-circle--accent {
+    outline: 1px dashed #6b9bd1;
+    outline-offset: 4px;
+}
+
+.franchise-benefit-plus {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #4C4948;
+}
+
+.franchise-benefit-line {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #4C4948;
+}
+
+.franchise-benefit-line strong {
+    font-weight: 700;
+}
+
+.franchise-divider-v {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    width: 1px;
+    background-color: rgba(76, 73, 72, 0.12);
+    justify-self: center;
+}
+
+.franchise-right-row {
+    grid-column: 3;
+    grid-row: 2;
+    display: flex;
+    align-items: flex-end;
+    height: 188px;
+}
+
+.franchise-divider-h {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(76, 73, 72, 0.12);
+}
+
+.franchise-mega {
+    grid-column: 3;
+    grid-row: 3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 300px;
+    padding-top: 2rem;
+}
+
+.franchise-mega-circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(100%, 360px);
+    aspect-ratio: 1;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: #f0eeec;
+}
+
+.franchise-mega-ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.franchise-mega-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 300px;
+    padding-top: 2.5rem;
+    text-align: center;
+}
+
+.franchise-mega-label {
+    margin: 0;
+    color: #4C4948;
+}
+
+.franchise-mega-value {
+    margin: 0;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #4C4948;
+    letter-spacing: -0.02em;
+}
+
+.franchise-mega-unit {
+    font-size: 0.55em;
+    font-weight: 700;
+}
 
 .feature-highlight {
     display: grid;
@@ -349,12 +523,6 @@
 /* =========================================
    5. PRODUCT SECTION
 ========================================= */
-
-.product {
-    padding: 100px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
 
 .product-content {
     display: grid;
@@ -439,13 +607,9 @@
    6. AI PROFILE SECTION
 ========================================= */
 
-.ai-profile {
-    padding: 100px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
+.ai-profile > .inner {
     background-color: #F8F5F0;
     border-radius: 20px;
-    margin-bottom: 100px;
 }
 
 .profile-showcase {
@@ -503,12 +667,6 @@
 /* =========================================
    7. PORTFOLIO SECTION
 ========================================= */
-
-.portfolio {
-    padding: 100px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
 
 .portfolio-grid {
     display: grid;
@@ -569,17 +727,17 @@
 ========================================= */
 
 .cta-section {
-    padding: 100px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-    background-color: #1E2022;
-    border-radius: 20px;
     text-align: center;
     color: #FFFFFF;
+}
+
+.cta-section > .inner {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 5rem;
     align-items: center;
+    background-color: #1E2022;
+    border-radius: 20px;
 }
 
 .cta-content {
@@ -612,16 +770,13 @@
 .footer {
     background-color: #1E2022;
     color: #FFFFFF;
-    padding: 60px 40px;
-    margin-top: 100px;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
-    max-width: 1400px;
-    margin: 0 auto 60px;
+    margin-bottom: 60px;
     padding-bottom: 60px;
 }
 
@@ -664,8 +819,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
     padding-top: 30px;
 }
 
@@ -701,13 +854,23 @@
 ========================================= */
 
 @media (max-width: 1024px) {
-    .hero {
-        padding: 3.75rem 1.875rem;
-    }
-
     .feature-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .franchise-layout {
+        column-gap: 2rem;
+    }
+
+    .franchise-benefit-circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    .franchise-benefits,
+    .franchise-right-row {
+        height: 160px;
     }
 
     .feature-highlight {
@@ -743,9 +906,6 @@
         --header-divider-gap: 0.875rem;
     }
 
-    .header-container {
-        --header-padding-x: 1.25rem;
-    }
 
     .header-menu {
         column-gap: 1rem;
@@ -767,8 +927,8 @@
     }
 
     .hero {
-        padding: 2.5rem 1.25rem;
         min-height: auto;
+        height: auto;
     }
 
     .hero-title {
@@ -787,21 +947,54 @@
         font-size: 1.75rem;
     }
 
-    .feature {
-        padding: 60px 20px;
-    }
-
     .feature-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .product {
-        padding: 60px 20px;
+    .franchise-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 2rem;
     }
 
-    .portfolio {
-        padding: 60px 20px;
+    .franchise-texts,
+    .franchise-side-label,
+    .franchise-benefits,
+    .franchise-divider-v,
+    .franchise-right-row,
+    .franchise-mega {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .franchise-divider-v {
+        display: none;
+    }
+
+    .franchise-texts {
+        margin-bottom: 3.125rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .franchise-benefits {
+        justify-content: center;
+        height: auto;
+    }
+
+    .franchise-benefit-circle {
+        width: 188px;
+        height: 188px;
+    }
+
+    .franchise-right-row {
+        height: auto;
+        padding-top: 1.25rem;
+    }
+
+    .franchise-divider-h {
+        display: block;
     }
 
     .portfolio-grid {
@@ -824,9 +1017,8 @@
         gap: 20px;
     }
 
-    .cta-section {
-        padding: 60px 20px;
-        gap: 30px;
+    .cta-section > .inner {
+        gap: 3.125rem;
     }
 
     .cta-buttons {

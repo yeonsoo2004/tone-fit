@@ -70,6 +70,12 @@
    3. LNB Tab Button (Left Navigation Tab Button)
    =================================== */
 
+.lnb-tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
 /* Default state */
 .lnb-tab-btn {
   display: block;
