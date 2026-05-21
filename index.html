@@ -19,7 +19,7 @@
 
     <script src="./assets/js/libs/ScrollTrigger.min.js"></script>
     <script src="./assets/js/libs/ScrollSmoother.min.js"></script>
-    <script src="assets/js/libs/MotionPathPlugin.min.js"></script>
+    <!-- <script src="assets/js/libs/MotionPathPlugin.min.js"></script> -->
 
     <!-- ===== HEADER ===== -->
     <header class="header">
@@ -27,13 +27,47 @@
             <div class="header-left">
                 <h1 class="logo">TONE:FIT</h1>
             </div>
-            <nav class="header-nav ft-20-r">
-                <button>BRAND</button>
-                <button>ARCHIVE</button>
-                <button>STORE</button>
-                <button>FRANCHISE</button>
-                <button>COMMUNITY</button>
-            </nav>
+            <div class="header-menu">
+                <nav class="header-nav ft-20-r" aria-label="주 메뉴">
+                    <div class="header-nav-item has-submenu">
+                        <button type="button" class="header-nav-link">BRAND</button>
+                    </div>
+                    <div class="header-nav-item">
+                        <button type="button" class="header-nav-link">FRAME</button>
+                    </div>
+                    <div class="header-nav-item">
+                        <button type="button" class="header-nav-link">STORE</button>
+                    </div>
+                    <div class="header-nav-item has-submenu">
+                        <button type="button" class="header-nav-link">FRANCHISE</button>
+                    </div>
+                    <div class="header-nav-item has-submenu">
+                        <button type="button" class="header-nav-link">COMMUNITY</button>
+                    </div>
+                </nav>
+                <div class="header-mega ft-18-r">
+                    <div class="header-mega-col">
+                        <ul class="header-mega-list">
+                            <li><a href="#">IDENTITY</a></li>
+                            <li><a href="#">SMART KIOSK</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
+                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
+                    <div class="header-mega-col">
+                        <ul class="header-mega-list">
+                            <li><a href="#">SPACE</a></li>
+                            <li><a href="#">STARTUP</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-mega-col">
+                        <ul class="header-mega-list">
+                            <li><a href="#">NEWS</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="header-right">
                 <span class="gnb-btn ft-20-r">창업문의</span>
             </div>
@@ -58,22 +92,23 @@
 
         <div class="feature-grid">
             <!-- Feature 1 -->
+            <!--
             <svg class="about-circle" width="650" height="650" viewBox="0 0 650 650">
                 <defs>
-                  <!-- 반지름을 380px으로 증가 (원 바깥쪽) -->
-                  <path id="circlePath" 
-                        d="M 325, 325 m -320, 0 a 320,320 0 1,1 640,0 a 320,320 0 1,1 -640,0" 
+                  <path id="circlePath"
+                        d="M 325, 325 m -320, 0 a 320,320 0 1,1 640,0 a 320,320 0 1,1 -640,0"
                         fill="none"/>
                 </defs>
-                
+
                 <circle cx="325" cy="325" r="325" fill="none" stroke="none" />
-                
+
                 <text id="rotatingText" font-size="80px" font-weight="700" fill="#D4734A" letter-spacing="0%">
                   <textPath href="#circlePath" startOffset="0%" text-anchor="start" dy="0">
                     TONE:FIT
                   </textPath>
                 </text>
               </svg>
+            -->
             <div class="about-texts">
                 <h3 class="ft-32-b">TONE [색조, 분위기]</h3>
                 <p>모든 사람은 각자의 고유한 피부 톤과 분위기를 가지고 있습니다.<br>
@@ -218,23 +253,21 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h4 class="ft-20-sb">TONE:FIT</h4>
-                <p class="ft-18-r">AI 기반 맞춤형 프로필 프레임 제작 서비스</p>
+                <h4 class="ft-20-sb">가맹문의</h4>
+                <p class="ft-18-r">1533-2779</p>
+                <p class="ft-18-r">24시간 운영</p>
             </div>
             <div class="footer-section">
-                <h4 class="ft-20-sb">빠른 링크</h4>
+                <h4 class="ft-20-sb">이벤트 프레임 & 협업문의</h4>
                 <ul>
-                    <li><a href="#" class="ft-18-r">제품</a></li>
-                    <li><a href="#" class="ft-18-r">갤러리</a></li>
-                    <li><a href="#" class="ft-18-r">블로그</a></li>
+                    <li><a href="#" class="ft-18-r">TONE:FIT</a></li>
+                    <li><a href="#" class="ft-18-r">카카오채널 </a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4 class="ft-20-sb">정보</h4>
+                <h4 class="ft-20-sb">PLANFECT</h4>
                 <ul>
-                    <li><a href="#" class="ft-18-r">개인정보처리방침</a></li>
-                    <li><a href="#" class="ft-18-r">이용약관</a></li>
-                    <li><a href="#" class="ft-18-r">고객지원</a></li>
+                    <li><a href="#" class="ft-18-r">E-mail : adsfsdfsdafsdafsdfsdf | Tel : 1533:2779</a></li>
                 </ul>
             </div>
         </div>

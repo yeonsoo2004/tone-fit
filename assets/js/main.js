@@ -2,35 +2,36 @@
     const header = document.querySelector('.header');
     if (!header) return;
 
-    function updateHeaderBg() {
-        header.classList.toggle('is-scrolled', window.scrollY > 0);
+    const scrollThreshold = 10;
+
+    function updateHeader() {
+        header.classList.toggle('is-scrolled', window.scrollY > scrollThreshold);
     }
 
-    updateHeaderBg();
-    window.addEventListener('scroll', updateHeaderBg, { passive: true });
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
 })();
 
 // MotionPathPlugin 등록
-gsap.registerPlugin(MotionPathPlugin);
+// gsap.registerPlugin(MotionPathPlugin);
 
 // 애니메이션 생성
-const animation = gsap.to("#rotatingText textPath", {
-  attr: { startOffset: "100%" },  // 시작점을 경로의 100% 위치로 이동
-  duration: 8,                     // 8초 소요
-  ease: "linear",                  // 일정한 속도
-  repeat: -1,                      // 무한 반복
-  paused: false                     // 초기 상태: -
-});
+// const animation = gsap.to("#rotatingText textPath", {
+//   attr: { startOffset: "100%" },
+//   duration: 8,
+//   ease: "linear",
+//   repeat: -1,
+//   paused: false
+// });
 
-// 제어 함수
-function playAnimation() {
-  animation.play();
-}
+// function playAnimation() {
+//   animation.play();
+// }
 
-function pauseAnimation() {
-  animation.pause();
-}
+// function pauseAnimation() {
+//   animation.pause();
+// }
 
-function resetAnimation() {
-  animation.restart();
-}
+// function resetAnimation() {
+//   animation.restart();
+// }
