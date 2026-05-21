@@ -89,6 +89,17 @@ body {
 
 
 /* =========================================
+   Spacing Classes (섹션 여백 유틸리티)
+========================================= */
+
+/* 섹션 상하 패딩 (130px) */
+.py-130 {
+    padding-top: 8.125rem;
+    padding-bottom: 8.125rem;
+}
+
+
+/* =========================================
    Layout & Grid System (PC 기준 1440px)
 ========================================= */
 /* 공통 이너 컨테이너 (모든 섹션의 콘텐츠를 정중앙 1440px로 잡아줌) */
@@ -116,6 +127,14 @@ body {
        grid-template-columns: repeat(8, 1fr); /* 태블릿은 8단으로 변경 */
        gap: 20px; /* 간격도 살짝 줄여줌 */
    }
+
+   .py-130 {
+       padding-top: 5rem;
+       padding-bottom: 5rem;
+   }
+
+   .ft-32-b { font-size: 1.75rem; }  /* 28px */
+   .ft-18-r { font-size: 1rem; }     /* 16px */
 }
 
 @media screen and (max-width: 768px) {
@@ -126,4 +145,12 @@ body {
    .inner {
        padding: 0 16px; /* 모바일 좌우 여백 */
    }
+
+   .py-130 {
+       padding-top: 3.75rem;
+       padding-bottom: 3.75rem;
+   }
+
+   .ft-32-b { font-size: 1.5rem; }   /* 24px */
+   .ft-18-r { font-size: 0.9375rem; } /* 15px */
 }
