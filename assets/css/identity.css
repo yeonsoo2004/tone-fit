@@ -1141,3 +1141,154 @@
         margin-top: 1.25rem;
     }
 }
+
+
+/* =========================================
+   Identity – Space & Record Section
+========================================= */
+
+.identity-space-section {
+    overflow-x: hidden;
+}
+
+.identity-space-section .inner {
+    overflow: visible;
+}
+
+.identity-space-section .grid-wrap {
+    align-items: center;
+    overflow: visible;
+}
+
+.identity-space-section .slider-col {
+    grid-column: 1 / span 7;
+    justify-content: space-between;
+    min-width: 0;
+    overflow: visible;
+    clip-path: inset(-6.25rem 0 -6.25rem -100vw);
+    margin-left: calc(50% - 50vw);
+    width: calc(100% + (50vw - 50%));
+}
+
+.identity-space-section .text-col {
+    grid-column: 9 / -1;
+    margin-left: auto;
+    justify-self: end;
+}
+
+.identity-space-section .color-point {
+    color: #D4734A;
+}
+
+.identity-space-section .space-title {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.identity-space-section .space-desc {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.identity-space-section .space-swiper,
+.identity-space-section .space-swiper.swiper {
+    width: 100%;
+    overflow: visible !important;
+    padding-bottom: 0;
+}
+
+.identity-space-section .space-swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.identity-space-section .space-swiper .swiper-slide {
+    max-height: 31.25rem;
+    height: 31.25rem;
+    /* border-radius: 0.625rem; */
+    overflow: hidden;
+}
+
+.identity-space-section .space-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    /* border-radius: 0.625rem; */
+}
+
+.identity-space-section .space-swiper .swiper-pagination {
+    position: relative;
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: 0.25rem;
+    margin: 1.875rem 0 0;
+    background-color: #E5E5E5;
+    border-radius: 0.125rem;
+}
+
+.identity-space-section .space-swiper .swiper-pagination-progressbar-fill {
+    background-color: #D4734A;
+    border-radius: 0.125rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .identity-space-section .grid-wrap {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .identity-space-section .slider-col,
+    .identity-space-section .text-col {
+        grid-column: span 12;
+        margin-left: 0;
+        width: 100%;
+        justify-self: stretch;
+    }
+
+    .identity-space-section .slider-col {
+        clip-path: none;
+        order: 1;
+    }
+
+    .identity-space-section .text-col {
+        order: 2;
+        margin-top: 2.5rem;
+    }
+
+    .identity-space-section .space-title {
+        font-size: 2.625rem;
+    }
+
+    .identity-space-section .space-swiper,
+    .identity-space-section .space-swiper.swiper {
+        overflow: hidden !important;
+    }
+
+    .identity-space-section .space-swiper .swiper-slide {
+        max-height: 25rem;
+        height: 25rem;
+    }
+
+    .identity-space-section .space-swiper .swiper-pagination {
+        margin-top: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .identity-space-section .space-title {
+        font-size: 2rem;
+    }
+
+    .identity-space-section .text-col {
+        margin-top: 2rem;
+    }
+
+    .identity-space-section .space-swiper .swiper-slide {
+        max-height: 20rem;
+        height: 20rem;
+    }
+
+    .identity-space-section .space-swiper .swiper-pagination {
+        margin-top: 1.25rem;
+    }
+}
