@@ -14,6 +14,19 @@
     margin-bottom: 2.5rem;
 }
 
+.mb-80 {
+    margin-bottom: 5rem;
+}
+
+.py-100 {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
 /* =========================================
    KV Section
 ========================================= */
@@ -23,7 +36,7 @@
     height: 100vh;
     background-image: url('../images/kiosk-kv.png');
     background-size: cover;
-    background-position: center;
+    background-position: right center;
     background-repeat: no-repeat;
 }
 
@@ -45,8 +58,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     height: 100%;
+    max-width: 36rem;
     text-align: left;
+}
+
+.kiosk-kv-section .gnb-btn {
+    align-self: flex-start;
+    text-decoration: none;
 }
 
 .kiosk-kv-section .kv-subtitle {
@@ -55,7 +75,7 @@
     font-weight: 600;
     color: #D4734A;
     line-height: 1.4;
-    margin: 0;
+    margin-top: 0;
 }
 
 .kiosk-kv-section .kv-title {
@@ -63,7 +83,7 @@
     font-weight: 700;
     color: #FFFFFF;
     line-height: 1.2;
-    margin: 0;
+    margin-top: 0;
 }
 
 .kiosk-kv-section .kv-desc {
@@ -71,7 +91,7 @@
     font-weight: 400;
     color: #FFFFFF;
     line-height: 1.6;
-    margin: 0;
+    margin-top: 0;
     max-width: 40rem;
 }
 
@@ -90,6 +110,14 @@
 }
 
 @media screen and (max-width: 768px) {
+    .kiosk-kv-section {
+        background-position: 75% center;
+    }
+
+    .kiosk-kv-section .kv-text-wrap {
+        max-width: 100%;
+    }
+
     .kiosk-kv-section .kv-subtitle {
         font-size: 1rem;
     }
@@ -101,5 +129,118 @@
     .kiosk-kv-section .kv-desc {
         font-size: 1rem;
         max-width: 100%;
+    }
+}
+
+/* =========================================
+   HOW IT WORKS Section
+========================================= */
+.kiosk-works-section .color-point {
+    color: #D4734A;
+}
+
+.kiosk-works-section .title-area h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #D4734A;
+    line-height: 1.3;
+}
+
+
+
+.kiosk-works-section .work-item {
+    align-items: center;
+}
+
+.kiosk-works-section .work-item .text-col,
+.kiosk-works-section .work-item .img-col {
+    grid-column: span 6;
+}
+
+.kiosk-works-section .slide-text-col {
+    overflow: hidden;
+}
+
+.kiosk-works-section .step-title {
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #D4734A;
+    line-height: 1.3;
+}
+
+
+.kiosk-works-section .img-col img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+    .kiosk-works-section .work-item .text-col,
+    .kiosk-works-section .work-item .img-col {
+        grid-column: span 12;
+    }
+
+    .kiosk-works-section .work-item .img-col {
+        margin-top: 2.5rem;
+    }
+
+    .kiosk-works-section .work-item.reverse-item .text-col {
+        order: 1;
+    }
+
+    .kiosk-works-section .work-item.reverse-item .img-col {
+        order: 2;
+        margin-top: 2.5rem;
+        margin-bottom: 0;
+    }
+
+    .kiosk-works-section .title-area h2 {
+        font-size: 1.75rem;
+    }
+
+    .kiosk-works-section .step-title {
+        font-size: 1.75rem;
+    }
+
+    .kiosk-works-section .step-desc,
+    .kiosk-works-section .title-area p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .py-100 {
+        padding-top: 3.75rem;
+        padding-bottom: 3.75rem;
+    }
+
+    .mb-80 {
+        margin-bottom: 3rem;
+    }
+
+    .kiosk-works-section .title-area h2 {
+        font-size: 1.5rem;
+    }
+
+    .kiosk-works-section .step-title {
+        font-size: 1.5rem;
+    }
+
+    .kiosk-works-section .step-desc,
+    .kiosk-works-section .title-area p {
+        font-size: 0.9375rem;
+    }
+
+    .kiosk-works-section .work-item .img-col {
+        margin-top: 1.5rem;
+    }
+
+    .kiosk-works-section .work-item.reverse-item .img-col {
+        margin-top: 1.5rem;
+        margin-bottom: 0;
     }
 }
