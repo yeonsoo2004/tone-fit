@@ -470,6 +470,11 @@
     align-content: center;
 }
 
+.ai-tone-finder-system p{
+    color: #4C4948;
+}
+
+
 .ai-tone-finder-sec-tag strong{
     font-size: 6.25rem;
     font-weight: 900;
@@ -499,12 +504,15 @@
 .ai-personal-bg-content{
     display: grid;
     grid-template-columns: repeat(7,1fr);
+    gap: 1.5rem;
 }
 
 .ai-personal-bg-content img{
     width: 100%;
 }
 .ai-personal-bg-content p{
+    color: #4C4948;
+    font-size: 1rem;
     text-align: center;
     align-content: center;
 }
@@ -549,10 +557,25 @@
 .frame{
     width: 100%;
     height: 39.125rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     text-align: center;
-    align-content: center;
-    color: transparent;
+    overflow: hidden;
+}
+.frame p,
+.frame button{
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .frame:nth-child(1){
     background-image: url(/assets/images/frame1.jpg);
@@ -567,13 +590,43 @@
     background-image: url(/assets/images/frame4.jpg);
 }
 
+.frame::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: #4C4948;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.frame:hover::before{
+    opacity: .5;
+}
+.frame:hover p,
+.frame:hover button{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
 .frame p{
     font-size: 1rem;
     font-weight: 700;
+    color: #fff;
 }
 .frame button{
     margin-top: 1.25rem;
-    justify-self: center;
+}
+.frame:hover button.topage-btn{
+    color: #fff;
+    border-color: #fff;
+}
+.frame:hover button.topage-btn:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
 }
 
 /* =========================================
@@ -585,96 +638,30 @@
     color: #FFFFFF;
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    margin-bottom: 60px;
-    padding-bottom: 60px;
+.footer-logo{
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
-.footer-section {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.footer-section h4 {
-    color: #FFFFFF;
-    margin: 0;
-}
-
-.footer-section p {
-    color: #B0B0B0;
-    margin: 0;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-section a {
-    color: #B0B0B0;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.footer-section a:hover {
-    color: #D4734A;
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 30px;
-}
-
-.footer-bottom p {
-    color: #7A7A7A;
-    margin: 0;
-}
-
-.footer-social {
-    display: flex;
-    gap: 15px;
-}
-
-.footer-social-btn {
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    color: #D4734A;
-    cursor: pointer;
-    transition: all 0.2s;
+.footer-sns-btn{
+    padding: 5px;
+    background-color: #4C4948;
     border-radius: 50%;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
 }
 
-.footer-social-btn:nth-child(1) {
-    background-image: url(/assets/images/icon/icons_insta.svg);
-}
-
-.footer-social-btn:nth-child(2) {
-    background-image: url(/assets/images/icon/icons_blogger.svg);
-}
-
-.footer-social-btn:nth-child(3) {
-    background-image: url(/assets/images/icon/icon_kakao-talk.svg);
-}
-
-.footer-social-btn:hover {
+.footer-sns-btn:hover{
     background-color: #D4734A;
-    color: #FFFFFF;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
-
+.footer-policy{
+    font-size: .75rem;
+    font-weight: 400;
+}
+.footer-info-contact{
+    font-size: .75rem;
+    font-weight: 400;
+}
 
 /* =========================================
    10. RESPONSIVE DESIGN
