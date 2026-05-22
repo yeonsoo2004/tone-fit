@@ -1,0 +1,777 @@
+/* =========================================
+   Startup Page (startup.html)
+========================================= */
+
+/* 네비게이션(112px) — common 유틸 없음 */
+.startup-page {
+    padding-top: 112px;
+}
+
+/* KV 780px · 배경 · 오버레이 — 특수 규격 */
+.startup-kv-section {
+    position: relative;
+    height: 780px;
+    background-image: url('../images/startup-kv.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.startup-kv-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.startup-kv-inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    text-align: left;
+}
+
+.startup-kv-copy {
+    width: 100%;
+}
+
+/* .ft-54-b .title — #FFFFFF · 68px line-height common 유틸 없음 */
+.startup-kv-title {
+    margin: 0;
+    line-height: 68px;
+    color: #FFFFFF;
+}
+
+/* .ft-28-r .gap-20 — #FFFFFF · 40px line-height common 유틸 없음 */
+.startup-kv-desc {
+    margin: 0;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+/* =========================================
+   Startup Feature Section (7:5 grid)
+========================================= */
+
+/* .py-130 .inner .grid-wrap */
+.startup-feature-section {
+    overflow: hidden;
+}
+
+.startup-feature-grid {
+    align-items: center;
+}
+
+/* 7그리드 · 동영상 828×729 */
+.startup-feature-video-col {
+    grid-column: span 7;
+}
+
+.startup-feature-video {
+    display: block;
+    width: 100%;
+    max-width: 828px;
+    height: 470px;
+}
+
+/* 5그리드 · 수직 중앙 */
+.startup-feature-text-col {
+    grid-column: span 5;
+}
+
+.startup-feature-copy {
+    width: 100%;
+    text-align: left;
+}
+
+/* .ft-32-b .title .color-main — line-height 44px */
+.startup-feature-title {
+    margin: 0;
+    line-height: 44px;
+    margin-left: 100px;
+}
+
+/* 타이틀 하단 ~ 1번 항목: 20px */
+.startup-feature-list {
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+    margin-left: 100px;
+}
+
+/* .gap-20 — 항목 묶음 간 20px */
+
+/* 항목 내 제목~캡션: 10px — common gap 유틸 없음 */
+.startup-feature-item {
+    gap: 10px;
+}
+
+/* .ft-28-r .color-main — semibold · line-height 40px */
+.startup-feature-item-title {
+    margin: 0;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+/* .ft-20-r .color-main — Light 300 · line-height 32px */
+.startup-feature-item-desc {
+    margin: 0;
+    font-weight: 300;
+    line-height: 32px;
+}
+
+/* =========================================
+   Startup Growth Section (텍스트 + SVG · Overlay · Align Top)
+========================================= */
+
+/* .py-130 .inner */
+.startup-growth-section {
+    overflow: visible;
+}
+
+/* 1440px 동일 영역 겹침 · Align Top */
+.startup-growth-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(701px, auto);
+    width: 100%;
+    max-width: 1440px;
+    position: relative;
+}
+
+.startup-growth-copy,
+.startup-growth-graphic {
+    grid-area: 1 / 1;
+    align-self: start;
+}
+
+/* z-index: 2 · 왼쪽 그리드 시작점 */
+.startup-growth-copy {
+    z-index: 2;
+    justify-self: start;
+    text-align: left;
+    max-width: 100%;
+}
+
+/* .title .color-main .ft-48-b — line-height 68px */
+.startup-growth-title {
+    margin: 0;
+    line-height: 68px;
+}
+
+/* '15만 건' → .color-orange (#D4734A) */
+
+/* 타이틀 하단 ~ 서브: 20px */
+.startup-growth-desc {
+    margin: 20px 0 0;
+    font-weight: 300;
+    line-height: 32px;
+}
+
+/* z-index: 1 · 오른쪽 그리드 끝선 (SVG 1279×701) */
+.startup-growth-graphic {
+    position: relative;
+    z-index: 1;
+    justify-self: end;
+}
+
+.startup-growth-graphic img {
+    display: block;
+    width: 1279px;
+    height: 701px;
+}
+
+/* 말풍선 — SVG path bounds(705,43 / 234×44) · .d-flex .jc-center .ai-center */
+.startup-growth-bubble {
+    position: absolute;
+    top: 43px;
+    left: 705px;
+    width: 234px;
+    height: 44px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .ft-18-r — #FFFFFF · semibold · line-height 28px */
+.startup-growth-bubble-text {
+    margin: 0;
+    width: 100%;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* =========================================
+   Startup Profit Section (4th · Marquee)
+========================================= */
+
+/* .py-130 .inner */
+.startup-profit-section {
+    overflow: hidden;
+}
+
+.startup-profit-head {
+    text-align: left;
+}
+
+/* .ft-32-r .color-main — Pretendard Light · 32px/44px (common에 ft-32-r 없음 → 페이지 보완) */
+.startup-profit-eyebrow {
+    margin: 0;
+    /* font-family: 'Pretendard', sans-serif; */
+    font-size: 2rem;
+    font-weight: 300;
+    /* color: #4C4948; */
+    line-height: 44px;
+}
+
+/* .title .color-main .ft-48-b — line-height 68px */
+.startup-profit-title {
+    margin: 0;
+    line-height: 68px;
+}
+
+/* 메인 타이틀 하단 ~ 마키 상단: 80px · 뷰포트 가로 풀 */
+.startup-profit-marquee {
+    margin-top: 5rem;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.startup-profit-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: startup-profit-marquee 50s linear infinite;
+    will-change: transform;
+}
+
+.startup-profit-marquee-group {
+    flex-shrink: 0;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.startup-profit-marquee-item {
+    flex-shrink: 0;
+}
+
+/* 5번째 ~ 다음 1번째(루프 연결) 간격 30px — 무한 루프 -50% 유지 */
+.startup-profit-marquee-item:last-child {
+    margin-right: 30px;
+}
+
+.startup-profit-marquee-item img {
+    display: block;
+    width: 412px;
+    height: 483px;
+    object-fit: cover;
+}
+
+/* 무한 루프: 복제 세트 50% 이동 */
+@keyframes startup-profit-marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* 마키 하단 ~ 캡션: 40px */
+.startup-profit-caption {
+    margin: 2.5rem 0 0;
+    font-weight: 300;
+    line-height: 32px;
+    text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .startup-profit-marquee-track {
+        animation: none;
+    }
+}
+
+/* =========================================
+   Startup Franchise Section (6th · Cards + CTA)
+========================================= */
+
+/* .py-130 .inner .bg-warm-white */
+.startup-franchise-section {
+    overflow: hidden;
+}
+
+/* .title .color-main .ft-48-b — line-height 62px */
+.startup-franchise-title {
+    margin: 0;
+    line-height: 62px;
+    text-align: center;
+}
+
+/* 메인 타이틀 하단 ~ 카드 그룹: 80px */
+.startup-franchise-cards {
+    flex-direction: row;
+    gap: 24px;
+    margin-top: 5rem;
+}
+
+.startup-franchise-card {
+    box-sizing: border-box;
+    width: 464px;
+    height: 473px;
+    flex-shrink: 0;
+    padding: 60px 28px;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+.startup-franchise-card-icon {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* .ft-32-b .color-main — 아이콘 하단 ~ 40px */
+.startup-franchise-card-title {
+    margin: 40px 0 0;
+    line-height: 44px;
+}
+
+/* .ft-20-r .color-main — medium · 타이틀 하단 ~ 20px */
+.startup-franchise-card-desc {
+    margin: 20px 0 0;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+/* 카드 그룹 하단 ~ 캡션·버튼: 40px · .gap-20 .jc-center */
+.startup-franchise-action {
+    margin-top: 2.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+/* .ft-20-r .color-main — medium */
+.startup-franchise-action-caption {
+    margin: 0;
+    font-weight: 500;
+    line-height: 32px;
+
+}
+
+/* .ft-20-sb .bg-point-orange — padding 20px 30px · radius 20px */
+.startup-franchise-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 20px 30px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    line-height: 32px;
+    text-decoration: none;
+    border: none;
+}
+
+/* =========================================
+   Responsive · 표준 브레이크포인트 (Startup Page)
+   - common.css 미수정 · .startup-page 스코프만
+========================================= */
+
+/* 1. 노트북 & 데스크탑 (1025px ~ 1440px) */
+@media screen and (max-width: 1440px) {
+    .startup-page .inner {
+        max-width: none;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .startup-page .py-130 {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    /* KV */
+    .startup-page .startup-kv-section {
+        height: 700px;
+    }
+
+    /* Feature · 7그리드 비디오 — height:auto+aspect-ratio 시 video 높이 0px 붕괴 방지 */
+    .startup-page .startup-feature-video {
+        width: 100%;
+        max-width: 828px;
+        height: 470px;
+    }
+
+    /* Growth · 오버레이 유지 · 그래프 스케일 */
+    .startup-page .startup-growth-layout {
+        min-height: 0;
+        grid-template-rows: minmax(0, auto);
+    }
+
+    .startup-page .startup-growth-copy {
+        max-width: 46%;
+        padding-right: 24px;
+        box-sizing: border-box;
+    }
+
+    .startup-page .startup-growth-graphic {
+        width: 90%;
+        max-width: 1279px;
+    }
+
+    .startup-page .startup-growth-graphic img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 말풍선 — 그래프 비율 연동 (1279×701 기준) */
+    .startup-page .startup-growth-bubble {
+        top: 6.13%;
+        left: 55.12%;
+        width: 18.3%;
+        min-width: 200px;
+        max-width: 234px;
+        height: 44px;
+    }
+
+    /* Profit · 타이틀 축소 */
+    .startup-page .startup-profit-eyebrow {
+        font-size: 1.75rem;
+        line-height: 40px;
+    }
+
+    .startup-page .startup-profit-title {
+        line-height: 60px;
+    }
+
+    /* Franchise */
+    .startup-page .startup-franchise-card {
+        width: calc((100% - 48px) / 3);
+        max-width: 464px;
+        min-width: 0;
+    }
+}
+
+/* 2. 태블릿 (769px ~ 1024px) */
+@media screen and (max-width: 1024px) {
+    .startup-page .inner {
+        max-width: none;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .startup-page .py-130 {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    /* KV */
+    .startup-page .startup-kv-section {
+        height: 600px;
+    }
+
+    .startup-page .startup-kv-title {
+        font-size: 42px;
+        line-height: 56px;
+    }
+
+    .startup-page .startup-kv-desc {
+        font-size: 22px;
+        line-height: 34px;
+    }
+
+    /* Feature · 수직 1단 */
+    .startup-page .startup-feature-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .startup-page .startup-feature-video-col,
+    .startup-page .startup-feature-text-col {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .startup-page .startup-feature-video {
+        width: 100%;
+        max-width: 100%;
+        height: 470px;
+    }
+
+    .startup-page .startup-feature-title,
+    .startup-page .startup-feature-list {
+        margin-left: 0;
+    }
+
+    /* Growth · 오버레이 해제 · 수직 스택 */
+    .startup-page .startup-growth-section {
+        overflow: hidden;
+    }
+
+    .startup-page .startup-growth-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 100%;
+    }
+
+    .startup-page .startup-growth-copy,
+    .startup-page .startup-growth-graphic {
+        position: relative;
+        grid-area: auto;
+        justify-self: stretch;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .startup-page .startup-growth-copy {
+        z-index: 1;
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .startup-page .startup-growth-title {
+        line-height: 56px;
+    }
+
+    .startup-page .startup-growth-graphic {
+        z-index: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .startup-page .startup-growth-graphic img {
+        width: 100%;
+        min-width: 720px;
+        max-width: 1279px;
+        height: auto;
+    }
+
+    .startup-page .startup-growth-bubble {
+        top: 6.13%;
+        left: 55.12%;
+        width: 18.3%;
+        min-width: 180px;
+        max-width: 234px;
+        height: 44px;
+    }
+
+    /* Profit */
+    .startup-page .startup-profit-eyebrow {
+        font-size: 1.625rem;
+        line-height: 38px;
+    }
+
+    .startup-page .startup-profit-title {
+        font-size: 2.5rem;
+        line-height: 52px;
+    }
+
+    .startup-page .startup-profit-marquee {
+        overflow: hidden;
+    }
+
+    .startup-page .startup-profit-marquee-item img {
+        width: 360px;
+        height: auto;
+        aspect-ratio: 412 / 483;
+    }
+
+    /* Franchise · 2열 wrap */
+    .startup-page .startup-franchise-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .startup-page .startup-franchise-card {
+        width: calc((100% - 24px) / 2);
+        max-width: 464px;
+        height: auto;
+        min-height: 420px;
+    }
+}
+
+/* 3. 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+    .startup-page .inner {
+        max-width: none;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .startup-page .py-130 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    /* KV */
+    .startup-page .startup-kv-section {
+        height: 450px;
+    }
+
+    .startup-page .startup-kv-title {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .startup-page .startup-kv-desc {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    /* Feature */
+    .startup-page .startup-feature-grid {
+        gap: 32px;
+    }
+
+    .startup-page .startup-feature-title {
+        font-size: 1.5rem;
+        line-height: 36px;
+    }
+
+    .startup-page .startup-feature-item-title {
+        font-size: 1.25rem;
+        line-height: 32px;
+    }
+
+    .startup-page .startup-feature-item-desc {
+        font-size: 0.9375rem;
+        line-height: 24px;
+    }
+
+    /* Growth */
+    .startup-page .startup-growth-layout {
+        gap: 28px;
+    }
+
+    .startup-page .startup-growth-title {
+        font-size: 1.75rem;
+        line-height: 40px;
+    }
+
+    .startup-page .startup-growth-desc {
+        font-size: 0.9375rem;
+        line-height: 24px;
+    }
+
+    .startup-page .startup-growth-graphic img {
+        width: 100%;
+        min-width: 560px;
+        height: auto;
+    }
+
+    .startup-page .startup-growth-bubble {
+        top: 6.13%;
+        left: 55.12%;
+        width: 22%;
+        min-width: 160px;
+        max-width: 234px;
+        height: auto;
+        min-height: 40px;
+        padding: 0 4px;
+        box-sizing: border-box;
+    }
+
+    .startup-page .startup-growth-bubble-text {
+        font-size: 0.875rem;
+        line-height: 24px;
+        white-space: normal;
+    }
+
+    /* Profit */
+    .startup-page .startup-profit-eyebrow {
+        font-size: 1.375rem;
+        line-height: 32px;
+    }
+
+    .startup-page .startup-profit-title {
+        font-size: 1.75rem;
+        line-height: 40px;
+    }
+
+    .startup-page .startup-profit-caption {
+        font-size: 0.9375rem;
+        line-height: 24px;
+    }
+
+    .startup-page .startup-profit-marquee {
+        margin-top: 3rem;
+    }
+
+    .startup-page .startup-profit-marquee-item img {
+        width: min(412px, 78vw);
+        height: auto;
+        aspect-ratio: 412 / 483;
+    }
+
+    .startup-page .startup-profit-marquee-group {
+        gap: 20px;
+    }
+
+    .startup-page .startup-profit-marquee-item:last-child {
+        margin-right: 20px;
+    }
+
+    /* Franchise · 1열 100% */
+    .startup-page .startup-franchise-title {
+        font-size: 1.75rem;
+        line-height: 40px;
+    }
+
+    .startup-page .startup-franchise-cards {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        margin-top: 3rem;
+    }
+
+    .startup-page .startup-franchise-card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 48px 24px;
+        border-radius: 40px;
+    }
+
+    .startup-page .startup-franchise-card-title {
+        font-size: 1.5rem;
+        line-height: 36px;
+    }
+
+    .startup-page .startup-franchise-card-desc {
+        font-size: 0.9375rem;
+        line-height: 24px;
+    }
+
+    .startup-page .startup-franchise-action {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 2rem;
+    }
+
+    .startup-page .startup-franchise-action-caption {
+        font-size: 0.9375rem;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    .startup-page .startup-franchise-btn {
+        width: 100%;
+        max-width: 320px;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,376 @@
+/* =========================================
+   Space Concept Page (space.html)
+========================================= */
+
+/* 네비게이션(112px) — common 유틸 없음 */
+.space-page {
+    padding-top: 112px;
+}
+
+.space-page .header {
+    min-height: 112px;
+    background-color: #FFFFFF;
+    color: #4C4948;
+}
+
+.space-page .header.is-scrolled,
+.space-page .header.is-mega-open {
+    background-color: #FFFFFF;
+    color: #4C4948;
+}
+
+.space-concept-head {
+    width: 100%;
+    text-align: center;
+}
+
+/* .title .color-main — 50px / 800 / 68px common 유틸 없음 */
+.space-main-title {
+    margin: 0 0 31px;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 68px;
+}
+
+/* 탭 버튼 — component.css 오버라이드 · 특수 규격 유지 */
+.space-tab-bar .tab-btn {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 8px 40px;
+    line-height: 32px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(51, 52, 70, 0.1);
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.space-tab-bar .tab-btn:hover:not(.active) {
+    box-shadow: 0px 0px 3px 0px #D4734A;
+}
+
+.space-tab-bar .tab-btn.active {
+    color: #FFFFFF;
+    background-color: #D4734A;
+    border: 1px solid rgba(51, 52, 70, 0.1);
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.space-tab-bar .tab-btn.active:hover {
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.space-tab-bar .tab-btn:focus,
+.space-tab-bar .tab-btn:focus-visible {
+    outline: none;
+}
+
+.space-tab-bar .tab-btn:focus-visible:not(.active) {
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.space-tab-bar .tab-btn.active:focus,
+.space-tab-bar .tab-btn.active:focus-visible {
+    color: #FFFFFF;
+    background-color: #D4734A;
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.space-tab-panels {
+    width: 100%;
+    text-align: left;
+}
+
+.space-tab-panel {
+    display: none;
+}
+
+.space-tab-panel.is-active {
+    display: block;
+}
+
+/* .ft-32-b .color-main — 800 / 44px / 31px common 유틸 없음 */
+.space-subtitle {
+    margin: 31px 0 0;
+    font-weight: 800;
+    line-height: 44px;
+    text-align: center;
+}
+
+/* .ft-20-r .color-main — 32px line-height common 유틸 없음 */
+.space-caption {
+    margin: 28px 0 0;
+    line-height: 32px;
+    text-align: center;
+}
+
+/* 1440px 갤러리 · 662×583 · 12px 바둑판 — 특수 규격 */
+.space-gallery {
+    display: grid;
+    grid-template-columns: 662px 766px;
+    column-gap: 12px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 10px 0 0;
+}
+
+.space-gallery__main {
+    margin: 0;
+}
+
+.space-gallery__main img {
+    display: block;
+    width: 662px;
+    height: 583px;
+}
+
+.space-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(2, calc((766px - 12px) / 2));
+    grid-template-rows: repeat(2, calc((583px - 12px) / 2));
+    gap: 12px;
+    width: 766px;
+    height: 583px;
+}
+
+.space-gallery__item {
+    margin: 0;
+    overflow: hidden;
+}
+
+.space-gallery__item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   Responsive · 표준 브레이크포인트 (Space Page)
+   - common.css 미수정 · .space-page 스코프만
+========================================= */
+
+/* 1. 노트북 & 데스크탑 (1025px ~ 1440px) */
+@media screen and (max-width: 1440px) {
+    .space-page .inner {
+        max-width: none;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .space-page .py-130 {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    /* .ft-32-b — 32px → 28px (2px 축소) */
+    .space-page .space-subtitle {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    /* .ft-20-r — 20px → 18px (2px 축소) */
+    .space-page .space-caption {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    /* 662 : 766 비율 유지 · 12px 갭 고정 */
+    .space-page .space-gallery {
+        display: grid;
+        grid-template-columns: minmax(0, 662fr) minmax(0, 766fr);
+        column-gap: 12px;
+        max-width: 100%;
+    }
+
+    .space-page .space-gallery__main img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 662 / 583;
+    }
+
+    .space-page .space-gallery__grid {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        aspect-ratio: 766 / 583;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+/* 2. 태블릿 (769px ~ 1024px) */
+@media screen and (max-width: 1024px) {
+    .space-page .inner {
+        max-width: none;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .space-page .py-130 {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .space-page .space-subtitle {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    .space-page .space-caption {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    /* 메인 이미지 상단 · 2×2 바둑판 하단 */
+    .space-page .space-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .space-page .space-gallery__main {
+        width: 100%;
+    }
+
+    .space-page .space-gallery__main img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 662 / 583;
+    }
+
+    .space-page .space-gallery__grid {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 766 / 583;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+/* 3. 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+    .space-page .inner {
+        max-width: none;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .space-page .py-130 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .space-page .space-main-title {
+        font-size: 24px;
+        line-height: 34px;
+        margin-bottom: 20px;
+    }
+
+    .space-page .space-subtitle {
+        margin-top: 20px;
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .space-page .space-caption {
+        margin-top: 16px;
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .space-page .space-tab-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 12px;
+    }
+
+    .space-page .space-tab-bar .tab-btn {
+        padding: 8px 24px;
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    /* 1단 수직 스크롤 · 갭 12px 유지 */
+    .space-page .space-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+    .space-page .space-gallery__main {
+        width: 100%;
+    }
+
+    .space-page .space-gallery__main img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 662 / 583;
+    }
+
+    .space-page .space-gallery__grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        gap: 12px;
+    }
+
+    .space-page .space-gallery__item {
+        width: 100%;
+        aspect-ratio: 662 / 583;
+    }
+
+    .space-page .space-gallery__item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* =========================================
+   Enter Animation (Fade-Up · 첫 진입)
+   - 아이템 A: .space-enter-copy
+   - 아이템 B: .space-enter-gallery (0.25s 지연은 space.js)
+========================================= */
+
+.space-enter-copy,
+.space-enter-gallery {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.space-enter-copy.is-enter-active,
+.space-enter-gallery.is-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 비활성 탭 패널 — 대기 상태(opacity:0) 미적용 */
+.space-tab-panel:not(.is-active) .space-enter-copy,
+.space-tab-panel:not(.is-active) .space-enter-gallery {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .space-enter-copy,
+    .space-enter-gallery {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        will-change: auto;
+    }
+}
