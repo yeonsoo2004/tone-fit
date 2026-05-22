@@ -543,7 +543,7 @@
 }
 
 /* =========================================
-   6. FRAME SECTION
+   7. FRAME SECTION
 ========================================= */
 .frame-section .section-header h3,p{
     color: #fff;
@@ -628,12 +628,21 @@
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
-
+/* =========================================
+   8. REVIEW SECTION
+========================================= */
+.review-content{
+    padding: 5rem 0;
+}
+.review-notice{
+    text-align: center;
+}
 /* =========================================
    9. FOOTER
 ========================================= */
 
 .footer {
+    padding: 6.25rem 0;
     background-color: #1E2022;
     color: #FFFFFF;
 }
