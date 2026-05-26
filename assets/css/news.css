@@ -1,0 +1,345 @@
+/* =========================================
+   News Page Styles
+========================================= */
+
+/* =========================================
+   1. PAGE TITLE SECTION
+========================================= */
+
+/* news 페이지는 히어로 없이 배경색이므로 헤더 항상 고정 스타일 적용 */
+.page-news .header {
+    background-color: #fff !important;
+    color: #4C4948 !important;
+}
+
+.news-main {
+    padding-top: 5.25rem; /* 헤더 높이 오프셋 */
+}
+
+.news-title-section {
+    padding-top: clamp(3.75rem, 9vw, 8.125rem); /* 60px ~ 130px */
+    padding-bottom: 0;
+    text-align: center;
+}
+
+.news-page-title {
+    font-family: 'jalnan gothic ttf', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.75rem, 3.75vw, 3.375rem); /* 28px ~ 54px */
+    color: #4C4948;
+    margin: 0;
+}
+
+/* =========================================
+   2. LNB TAB SECTION
+========================================= */
+.news-lnb-section {
+    padding-top: clamp(1.25rem, 3.5vw, 3.125rem); /* 20px ~ 50px */
+    padding-bottom: 0;
+}
+
+.news-lnb-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+/* =========================================
+   3. CONTENT SECTION
+========================================= */
+.news-content-section {
+    padding-top: 5rem;           /* lnb ~ 콘텐츠 80px */
+    padding-bottom: clamp(5rem, 9vw, 8.125rem); /* 80px ~ 130px */
+}
+
+/* =========================================
+   4. NEWS CARD GRID
+========================================= */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(12px, 1.67vw, 24px); /* 12px ~ 24px fluid */
+}
+
+/* =========================================
+   5. NEWS CARD
+========================================= */
+.news-card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: transform 0.2s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+}
+
+.news-card-img-wrap {
+    width: 100%;
+    aspect-ratio: 464 / 619;
+    background-color: #D9D9D9;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.news-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-card-img-wrap img {
+    transform: scale(1.03);
+}
+
+/* =========================================
+   6. MODAL OVERLAY
+========================================= */
+.news-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(70, 70, 70, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-modal-overlay.is-open {
+    display: flex;
+}
+
+/* =========================================
+   7. MODAL CONTENT
+========================================= */
+.news-modal {
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    width: min(723px, calc(100vw - 2rem));
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 0;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+    animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.news-modal-img-wrap {
+    width: 100%;
+    background-color: #D9D9D9;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+
+.news-modal-img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 이미지 없을 때 placeholder */
+.news-modal-img-placeholder {
+    width: 100%;
+    aspect-ratio: 723 / 963;
+    background-color: #D9D9D9;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a9a9a9;
+    font-size: 0.875rem;
+}
+
+/* =========================================
+   8. MODAL CLOSE BUTTON
+========================================= */
+.news-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 57px;
+    height: 57px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.news-modal-close:hover {
+    background-color: #FFFFFF;
+}
+
+.news-modal-close img {
+    width: 57px;
+    height: 57px;
+    display: block;
+}
+
+/* =========================================
+   9. EMPTY STATE (완료된 이벤트 등)
+========================================= */
+.news-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 5rem 0;
+    color: #a9a9a9;
+    font-size: 1.125rem;
+}
+
+/* =========================================
+   9-1. 완료된 이벤트 딤처리
+========================================= */
+#tab-panel-ended .news-card-img-wrap {
+    position: relative;
+}
+
+#tab-panel-ended .news-card-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+/* =========================================
+   10. RESPONSIVE
+========================================= */
+
+/* 1440px 이하부터 자연스럽게 좌우 여백 생성 */
+@media screen and (max-width: 1440px) {
+    .page-news .inner {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-news .inner {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .news-page-title {
+        font-size: 2.625rem; /* 42px */
+    }
+
+    .news-title-section {
+        padding-top: 2.5rem; /* 40px */
+    }
+
+    .news-lnb-section {
+        padding-top: 1.25rem; /* 20px */
+    }
+
+    .news-content-section {
+        padding-top: 2.5rem;  /* 40px */
+        padding-bottom: 2.5rem; /* 40px */
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-news .inner {
+        padding-left: 0.875rem; /* 14px */
+        padding-right: 0.875rem;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .page-news .lnb-tab-bar {
+        gap: 0.625rem; /* 10px */
+    }
+}
+@media screen and (max-width: 768px) {
+    .page-news .lnb-tab-btn {
+        font-size: 1.125rem;        /* 18px */
+        padding: 0.5rem 1.125rem;   /* 8px 18px */
+        border-radius: 50px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 402px) {
+    .page-news .lnb-tab-btn {
+        font-size: 0.875rem;        /* 14px */
+        padding: 0.5rem 0.9375rem;  /* 8px 15px */
+        border-radius: 50px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-news .inner {
+        padding-left: 0.875rem; /* 14px */
+        padding-right: 0.875rem;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .page-news .lnb-tab-bar {
+        gap: 0.625rem; /* 10px */
+    }
+}
+
+@media screen and (max-width: 402px) {
+    .news-title-section {
+        padding-top: 2.5rem;        /* 40px */
+    }
+
+    .news-lnb-section {
+        padding-top: 1.25rem;       /* 20px */
+    }
+
+    .news-content-section {
+        padding-top: 1.25rem;       /* 20px */
+        padding-bottom: 2.5rem;     /* 40px */
+    }
+
+    .news-page-title {
+        font-size: 2rem;            /* 32px */
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .news-card-img-wrap {
+        aspect-ratio: 464 / 619;    /* 비율 유지하며 축소 */
+    }
+}
