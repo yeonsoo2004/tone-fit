@@ -19,7 +19,6 @@
 
     <script src="./assets/js/libs/ScrollTrigger.min.js"></script>
     <script src="./assets/js/libs/ScrollSmoother.min.js"></script>
-    <!-- <script src="assets/js/libs/MotionPathPlugin.min.js"></script> -->
 
     <!-- ===== HEADER ===== -->
     <header class="header">
@@ -87,10 +86,12 @@
     </section>
 
     <!-- ===== ABOUT SECTION ===== -->
-    <section>
+    <section class="about-section">
         <div class="inner">
             <!-- IDENTITY SUB-SECTION -->
-            <h3 class="identity-title ft-32-b title color-main">나만의 색이 완벽하게 빛나는 순간 -</h3>
+            <div class="identity-header">
+                <h3 class="identity-title ft-32-b title color-main">나만의 색이 완벽하게 빛나는 순간 -</h3>
+            </div>
 
             <div class="identity-grid">
 
@@ -285,7 +286,7 @@
             <h3 class="title color-point ft-48-b">고객이 직접 홍보하는 바이럴 구조</h3>
             <p class="color-main ft-20-r">촬영이 끝난 뒤에도 콘텐츠는 계속 확산됩니다. SNS 업로드 중심의 자연 유입 시스템입니다.</p>
         </div>
-        <div class="viral-content d-flex inner jc-between gap-20">
+        <div class="viral-content fade-up d-flex inner jc-between gap-20">
             <div class="viral-userflow">
                 <div class="userflow-img">
                     <img src="assets/images/icon/ai_face-viral.svg" alt="">
@@ -334,12 +335,13 @@
         </div>
     </section>
     <!-- ===== 24HOUR AI SMART STUDIO ===== -->
-    <section class="24hour-section py-130">
-        <div class="section-header">
-            <h3 class="title">
+    <section class="ai-24hour-section py-130">
+        <div class="ai-24hour-bg" aria-hidden="true"></div>
+        <div class="section-header" data-fade-stagger>
+            <h3 class="title ft-18-r fade-up">
                 24시간 AI 스마트 스튜디오
             </h3>
-            <p>자체 개발 AI 톤 파인더와 가변형 조명으로 24시간 최상의 화보 퀄리티 구현<br>
+            <p class="color-main fade-up">자체 개발 AI 톤 파인더와 가변형 조명으로 24시간 최상의 화보 퀄리티 구현<br>
                 매월 자동 업데이트되는 브랜드 콜라보를 통한 한정판 프레임 원격 지원<br>
                 전용 모바일 앱을 활용한 실시간 기기 제어 및 스마트 무인 운영 시스템</p>
         </div>

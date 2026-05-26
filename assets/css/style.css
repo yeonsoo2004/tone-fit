@@ -122,6 +122,7 @@
 }
 
 .header-nav-link {
+    display: inline-block;
     color: inherit;
     font-weight: 400;
     background: none;
@@ -129,6 +130,7 @@
     cursor: pointer;
     padding: 8px 4px;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .header-mega {
@@ -258,9 +260,13 @@
 /* =========================================
 3. ABOUT SECTION
 ========================================= */
-.identity-title {
+.about-section{
+    padding-top: 8.125rem;
+}
+
+.identity-header{
     text-align: center;
-    margin: 8.125rem 0 5rem 0;
+    margin-bottom: 5rem;
 }
 
 .identity-grid {
@@ -658,6 +664,8 @@ p {
 .review-content {
     padding: 5rem 0;
 }
+<<<<<<< Updated upstream
+
 
 .review-marquee {
     width: 100%;
@@ -680,7 +688,7 @@ p {
     width: auto;
     height: auto;
     max-width: none;
-    border-radius: 1rem;
+    border-radius: 0;
     flex: 0 0 auto;
 }
 
@@ -701,15 +709,23 @@ p {
 }
 
 .review-notice {
+=======
+.review-notice{
+>>>>>>> Stashed changes
     text-align: center;
 }
 
 
 /* =========================================
+<<<<<<< Updated upstream
    9.   VIRAL SECTION
 ========================================= */
 .viral-content{
     padding: 5rem 0;
+}
+
+.viral-content.fade-up{
+    will-change: transform, opacity;
 }
 
 .viral-userflow {
@@ -753,8 +769,61 @@ p {
     color: #1e2022;
 }
 
+
+
+/* =========================================
+   10. 24HOUR SECTION
+========================================= */
+.ai-24hour-section{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    height: 41.875rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.ai-24hour-bg{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url(/assets/images/24hour-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.2);
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.ai-24hour-section .section-header{
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: 100%;
+    color: #fff;
+}
+
+.ai-24hour-section .fade-up{
+    will-change: transform, opacity;
+}
+
+.ai-24hour-section .section-header h3,
+.ai-24hour-section .section-header p,
+.ai-24hour-section .section-header .title,
+.ai-24hour-section .color-main{
+    color: #fff;
+}
+
 /* =========================================
    10. FOOTER
+=======
+   9. FOOTER
+>>>>>>> Stashed changes
 ========================================= */
 
 .footer {
