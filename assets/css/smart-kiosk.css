@@ -14,7 +14,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('../images/kiosk-kv.png');
+    background-image: url('../images/kiosk-kv.webp');
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-    max-width: 36rem;
+    max-width: 42rem;
     text-align: left;
 }
 
@@ -51,42 +51,21 @@
 
 .kiosk-kv-section .kv-subtitle {
     display: block;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #D4734A;
     line-height: 1.4;
     margin-top: 0;
 }
 
 .kiosk-kv-section .kv-title {
-    font-size: 3rem;
-    font-weight: 700;
     color: #FFFFFF;
     line-height: 1.2;
     margin-top: 0;
 }
 
 .kiosk-kv-section .kv-desc {
-    font-size: 1.25rem;
-    font-weight: 400;
     color: #FFFFFF;
     line-height: 1.6;
     margin-top: 0;
     max-width: 40rem;
-}
-
-@media screen and (max-width: 1024px) {
-    .kiosk-kv-section .kv-subtitle {
-        font-size: 1.125rem;
-    }
-
-    .kiosk-kv-section .kv-title {
-        font-size: 2.625rem;
-    }
-
-    .kiosk-kv-section .kv-desc {
-        font-size: 1.125rem;
-    }
 }
 
 @media screen and (max-width: 768px) {
@@ -98,16 +77,7 @@
         max-width: 100%;
     }
 
-    .kiosk-kv-section .kv-subtitle {
-        font-size: 1rem;
-    }
-
-    .kiosk-kv-section .kv-title {
-        font-size: 2rem;
-    }
-
     .kiosk-kv-section .kv-desc {
-        font-size: 1rem;
         max-width: 100%;
     }
 }
@@ -121,8 +91,6 @@
 
 .kiosk-works-section .title-area h2 {
     margin-top: 0;
-    font-size: 2rem;
-    font-weight: 700;
     color: #D4734A;
     line-height: 1.3;
 }
@@ -144,8 +112,6 @@
 
 .kiosk-works-section .step-title {
     margin-top: 0;
-    font-size: 2rem;
-    font-weight: 700;
     color: #D4734A;
     line-height: 1.3;
 }
@@ -180,18 +146,6 @@
         margin-bottom: 0;
     }
 
-    .kiosk-works-section .title-area h2 {
-        font-size: 1.75rem;
-    }
-
-    .kiosk-works-section .step-title {
-        font-size: 1.75rem;
-    }
-
-    .kiosk-works-section .step-desc,
-    .kiosk-works-section .title-area p {
-        font-size: 1rem;
-    }
 }
 
 @media screen and (max-width: 768px) {
@@ -207,19 +161,6 @@
 
     .kiosk-works-section .img-col img {
         max-height: 14rem;
-    }
-
-    .kiosk-works-section .title-area h2 {
-        font-size: 1.5rem;
-    }
-
-    .kiosk-works-section .step-title {
-        font-size: 1.5rem;
-    }
-
-    .kiosk-works-section .step-desc,
-    .kiosk-works-section .title-area p {
-        font-size: 0.9375rem;
     }
 
     .kiosk-works-section .work-item .img-col {
@@ -362,10 +303,6 @@
         grid-column: span 4;
     }
 
-    .kiosk-cut-section .cut-section-title {
-        font-size: 2.625rem;
-    }
-
     .kiosk-cut-section .cut-card {
         min-height: 13rem;
         padding: 1.5rem 1.25rem;
@@ -375,10 +312,6 @@
 @media screen and (max-width: 768px) {
     .kiosk-cut-section .cut-item {
         grid-column: span 6;
-    }
-
-    .kiosk-cut-section .cut-section-title {
-        font-size: 2rem;
     }
 
     .kiosk-cut-section .cut-card {
@@ -404,7 +337,6 @@
 
 .kiosk-counting-section .count-title {
     display: block;
-    font-size: 3rem;
     font-weight: 800;
     color: #1E2022;
     line-height: 1.2;
@@ -413,8 +345,6 @@
 
 .kiosk-counting-section .count-desc {
     margin: 0;
-    font-size: 1.25rem;
-    font-weight: 400;
     line-height: 1.5;
 }
 
@@ -423,26 +353,11 @@
         grid-column: span 4;
     }
 
-    .kiosk-counting-section .count-title {
-        font-size: 2.625rem;
-    }
-
-    .kiosk-counting-section .count-desc {
-        font-size: 1.125rem;
-    }
 }
 
 @media screen and (max-width: 768px) {
     .kiosk-counting-section .count-item {
         grid-column: span 6;
-    }
-
-    .kiosk-counting-section .count-title {
-        font-size: 2rem;
-    }
-
-    .kiosk-counting-section .count-desc {
-        font-size: 1rem;
     }
 }
 
@@ -490,7 +405,6 @@
 .kiosk-tech-section .tech-item-title {
     margin-top: 0;
     line-height: 1.35;
-    font-size: 1.75rem;
 }
 
 .kiosk-tech-section .tech-item-desc {
@@ -576,12 +490,7 @@
 
 .kiosk-compare-section .compare-value {
     display: block;
-    font-size: 1.5rem;
     line-height: 1.2;
-}
-
-.kiosk-compare-section .table-header .compare-value {
-    font-size: 1.75rem;
 }
 
 .kiosk-compare-section .desc {
@@ -594,13 +503,6 @@
         padding: 1.25rem 0;
     }
 
-    .kiosk-compare-section .compare-value {
-        font-size: 1.375rem;
-    }
-
-    .kiosk-compare-section .table-header .compare-value {
-        font-size: 1.5rem;
-    }
 }
 
 @media screen and (max-width: 768px) {
@@ -661,7 +563,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-image: url('../images/kiosk-background.png');
+    background-image: url('../images/kiosk-background.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
