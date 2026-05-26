@@ -2,29 +2,9 @@
    Smart Kiosk Page (subpage/smart-kiosk.html)
 ========================================= */
 
-.mb-10 {
-    margin-bottom: 0.625rem;
-}
-
-.mb-20 {
-    margin-bottom: 1.25rem;
-}
-
-.mb-40 {
-    margin-bottom: 2.5rem;
-}
-
-.mb-80 {
-    margin-bottom: 5rem;
-}
-
 .py-100 {
     padding-top: 6.25rem;
     padding-bottom: 6.25rem;
-}
-
-.text-center {
-    text-align: center;
 }
 
 /* =========================================
@@ -34,7 +14,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('../images/kiosk-kv.png');
+    background-image: url('../images/kiosk-kv.webp');
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
@@ -60,7 +40,7 @@
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-    max-width: 36rem;
+    max-width: 42rem;
     text-align: left;
 }
 
@@ -71,42 +51,21 @@
 
 .kiosk-kv-section .kv-subtitle {
     display: block;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #D4734A;
     line-height: 1.4;
     margin-top: 0;
 }
 
 .kiosk-kv-section .kv-title {
-    font-size: 3rem;
-    font-weight: 700;
     color: #FFFFFF;
     line-height: 1.2;
     margin-top: 0;
 }
 
 .kiosk-kv-section .kv-desc {
-    font-size: 1.25rem;
-    font-weight: 400;
     color: #FFFFFF;
     line-height: 1.6;
     margin-top: 0;
     max-width: 40rem;
-}
-
-@media screen and (max-width: 1024px) {
-    .kiosk-kv-section .kv-subtitle {
-        font-size: 1.125rem;
-    }
-
-    .kiosk-kv-section .kv-title {
-        font-size: 2.625rem;
-    }
-
-    .kiosk-kv-section .kv-desc {
-        font-size: 1.125rem;
-    }
 }
 
 @media screen and (max-width: 768px) {
@@ -118,16 +77,7 @@
         max-width: 100%;
     }
 
-    .kiosk-kv-section .kv-subtitle {
-        font-size: 1rem;
-    }
-
-    .kiosk-kv-section .kv-title {
-        font-size: 2rem;
-    }
-
     .kiosk-kv-section .kv-desc {
-        font-size: 1rem;
         max-width: 100%;
     }
 }
@@ -141,8 +91,6 @@
 
 .kiosk-works-section .title-area h2 {
     margin-top: 0;
-    font-size: 2rem;
-    font-weight: 700;
     color: #D4734A;
     line-height: 1.3;
 }
@@ -164,8 +112,6 @@
 
 .kiosk-works-section .step-title {
     margin-top: 0;
-    font-size: 2rem;
-    font-weight: 700;
     color: #D4734A;
     line-height: 1.3;
 }
@@ -173,15 +119,17 @@
 
 .kiosk-works-section .img-col img {
     width: 100%;
+    max-height: 30rem;
     height: auto;
     display: block;
     object-fit: cover;
+    object-position: center;
 }
 
 @media screen and (max-width: 1024px) {
     .kiosk-works-section .work-item .text-col,
     .kiosk-works-section .work-item .img-col {
-        grid-column: span 12;
+        grid-column: span 4;
     }
 
     .kiosk-works-section .work-item .img-col {
@@ -198,18 +146,6 @@
         margin-bottom: 0;
     }
 
-    .kiosk-works-section .title-area h2 {
-        font-size: 1.75rem;
-    }
-
-    .kiosk-works-section .step-title {
-        font-size: 1.75rem;
-    }
-
-    .kiosk-works-section .step-desc,
-    .kiosk-works-section .title-area p {
-        font-size: 1rem;
-    }
 }
 
 @media screen and (max-width: 768px) {
@@ -218,21 +154,13 @@
         padding-bottom: 3.75rem;
     }
 
-    .mb-80 {
-        margin-bottom: 3rem;
+    .kiosk-works-section .work-item .text-col,
+    .kiosk-works-section .work-item .img-col {
+        grid-column: span 6;
     }
 
-    .kiosk-works-section .title-area h2 {
-        font-size: 1.5rem;
-    }
-
-    .kiosk-works-section .step-title {
-        font-size: 1.5rem;
-    }
-
-    .kiosk-works-section .step-desc,
-    .kiosk-works-section .title-area p {
-        font-size: 0.9375rem;
+    .kiosk-works-section .img-col img {
+        max-height: 14rem;
     }
 
     .kiosk-works-section .work-item .img-col {
@@ -242,5 +170,479 @@
     .kiosk-works-section .work-item.reverse-item .img-col {
         margin-top: 1.5rem;
         margin-bottom: 0;
+    }
+}
+
+/* =========================================
+   Frame Collection Section
+========================================= */
+.kiosk-frame-section.bg-deep-base {
+    background-color: #1E2022; /* common.css와 동일 톤 */
+}
+
+.kiosk-frame-section .title-area {
+    color: #FFFFFF;
+}
+
+.kiosk-frame-section .kiosk-frame-subtitle {
+    display: block;
+    line-height: 1.4;
+}
+
+.kiosk-frame-section .kiosk-frame-title {
+    margin-top: 0;
+    line-height: 1.25;
+}
+
+.kiosk-frame-section .kiosk-frame-desc {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* index.html .frame-content / .frame 동일 스펙 */
+.kiosk-frame-section .kiosk-frame-content {
+    width: 100%;
+    max-width: none;
+    margin-top: 5rem;
+}
+
+.kiosk-frame-section .kiosk-frame-swiper {
+    width: 100%;
+}
+
+.kiosk-frame-section .kiosk-frame-swiper .swiper-slide {
+    height: auto;
+    box-sizing: border-box;
+}
+
+.kiosk-frame-section .frame {
+    width: 100%;
+    height: 39.1875rem;
+    overflow: hidden;
+}
+
+.kiosk-frame-section .frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .kiosk-works-section .img-col img {
+        max-height: 15rem;
+    }
+
+    .kiosk-frame-section .frame {
+        height: 28.125rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .kiosk-frame-section .frame {
+        height: 18.75rem;
+    }
+}
+
+/* =========================================
+   Cut Frames Section
+========================================= */
+.kiosk-cut-section {
+    background-color: #F6F6F6;
+}
+
+.kiosk-cut-section .cut-label {
+    margin-top: 0;
+    line-height: 1.4;
+}
+
+.kiosk-cut-section .cut-list {
+    align-items: stretch;
+}
+
+.kiosk-cut-section .cut-item {
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kiosk-cut-section .cut-label {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.kiosk-cut-section .cut-card {
+    width: 100%;
+    flex: 1;
+    min-height: 28.125rem;
+    aspect-ratio: 4 / 5;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 1.75rem 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kiosk-cut-section .cut-card img {
+    width: auto;
+    height: auto;
+    max-width: 85%;
+    max-height: 85%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .kiosk-cut-section .cut-item {
+        grid-column: span 4;
+    }
+
+    .kiosk-cut-section .cut-card {
+        min-height: 13rem;
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .kiosk-cut-section .cut-item {
+        grid-column: span 6;
+    }
+
+    .kiosk-cut-section .cut-card {
+        min-height: 12rem;
+        max-width: 20rem;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem;
+    }
+
+    .kiosk-cut-section .cut-card img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+}
+
+/* =========================================
+   Counting Section
+========================================= */
+.kiosk-counting-section .count-item {
+    grid-column: span 3;
+    text-align: center;
+}
+
+.kiosk-counting-section .count-title {
+    display: block;
+    font-weight: 800;
+    color: #1E2022;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.kiosk-counting-section .count-desc {
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1024px) {
+    .kiosk-counting-section .count-item {
+        grid-column: span 4;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .kiosk-counting-section .count-item {
+        grid-column: span 6;
+    }
+}
+
+/* =========================================
+   AI Technology Section
+========================================= */
+.kiosk-tech-section .kiosk-tech-subtitle {
+    display: block;
+    line-height: 1.4;
+}
+
+.kiosk-tech-section .kiosk-tech-title {
+    margin-top: 0;
+    line-height: 1.25;
+}
+
+.kiosk-tech-section .kiosk-tech-desc {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.kiosk-tech-section .tech-list {
+    gap: 1.5rem;
+}
+
+.kiosk-tech-section .tech-item {
+    grid-column: span 6;
+    border-radius: 15px;
+    padding: 3rem;
+}
+
+.kiosk-tech-section .icon-wrap {
+    text-align: left;
+}
+
+.kiosk-tech-section .icon-wrap img {
+    width: auto;
+    height: auto;
+    max-width: 4rem;
+    max-height: 4rem;
+    display: block;
+    object-fit: contain;
+}
+
+.kiosk-tech-section .tech-item-title {
+    margin-top: 0;
+    line-height: 1.35;
+}
+
+.kiosk-tech-section .tech-item-desc {
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 1024px) {
+    .kiosk-tech-section .tech-item {
+        grid-column: span 4;
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .kiosk-tech-section .tech-item {
+        grid-column: span 6;
+        padding: 1.75rem;
+    }
+
+    .kiosk-tech-section .icon-wrap img {
+        max-width: 3.5rem;
+        max-height: 3.5rem;
+    }
+}
+
+/* =========================================
+   Comparison Section
+========================================= */
+.kiosk-compare-section {
+    background-color: #F6F6F6;
+}
+
+.kiosk-compare-section .compare-subtitle {
+    display: block;
+    line-height: 1.4;
+}
+
+.kiosk-compare-section .compare-main-title {
+    margin: 0;
+    line-height: 1.25;
+}
+
+.kiosk-compare-section .compare-table {
+    width: 100%;
+}
+
+.kiosk-compare-section .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.kiosk-compare-section .compare-row-last {
+    border-bottom: none;
+}
+
+.kiosk-compare-section .table-header {
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+}
+
+.kiosk-compare-section .col-title {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.kiosk-compare-section .col-normal,
+.kiosk-compare-section .col-tonefit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.kiosk-compare-section .col-tonefit {
+    color: #D4734A;
+}
+
+.kiosk-compare-section .compare-value {
+    display: block;
+    line-height: 1.2;
+}
+
+.kiosk-compare-section .desc {
+    display: block;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1024px) {
+    .kiosk-compare-section .compare-row {
+        padding: 1.25rem 0;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .kiosk-compare-section .compare-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 1.25rem;
+        padding: 1.5rem 0;
+    }
+
+    .kiosk-compare-section .table-header .col-title {
+        display: none;
+    }
+
+    .kiosk-compare-section .table-header {
+        padding-bottom: 1rem;
+    }
+
+    .kiosk-compare-section .compare-row:not(.table-header) .col-title {
+        grid-column: 1 / -1;
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.25rem;
+        border-bottom: 1px solid #E5E5E5;
+    }
+
+    .kiosk-compare-section .compare-row:not(.table-header) .col-normal {
+        grid-column: 1;
+    }
+
+    .kiosk-compare-section .compare-row:not(.table-header) .col-tonefit {
+        grid-column: 2;
+    }
+}
+
+/* =========================================
+   CTA Section
+========================================= */
+.kiosk-cta-section {
+    position: relative;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    height: 60vh;
+    min-height: 26rem;
+}
+
+.kiosk-cta-section .inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kiosk-cta-section .bg-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: url('../images/kiosk-background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1.2);
+    transform-origin: center center;
+}
+
+.kiosk-cta-section .bg-area::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.kiosk-cta-section .cta-text-wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 56rem;
+}
+
+.kiosk-cta-section,
+.kiosk-cta-section .cta-title,
+.kiosk-cta-section .cta-desc {
+    color: #FFFFFF;
+}
+
+.kiosk-cta-section .cta-subtitle {
+    display: block;
+    line-height: 1.4;
+}
+
+.kiosk-cta-section .cta-title {
+    margin-top: 0;
+    line-height: 1.25;
+}
+
+.kiosk-cta-section .cta-desc {
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+.kiosk-cta-section .btn-group {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+/* CTA 버튼: gnb-btn(채움) + topage-btn(테두리) — component.css 기준, 크기만 보강 */
+.kiosk-cta-section .gnb-btn,
+.kiosk-cta-section .topage-btn {
+    text-decoration: none;
+    padding: 1.125rem 2rem;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1024px) {
+    .kiosk-cta-section {
+        min-height: 26rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .kiosk-cta-section {
+        height: auto;
+        min-height: 22rem;
+        padding: 3rem 0;
+    }
+
+    .kiosk-cta-section .btn-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .kiosk-cta-section .topage-btn,
+    .kiosk-cta-section .gnb-btn {
+        width: 100%;
+        max-width: 18rem;
+        text-align: center;
     }
 }

@@ -4,6 +4,14 @@
    TONE:FIT Main Page Styles (index.css)
 ========================================= */
 
+html {
+    overflow-x: clip;
+}
+
+body {
+    overflow-x: clip;
+}
+
 /* =========================================
    1. HEADER
 ========================================= */
@@ -86,6 +94,11 @@
     margin: 0;
 }
 
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .header-menu {
     grid-column: 2;
     grid-row: 1 / 3;
@@ -117,6 +130,7 @@
 }
 
 .header-nav-link {
+    display: inline-block;
     color: inherit;
     font-weight: 400;
     background: none;
@@ -124,6 +138,7 @@
     cursor: pointer;
     padding: 8px 4px;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .header-mega {
@@ -193,7 +208,7 @@
     height: 100vh;
     min-height: 37.5rem;
     box-sizing: border-box;
-    background-image: url('../images/kv-bg-img.jpg');
+    background-image: url('../images/kv-bg-img.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -253,22 +268,32 @@
 /* =========================================
 3. ABOUT SECTION
 ========================================= */
-.identity-title {
+.about-section{
+    padding-top: 8.125rem;
+}
+
+.identity-header{
     text-align: center;
-    margin: 8.125rem 0 5rem 0;
+    margin-bottom: 5rem;
 }
 
 .identity-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 5rem;
+    min-width: 0;
 }
 
 .about-circle {
-    width: 650px;
-    height: 650px;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    aspect-ratio: 1;
     border-radius: 50%;
-    background-image: url(/assets/images/tone-fit-about-brand.jpg);
+    background-image: url(/assets/images/tone-fit-about-brand.webp);
+    background-size: cover;
+    background-position: center;
+    justify-self: center;
     overflow: visible;
 }
 
@@ -278,6 +303,11 @@
     gap: 20px;
     align-self: center;
     align-content: center;
+    min-width: 0;
+}
+
+.identity-texts p {
+    overflow-wrap: break-word;
 }
 
 .identity-texts p:nth-child(2) {
@@ -292,10 +322,11 @@
 
 .franchise-layout {
     display: grid;
-    grid-template-columns: 1fr 1px 1fr;
+    grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
     grid-template-rows: auto 188px auto;
     align-items: stretch;
     margin-top: 8.125rem;
+    min-width: 0;
 }
 
 .franchise-texts {
@@ -345,8 +376,14 @@
     border-radius: 50%;
     background-color: #fff;
     box-sizing: border-box;
+    transform-origin: center center;
+    will-change: transform;
 }
 
+.franchise-benefit-circle .franchise-benefit-plus,
+.franchise-benefit-circle .franchise-benefit-line {
+    opacity: 0;
+}
 
 .franchise-benefit-plus {
     font-size: 1.25rem;
@@ -396,6 +433,7 @@
     display: flex;
     justify-content: flex-end;
     min-height: 18.75rem;
+    overflow: hidden;
 }
 
 
@@ -412,7 +450,7 @@
 .franchise-mega-content::after {
     content: "";
     background: #F8F5F0;
-    width: 38.875rem;
+    width: min(38.875rem, 100%);
     aspect-ratio: 1;
     border-radius: 50%;
     position: absolute;
@@ -447,21 +485,67 @@
 /* =========================================
    4. AI TONE FINDER SECTION
 ========================================= */
-.ai-tone-finder{
-    background-image: url(/assets/images/kiosk-buble.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+.ai-tone-finder {
+    position: relative;
+    overflow: hidden;
 }
 
-.ai-tone-finder-header{
+.ai-tone-finder-visual {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ai-tone-finder-circle {
+    position: absolute;
+    top: 50%;
+    left: clamp(12rem, 48vw, 32rem);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.ai-tone-finder-circle-shape {
+    display: block;
+    width: min(30.875rem, 52vw);
+    aspect-ratio: 1;
+    background-image: url(/assets/images/circle.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0;
+}
+
+.ai-tone-finder-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: url(/assets/images/kiosk.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    opacity: 0;
+}
+
+.ai-tone-finder .inner {
+    position: relative;
+    z-index: 1;
+}
+
+.ai-tone-finder-header {
     text-align: end;
     margin-top: 5.625rem;
 }
 
-.ai-tone-finder-content{
+.ai-tone-finder-header:not(.is-header-visible) > * {
+    opacity: 0;
+}
+
+.ai-tone-finder-content {
     text-align: end;
 }
-.ai-tone-finder-system{
+
+.ai-tone-finder-system {
     width: 16.125rem;
     aspect-ratio: 1;
     border: 1px solid #4C4948;
@@ -470,93 +554,132 @@
     align-content: center;
 }
 
-.ai-tone-finder-system p{
+.ai-tone-finder-system p {
     color: #4C4948;
 }
 
 
-.ai-tone-finder-sec-tag strong{
+.ai-tone-finder-sec-tag strong {
     font-size: 6.25rem;
     font-weight: 900;
 }
+
 /* =========================================
    5. SECTION HEADER
 ========================================= */
-.section-header{
+.section-header {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
     text-align: center;
 }
-.section-header h3{
+
+.section-header h3 {
     font-size: 3rem;
 }
 
-.section-header hr{
+.section-header hr {
     margin-top: 1.875rem;
     margin-bottom: 5rem;
-    width: 33.75rem;
+    width: min(33.75rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
 }
+
 /* =========================================
    6. AI PERSONAL BG MATCHING SECTION
 ========================================= */
 
-.ai-personal-bg-content{
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    gap: 1.5rem;
+.ai-personal-bg-content:not(.is-content-visible) > * {
+    opacity: 0;
 }
 
-.ai-personal-bg-content img{
+.ai-personal-bg-content {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 1.5rem;
+    min-width: 0;
+}
+
+.ai-personal-bg-content img {
     width: 100%;
 }
-.ai-personal-bg-content p{
+
+.ai-personal-bg-content p {
     color: #4C4948;
     font-size: 1rem;
     text-align: center;
     align-content: center;
 }
 
-.ai-pet-section{
+.ai-pet-section {
     margin-top: 8.125rem;
 }
-.ai-pet-content{
-    display: flex;
-    height: 20rem;
+
+.ai-pet-content:not(.is-pet-content-visible) > * {
+    opacity: 0;
 }
 
-.pet-img{
-    background-image: url(/assets/images/dog-cat.jpg);
+.ai-pet-content {
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+    height: 20rem;
+    min-width: 0;
+}
+
+.pet-img {
+    background-image: url(/assets/images/dog-cat.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 29rem;
+    flex: 0 1 29rem;
+    width: auto;
+    min-width: 0;
+    max-width: 29rem;
     height: auto;
 }
-.pet-8img{
-    background-image: url(/assets/images/dog-cat-8imgs.jpg);
+
+.pet-8img {
+    background-image: url(/assets/images/dog-cat-8imgs.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 59.5rem;
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    max-width: 59.5rem;
     height: auto;
 }
 
 /* =========================================
    7. FRAME SECTION
 ========================================= */
-.frame-section .section-header h3,p{
+.frame-section .section-header h3,
+p {
     color: #fff;
 }
 
-.frame-content{
+.frame-content {
     width: 100%;
+    max-width: 100%;
     margin-top: 5rem;
+    overflow: hidden;
 }
 
-.frame{
+.frames {
+    display: flex;
+    justify-content: space-between;
+    gap: clamp(0.5rem, 1.25vw, 1.25rem);
     width: 100%;
-    height: 39.125rem;
+    min-width: 0;
+}
+
+.frame {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    height: clamp(16rem, 32vw, 39.125rem);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -568,8 +691,9 @@
     text-align: center;
     overflow: hidden;
 }
+
 .frame p,
-.frame button{
+.frame button {
     position: relative;
     z-index: 1;
     opacity: 0;
@@ -577,20 +701,24 @@
     pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.frame:nth-child(1){
-    background-image: url(/assets/images/frame1.jpg);
-}
-.frame:nth-child(2){
-    background-image: url(/assets/images/frame2.jpg);
-}
-.frame:nth-child(3){
-    background-image: url(/assets/images/frame3.jpg);
-}
-.frame:nth-child(4){
-    background-image: url(/assets/images/frame4.jpg);
+
+.frame:nth-child(1) {
+    background-image: url(/assets/images/frame1.webp);
 }
 
-.frame::before{
+.frame:nth-child(2) {
+    background-image: url(/assets/images/frame2.webp);
+}
+
+.frame:nth-child(3) {
+    background-image: url(/assets/images/frame3.webp);
+}
+
+.frame:nth-child(4) {
+    background-image: url(/assets/images/frame4.webp);
+}
+
+.frame::before {
     content: "";
     width: 100%;
     height: 100%;
@@ -603,78 +731,262 @@
     pointer-events: none;
 }
 
-.frame:hover::before{
+.frame:hover::before {
     opacity: .5;
 }
+
 .frame:hover p,
-.frame:hover button{
+.frame:hover button {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
-.frame p{
+
+.frame p {
     font-size: 1rem;
     font-weight: 700;
     color: #fff;
 }
-.frame button{
+
+.frame button {
     margin-top: 1.25rem;
 }
-.frame:hover button.topage-btn{
+
+.frame:hover button.topage-btn {
     color: #fff;
     border-color: #fff;
 }
-.frame:hover button.topage-btn:hover{
+
+.frame:hover button.topage-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
+
 /* =========================================
    8. REVIEW SECTION
 ========================================= */
-.review-content{
+.review-content {
     padding: 5rem 0;
 }
-.review-notice{
+
+
+
+.review-swiper {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+.review-swiper .swiper-slide {
+    width: auto;
+}
+
+.review-feed {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: none;
+    border-radius: 0;
+    flex: 0 0 auto;
+}
+
+@keyframes review-marquee-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .review-track {
+        animation: none;
+    }
+}
+
+.review-notice {
     text-align: center;
 }
+
+
 /* =========================================
-   9. FOOTER
+   9.   VIRAL SECTION
+========================================= */
+.viral-content {
+    padding: 5rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 0;
+}
+
+.viral-content > img {
+    flex: 0 0 auto;
+    width: clamp(1.5rem, 4vw, 2.75rem);
+    height: auto;
+    align-self: center;
+}
+
+.viral-content.fade-up {
+    will-change: transform, opacity;
+}
+
+.viral-userflow {
+    flex: 1 1 8.5rem;
+    min-width: 0;
+    max-width: 12.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.userflow-img {
+    background-color: #fff;
+    width: 8.875rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+.viral-userflow>h4 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #1e2022;
+}
+
+.viral-userflow p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #4C4948;
+}
+
+.viral-userflow>.userflow-label {
+    padding: 10px;
+    background: #fff;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 50px;
+    color: #1e2022;
+}
+
+
+
+/* =========================================
+   10. 24HOUR SECTION
+========================================= */
+.ai-24hour-section{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    height: 41.875rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.ai-24hour-bg{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url(/assets/images/24hour-bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.2);
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.ai-24hour-section .section-header{
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: 100%;
+    color: #fff;
+}
+
+.ai-24hour-section .fade-up{
+    will-change: transform, opacity;
+}
+
+.ai-24hour-section .section-header h3,
+.ai-24hour-section .section-header p,
+.ai-24hour-section .section-header .title,
+.ai-24hour-section .color-main{
+    color: #fff;
+}
+
+/* =========================================
+   10. FOOTER
 ========================================= */
 
 .footer {
-    padding: 6.25rem 0;
+    padding: 4.25rem 0;
     background-color: #1E2022;
     color: #FFFFFF;
 }
 
-.footer-logo{
+.footer-logo {
     font-size: 1.25rem;
     font-weight: 600;
 }
 
-.footer-sns-btn{
+.footer-sns-btn {
     padding: 5px;
     background-color: #4C4948;
     border-radius: 50%;
 }
 
-.footer-sns-btn:hover{
+.footer-sns-btn:hover {
     background-color: #D4734A;
     transition: 0.3s ease;
     cursor: pointer;
 }
-.footer-policy{
+
+.footer-policy {
     font-size: .75rem;
     font-weight: 400;
 }
-.footer-info-contact{
+
+.footer-info-contact {
     font-size: .75rem;
     font-weight: 400;
 }
 
 /* =========================================
-   10. RESPONSIVE DESIGN
+   INDEX RESPONSIVE (769px ~ : horizontal scroll prevention)
+   Tablet layout: max-width 768px (applied separately)
 ========================================= */
+
+@media (max-width: 1280px) {
+    .ai-personal-bg-content {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .ai-tone-finder-circle {
+        left: clamp(1rem, 16vw, 10rem);
+    }
+
+    .ai-tone-finder-circle-shape {
+        width: min(22rem, 40vw);
+    }
+
+    .ai-tone-finder-sec-tag strong {
+        font-size: clamp(3rem, 8vw, 6.25rem);
+    }
+}
 
 @media (max-width: 1024px) {
     .identity-grid {
@@ -682,18 +994,82 @@
         gap: 30px;
     }
 
+    .identity-texts {
+        min-width: 0;
+    }
+
     .franchise-layout {
-        column-gap: 2rem;
+        column-gap: 1.5rem;
+        min-width: 0;
+    }
+
+    .franchise-benefits {
+        justify-content: center;
     }
 
     .franchise-benefit-circle {
-        width: 160px;
-        height: 160px;
+        width: min(160px, 26vw);
+        height: min(160px, 26vw);
     }
 
     .franchise-benefits,
     .franchise-right-row {
-        height: 160px;
+        height: auto;
+        min-height: 160px;
+    }
+
+    .franchise-mega-content::after {
+        width: min(32rem, 85vw);
+    }
+
+    .ai-personal-bg-content {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .ai-pet-content {
+        height: auto;
+        min-height: 16rem;
+    }
+
+    .pet-img {
+        flex: 0 1 42%;
+        max-width: 22rem;
+    }
+
+    .pet-8img {
+        flex: 1 1 0;
+        max-width: none;
+    }
+
+    .ai-tone-finder-header {
+        margin-top: clamp(2rem, 6vw, 5.625rem);
+    }
+
+    .ai-tone-finder-content {
+        flex-wrap: wrap;
+        row-gap: 2rem;
+    }
+
+    .ai-tone-finder-system {
+        width: min(16.125rem, 70vw);
+    }
+
+    .viral-userflow {
+        flex: 1 1 calc(33.333% - 1.5rem);
+        max-width: 11rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 3.375rem);
+    }
+
+    .section-header h3 {
+        font-size: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .footer-info-contact {
+        flex-wrap: wrap;
+        gap: 1.25rem;
     }
 
     .feature-highlight {
@@ -734,6 +1110,60 @@
     .gnb-btn {
         padding: 8px 15px;
         font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 960px) {
+    .header-container {
+        column-gap: 1rem;
+    }
+
+    .header-menu {
+        column-gap: 0.5rem;
+    }
+
+    .header-nav-link {
+        padding: 8px 2px;
+        font-size: 0.875rem;
+    }
+
+    .franchise-benefit-circle {
+        width: min(140px, 24vw);
+        height: min(140px, 24vw);
+    }
+
+    .franchise-benefit-line,
+    .franchise-benefit-plus {
+        font-size: 1rem;
+    }
+
+    .franchise-mega-value {
+        font-size: clamp(3.5rem, 10vw, 6.25rem);
+    }
+
+    .ai-personal-bg-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .viral-userflow {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: 10rem;
+    }
+
+    .viral-userflow > h4 {
+        font-size: 1.25rem;
+    }
+
+    .viral-userflow p {
+        font-size: 1rem;
+    }
+
+    .userflow-img {
+        width: min(8.875rem, 18vw);
+    }
+
+    .frame {
+        height: clamp(14rem, 36vw, 28rem);
     }
 }
 
