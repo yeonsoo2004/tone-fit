@@ -678,6 +678,7 @@
 .identity-experience-section .exp-title {
     margin-top: 0;
     line-height: 1.3;
+    font-size: 3rem;
 }
 
 .identity-experience-section .exp-desc {
@@ -756,6 +757,7 @@
     margin-top: 0;
     color: #FFFFFF;
     line-height: 1.2;
+    font-weight: 700;
 }
 
 .identity-counting-section .count-desc {
