@@ -664,6 +664,7 @@ p {
 .review-content {
     padding: 5rem 0;
 }
+<<<<<<< Updated upstream
 
 
 .review-marquee {
@@ -708,11 +709,15 @@ p {
 }
 
 .review-notice {
+=======
+.review-notice{
+>>>>>>> Stashed changes
     text-align: center;
 }
 
 
 /* =========================================
+<<<<<<< Updated upstream
    9.   VIRAL SECTION
 ========================================= */
 .viral-content{
@@ -816,6 +821,9 @@ p {
 
 /* =========================================
    10. FOOTER
+=======
+   9. FOOTER
+>>>>>>> Stashed changes
 ========================================= */
 
 .footer {
