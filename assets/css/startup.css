@@ -3,25 +3,16 @@
    rem 기준: root 16px — 타이포·여백 rem, 고정 레이아웃·폼·마키 px 유지
 ========================================= */
 
-/* 고정 헤더 높이( style.css: 1rem + 3.25rem + 1rem )만큼 본문 상단 여백 */
+/* KV 풀블리드 — style.css 헤더(투명 → 스크롤 시 흰 배경) · common.js/main.js */
 .startup-page .startup-main {
-    padding-top: 5.25rem;
+    padding-top: 0;
 }
 
-.startup-page .header {
-    background-color: #FFFFFF;
-    color: #4C4948;
-}
-
+/* 스크롤·메가메뉴 시에만 흰 배경 (기본: style.css transparent + #fff 텍스트) */
 .startup-page .header.is-scrolled,
 .startup-page .header.is-mega-open {
     background-color: #FFFFFF;
     color: #4C4948;
-}
-
-.startup-page .header .logo a {
-    color: inherit;
-    text-decoration: none;
 }
 
 /* KV 48.75rem · 배경 · 오버레이 — 특수 규격 */
@@ -439,11 +430,12 @@
 }
 
 /* =========================================
-   Responsive · 표준 브레이크포인트 (Startup Page)
-   - common.css 미수정 · .startup-page 스코프만
+   Responsive (Startup Page) · 1024 / 768 / 402
+   - common.css · font.css · smart-kiosk.css 패턴 참고
+   - .startup-page 스코프만
 ========================================= */
 
-/* 1. 노트북 & 데스크탑 (64.0625rem ~ 90rem) */
+/* 노트북 (90rem 이하) */
 @media screen and (max-width: 1440px) {
     .startup-page .inner {
         max-width: none;
@@ -528,13 +520,13 @@
     }
 }
 
-/* 2. 태블릿 (48.0625rem ~ 64rem) */
+/* 태블릿 (1024px 이하) */
 @media screen and (max-width: 1024px) {
     .startup-page .inner {
         max-width: none;
         width: 100%;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 
     .startup-page .py-130 {
@@ -542,19 +534,19 @@
         padding-bottom: 5rem;
     }
 
-    /* KV */
+    /* KV — font ft-54-r 42px */
     .startup-page .startup-kv-section {
         height: 600px;
     }
 
     .startup-page .startup-kv-title {
         font-size: 2.625rem;
-        line-height: 3.5rem;
+        line-height: 3.25rem;
     }
 
     .startup-page .startup-kv-desc {
-        font-size: 1.375rem;
-        line-height: 2.125rem;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
     }
 
     /* Feature · 수직 1단 */
@@ -573,7 +565,23 @@
     .startup-page .startup-feature-video {
         width: 100%;
         max-width: 100%;
-        height: 470px;
+        height: auto;
+        aspect-ratio: 828 / 470;
+    }
+
+    .startup-page .startup-feature-title {
+        font-size: 1.75rem;
+        line-height: 2.275rem;
+    }
+
+    .startup-page .startup-feature-item-title {
+        font-size: 1.5rem;
+        line-height: 2.025rem;
+    }
+
+    .startup-page .startup-feature-item-desc {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
     }
 
     .startup-page .startup-feature-title,
@@ -690,15 +698,91 @@
         font-size: 1.125rem;
         line-height: 1.75rem;
     }
+
+    /* Process — font ft-48-r 36px */
+    .startup-page .startup-process-section .inner {
+        gap: 3rem;
+    }
+
+    .startup-page .startup-process-title {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }
+
+    .startup-page .startup-process-list {
+        flex-wrap: wrap;
+        row-gap: 2rem;
+        column-gap: 1.25rem;
+    }
+
+    .startup-page .startup-process-item {
+        flex: 0 1 calc((100% - 2.5rem) / 3);
+        max-width: calc((100% - 2.5rem) / 3);
+    }
+
+    /* Inquiry — 2단 → 1단 */
+    .startup-page .startup-inquiry-layout {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .startup-page .startup-inquiry-info {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .startup-page .startup-inquiry-title {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+        width: 100%;
+    }
+
+    .startup-page .startup-inquiry-email,
+    .startup-page .startup-inquiry-phone {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+
+    .startup-page .startup-inquiry-form {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .startup-page .startup-inquiry-form-row {
+        flex-direction: column;
+    }
+
+    .startup-page .startup-inquiry-input--half,
+    .startup-page .startup-inquiry-input--full,
+    .startup-page .startup-inquiry-textarea,
+    .startup-page .startup-inquiry-file-row,
+    .startup-page .startup-inquiry-submit {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .startup-page .startup-inquiry-label {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+
+    .startup-page .startup-inquiry-input,
+    .startup-page .startup-inquiry-textarea,
+    .startup-page .startup-inquiry-file-name {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
 }
 
-/* 3. 모바일 (48rem 이하) */
+/* 모바일 (768px 이하) */
 @media screen and (max-width: 768px) {
     .startup-page .inner {
         max-width: none;
         width: 100%;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .startup-page .py-130 {
@@ -854,6 +938,249 @@
         font-size: 0.9375rem;
         line-height: 1.5rem;
         text-align: center;
+    }
+
+    /* Process — font ft-48-r 28px */
+    .startup-page .startup-process-section .inner {
+        gap: 2.5rem;
+    }
+
+    .startup-page .startup-process-title {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+    }
+
+    .startup-page .startup-process-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .startup-page .startup-process-item {
+        flex: 0 1 auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .startup-page .startup-process-circle {
+        width: 8.5rem;
+        height: 8.5rem;
+    }
+
+    .startup-page .startup-process-item:nth-child(1) .startup-process-icon {
+        width: 5rem;
+        height: 5rem;
+        max-width: 5rem;
+        max-height: 5rem;
+    }
+
+    .startup-page .startup-process-item:nth-child(2) .startup-process-icon {
+        width: 4.5rem;
+        height: 2.875rem;
+        max-width: 4.5rem;
+        max-height: 2.875rem;
+    }
+
+    .startup-page .startup-process-item:nth-child(3) .startup-process-icon {
+        width: 4rem;
+        height: 4rem;
+        max-width: 4rem;
+        max-height: 4rem;
+    }
+
+    .startup-page .startup-process-item:nth-child(4) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(5) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(6) .startup-process-icon {
+        width: 4.5rem;
+        height: 4.5rem;
+        max-width: 4.5rem;
+        max-height: 4.5rem;
+    }
+
+    .startup-page .startup-process-item-desc {
+        white-space: normal;
+        max-width: 100%;
+    }
+
+    /* Inquiry */
+    .startup-page .startup-inquiry-layout {
+        gap: 2.5rem;
+    }
+
+    .startup-page .startup-inquiry-title {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+    }
+
+    .startup-page .startup-inquiry-title-line {
+        white-space: normal;
+    }
+
+    .startup-page .startup-inquiry-contact {
+        gap: 1.25rem;
+    }
+
+    .startup-page .startup-inquiry-email,
+    .startup-page .startup-inquiry-phone {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .startup-page .startup-inquiry-label {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .startup-page .startup-inquiry-field-error {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+    }
+
+    .startup-page .startup-inquiry-agree-label {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .startup-page .startup-inquiry-file-btn {
+        width: 100%;
+        max-width: 8.125rem;
+    }
+
+    .startup-page .startup-inquiry-submit {
+        width: 100%;
+        height: 3.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* 소형 모바일 (402px 이하) — font.css 402 스케일 */
+@media screen and (max-width: 402px) {
+    .startup-page .inner {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .startup-page .py-130 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .startup-page .startup-kv-section {
+        height: 22rem;
+    }
+
+    .startup-page .startup-kv-title {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+    }
+
+    .startup-page .startup-kv-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .startup-page .startup-feature-grid {
+        gap: 1.5rem;
+    }
+
+    .startup-page .startup-feature-title {
+        font-size: 1.5rem;
+        line-height: 1.95rem;
+    }
+
+    .startup-page .startup-feature-item-title {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .startup-page .startup-feature-item-desc {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+    }
+
+    .startup-page .startup-growth-title {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+    }
+
+    .startup-page .startup-growth-desc {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+    }
+
+    .startup-page .startup-profit-eyebrow {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .startup-page .startup-profit-title {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+    }
+
+    .startup-page .startup-profit-marquee-item img {
+        width: 10rem;
+    }
+
+    .startup-page .startup-franchise-title {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+    }
+
+    .startup-page .startup-franchise-card {
+        padding: 2rem 1.25rem;
+        border-radius: 2rem;
+    }
+
+    .startup-page .startup-franchise-card-title {
+        font-size: 1.5rem;
+        line-height: 1.95rem;
+    }
+
+    .startup-page .startup-franchise-card-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .startup-page .startup-franchise-card-icon {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .startup-page .startup-process-section .inner {
+        gap: 2rem;
+    }
+
+    .startup-page .startup-process-title {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+    }
+
+    .startup-page .startup-process-circle {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+
+    .startup-page .startup-inquiry-title {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+    }
+
+    .startup-page .startup-inquiry-layout {
+        gap: 2rem;
+    }
+
+    .startup-page .startup-inquiry-input,
+    .startup-page .startup-inquiry-textarea,
+    .startup-page .startup-inquiry-file-name {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .startup-page .startup-inquiry-file-btn {
+        max-width: 100%;
+        padding: 0.875rem 1rem;
+        font-size: 0.875rem;
     }
 }
 

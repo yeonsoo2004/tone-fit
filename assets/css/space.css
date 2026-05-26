@@ -3,11 +3,12 @@
    rem 기준: root 16px — 타이포·여백 rem, 고정 그리드·갤러리 px 유지
 ========================================= */
 
-/* 고정 헤더 높이( style.css: 1rem + 3.25rem + 1rem )만큼 본문 상단 여백 */
+/* 상단 KV 없음 — 고정 헤더 높이만큼 본문 여백 */
 .space-page .space-main {
-    padding-top: 5.25rem;
+    padding-top: calc(1rem + 3.25rem + 1rem);
 }
 
+/* 라이트 배경 페이지: 기본 흰 헤더 (KV 투명 효과 미적용) */
 .space-page .header {
     background-color: #FFFFFF;
     color: #4C4948;
@@ -17,11 +18,6 @@
 .space-page .header.is-mega-open {
     background-color: #FFFFFF;
     color: #4C4948;
-}
-
-.space-page .header .logo a {
-    color: inherit;
-    text-decoration: none;
 }
 
 .space-concept-head {
@@ -153,11 +149,12 @@
 }
 
 /* =========================================
-   Responsive · 표준 브레이크포인트 (Space Page)
-   - common.css 미수정 · .space-page 스코프만
+   Responsive (Space Page) · 1024 / 768 / 402
+   - common.css · font.css · smart-kiosk.css 패턴 참고
+   - .space-page 스코프만
 ========================================= */
 
-/* 1. 노트북 & 데스크탑 (64.0625rem ~ 90rem) */
+/* 노트북 (90rem 이하 · 갤러리 fluid) */
 @media screen and (max-width: 1440px) {
     .space-page .inner {
         max-width: none;
@@ -208,18 +205,23 @@
     }
 }
 
-/* 2. 태블릿 (48.0625rem ~ 64rem) */
+/* 태블릿 (1024px 이하) — common .inner padding 64px · font 1024 스케일 */
 @media screen and (max-width: 1024px) {
     .space-page .inner {
         max-width: none;
         width: 100%;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 
     .space-page .py-130 {
         padding-top: 5rem;
         padding-bottom: 5rem;
+    }
+
+    .space-page .space-main-title {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
     }
 
     .space-page .space-subtitle {
@@ -230,6 +232,12 @@
     .space-page .space-caption {
         font-size: 1.125rem;
         line-height: 1.75rem;
+    }
+
+    .space-page .space-tab-bar .tab-btn {
+        padding: 0.5rem 2rem;
+        font-size: 1.125rem;
+        line-height: 1.6;
     }
 
     /* 메인 이미지 상단 · 2×2 바둑판 하단 */
@@ -260,13 +268,13 @@
     }
 }
 
-/* 3. 모바일 (48rem 이하) */
+/* 모바일 (768px 이하) — common .inner padding 16px · font 768 스케일 */
 @media screen and (max-width: 768px) {
     .space-page .inner {
         max-width: none;
         width: 100%;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .space-page .py-130 {
@@ -340,6 +348,56 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+}
+
+/* 소형 모바일 (402px 이하) — font.css 402 스케일 */
+@media screen and (max-width: 402px) {
+    .space-page .inner {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .space-page .py-130 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .space-page .space-main-title {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+        margin-bottom: 1rem;
+    }
+
+    .space-page .space-subtitle {
+        margin-top: 1rem;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .space-page .space-caption {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+    }
+
+    .space-page .space-tab-bar {
+        row-gap: 0.5rem;
+        column-gap: 0.5rem;
+    }
+
+    .space-page .space-tab-bar .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+    }
+
+    .space-page .space-gallery {
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+    }
+
+    .space-page .space-gallery__grid {
+        gap: 0.5rem;
     }
 }
 
