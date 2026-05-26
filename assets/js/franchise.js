@@ -1,12 +1,14 @@
 /**
  * Space Concept Page — Fade-Up 진입 · 탭 전환 인터랙션
- * jQuery 3.2.1 · space.css (.space-enter-copy / .space-enter-gallery)
+ * Startup Page — 섹션별 Fade-Up (KV · Feature · Growth · Profit · Franchise)
+ * jQuery 3.2.1 · space.css · startup.css
  */
 (function ($) {
     'use strict';
 
     var GALLERY_ENTER_DELAY_MS = 50;
     var PANEL_FADE_MS = 150;
+    var STARTUP_FADE_THRESHOLD = 0.15;
 
     function resetEnterState($panel) {
         $panel.find('.space-enter-copy, .space-enter-gallery').removeClass('is-enter-active');
@@ -59,6 +61,71 @@
             });
     }
 
+    function initStartupFadeUp() {
+        var $page = $('.startup-page');
+
+        if (!$page.length) {
+            return;
+        }
+
+        var $kvCopy = $page.find('.startup-kv-copy.startup-fade-up');
+        var $featureCopy = $page.find('.startup-feature-copy.startup-fade-up');
+        var $growthVisual = $page.find('.startup-growth-graphic.startup-fade-up');
+        var $profitMarquee = $page.find('.startup-profit-marquee.startup-fade-up');
+        var $profitCaption = $page.find('.startup-profit-caption.startup-fade-up');
+        var $franchiseCards = $page.find('.startup-franchise-cards.startup-fade-up');
+        var $franchiseAction = $page.find('.startup-franchise-action.startup-fade-up');
+
+        function activateFade($target) {
+            if ($target && $target.length) {
+                $target.addClass('is-fade-active');
+            }
+        }
+
+        function observeFadeTargets($targets) {
+            if (!$targets.length) {
+                return;
+            }
+
+            if (!window.IntersectionObserver) {
+                activateFade($targets);
+                return;
+            }
+
+            var observer = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        activateFade($(entry.target));
+                        observer.unobserve(entry.target);
+                    });
+                },
+                {
+                    threshold: STARTUP_FADE_THRESHOLD,
+                    rootMargin: '0px 0px -5% 0px'
+                }
+            );
+
+            $targets.each(function () {
+                observer.observe(this);
+            });
+        }
+
+        window.requestAnimationFrame(function () {
+            activateFade($kvCopy);
+        });
+
+        observeFadeTargets($featureCopy);
+        observeFadeTargets($growthVisual);
+        observeFadeTargets($profitMarquee);
+        observeFadeTargets($profitCaption);
+        observeFadeTargets($franchiseCards);
+        observeFadeTargets($franchiseAction);
+    }
+
     $(function () {
         var $activePanel = $('.space-tab-panels .space-tab-panel.is-active').first();
 
@@ -68,5 +135,7 @@
         $('.space-tab-bar .tab-btn').on('click', function () {
             activatePanel($(this).data('panel'));
         });
+
+        initStartupFadeUp();
     });
 })(jQuery);

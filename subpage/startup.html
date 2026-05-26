@@ -24,7 +24,7 @@
             <div class="header-menu">
                 <nav class="header-nav ft-20-r" aria-label="주 메뉴" aria-haspopup="true" aria-expanded="false">
                     <div class="header-nav-item has-submenu">
-                        <button type="button" class="header-nav-link">BRAND</button>
+                        <a href="identity.html" class="header-nav-link">BRAND</a>
                     </div>
                     <div class="header-nav-item">
                         <button type="button" class="header-nav-link">FRAME</button>
@@ -33,7 +33,7 @@
                         <button type="button" class="header-nav-link">STORE</button>
                     </div>
                     <div class="header-nav-item has-submenu">
-                        <button type="button" class="header-nav-link">FRANCHISE</button>
+                        <a href="space.html" class="header-nav-link">FRANCHISE</a>
                     </div>
                     <div class="header-nav-item has-submenu">
                         <button type="button" class="header-nav-link">COMMUNITY</button>
@@ -72,7 +72,7 @@
     <main class="sub-main startup-main">
         <section class="startup-kv-section">
             <div class="inner startup-kv-inner d-flex ai-center">
-                <div class="startup-kv-copy d-flex flex-col gap-20">
+                <div class="startup-kv-copy startup-fade-up d-flex flex-col gap-20">
                     <h2 class="startup-kv-title ft-54-b title">감각적인 공간, 안정적인 운영</h2>
                     <p class="startup-kv-desc ft-20-r">트렌드에 맞는 브랜드 경험과 효율적인 무인 운영 시스템으로<br>창업의 기준을 만들어갑니다.</p>
                 </div>
@@ -94,7 +94,7 @@
                             aria-label="AI 스캔 및 무인 운영 소개 영상"></video>
                     </div>
                     <div class="startup-feature-text-col d-flex ai-center">
-                        <div class="startup-feature-copy d-flex flex-col">
+                        <div class="startup-feature-copy startup-fade-up d-flex flex-col">
                             <h2 class="startup-feature-title ft-32-b title color-main">인건비 제로, 퀄리티는 무한대</h2>
                             <ul class="startup-feature-list d-flex flex-col gap-20">
                                 <li class="startup-feature-item d-flex flex-col">
@@ -123,10 +123,12 @@
                         <h2 class="startup-growth-title title color-main ft-48-b">단 3개월 만에<br>누적 AI 진단 &amp; 촬영 <span class="color-orange">15만 건</span> 돌파!</h2>
                         <p class="startup-growth-desc ft-20-r color-main">트렌디한 MZ세대가 먼저 알아본 TONE:FIT의 성장 곡선입니다.<br>독보적인 AI 기술과 감성으로 광고 없이 폭발적인 유저 유입을 증명합니다.</p>
                     </div>
-                    <div class="startup-growth-graphic">
+                    <div class="startup-growth-graphic startup-fade-up">
                         <img src="../assets/images/startup-graph.svg" alt="TONE:FIT 누적 AI 진단 및 촬영 성장 그래프" width="1279" height="701">
-                        <div class="startup-growth-bubble d-flex jc-center ai-center">
-                            <p class="startup-growth-bubble-text ft-18-r">지금 이 순간에도 촬영 중! 📸</p>
+                        <div class="startup-growth-bubble" role="note">
+                            <div class="startup-growth-bubble-box">
+                                <p class="startup-growth-bubble-text">지금 이 순간에도 촬영 중! 📸</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -141,7 +143,7 @@
                 </div>
             </div>
 
-            <div class="startup-profit-marquee" role="region" aria-label="매장 실적 이미지 슬라이드">
+            <div class="startup-profit-marquee startup-fade-up" role="region" aria-label="매장 실적 이미지 슬라이드">
                     <div class="startup-profit-marquee-track">
                         <ul class="startup-profit-marquee-group d-flex">
                             <li class="startup-profit-marquee-item">
@@ -181,7 +183,7 @@
             </div>
 
             <div class="inner">
-                <p class="startup-profit-caption ft-20-r color-main">※ 운영 중인 매장의 실제 데이터를 기반으로 작성되었습니다.</p>
+                <p class="startup-profit-caption startup-fade-up ft-20-r color-main">※ 운영 중인 매장의 실제 데이터를 기반으로 작성되었습니다.</p>
             </div>
         </section>
 
@@ -189,7 +191,7 @@
             <div class="inner">
                 <h2 id="startup-franchise-title" class="startup-franchise-title title color-main ft-48-b">톤:핏의 가맹 경쟁력</h2>
 
-                <div class="startup-franchise-cards d-flex">
+                <div class="startup-franchise-cards startup-fade-up d-flex">
                     <article class="startup-franchise-card d-flex flex-col ai-center">
                         <img class="startup-franchise-card-icon" src="../assets/images/icon/Profit.svg" alt="" width="120" height="120" decoding="async">
                         <h3 class="startup-franchise-card-title ft-32-b color-main">수익성 (Profit)</h3>
@@ -207,7 +209,7 @@
                     </article>
                 </div>
 
-                <div class="startup-franchise-action d-flex ai-center jc-center gap-20">
+                <div class="startup-franchise-action startup-fade-up d-flex ai-center jc-center gap-20">
                     <p class="startup-franchise-action-caption ft-20-r color-main">내 상권에서의 예상 수익, 전문가와 함께 분석해보세요.</p>
                     <a href="#" class="startup-franchise-btn ft-20-sb bg-point-orange">상권 분석 리포트 신청</a>
                 </div>
@@ -217,5 +219,6 @@
 
     <script src="../assets/js/libs/jquery.min.js"></script>
     <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/franchise.js"></script>
 </body>
 </html>

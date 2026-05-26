@@ -53,6 +53,107 @@
     window.addEventListener('scroll', updateHeader, { passive: true });
 })();
 
+(function () {
+    const section = document.querySelector('.ai-24hour-section');
+    const bg = section?.querySelector('.ai-24hour-bg');
+    if (!section || !bg || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        return;
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        bg.style.transform = 'scale(1)';
+        return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.set(bg, { scale: 1.2 });
+
+    gsap.to(bg, {
+        scale: 1,
+        duration: 1.4,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+            once: true
+        }
+    });
+})();
+
+(function () {
+    const section = document.querySelector('.ai-24hour-section');
+    if (!section || typeof gsap === 'undefined') return;
+
+    const fadeEls = section.querySelectorAll('.fade-up');
+    if (!fadeEls.length) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.set(fadeEls, { opacity: 1, y: 0, clearProps: 'transform' });
+        return;
+    }
+
+    if (typeof ScrollTrigger === 'undefined') return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const fadeFrom = { y: 50, opacity: 0 };
+    const fadeTo = {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: 'power3.out',
+        clearProps: 'transform'
+    };
+
+    gsap.set(fadeEls, fadeFrom);
+
+    gsap.fromTo(fadeEls, fadeFrom, {
+        ...fadeTo,
+        stagger: 0.15,
+        scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            once: true
+        }
+    });
+})();
+
+(function () {
+    const section = document.querySelector('.viral-section');
+    const content = section?.querySelector('.viral-content.fade-up');
+    if (!section || !content || typeof gsap === 'undefined') return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.set(content, { opacity: 1, y: 0, clearProps: 'transform' });
+        return;
+    }
+
+    if (typeof ScrollTrigger === 'undefined') return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const fadeFrom = { y: 50, opacity: 0 };
+    const fadeTo = {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: 'power3.out',
+        clearProps: 'transform'
+    };
+
+    gsap.set(content, fadeFrom);
+
+    gsap.fromTo(content, fadeFrom, {
+        ...fadeTo,
+        scrollTrigger: {
+            trigger: section,
+            start: 'top 85%',
+            once: true
+        }
+    });
+})();
 
 // MotionPathPlugin 등록
 // gsap.registerPlugin(MotionPathPlugin);

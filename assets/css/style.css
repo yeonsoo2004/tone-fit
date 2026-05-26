@@ -117,6 +117,7 @@
 }
 
 .header-nav-link {
+    display: inline-block;
     color: inherit;
     font-weight: 400;
     background: none;
@@ -124,6 +125,7 @@
     cursor: pointer;
     padding: 8px 4px;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .header-mega {
@@ -253,9 +255,13 @@
 /* =========================================
 3. ABOUT SECTION
 ========================================= */
-.identity-title {
+.about-section{
+    padding-top: 8.125rem;
+}
+
+.identity-header{
     text-align: center;
-    margin: 8.125rem 0 5rem 0;
+    margin-bottom: 5rem;
 }
 
 .identity-grid {
@@ -545,9 +551,6 @@
 /* =========================================
    7. FRAME SECTION
 ========================================= */
-.frame-section .section-header h3,p{
-    color: #fff;
-}
 
 .frame-content{
     width: 100%;
@@ -634,15 +637,167 @@
 .review-content{
     padding: 5rem 0;
 }
+<<<<<<< Updated upstream
 .review-notice{
+=======
+
+.review-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+.review-track {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    width: max-content;
+    will-change: transform;
+    animation: review-marquee-left 28s linear infinite;
+}
+
+.review-feed {
+    width: auto;
+    height: auto;
+    max-width: none;
+    border-radius: 0;
+    flex: 0 0 auto;
+}
+
+@keyframes review-marquee-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .review-track {
+        animation: none;
+    }
+}
+
+.review-notice {
+>>>>>>> Stashed changes
     text-align: center;
 }
 /* =========================================
+<<<<<<< Updated upstream
    9. FOOTER
+=======
+   9.   VIRAL SECTION
+========================================= */
+.viral-content{
+    padding: 5rem 0;
+}
+
+.viral-content.fade-up{
+    will-change: transform, opacity;
+}
+
+.viral-userflow {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.userflow-img {
+    background-color: #fff;
+    width: 8.875rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+.viral-userflow>h4 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #1e2022;
+}
+
+.viral-userflow p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #4C4948;
+}
+
+.viral-userflow>.userflow-label {
+    padding: 10px;
+    background: #fff;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 50px;
+    color: #1e2022;
+}
+
+
+
+/* =========================================
+   10. 24HOUR SECTION
+========================================= */
+.ai-24hour-section{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    height: 41.875rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.ai-24hour-bg{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url(/assets/images/24hour-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.2);
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.ai-24hour-section .section-header{
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: 100%;
+    color: #fff;
+}
+
+.ai-24hour-section .fade-up{
+    will-change: transform, opacity;
+}
+
+.ai-24hour-section .section-header h3,
+.ai-24hour-section .section-header p,
+.ai-24hour-section .section-header .title,
+.ai-24hour-section .color-main{
+    color: #fff;
+}
+
+/* =========================================
+   10. FOOTER
+>>>>>>> Stashed changes
 ========================================= */
 
 .footer {
-    padding: 6.25rem 0;
+    padding: 4.25rem 0;
     background-color: #1E2022;
     color: #FFFFFF;
 }
