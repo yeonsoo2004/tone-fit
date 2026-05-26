@@ -29,7 +29,6 @@
     background-position: center;
 
     background-repeat: no-repeat;
-
 }
 
 
@@ -43,7 +42,6 @@
     height: 758px;
 
     text-align: left;
-
 }
 
 
@@ -274,19 +272,13 @@
 
 
 
-    .contact-kv-title {
-
-        font-size: 2.625rem;
-
-    }
-
-
-
     .contact-card-wrap {
 
         width: 100%;
 
-        padding: 0 1.25rem;
+        padding: 0 64px;
+
+        box-sizing: border-box;
 
     }
 
@@ -322,7 +314,7 @@
 
     .contact-card-divider {
 
-        margin: 50px 0;
+        margin: 2.5rem 0;
 
     }
 
@@ -335,6 +327,14 @@
         column-gap: 0;
 
         row-gap: 2.5rem;
+
+    }
+
+
+
+    .contact-faq-section {
+
+        margin-top: 8rem;
 
     }
 
@@ -354,23 +354,7 @@
 
     .contact-kv-section {
 
-        padding-bottom: 12rem;
-
-    }
-
-
-
-    .contact-kv-title {
-
-        font-size: 2rem;
-
-    }
-
-
-
-    .contact-kv-desc {
-
-        font-size: 1.125rem;
+        padding-bottom: 10rem;
 
     }
 
@@ -380,7 +364,9 @@
 
         width: 100%;
 
-        padding: 0 1rem;
+        padding: 0 16px;
+
+        box-sizing: border-box;
 
     }
 
@@ -410,7 +396,7 @@
 
     .contact-card-divider {
 
-        margin: 50px 0;
+        margin: 1.5rem 0;
 
     }
 
@@ -419,6 +405,22 @@
     .contact-details-row {
 
         gap: 2rem;
+
+    }
+
+
+
+    .contact-faq-section {
+
+        margin-top: 5rem;
+
+    }
+
+
+
+    .contact-detail-label {
+
+        margin-bottom: 0.625rem;
 
     }
 
@@ -451,10 +453,6 @@
 .contact-faq-title {
 
     margin: 0 0 2.5rem;
-
-    font-size: 2rem;
-
-    font-weight: 500;
 
     line-height: 1.4;
 
@@ -682,8 +680,6 @@
 
         margin-bottom: 2rem;
 
-        font-size: 1.75rem;
-
     }
 
 
@@ -691,8 +687,6 @@
     .contact-faq-trigger {
 
         padding: 2rem 0;
-
-        font-size: 1.5rem;
 
     }
 
@@ -716,8 +710,6 @@
 
         margin-bottom: 1.5rem;
 
-        font-size: 1.5rem;
-
     }
 
 
@@ -725,8 +717,6 @@
     .contact-faq-trigger {
 
         padding: 1.5rem 0;
-
-        font-size: 1.25rem;
 
     }
 
@@ -775,7 +765,7 @@
 
     align-items: flex-start;
 
-    gap: 5rem;
+    gap: 110px;
 
 }
 
@@ -843,10 +833,6 @@
 
 .contact-inquiry-phone {
 
-    font-size: 1.5rem;
-
-    font-weight: 500;
-
     line-height: 1.5;
 
     color: #333446;
@@ -857,11 +843,15 @@
 
 .contact-inquiry-form {
 
-    flex: 1;
+    flex: 0 0 783px;
+
+    width: 783px;
+
+    max-width: 100%;
 
     min-width: 0;
 
-    gap: 1.25rem;
+    gap: 20px;
 
 }
 
@@ -869,7 +859,9 @@
 
 .contact-inquiry-form-row {
 
-    gap: 1.25rem;
+    gap: 19px;
+
+    width: 100%;
 
 }
 
@@ -877,15 +869,25 @@
 
 .contact-inquiry-field {
 
-    gap: 0.625rem;
+    flex-shrink: 0;
+
+    width: 783px;
+
+    max-width: 100%;
+
+    height: 84px;
+
+    gap: 10px;
+
+    box-sizing: border-box;
 
 }
 
 
 
-.contact-inquiry-field--half {
+.contact-inquiry-form-row .contact-inquiry-field--half {
 
-    flex: 1;
+    flex: none;
 
     min-width: 0;
 
@@ -893,13 +895,39 @@
 
 
 
+.contact-inquiry-form-row .contact-inquiry-field--half:first-child {
+
+    width: 370px;
+
+}
+
+
+
+.contact-inquiry-form-row .contact-inquiry-field--half:last-child {
+
+    width: 394px;
+
+}
+
+
+
+.contact-inquiry-field:has(.contact-inquiry-textarea) {
+
+    height: 232px;
+
+}
+
+
+
 .contact-inquiry-label {
 
-    font-size: 1.25rem;
+    flex-shrink: 0;
 
-    font-weight: 400;
+    height: 20px;
 
-    line-height: 1.5;
+    margin: 0;
+
+    line-height: 20px;
 
     color: #4C4948;
 
@@ -917,13 +945,9 @@
 
     margin: 0;
 
-    padding: 0.875rem 1rem;
+    padding: 0 1rem;
 
     font-family: inherit;
-
-    font-size: 1.125rem;
-
-    font-weight: 400;
 
     line-height: 1.5;
 
@@ -941,13 +965,21 @@
 
 
 
+.contact-inquiry-input {
+
+    flex: 1;
+
+    min-height: 0;
+
+    height: 54px;
+
+}
+
+
+
 .contact-inquiry-input::placeholder,
 
 .contact-inquiry-textarea::placeholder {
-
-    font-size: 1.125rem;
-
-    font-weight: 400;
 
     line-height: 1.5;
 
@@ -973,9 +1005,23 @@
 
 .contact-inquiry-textarea {
 
-    min-height: 12.5rem;
+    flex: 1;
 
-    resize: vertical;
+    min-height: 0;
+
+    height: 202px;
+
+    padding: 0.875rem 1rem;
+
+    resize: none;
+
+}
+
+
+
+.contact-inquiry-field:has(.contact-inquiry-file-row) {
+
+    height: 84px;
 
 }
 
@@ -983,7 +1029,13 @@
 
 .contact-inquiry-file-row {
 
+    flex: 1;
+
+    min-height: 0;
+
     gap: 20px;
+
+    height: 54px;
 
 }
 
@@ -993,7 +1045,11 @@
 
     flex: 1;
 
-    min-height: 3rem;
+    min-width: 0;
+
+    height: 54px;
+
+    min-height: 54px;
 
 }
 
@@ -1003,13 +1059,11 @@
 
     flex-shrink: 0;
 
-    padding: 0.875rem 1.5rem;
+    height: 54px;
+
+    padding: 0 1.5rem;
 
     font-family: inherit;
-
-    font-size: 1.25rem;
-
-    font-weight: 400;
 
     line-height: 1.5;
 
@@ -1039,6 +1093,14 @@
 
 .contact-inquiry-agree-row {
 
+    flex-shrink: 0;
+
+    width: 319px;
+
+    max-width: 100%;
+
+    height: 26px;
+
     gap: 0.625rem;
 
 }
@@ -1063,11 +1125,7 @@
 
 .contact-inquiry-agree-label {
 
-    font-size: 1.25rem;
-
-    font-weight: 400;
-
-    line-height: 1.5;
+    line-height: 26px;
 
     color: #4C4948;
 
@@ -1086,10 +1144,6 @@
     padding: 1.25rem 1.875rem;
 
     font-family: inherit;
-
-    font-size: 1.25rem;
-
-    font-weight: 600;
 
     line-height: 1.5;
 
@@ -1121,7 +1175,7 @@
 
         flex-direction: column;
 
-        gap: 3.125rem;
+        gap: 2.5rem;
 
     }
 
@@ -1133,6 +1187,38 @@
 
         width: 100%;
 
+        gap: 2rem;
+
+    }
+
+
+
+    .contact-inquiry-form {
+
+        flex: none;
+
+        width: 100%;
+
+    }
+
+
+
+    .contact-inquiry-form-row {
+
+        gap: 20px;
+
+    }
+
+
+
+    .contact-inquiry-field,
+
+    .contact-inquiry-form-row .contact-inquiry-field--half:first-child,
+
+    .contact-inquiry-form-row .contact-inquiry-field--half:last-child {
+
+        width: 100%;
+
     }
 
 }
@@ -1141,11 +1227,203 @@
 
 @media screen and (max-width: 768px) {
 
+    .contact-inquiry-layout {
+
+        gap: 2rem;
+
+    }
+
+
+
+    .contact-inquiry-info {
+
+        gap: 1.5rem;
+
+    }
+
+
+
     .contact-inquiry-form-row {
 
         flex-direction: column;
 
+        gap: 20px;
+
     }
+
+
+
+    .contact-inquiry-form-row .contact-inquiry-field--half:first-child,
+
+    .contact-inquiry-form-row .contact-inquiry-field--half:last-child {
+
+        width: 100%;
+
+    }
+
+
+
+    .contact-inquiry-field,
+
+    .contact-inquiry-field:has(.contact-inquiry-textarea),
+
+    .contact-inquiry-field:has(.contact-inquiry-file-row) {
+
+        height: auto;
+
+        min-height: 84px;
+
+    }
+
+
+
+    .contact-inquiry-field:has(.contact-inquiry-textarea) {
+
+        min-height: 12rem;
+
+    }
+
+
+
+    .contact-inquiry-textarea {
+
+        height: auto;
+
+        min-height: 9rem;
+
+    }
+
+
+
+    .contact-inquiry-agree-row {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 26px;
+
+    }
+
+
+
+    .contact-page .footer-info-contact {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 1.25rem;
+
+    }
+
+}
+
+
+
+/* 소형 모바일 — font.css 402px 구간과 동기 */
+
+@media screen and (max-width: 402px) {
+
+    .contact-kv-inner {
+
+        height: 20rem;
+
+    }
+
+
+
+    .contact-kv-section {
+
+        padding-bottom: 8rem;
+
+    }
+
+
+
+    .contact-card {
+
+        padding: 2rem 1.25rem;
+
+    }
+
+
+
+    .contact-faq-section {
+
+        margin-top: 4rem;
+
+    }
+
+
+
+    .contact-faq-trigger {
+
+        gap: 1rem;
+
+        padding: 1.25rem 0;
+
+    }
+
+
+
+    .contact-inquiry-layout {
+
+        gap: 1.5rem;
+
+    }
+
+
+
+    .contact-inquiry-file-row {
+
+        flex-wrap: wrap;
+
+        height: auto;
+
+        min-height: 54px;
+
+    }
+
+
+
+    .contact-inquiry-file-btn {
+
+        width: 100%;
+
+    }
+
+}
+
+
+
+/* =========================================
+
+   Footer — Contact page only (.contact-page)
+
+   font.css 클래스가 style.css 푸터 폰트보다 우선
+
+========================================= */
+
+
+
+.contact-page .footer .footer-logo,
+
+.contact-page .footer .footer-policy,
+
+.contact-page .footer .footer-policy p,
+
+.contact-page .footer .footer-info-contact,
+
+.contact-page .footer .footer-info,
+
+.contact-page .footer .email {
+
+    font-size: unset;
+
+    font-weight: unset;
+
+    line-height: unset;
 
 }
 
