@@ -545,9 +545,6 @@
 /* =========================================
    7. FRAME SECTION
 ========================================= */
-.frame-section .section-header h3,p{
-    color: #fff;
-}
 
 .frame-content{
     width: 100%;
@@ -642,7 +639,7 @@
 ========================================= */
 
 .footer {
-    padding: 6.25rem 0;
+    padding: 4.25rem 0;
     background-color: #1E2022;
     color: #FFFFFF;
 }
