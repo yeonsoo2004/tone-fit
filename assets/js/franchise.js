@@ -155,6 +155,124 @@
         });
     }
 
+    var INQUIRY_MSG_REQUIRED = '필수 항목입니다.';
+    var INQUIRY_MSG_INVALID = '잘못된 형식입니다.';
+    var INQUIRY_MSG_SUCCESS = '제출이 완료되었습니다.';
+
+    function trimInquiryValue(value) {
+        return (value || '').trim();
+    }
+
+    function isValidInquiryEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+    }
+
+    function isValidInquiryTel(value) {
+        if (!/^[\d-]+$/.test(value)) {
+            return false;
+        }
+
+        var digits = value.replace(/\D/g, '');
+
+        if (digits.length < 9 || digits.length > 11) {
+            return false;
+        }
+
+        if (/^01/.test(digits)) {
+            return digits.length === 10 || digits.length === 11;
+        }
+
+        return true;
+    }
+
+    function validateInquiryField(fieldKey, value) {
+        var trimmed = trimInquiryValue(value);
+
+        if (!trimmed) {
+            return { valid: false, message: INQUIRY_MSG_REQUIRED };
+        }
+
+        if (fieldKey === 'tel' && !isValidInquiryTel(trimmed)) {
+            return { valid: false, message: INQUIRY_MSG_INVALID };
+        }
+
+        if (fieldKey === 'email' && !isValidInquiryEmail(trimmed)) {
+            return { valid: false, message: INQUIRY_MSG_INVALID };
+        }
+
+        return { valid: true, message: '' };
+    }
+
+    function setInquiryFieldError($error, message) {
+        if (!$error.length) {
+            return;
+        }
+
+        $error.text(message || '');
+    }
+
+    function initStartupInquirySubmit() {
+        var $page = $('.startup-page');
+
+        if (!$page.length) {
+            return;
+        }
+
+        var $form = $page.find('.startup-inquiry-form');
+
+        if (!$form.length) {
+            return;
+        }
+
+        var fields = [
+            { key: 'name', $input: $form.find('#startup-inquiry-name'), $error: $form.find('#startup-inquiry-name-error') },
+            { key: 'tel', $input: $form.find('#startup-inquiry-tel'), $error: $form.find('#startup-inquiry-tel-error') },
+            { key: 'email', $input: $form.find('#startup-inquiry-email'), $error: $form.find('#startup-inquiry-email-error') },
+            { key: 'message', $input: $form.find('#startup-inquiry-message'), $error: $form.find('#startup-inquiry-message-error') }
+        ];
+
+        function validateOne(field) {
+            var result = validateInquiryField(field.key, field.$input.val());
+            setInquiryFieldError(field.$error, result.valid ? '' : result.message);
+            return result.valid;
+        }
+
+        function validateAll() {
+            var isValid = true;
+
+            fields.forEach(function (field) {
+                if (!validateOne(field)) {
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
+        fields.forEach(function (field) {
+            field.$input.on('input blur', function () {
+                if (field.$error.text()) {
+                    validateOne(field);
+                }
+            });
+        });
+
+        $form.on('submit', function (event) {
+            event.preventDefault();
+
+            if (!validateAll()) {
+                return;
+            }
+
+            window.alert(INQUIRY_MSG_SUCCESS);
+            $form[0].reset();
+            fields.forEach(function (field) {
+                setInquiryFieldError(field.$error, '');
+            });
+            $page.find('#startup-inquiry-file-name').text('');
+        });
+    }
+
     $(function () {
         var $activePanel = $('.space-tab-panels .space-tab-panel.is-active').first();
 
@@ -167,5 +285,6 @@
 
         initStartupFadeUp();
         initStartupInquiryFile();
+        initStartupInquirySubmit();
     });
 })(jQuery);
