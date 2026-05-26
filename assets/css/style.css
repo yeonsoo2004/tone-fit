@@ -86,6 +86,11 @@
     margin: 0;
 }
 
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .header-menu {
     grid-column: 2;
     grid-row: 1 / 3;
@@ -117,6 +122,7 @@
 }
 
 .header-nav-link {
+    display: inline-block;
     color: inherit;
     font-weight: 400;
     background: none;
@@ -124,6 +130,7 @@
     cursor: pointer;
     padding: 8px 4px;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .header-mega {
@@ -253,9 +260,13 @@
 /* =========================================
 3. ABOUT SECTION
 ========================================= */
-.identity-title {
+.about-section{
+    padding-top: 8.125rem;
+}
+
+.identity-header{
     text-align: center;
-    margin: 8.125rem 0 5rem 0;
+    margin-bottom: 5rem;
 }
 
 .identity-grid {
@@ -447,21 +458,22 @@
 /* =========================================
    4. AI TONE FINDER SECTION
 ========================================= */
-.ai-tone-finder{
+.ai-tone-finder {
     background-image: url(/assets/images/kiosk-buble.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.ai-tone-finder-header{
+.ai-tone-finder-header {
     text-align: end;
     margin-top: 5.625rem;
 }
 
-.ai-tone-finder-content{
+.ai-tone-finder-content {
     text-align: end;
 }
-.ai-tone-finder-system{
+
+.ai-tone-finder-system {
     width: 16.125rem;
     aspect-ratio: 1;
     border: 1px solid #4C4948;
@@ -470,62 +482,67 @@
     align-content: center;
 }
 
-.ai-tone-finder-system p{
+.ai-tone-finder-system p {
     color: #4C4948;
 }
 
 
-.ai-tone-finder-sec-tag strong{
+.ai-tone-finder-sec-tag strong {
     font-size: 6.25rem;
     font-weight: 900;
 }
+
 /* =========================================
    5. SECTION HEADER
 ========================================= */
-.section-header{
+.section-header {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
     text-align: center;
 }
-.section-header h3{
+
+.section-header h3 {
     font-size: 3rem;
 }
 
-.section-header hr{
+.section-header hr {
     margin-top: 1.875rem;
     margin-bottom: 5rem;
     width: 33.75rem;
 }
+
 /* =========================================
    6. AI PERSONAL BG MATCHING SECTION
 ========================================= */
 
-.ai-personal-bg-content{
+.ai-personal-bg-content {
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 1.5rem;
 }
 
-.ai-personal-bg-content img{
+.ai-personal-bg-content img {
     width: 100%;
 }
-.ai-personal-bg-content p{
+
+.ai-personal-bg-content p {
     color: #4C4948;
     font-size: 1rem;
     text-align: center;
     align-content: center;
 }
 
-.ai-pet-section{
+.ai-pet-section {
     margin-top: 8.125rem;
 }
-.ai-pet-content{
+
+.ai-pet-content {
     display: flex;
     height: 20rem;
 }
 
-.pet-img{
+.pet-img {
     background-image: url(/assets/images/dog-cat.jpg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -533,7 +550,8 @@
     width: 29rem;
     height: auto;
 }
-.pet-8img{
+
+.pet-8img {
     background-image: url(/assets/images/dog-cat-8imgs.jpg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -545,13 +563,17 @@
 /* =========================================
    7. FRAME SECTION
 ========================================= */
+.frame-section .section-header h3,
+p {
+    color: #fff;
+}
 
-.frame-content{
+.frame-content {
     width: 100%;
     margin-top: 5rem;
 }
 
-.frame{
+.frame {
     width: 100%;
     height: 39.125rem;
     position: relative;
@@ -565,8 +587,9 @@
     text-align: center;
     overflow: hidden;
 }
+
 .frame p,
-.frame button{
+.frame button {
     position: relative;
     z-index: 1;
     opacity: 0;
@@ -574,20 +597,24 @@
     pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.frame:nth-child(1){
+
+.frame:nth-child(1) {
     background-image: url(/assets/images/frame1.jpg);
 }
-.frame:nth-child(2){
+
+.frame:nth-child(2) {
     background-image: url(/assets/images/frame2.jpg);
 }
-.frame:nth-child(3){
+
+.frame:nth-child(3) {
     background-image: url(/assets/images/frame3.jpg);
 }
-.frame:nth-child(4){
+
+.frame:nth-child(4) {
     background-image: url(/assets/images/frame4.jpg);
 }
 
-.frame::before{
+.frame::before {
     content: "";
     width: 100%;
     height: 100%;
@@ -600,42 +627,203 @@
     pointer-events: none;
 }
 
-.frame:hover::before{
+.frame:hover::before {
     opacity: .5;
 }
+
 .frame:hover p,
-.frame:hover button{
+.frame:hover button {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
-.frame p{
+
+.frame p {
     font-size: 1rem;
     font-weight: 700;
     color: #fff;
 }
-.frame button{
+
+.frame button {
     margin-top: 1.25rem;
 }
-.frame:hover button.topage-btn{
+
+.frame:hover button.topage-btn {
     color: #fff;
     border-color: #fff;
 }
-.frame:hover button.topage-btn:hover{
+
+.frame:hover button.topage-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
+
 /* =========================================
    8. REVIEW SECTION
 ========================================= */
-.review-content{
+.review-content {
     padding: 5rem 0;
 }
+<<<<<<< Updated upstream
+
+
+.review-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+.review-track {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    width: max-content;
+    will-change: transform;
+    animation: review-marquee-left 28s linear infinite;
+}
+
+.review-feed {
+    width: auto;
+    height: auto;
+    max-width: none;
+    border-radius: 0;
+    flex: 0 0 auto;
+}
+
+@keyframes review-marquee-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .review-track {
+        animation: none;
+    }
+}
+
+.review-notice {
+=======
 .review-notice{
+>>>>>>> Stashed changes
     text-align: center;
 }
+
+
 /* =========================================
+<<<<<<< Updated upstream
+   9.   VIRAL SECTION
+========================================= */
+.viral-content{
+    padding: 5rem 0;
+}
+
+.viral-content.fade-up{
+    will-change: transform, opacity;
+}
+
+.viral-userflow {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.userflow-img {
+    background-color: #fff;
+    width: 8.875rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+.viral-userflow>h4 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #1e2022;
+}
+
+.viral-userflow p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #4C4948;
+}
+
+.viral-userflow>.userflow-label {
+    padding: 10px;
+    background: #fff;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 50px;
+    color: #1e2022;
+}
+
+
+
+/* =========================================
+   10. 24HOUR SECTION
+========================================= */
+.ai-24hour-section{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    height: 41.875rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.ai-24hour-bg{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url(/assets/images/24hour-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.2);
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.ai-24hour-section .section-header{
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: 100%;
+    color: #fff;
+}
+
+.ai-24hour-section .fade-up{
+    will-change: transform, opacity;
+}
+
+.ai-24hour-section .section-header h3,
+.ai-24hour-section .section-header p,
+.ai-24hour-section .section-header .title,
+.ai-24hour-section .color-main{
+    color: #fff;
+}
+
+/* =========================================
+   10. FOOTER
+=======
    9. FOOTER
+>>>>>>> Stashed changes
 ========================================= */
 
 .footer {
@@ -644,27 +832,29 @@
     color: #FFFFFF;
 }
 
-.footer-logo{
+.footer-logo {
     font-size: 1.25rem;
     font-weight: 600;
 }
 
-.footer-sns-btn{
+.footer-sns-btn {
     padding: 5px;
     background-color: #4C4948;
     border-radius: 50%;
 }
 
-.footer-sns-btn:hover{
+.footer-sns-btn:hover {
     background-color: #D4734A;
     transition: 0.3s ease;
     cursor: pointer;
 }
-.footer-policy{
+
+.footer-policy {
     font-size: .75rem;
     font-weight: 400;
 }
-.footer-info-contact{
+
+.footer-info-contact {
     font-size: .75rem;
     font-weight: 400;
 }
