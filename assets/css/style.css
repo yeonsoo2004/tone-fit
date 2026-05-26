@@ -758,7 +758,8 @@ p {
 ========================================= */
 
 .footer {
-    padding: 4.25rem;
+    padding: 4.25rem 0;
+    background-color: #1E2022;
     color: #FFFFFF;
 }
 
