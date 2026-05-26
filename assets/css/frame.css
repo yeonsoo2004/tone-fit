@@ -1,7 +1,8 @@
 @charset "utf-8";
 
 /* =========================================
-   Frame Page — Base
+   Frame Page — 서브페이지 헤더 오프셋
+   (서브페이지: 최초부터 white background 유지)
 ========================================= */
 
 .frame-page {
@@ -22,35 +23,15 @@
 
 
 /* =========================================
-   타이틀 영역
-========================================= */
-
-.frame-head {
-    width: 100%;
-    text-align: center;
-}
-
-.frame-main-title {
-    margin-bottom: 20px; /* 타이틀 ↔ 탭 간격 20px */
-}
-
-
-/* =========================================
-   LNB 탭 버튼
+   LNB 탭 버튼 — component.css lnb-tab-btn 오버라이드
+   (FRAME 전용 크기·색상·인터랙션 차이만 유지)
 ========================================= */
 
 .frame-tab-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     padding: 10px 36px;
     height: 52px;
-    background-color: #FFFFFF;
     color: #4C4948;
-    font-family: 'Pretendard', sans-serif;
     border: 1px solid rgba(76, 73, 72, 0.18);
-    border-radius: 50px;
-    cursor: pointer;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     transition:
         background-color 0.25s ease,
@@ -66,9 +47,8 @@
 }
 
 .frame-tab-btn.active {
-    background-color: #D4734A;
-    color: #FFFFFF;
     border-color: #D4734A;
+    border-radius: 50px;
     box-shadow: 0 2px 10px rgba(212, 115, 74, 0.32);
 }
 
@@ -87,7 +67,7 @@
 
 
 /* =========================================
-   탭 패널
+   탭 패널 (show / hide)
 ========================================= */
 
 .frame-tab-panels {
@@ -104,8 +84,8 @@
 
 
 /* =========================================
-   포스터 그리드
-   — column-gap 24px / row-gap 0
+   포스터 그리드 — 3열 custom grid
+   (grid-wrap은 12단 시스템이므로 별도 정의)
 ========================================= */
 
 .frame-poster-grid {
@@ -118,21 +98,13 @@
 
 
 /* =========================================
-   포스터 카드
+   포스터 카드 — 이미지 래퍼 (462:530 비율)
 ========================================= */
 
-.frame-poster-card {
-    display: flex;
-    flex-direction: column;
-}
-
-/* 이미지 래퍼 — 462 : 530 비율 */
 .frame-poster-img-wrap {
     position: relative;
     overflow: hidden;
     aspect-ratio: 462 / 530;
-    /* border-radius: 6px; */
-    background-color: #F6F6F6;
 }
 
 .frame-poster-img-wrap img {
@@ -145,32 +117,23 @@
 }
 
 
-/* ─── 오버레이 — 위 → 아래 슬라이드 등장 ─── */
+/* ─── 오버레이 — clip-path wipe 애니메이션 ─── */
 
 .frame-poster-overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(188, 143, 118, 0.95); /* #BC8F76 95% */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* clip-path으로 위→아래 wipe 연출: 초기에 height 0 (아래쪽 클리핑) */
+    background-color: rgba(188, 143, 118, 0.95);
     clip-path: inset(0 0 100% 0);
     transition: clip-path 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
-/* ─── 오버레이 내부 텍스트 그룹 ─── */
+/* ─── 오버레이 텍스트 fade-up ─── */
 
 .frame-poster-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
     color: #FFFFFF;
+    gap: 10px;
     padding: 0 20px;
-    /* 텍스트 fade-up — 오버레이 등장 후 지연 시작 */
     opacity: 0;
     transform: translateY(16px);
     transition:
@@ -179,72 +142,48 @@
 }
 
 .frame-poster-info-name {
-    font-family: 'Pretendard', sans-serif;
     color: #FFFFFF;
     letter-spacing: 0.04em;
 }
 
 .frame-poster-info-date {
-    font-family: 'Pretendard', sans-serif;
     color: rgba(255, 255, 255, 0.85);
     letter-spacing: 0.06em;
 }
 
 .frame-poster-info-desc {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 0.8125rem; /* 13px */
-    font-weight: 400;
+    font-size: 0.8125rem;
     color: rgba(255, 255, 255, 0.75);
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
 
-/* ─── hover 상태 ─── */
+/* ─── hover 인터랙션 ─── */
 
-/* 이미지 scale zoom */
 .frame-poster-card:hover .frame-poster-img-wrap img {
     transform: scale(1.05);
 }
 
-/* 오버레이 위→아래 완전 등장 */
 .frame-poster-card:hover .frame-poster-overlay {
     clip-path: inset(0 0 0% 0);
 }
 
-/* 텍스트 fade-up 완료 */
 .frame-poster-card:hover .frame-poster-info {
     opacity: 1;
     transform: translateY(0);
 }
 
 
-/* ─── 아티스트명 캡션 (카드 하단) ─── */
+/* ─── 포스터 캡션 (letter-spacing만 frame 전용) ─── */
 
 .frame-poster-name {
-    margin-top: 23px;
-    margin-bottom: 23px;
-    text-align: center;
-    font-family: 'Pretendard', sans-serif;
-    color: #4C4948;
     letter-spacing: 0.02em;
 }
 
 
 /* =========================================
-   Coming Soon (비활성 탭)
-========================================= */
-
-.frame-coming-soon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 0;
-}
-
-
-/* =========================================
-   등장 애니메이션 — Fade-Up (스크롤 진입)
+   Fade-Up 등장 애니메이션 (스크롤 진입)
 ========================================= */
 
 .frame-fade-up {
@@ -261,13 +200,11 @@
     transform: translateY(0);
 }
 
-/* 비활성 패널은 초기값 유지 (탭 전환 시 재생) */
 .frame-tab-panel:not(.is-active).frame-fade-up {
     opacity: 0;
     transform: translateY(30px);
 }
 
-/* 모션 감소 설정 */
 @media (prefers-reduced-motion: reduce) {
     .frame-fade-up {
         opacity: 1;
@@ -276,114 +213,9 @@
         will-change: auto;
     }
 
-    .frame-poster-img-wrap img {
-        transition: none;
-    }
-
-    .frame-poster-overlay {
-        transition: none;
-    }
-
+    .frame-poster-img-wrap img,
+    .frame-poster-overlay,
     .frame-poster-info {
         transition: none;
-    }
-}
-
-
-/* =========================================
-   반응형 — 1440px 이하 (노트북)
-========================================= */
-
-@media screen and (max-width: 1440px) {
-    .frame-page .inner {
-        max-width: none;
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-
-
-/* =========================================
-   반응형 — 1024px 이하 (태블릿)
-========================================= */
-
-@media screen and (max-width: 1024px) {
-    .frame-page .inner {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .frame-poster-grid {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 20px;
-        row-gap: 0;
-    }
-
-    .frame-tab-btn {
-        padding: 8px 28px;
-        height: 46px;
-    }
-}
-
-
-/* =========================================
-   반응형 — 768px 이하 (모바일)
-========================================= */
-
-@media screen and (max-width: 768px) {
-    .frame-page .inner {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .frame-main-title {
-        font-size: 2rem;
-        margin-bottom: 16px;
-    }
-
-    .frame-tab-bar {
-        flex-wrap: wrap;
-        justify-content: center;
-        row-gap: 10px;
-    }
-
-    .frame-tab-btn {
-        padding: 8px 22px;
-        height: 42px;
-        font-size: 0.9375rem;
-    }
-
-    .frame-poster-grid {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 16px;
-        row-gap: 0;
-    }
-
-    .frame-poster-name {
-        font-size: 0.9375rem;
-        margin-top: 16px;
-        margin-bottom: 16px;
-    }
-
-    .frame-poster-info-name {
-        font-size: 1rem;
-    }
-
-    .frame-poster-info-date {
-        font-size: 0.875rem;
-    }
-}
-
-
-/* =========================================
-   반응형 — 480px 이하 (소형 모바일)
-========================================= */
-
-@media screen and (max-width: 480px) {
-    .frame-poster-grid {
-        grid-template-columns: 1fr;
-        column-gap: 0;
-        row-gap: 0;
     }
 }
