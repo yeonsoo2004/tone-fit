@@ -332,8 +332,11 @@
                         </div>
 
                         <div class="startup-inquiry-agree-row d-flex ai-center">
-                            <input class="startup-inquiry-checkbox" type="checkbox" id="startup-inquiry-privacy" name="privacy_agree" value="yes">
-                            <label class="startup-inquiry-agree-label" for="startup-inquiry-privacy">개인정보수집 및 이용방침에 동의합니다.</label>
+                            <input class="startup-inquiry-checkbox" type="checkbox" id="startup-inquiry-privacy" name="privacy_agree" value="yes" required aria-describedby="startup-inquiry-privacy-error">
+                            <div class="startup-inquiry-label-row d-flex ai-center">
+                                <label class="startup-inquiry-agree-label" for="startup-inquiry-privacy">개인정보수집 및 이용방침에 동의합니다.</label>
+                                <span class="startup-inquiry-field-error" id="startup-inquiry-privacy-error" role="alert" aria-live="polite"></span>
+                            </div>
                         </div>
 
                         <button class="startup-inquiry-submit bg-point-orange" type="submit">제휴문의</button>

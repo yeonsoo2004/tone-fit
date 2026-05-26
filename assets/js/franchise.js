@@ -228,10 +228,17 @@
             { key: 'name', $input: $form.find('#startup-inquiry-name'), $error: $form.find('#startup-inquiry-name-error') },
             { key: 'tel', $input: $form.find('#startup-inquiry-tel'), $error: $form.find('#startup-inquiry-tel-error') },
             { key: 'email', $input: $form.find('#startup-inquiry-email'), $error: $form.find('#startup-inquiry-email-error') },
-            { key: 'message', $input: $form.find('#startup-inquiry-message'), $error: $form.find('#startup-inquiry-message-error') }
+            { key: 'message', $input: $form.find('#startup-inquiry-message'), $error: $form.find('#startup-inquiry-message-error') },
+            { key: 'privacy', $input: $form.find('#startup-inquiry-privacy'), $error: $form.find('#startup-inquiry-privacy-error'), isCheckbox: true }
         ];
 
         function validateOne(field) {
+            if (field.isCheckbox) {
+                var isChecked = field.$input.is(':checked');
+                setInquiryFieldError(field.$error, isChecked ? '' : INQUIRY_MSG_REQUIRED);
+                return isChecked;
+            }
+
             var result = validateInquiryField(field.key, field.$input.val());
             setInquiryFieldError(field.$error, result.valid ? '' : result.message);
             return result.valid;
@@ -250,7 +257,9 @@
         }
 
         fields.forEach(function (field) {
-            field.$input.on('input blur', function () {
+            var events = field.isCheckbox ? 'change' : 'input blur';
+
+            field.$input.on(events, function () {
                 if (field.$error.text()) {
                     validateOne(field);
                 }
