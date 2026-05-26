@@ -4,6 +4,14 @@
    TONE:FIT Main Page Styles (index.css)
 ========================================= */
 
+html {
+    overflow-x: clip;
+}
+
+body {
+    overflow-x: clip;
+}
+
 /* =========================================
    1. HEADER
 ========================================= */
@@ -200,7 +208,7 @@
     height: 100vh;
     min-height: 37.5rem;
     box-sizing: border-box;
-    background-image: url('../images/kv-bg-img.jpg');
+    background-image: url('../images/kv-bg-img.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -271,15 +279,21 @@
 
 .identity-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 5rem;
+    min-width: 0;
 }
 
 .about-circle {
-    width: 650px;
-    height: 650px;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    aspect-ratio: 1;
     border-radius: 50%;
-    background-image: url(/assets/images/tone-fit-about-brand.jpg);
+    background-image: url(/assets/images/tone-fit-about-brand.webp);
+    background-size: cover;
+    background-position: center;
+    justify-self: center;
     overflow: visible;
 }
 
@@ -289,6 +303,11 @@
     gap: 20px;
     align-self: center;
     align-content: center;
+    min-width: 0;
+}
+
+.identity-texts p {
+    overflow-wrap: break-word;
 }
 
 .identity-texts p:nth-child(2) {
@@ -303,10 +322,11 @@
 
 .franchise-layout {
     display: grid;
-    grid-template-columns: 1fr 1px 1fr;
+    grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
     grid-template-rows: auto 188px auto;
     align-items: stretch;
     margin-top: 8.125rem;
+    min-width: 0;
 }
 
 .franchise-texts {
@@ -413,6 +433,7 @@
     display: flex;
     justify-content: flex-end;
     min-height: 18.75rem;
+    overflow: hidden;
 }
 
 
@@ -429,7 +450,7 @@
 .franchise-mega-content::after {
     content: "";
     background: #F8F5F0;
-    width: 38.875rem;
+    width: min(38.875rem, 100%);
     aspect-ratio: 1;
     border-radius: 50%;
     position: absolute;
@@ -499,7 +520,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background-image: url(/assets/images/kiosk.png);
+    background-image: url(/assets/images/kiosk.webp);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left center;
@@ -560,7 +581,9 @@
 .section-header hr {
     margin-top: 1.875rem;
     margin-bottom: 5rem;
-    width: 33.75rem;
+    width: min(33.75rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* =========================================
@@ -573,8 +596,9 @@
 
 .ai-personal-bg-content {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 1.5rem;
+    min-width: 0;
 }
 
 .ai-personal-bg-content img {
@@ -598,24 +622,33 @@
 
 .ai-pet-content {
     display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
     height: 20rem;
+    min-width: 0;
 }
 
 .pet-img {
-    background-image: url(/assets/images/dog-cat.jpg);
+    background-image: url(/assets/images/dog-cat.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 29rem;
+    flex: 0 1 29rem;
+    width: auto;
+    min-width: 0;
+    max-width: 29rem;
     height: auto;
 }
 
 .pet-8img {
-    background-image: url(/assets/images/dog-cat-8imgs.jpg);
+    background-image: url(/assets/images/dog-cat-8imgs.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 59.5rem;
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    max-width: 59.5rem;
     height: auto;
 }
 
@@ -629,12 +662,24 @@ p {
 
 .frame-content {
     width: 100%;
+    max-width: 100%;
     margin-top: 5rem;
+    overflow: hidden;
+}
+
+.frames {
+    display: flex;
+    justify-content: space-between;
+    gap: clamp(0.5rem, 1.25vw, 1.25rem);
+    width: 100%;
+    min-width: 0;
 }
 
 .frame {
-    width: 100%;
-    height: 39.125rem;
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    height: clamp(16rem, 32vw, 39.125rem);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -658,19 +703,19 @@ p {
 }
 
 .frame:nth-child(1) {
-    background-image: url(/assets/images/frame1.jpg);
+    background-image: url(/assets/images/frame1.webp);
 }
 
 .frame:nth-child(2) {
-    background-image: url(/assets/images/frame2.jpg);
+    background-image: url(/assets/images/frame2.webp);
 }
 
 .frame:nth-child(3) {
-    background-image: url(/assets/images/frame3.jpg);
+    background-image: url(/assets/images/frame3.webp);
 }
 
 .frame:nth-child(4) {
-    background-image: url(/assets/images/frame4.jpg);
+    background-image: url(/assets/images/frame4.webp);
 }
 
 .frame::before {
@@ -770,15 +815,28 @@ p {
 /* =========================================
    9.   VIRAL SECTION
 ========================================= */
-.viral-content{
+.viral-content {
     padding: 5rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 0;
 }
 
-.viral-content.fade-up{
+.viral-content > img {
+    flex: 0 0 auto;
+    width: clamp(1.5rem, 4vw, 2.75rem);
+    height: auto;
+    align-self: center;
+}
+
+.viral-content.fade-up {
     will-change: transform, opacity;
 }
 
 .viral-userflow {
+    flex: 1 1 8.5rem;
+    min-width: 0;
+    max-width: 12.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -841,7 +899,7 @@ p {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url(/assets/images/24hour-bg.jpg);
+    background-image: url(/assets/images/24hour-bg.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -907,8 +965,28 @@ p {
 }
 
 /* =========================================
-   10. RESPONSIVE DESIGN
+   INDEX RESPONSIVE (769px ~ : horizontal scroll prevention)
+   Tablet layout: max-width 768px (applied separately)
 ========================================= */
+
+@media (max-width: 1280px) {
+    .ai-personal-bg-content {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .ai-tone-finder-circle {
+        left: clamp(1rem, 16vw, 10rem);
+    }
+
+    .ai-tone-finder-circle-shape {
+        width: min(22rem, 40vw);
+    }
+
+    .ai-tone-finder-sec-tag strong {
+        font-size: clamp(3rem, 8vw, 6.25rem);
+    }
+}
 
 @media (max-width: 1024px) {
     .identity-grid {
@@ -916,18 +994,82 @@ p {
         gap: 30px;
     }
 
+    .identity-texts {
+        min-width: 0;
+    }
+
     .franchise-layout {
-        column-gap: 2rem;
+        column-gap: 1.5rem;
+        min-width: 0;
+    }
+
+    .franchise-benefits {
+        justify-content: center;
     }
 
     .franchise-benefit-circle {
-        width: 160px;
-        height: 160px;
+        width: min(160px, 26vw);
+        height: min(160px, 26vw);
     }
 
     .franchise-benefits,
     .franchise-right-row {
-        height: 160px;
+        height: auto;
+        min-height: 160px;
+    }
+
+    .franchise-mega-content::after {
+        width: min(32rem, 85vw);
+    }
+
+    .ai-personal-bg-content {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .ai-pet-content {
+        height: auto;
+        min-height: 16rem;
+    }
+
+    .pet-img {
+        flex: 0 1 42%;
+        max-width: 22rem;
+    }
+
+    .pet-8img {
+        flex: 1 1 0;
+        max-width: none;
+    }
+
+    .ai-tone-finder-header {
+        margin-top: clamp(2rem, 6vw, 5.625rem);
+    }
+
+    .ai-tone-finder-content {
+        flex-wrap: wrap;
+        row-gap: 2rem;
+    }
+
+    .ai-tone-finder-system {
+        width: min(16.125rem, 70vw);
+    }
+
+    .viral-userflow {
+        flex: 1 1 calc(33.333% - 1.5rem);
+        max-width: 11rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 3.375rem);
+    }
+
+    .section-header h3 {
+        font-size: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .footer-info-contact {
+        flex-wrap: wrap;
+        gap: 1.25rem;
     }
 
     .feature-highlight {
@@ -968,6 +1110,60 @@ p {
     .gnb-btn {
         padding: 8px 15px;
         font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 960px) {
+    .header-container {
+        column-gap: 1rem;
+    }
+
+    .header-menu {
+        column-gap: 0.5rem;
+    }
+
+    .header-nav-link {
+        padding: 8px 2px;
+        font-size: 0.875rem;
+    }
+
+    .franchise-benefit-circle {
+        width: min(140px, 24vw);
+        height: min(140px, 24vw);
+    }
+
+    .franchise-benefit-line,
+    .franchise-benefit-plus {
+        font-size: 1rem;
+    }
+
+    .franchise-mega-value {
+        font-size: clamp(3.5rem, 10vw, 6.25rem);
+    }
+
+    .ai-personal-bg-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .viral-userflow {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: 10rem;
+    }
+
+    .viral-userflow > h4 {
+        font-size: 1.25rem;
+    }
+
+    .viral-userflow p {
+        font-size: 1rem;
+    }
+
+    .userflow-img {
+        width: min(8.875rem, 18vw);
+    }
+
+    .frame {
+        height: clamp(14rem, 36vw, 28rem);
     }
 }
 
