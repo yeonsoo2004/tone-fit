@@ -28,12 +28,12 @@
     text-align: center;
 }
 
-/* .title .color-main — 50px / 800 / 68px common 유틸 없음 */
+/* .title .color-main — 48px / 800 / 62px · 하단 여백 20px */
 .space-main-title {
-    margin: 0 0 31px;
-    font-size: 50px;
+    margin: 0 0 20px;
+    font-size: 48px;
     font-weight: 800;
-    line-height: 68px;
+    line-height: 62px;
 }
 
 /* 탭 버튼 — component.css 오버라이드 · 특수 규격 유지 */
@@ -103,9 +103,9 @@
     text-align: center;
 }
 
-/* .ft-20-r .color-main — 32px line-height common 유틸 없음 */
+/* .ft-20-r .color-main — 제목 하단 간격 10px */
 .space-caption {
-    margin: 28px 0 0;
+    margin: 10px 0 0;
     line-height: 32px;
     text-align: center;
 }
@@ -286,7 +286,7 @@
     }
 
     .space-page .space-caption {
-        margin-top: 16px;
+        margin-top: 10px;
         font-size: 15px;
         line-height: 24px;
     }

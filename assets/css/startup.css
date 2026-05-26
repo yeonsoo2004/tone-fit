@@ -895,25 +895,28 @@
     gap: 20px;
 }
 
-/* 183×183 원형 · point-orange · 아이콘 정중앙 */
+/* 163×163 원형 · point-orange · 아이콘 정중앙 */
 .startup-process-circle {
-    width: 183px;
-    height: 183px;
+    box-sizing: border-box;
+    width: 163px;
+    height: 163px;
     border-radius: 50%;
     flex-shrink: 0;
-    /* background-color: #D4734A; */ /* .bg-point-orange */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* SVG 원본 사이즈 유지 — HTML width/height 기준, 확대 금지 */
+/* SVG — 원 안 정중앙 · contain */
 .startup-process-icon {
     display: block;
     width: auto;
     height: auto;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     flex-shrink: 0;
+    margin: auto;
 }
 
 .startup-process-item:nth-child(1) .startup-process-icon {
@@ -946,14 +949,13 @@
     max-height: 90px;
 }
 
-/* 캡션~본문 간격 10px */
+/* 캡션~본문 간격 10px · 의도한 2줄(<br>)만 유지 */
 .startup-process-item-body {
-    width: 100%;
+    width: max-content;
+    max-width: 100%;
+    align-self: center;
     gap: 10px;
     text-align: center;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
 }
 
 /* ft-20-sb — #FFFFFF · line-height 32px */
@@ -970,12 +972,11 @@
 /* ft-18-r — #FFFFFF · line-height 28px */
 .startup-process-item-desc {
     margin: 0;
-    width: 100%;
+    width: max-content;
+    max-width: none;
     color: #FFFFFF;
-    /* font-family: 'Pretendard', sans-serif; */
-    /* font-size: 18px; */
-    /* font-weight: 400; */
     line-height: 28px;
+    white-space: nowrap;
 }
 
 /* =========================================
