@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/common.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/component.css">
+    <link rel="stylesheet" href="./assets/css/libs/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -32,23 +33,23 @@
                         <a href="subpage/identity.html" class="header-nav-link">BRAND</a>
                     </div>
                     <div class="header-nav-item">
-                        <button type="button" class="header-nav-link">FRAME</button>
+                        <a href="subpage/frame.html" class="header-nav-link">FRAME</a>
                     </div>
                     <div class="header-nav-item">
-                        <button type="button" class="header-nav-link">STORE</button>
+                        <a href="subpage/store.html" class="header-nav-link">STORE</a>
                     </div>
                     <div class="header-nav-item has-submenu">
                         <a href="subpage/space.html" class="header-nav-link">FRANCHISE</a>
                     </div>
                     <div class="header-nav-item has-submenu">
-                        <button type="button" class="header-nav-link">COMMUNITY</button>
+                        <a href="subpage/news.html" class="header-nav-link">COMMUNITY</a>
                     </div>
                 </nav>
                 <div class="header-mega ft-18-r">
                     <div class="header-mega-col">
                         <ul class="header-mega-list">
                             <li><a href="subpage/identity.html">IDENTITY</a></li>
-                            <li><a href="#">SMART KIOSK</a></li>
+                            <li><a href="subpage/smart-kiosk.html">SMART KIOSK</a></li>
                         </ul>
                     </div>
                     <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
@@ -61,14 +62,14 @@
                     </div>
                     <div class="header-mega-col">
                         <ul class="header-mega-list">
-                            <li><a href="#">NEWS</a></li>
-                            <li><a href="#">CONTACT</a></li>
+                            <li><a href="subpage/news.html">NEWS</a></li>
+                            <li><a href="subpage/contact.html">CONTACT</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="header-right">
-                <span class="gnb-btn ft-20-r">창업문의</span>
+                <span class="gnb-btn ft-20-r"><a href="subpage/contact.html">창업문의</a></span>
             </div>
         </div>
     </header>
@@ -111,12 +112,12 @@
                 </text> -->
                 </svg>
 
-                <div class="identity-texts ft-20-r">
-                    <h3 class="ft-32-b">TONE [색조, 분위기]</h3>
-                    <p class="color-main">모든 사람은 각자의 고유한 피부 톤과 분위기를 가지고 있습니다.<br>
+                <div class="identity-texts ft-20-r" data-fade-stagger>
+                    <h3 class="ft-32-b fade-up">TONE [색조, 분위기]</h3>
+                    <p class="color-main fade-up">모든 사람은 각자의 고유한 피부 톤과 분위기를 가지고 있습니다.<br>
                         톤핏은 유행을 좇는 대신, 누구나 가지고 있는 본연의 아름다운 '색'에 집중합니다.</p>
-                    <h3 class="ft-32-b">FIT [꼭 맞다, 조화롭다]</h3>
-                    <p class="color-main">AI 기술을 통해 당신의 톤에 가장 완벽하게 들어맞는 조명과 배경을 찾아냅니다. <br>
+                    <h3 class="ft-32-b fade-up">FIT [꼭 맞다, 조화롭다]</h3>
+                    <p class="color-main fade-up">AI 기술을 통해 당신의 톤에 가장 완벽하게 들어맞는 조명과 배경을 찾아냅니다. <br>
                         어떤 프레임을 선택하든 당신이 가장 돋보일 수 있도록, 오직 당신만을 위한 <br>
                         맞춤형 뷰티 테크 스튜디오를 경험해 보세요</p>
                 </div>
@@ -172,6 +173,12 @@
 
     <!-- ===== AI TONE FINDER SECTION ===== -->
     <section class="ai-tone-finder py-130 bg-light-gray">
+        <div class="ai-tone-finder-visual" aria-hidden="true">
+            <div class="ai-tone-finder-circle">
+                <span class="ai-tone-finder-circle-shape"></span>
+            </div>
+            <div class="ai-tone-finder-bg"></div>
+        </div>
         <div class="inner d-flex flex-col gap-100">
             <div class="ai-tone-finder-header d-flex flex-col gap-20">
                 <h3 class="ft-28-r title">무인 스튜디오의 새로운 패러다임</h3>
@@ -186,7 +193,7 @@
                         <p>가변형 스마트 조명 시스템</p>
                     </div>
                     <div class="ai-tone-finder-sec-tag d-flex flex-col">
-                        <p class="ai-tone-finder-sec ft-32-b color-main"><strong class="color-point">30</strong>초</p>
+                        <p class="ai-tone-finder-sec ft-32-b color-main"><strong class="color-point"><span class="counter-num" data-target="30">0</span></strong>초</p>
                         <p class="ai-tone-finder-tag ft-18-r color-main">#AI_퍼스널컬러 #맞춤형_스마트조명 #무보정_인생샷</p>
                     </div>
                 </div>
@@ -234,19 +241,19 @@
             <div class="frames d-flex jc-between">
                 <div class="frame">
                     <p>TONE:FIT 프렌즈 피크닉 콜라보 프레임 출시!</p>
-                    <button class="topage-btn">VIEW FRAME →</button>
+                    <a class="topage-btn" href="/subpage/frame.html">VIEW FRAME →</a>
                 </div>
                 <div class="frame">
                     <p>TONE:FIT 프렌즈 피크닉 콜라보 프레임 출시!</p>
-                    <button class="topage-btn">VIEW FRAME →</button>
+                    <a class="topage-btn" href="/subpage/frame.html">VIEW FRAME →</a>
                 </div>
                 <div class="frame">
                     <p>TONE:FIT 프렌즈 피크닉 콜라보 프레임 출시!</p>
-                    <button class="topage-btn">VIEW FRAME →</button>
+                    <a class="topage-btn" href="/subpage/frame.html">VIEW FRAME →</a>
                 </div>
                 <div class="frame">
                     <p>TONE:FIT 프렌즈 피크닉 콜라보 프레임 출시!</p>
-                    <button class="topage-btn">VIEW FRAME →</button>
+                    <a class="topage-btn" href="/subpage/frame.html">VIEW FRAME →</a>
                 </div>
             </div>
         </div>
@@ -257,24 +264,30 @@
             <h3 class="title color-point ft-48-b">실제 고객이 직접 공유한 반응</h3>
             <p class="color-point ft-20-r">촬영을 마친 고객이 자발적으로 SNS에 업로드한 콘텐츠입니다. 실제 사용자 반응은 어떤 광고보다 강력한 신뢰를 만듭니다.</p>
         </div>
-        <div class="review-content" aria-label="고객 후기 이미지 흐름">
-            <div class="review-marquee">
-                <div class="review-track">
-                    <img src="assets/images/insta-review1.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review2.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review3.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review4.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review5.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review6.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review7.jpg" alt="" class="review-feed">
-
-                    <img src="assets/images/insta-review1.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review2.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review3.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review4.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review5.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review6.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review7.jpg" alt="" class="review-feed" aria-hidden="true">
+        <div class="review-content" aria-label="고객 후기 이미지 슬라이드">
+            <div class="swiper review-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review1.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review2.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review3.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review4.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review5.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review6.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review7.jpg" alt="" class="review-feed">
+                    </div>
                 </div>
             </div>
         </div>
@@ -346,16 +359,6 @@
                 전용 모바일 앱을 활용한 실시간 기기 제어 및 스마트 무인 운영 시스템</p>
         </div>
     </section>
-     <section class="24hour-section py-130">
-        <div class="section-header">
-            <h3 class="title">
-                24시간 AI 스마트 스튜디오
-            </h3>
-            <p>자체 개발 AI 톤 파인더와 가변형 조명으로 24시간 최상의 화보 퀄리티 구현<br>
-                매월 자동 업데이트되는 브랜드 콜라보를 통한 한정판 프레임 원격 지원<br>
-                전용 모바일 앱을 활용한 실시간 기기 제어 및 스마트 무인 운영 시스템</p>
-        </div>
-     </section>
     <!-- ===== FOOTER ===== -->
     <footer class="footer bg-deep-base">
         <div class="footer-container inner d-flex flex-col gap-20">
@@ -381,6 +384,7 @@
             </div>
     </footer>
     <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/libs/swiper-bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 
