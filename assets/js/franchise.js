@@ -1,6 +1,6 @@
 /**
  * Space Concept Page — Fade-Up 진입 · 탭 전환 인터랙션
- * Startup Page — 섹션별 Fade-Up (KV · Feature · Growth · Profit · Franchise)
+ * Startup Page — 섹션별 Fade-Up (KV · Feature · Growth · Profit · Franchise · Process · Inquiry)
  * jQuery 3.2.1 · space.css · startup.css
  */
 (function ($) {
@@ -75,6 +75,8 @@
         var $profitCaption = $page.find('.startup-profit-caption.startup-fade-up');
         var $franchiseCards = $page.find('.startup-franchise-cards.startup-fade-up');
         var $franchiseAction = $page.find('.startup-franchise-action.startup-fade-up');
+        var $processList = $page.find('.startup-process-list.startup-fade-up');
+        var $inquiryInfo = $page.find('.startup-inquiry-info.startup-fade-up');
 
         function activateFade($target) {
             if ($target && $target.length) {
@@ -124,6 +126,33 @@
         observeFadeTargets($profitCaption);
         observeFadeTargets($franchiseCards);
         observeFadeTargets($franchiseAction);
+        observeFadeTargets($processList);
+        observeFadeTargets($inquiryInfo);
+    }
+
+    function initStartupInquiryFile() {
+        var $page = $('.startup-page');
+
+        if (!$page.length) {
+            return;
+        }
+
+        var $fileInput = $page.find('#startup-inquiry-file');
+        var $fileName = $page.find('#startup-inquiry-file-name');
+        var $fileBtn = $page.find('.startup-inquiry-file-btn');
+
+        if (!$fileInput.length || !$fileName.length || !$fileBtn.length) {
+            return;
+        }
+
+        $fileBtn.on('click', function () {
+            $fileInput.trigger('click');
+        });
+
+        $fileInput.on('change', function () {
+            var file = this.files && this.files[0];
+            $fileName.text(file ? file.name : '');
+        });
     }
 
     $(function () {
@@ -137,5 +166,6 @@
         });
 
         initStartupFadeUp();
+        initStartupInquiryFile();
     });
 })(jQuery);
