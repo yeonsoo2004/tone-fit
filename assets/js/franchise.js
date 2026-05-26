@@ -1,6 +1,6 @@
 /**
  * Space Concept Page — Fade-Up 진입 · 탭 전환 인터랙션
- * Startup Page — 섹션별 Fade-Up (KV · Feature · Growth · Profit · Franchise)
+ * Startup Page — 섹션별 Fade-Up (KV · Feature · Growth · Profit · Franchise · Process · Inquiry)
  * jQuery 3.2.1 · space.css · startup.css
  */
 (function ($) {
@@ -75,6 +75,8 @@
         var $profitCaption = $page.find('.startup-profit-caption.startup-fade-up');
         var $franchiseCards = $page.find('.startup-franchise-cards.startup-fade-up');
         var $franchiseAction = $page.find('.startup-franchise-action.startup-fade-up');
+        var $processList = $page.find('.startup-process-list.startup-fade-up');
+        var $inquiryInfo = $page.find('.startup-inquiry-info.startup-fade-up');
 
         function activateFade($target) {
             if ($target && $target.length) {
@@ -124,6 +126,160 @@
         observeFadeTargets($profitCaption);
         observeFadeTargets($franchiseCards);
         observeFadeTargets($franchiseAction);
+        observeFadeTargets($processList);
+        observeFadeTargets($inquiryInfo);
+    }
+
+    function initStartupInquiryFile() {
+        var $page = $('.startup-page');
+
+        if (!$page.length) {
+            return;
+        }
+
+        var $fileInput = $page.find('#startup-inquiry-file');
+        var $fileName = $page.find('#startup-inquiry-file-name');
+        var $fileBtn = $page.find('.startup-inquiry-file-btn');
+
+        if (!$fileInput.length || !$fileName.length || !$fileBtn.length) {
+            return;
+        }
+
+        $fileBtn.on('click', function () {
+            $fileInput.trigger('click');
+        });
+
+        $fileInput.on('change', function () {
+            var file = this.files && this.files[0];
+            $fileName.text(file ? file.name : '');
+        });
+    }
+
+    var INQUIRY_MSG_REQUIRED = '필수 항목입니다.';
+    var INQUIRY_MSG_INVALID = '잘못된 형식입니다.';
+    var INQUIRY_MSG_SUCCESS = '제출이 완료되었습니다.';
+
+    function trimInquiryValue(value) {
+        return (value || '').trim();
+    }
+
+    function isValidInquiryEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+    }
+
+    function isValidInquiryTel(value) {
+        if (!/^[\d-]+$/.test(value)) {
+            return false;
+        }
+
+        var digits = value.replace(/\D/g, '');
+
+        if (digits.length < 9 || digits.length > 11) {
+            return false;
+        }
+
+        if (/^01/.test(digits)) {
+            return digits.length === 10 || digits.length === 11;
+        }
+
+        return true;
+    }
+
+    function validateInquiryField(fieldKey, value) {
+        var trimmed = trimInquiryValue(value);
+
+        if (!trimmed) {
+            return { valid: false, message: INQUIRY_MSG_REQUIRED };
+        }
+
+        if (fieldKey === 'tel' && !isValidInquiryTel(trimmed)) {
+            return { valid: false, message: INQUIRY_MSG_INVALID };
+        }
+
+        if (fieldKey === 'email' && !isValidInquiryEmail(trimmed)) {
+            return { valid: false, message: INQUIRY_MSG_INVALID };
+        }
+
+        return { valid: true, message: '' };
+    }
+
+    function setInquiryFieldError($error, message) {
+        if (!$error.length) {
+            return;
+        }
+
+        $error.text(message || '');
+    }
+
+    function initStartupInquirySubmit() {
+        var $page = $('.startup-page');
+
+        if (!$page.length) {
+            return;
+        }
+
+        var $form = $page.find('.startup-inquiry-form');
+
+        if (!$form.length) {
+            return;
+        }
+
+        var fields = [
+            { key: 'name', $input: $form.find('#startup-inquiry-name'), $error: $form.find('#startup-inquiry-name-error') },
+            { key: 'tel', $input: $form.find('#startup-inquiry-tel'), $error: $form.find('#startup-inquiry-tel-error') },
+            { key: 'email', $input: $form.find('#startup-inquiry-email'), $error: $form.find('#startup-inquiry-email-error') },
+            { key: 'message', $input: $form.find('#startup-inquiry-message'), $error: $form.find('#startup-inquiry-message-error') },
+            { key: 'privacy', $input: $form.find('#startup-inquiry-privacy'), $error: $form.find('#startup-inquiry-privacy-error'), isCheckbox: true }
+        ];
+
+        function validateOne(field) {
+            if (field.isCheckbox) {
+                var isChecked = field.$input.is(':checked');
+                setInquiryFieldError(field.$error, isChecked ? '' : INQUIRY_MSG_REQUIRED);
+                return isChecked;
+            }
+
+            var result = validateInquiryField(field.key, field.$input.val());
+            setInquiryFieldError(field.$error, result.valid ? '' : result.message);
+            return result.valid;
+        }
+
+        function validateAll() {
+            var isValid = true;
+
+            fields.forEach(function (field) {
+                if (!validateOne(field)) {
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
+        fields.forEach(function (field) {
+            var events = field.isCheckbox ? 'change' : 'input blur';
+
+            field.$input.on(events, function () {
+                if (field.$error.text()) {
+                    validateOne(field);
+                }
+            });
+        });
+
+        $form.on('submit', function (event) {
+            event.preventDefault();
+
+            if (!validateAll()) {
+                return;
+            }
+
+            window.alert(INQUIRY_MSG_SUCCESS);
+            $form[0].reset();
+            fields.forEach(function (field) {
+                setInquiryFieldError(field.$error, '');
+            });
+            $page.find('#startup-inquiry-file-name').text('');
+        });
     }
 
     $(function () {
@@ -137,5 +293,7 @@
         });
 
         initStartupFadeUp();
+        initStartupInquiryFile();
+        initStartupInquirySubmit();
     });
 })(jQuery);
