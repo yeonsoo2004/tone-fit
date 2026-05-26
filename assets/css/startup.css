@@ -2,13 +2,12 @@
    Startup Page (startup.html)
 ========================================= */
 
-/* 네비게이션(112px) — common 유틸 없음 */
-.startup-page {
-    padding-top: 112px;
+/* 고정 헤더 높이( style.css: 1rem + 3.25rem + 1rem )만큼 본문 상단 여백 */
+.startup-page .startup-main {
+    padding-top: 5.25rem;
 }
 
 .startup-page .header {
-    min-height: 112px;
     background-color: #FFFFFF;
     color: #4C4948;
 }

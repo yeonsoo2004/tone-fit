@@ -2,13 +2,12 @@
    Space Concept Page (space.html)
 ========================================= */
 
-/* 네비게이션(112px) — common 유틸 없음 */
-.space-page {
-    padding-top: 112px;
+/* 고정 헤더 높이( style.css: 1rem + 3.25rem + 1rem )만큼 본문 상단 여백 */
+.space-page .space-main {
+    padding-top: 5.25rem;
 }
 
 .space-page .header {
-    min-height: 112px;
     background-color: #FFFFFF;
     color: #4C4948;
 }
@@ -17,6 +16,11 @@
 .space-page .header.is-mega-open {
     background-color: #FFFFFF;
     color: #4C4948;
+}
+
+.space-page .header .logo a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .space-concept-head {
