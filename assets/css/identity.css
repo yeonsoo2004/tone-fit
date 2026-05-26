@@ -39,23 +39,8 @@
     margin: 0;
 }
 
-@media screen and (max-width: 1024px) {
-    .identity-kv-section .kv-title {
-        font-size: 2.625rem;
-    }
-
-    .identity-kv-section .kv-desc {
-        font-size: 1rem;
-    }
-}
-
 @media screen and (max-width: 768px) {
-    .identity-kv-section .kv-title {
-        font-size: 2rem;
-    }
-
     .identity-kv-section .kv-desc {
-        font-size: 0.9375rem;
         max-width: 100%;
     }
 
@@ -142,7 +127,6 @@
 @media screen and (max-width: 1024px) {
     .identity-vision-section .vision-title {
         margin-bottom: 2.5rem;
-        font-size: 2.625rem;
     }
 
     .identity-vision-section .vision-content-wrap {
@@ -154,24 +138,14 @@
         height: 16rem;
     }
 
-    .identity-vision-section .circle-text h3 {
-        font-size: 1.75rem;
-    }
-
-    .identity-vision-section .circle-text p {
-        font-size: 1rem;
-    }
-
     .identity-vision-section .vision-bottom-text {
         margin-top: 3rem;
-        font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 768px) {
     .identity-vision-section .vision-title {
         margin-bottom: 2rem;
-        font-size: 2rem;
     }
 
     .identity-vision-section .vision-content-wrap {
@@ -195,7 +169,6 @@
 
     .identity-vision-section .vision-bottom-text {
         margin-top: 2.5rem;
-        font-size: 0.9375rem;
     }
 }
 
@@ -322,7 +295,6 @@
 
 .identity-pet-section .text-box p {
     margin: 0;
-    font-size: 1rem;
 }
 
 .identity-feature-section .feature-video {
@@ -349,18 +321,7 @@
     .identity-market-section .img-col,
     .identity-pet-section .text-col,
     .identity-pet-section .img-col {
-        grid-column: span 12;
-    }
-
-    .identity-feature-section .feature-title,
-    .identity-market-section .market-title,
-    .identity-pet-section .pet-title {
-        font-size: 2.625rem;
-    }
-
-    .identity-feature-section .text-col > p,
-    .identity-market-section .text-col > p {
-        font-size: 1rem;
+        grid-column: span 4;
     }
 
     .identity-feature-section .img-col,
@@ -375,15 +336,13 @@
 }
 
 @media screen and (max-width: 768px) {
-    .identity-feature-section .feature-title,
-    .identity-market-section .market-title,
-    .identity-pet-section .pet-title {
-        font-size: 2rem;
-    }
-
-    .identity-feature-section .text-col > p,
-    .identity-market-section .text-col > p {
-        font-size: 0.9375rem;
+    .identity-feature-section .text-col,
+    .identity-feature-section .img-col,
+    .identity-market-section .text-col,
+    .identity-market-section .img-col,
+    .identity-pet-section .text-col,
+    .identity-pet-section .img-col {
+        grid-column: span 6;
     }
 
     .identity-pet-section .icon-box {
@@ -395,14 +354,6 @@
     .identity-pet-section .icon-box img {
         width: 1.75rem;
         height: 1.75rem;
-    }
-
-    .identity-pet-section .text-box h3 {
-        font-size: 1.125rem;
-    }
-
-    .identity-pet-section .text-box p {
-        font-size: 0.9375rem;
     }
 
     .identity-pet-section .img-col {
@@ -498,14 +449,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .identity-why-section .why-title {
-        font-size: 2.625rem;
-    }
-
-    .identity-why-section .why-desc {
-        font-size: 1rem;
-    }
-
     .identity-why-section .comparison-wrap {
         gap: 2rem;
     }
@@ -516,12 +459,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .identity-why-section .why-title {
-        font-size: 2rem;
-    }
-
     .identity-why-section .why-desc {
-        font-size: 0.9375rem;
         margin-bottom: 3.75rem;
     }
 
@@ -641,20 +579,8 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .identity-analysis-section .analysis-title {
-        font-size: 2.625rem;
-    }
-
-    .identity-analysis-section .analysis-desc {
-        font-size: 1rem;
-    }
-
-    .identity-analysis-section .analysis-steps-wrap {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
     .identity-analysis-section .step-item {
-        grid-column: span 6;
+        grid-column: span 4;
     }
 
     .identity-analysis-section .step-card {
@@ -674,21 +600,12 @@
 }
 
 @media screen and (max-width: 768px) {
-    .identity-analysis-section .analysis-title {
-        font-size: 2rem;
-    }
-
     .identity-analysis-section .analysis-desc {
-        font-size: 0.9375rem;
         margin-bottom: 2.5rem;
     }
 
-    .identity-analysis-section .analysis-steps-wrap {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
     .identity-analysis-section .step-item {
-        grid-column: span 12;
+        grid-column: span 6;
     }
 
     .identity-analysis-section .step-card {
@@ -771,7 +688,7 @@
 @media screen and (max-width: 1024px) {
     .identity-experience-section .img-col,
     .identity-experience-section .text-col {
-        grid-column: span 12;
+        grid-column: span 4;
     }
 
     .identity-experience-section .img-wrap img {
@@ -784,26 +701,16 @@
         margin-top: 2.5rem;
     }
 
-    .identity-experience-section .exp-title {
-        font-size: 2.25rem;
-    }
-
-    .identity-experience-section .exp-desc {
-        font-size: 1.125rem;
-    }
 }
 
 @media screen and (max-width: 768px) {
+    .identity-experience-section .img-col,
+    .identity-experience-section .text-col {
+        grid-column: span 6;
+    }
+
     .identity-experience-section .text-col {
         margin-top: 2rem;
-    }
-
-    .identity-experience-section .exp-title {
-        font-size: 1.75rem;
-    }
-
-    .identity-experience-section .exp-desc {
-        font-size: 1rem;
     }
 
     .identity-experience-section .notice-text {
@@ -858,20 +765,8 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .identity-counting-section .counting-head {
-        font-size: 2.625rem;
-    }
-
-    .identity-counting-section .counting-sub {
-        font-size: 1rem;
-    }
-
-    .identity-counting-section .counting-wrap {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
     .identity-counting-section .count-item {
-        grid-column: span 6;
+        grid-column: span 4;
         border-right: none;
         border-bottom: none;
     }
@@ -884,27 +779,15 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     }
 
-    .identity-counting-section .count-title {
-        font-size: 2.625rem;
-    }
-
-    .identity-counting-section .count-desc {
-        font-size: 1rem;
-    }
 }
 
 @media screen and (max-width: 768px) {
-    .identity-counting-section .counting-head {
-        font-size: 2rem;
-    }
-
     .identity-counting-section .counting-sub {
-        font-size: 0.9375rem;
         margin-bottom: 3.75rem;
     }
 
     .identity-counting-section .count-item {
-        grid-column: span 12;
+        grid-column: span 6;
         padding: 1.25rem 0;
         border-right: none;
         border-bottom: none;
@@ -918,13 +801,6 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     }
 
-    .identity-counting-section .count-title {
-        font-size: 2rem;
-    }
-
-    .identity-counting-section .count-desc {
-        font-size: 0.9375rem;
-    }
 }
 
 
@@ -1059,23 +935,15 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .identity-season-section .grid-wrap {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
     .identity-season-section .text-col,
     .identity-season-section .slider-col {
-        grid-column: span 12;
+        grid-column: span 8;
         height: auto;
         min-height: 0;
     }
 
     .identity-season-section .text-col {
         gap: 2rem;
-    }
-
-    .identity-season-section .season-title {
-        font-size: 2.625rem;
     }
 
     .identity-season-section .slider-col {
@@ -1103,8 +971,9 @@
 }
 
 @media screen and (max-width: 768px) {
-    .identity-season-section .season-title {
-        font-size: 2rem;
+    .identity-season-section .text-col,
+    .identity-season-section .slider-col {
+        grid-column: span 6;
     }
 
     .identity-season-section .slider-col {
@@ -1225,13 +1094,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .identity-space-section .grid-wrap {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
     .identity-space-section .slider-col,
     .identity-space-section .text-col {
-        grid-column: span 12;
+        grid-column: span 8;
         margin-left: 0;
         width: 100%;
         justify-self: stretch;
@@ -1245,10 +1110,6 @@
     .identity-space-section .text-col {
         order: 2;
         margin-top: 2.5rem;
-    }
-
-    .identity-space-section .space-title {
-        font-size: 2.625rem;
     }
 
     .identity-space-section .space-swiper,
@@ -1267,8 +1128,9 @@
 }
 
 @media screen and (max-width: 768px) {
-    .identity-space-section .space-title {
-        font-size: 2rem;
+    .identity-space-section .slider-col,
+    .identity-space-section .text-col {
+        grid-column: span 6;
     }
 
     .identity-space-section .text-col {

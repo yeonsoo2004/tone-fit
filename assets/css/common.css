@@ -1,37 +1,17 @@
 @charset "utf-8";
 
 /* =========================================
-   Base Styles (기본 설정)
+   Base Styles (기본 레이아웃 설정)
 ========================================= */
 body {
-    font-family: 'Pretendard', sans-serif;
-    line-height: 1.5;
-    letter-spacing: 0;
-    color: #4C4948; /* main-font 컬러 기본 적용 */
-    background-color: #FFFFFF; 
+   line-height: 1.5;
+   color: #4C4948; /* 기본 텍스트 컬러 */
+   background-color: #FFFFFF;
 }
-
-/* =========================================
-   Typography Classes (16px = 1rem 기준)
-========================================= */
-
-/* Headings */
-.ft-54-b { font-size: 3.375rem; font-weight: 700; } /* 54px, Bold */
-.ft-48-b { font-size: 3rem; font-weight: 700; }     /* 48px, Bold */
-.ft-32-b { font-size: 2rem; font-weight: 600; }     /* 32px, SemiBold */
-.ft-28-r { font-size: 1.75rem; font-weight: 400; }  /* 28px, Regular */
-.title{font-family: 'jalnan gothic ttf', sans-serif; font-weight: 400;}
-
-/* Body & Caption */
-.ft-20-r { font-size: 1.25rem; font-weight: 400; }  /* 20px, Regular */
-.ft-20-sb { font-size: 1.25rem; font-weight: 600; } /* 20px, SemiBold (강조용) */
-.ft-18-r { font-size: 1.125rem; font-weight: 400; } /* 18px, Regular */
-
 
 /* =========================================
    Color Classes (텍스트 & 배경 유틸리티)
 ========================================= */
-
 /* 1. Text Colors (폰트 컬러용) */
 .color-main { color: #4C4948; }
 .color-point { color: #1E2022; }
@@ -47,107 +27,92 @@ body {
 /* =========================================
    Layout & Flex Classes (레이아웃 & 정렬)
 ========================================= */
+.d-flex { display: flex; }
+.flex-col { flex-direction: column; }
 
-/* 기본 Flex 설정 */
-.d-flex { 
-    display: flex; 
-}
-.flex-col { 
-    flex-direction: column; /* 세로 정렬로 변경할 때 사용 */
-}
+/* 주축 정렬 (Justify Content) */
+.jc-start { justify-content: flex-start; }
+.jc-center { justify-content: center; }
+.jc-end { justify-content: flex-end; }
+.jc-between { justify-content: space-between; }
 
-/* 가로 정렬 (주축 정렬 - 가로 방향일 때) */
-.jc-start { justify-content: flex-start; }  /* 왼쪽 정렬 */
-.jc-center { justify-content: center; }     /* 가운데 정렬 */
-.jc-end { justify-content: flex-end; }      /* 오른쪽 정렬 */
-.jc-between { justify-content: space-between; } /* 양끝 배치 */
-
-/* 세로 정렬 (교차축 정렬 - 가로 방향일 때 위아래 위치) */
-.ai-start { align-items: flex-start; }      /* 위로 붙임 */
-.ai-center { align-items: center; }         /* 세로 중앙 정렬 */
-.ai-end { align-items: flex-end; }          /* 아래로 붙임 */
-
+/* 교차축 정렬 (Align Items) */
+.ai-start { align-items: flex-start; }
+.ai-center { align-items: center; }
+.ai-end { align-items: flex-end; }
 
 /* =========================================
-   Gap Classes (flex/grid 간격, 16px = 1rem 기준)
+   Gap Classes (Flex/Grid 간격 유틸리티)
 ========================================= */
-.gap-100 { gap: 6.25rem; }  /* 100px */
-.gap-80 { gap: 5rem; }      /* 80px */
+.gap-100 { gap: 6.25rem; } /* 100px */
+.gap-80 { gap: 5rem; }     /* 80px */
 .gap-50 { gap: 3.125rem; }  /* 50px */
 .gap-20 { gap: 1.25rem; }   /* 20px */
 
 /* =========================================
-   Margin & Text Align (요소 여백 유틸리티)
+   Margin & Text Align (여백 및 정렬 유틸리티)
 ========================================= */
-.mt-10 { margin-top: 0.625rem; }   /* 10px */
-.mb-10 { margin-bottom: 0.625rem; } /* 10px */
-.mb-20 { margin-bottom: 1.25rem; } /* 20px */
-.mb-40 { margin-bottom: 2.5rem; }  /* 40px */
-.mb-80 { margin-bottom: 5rem; }    /* 80px */
+.mt-10 { margin-top: 0.625rem; }
+.mb-10 { margin-bottom: 0.625rem; }
+.mb-20 { margin-bottom: 1.25rem; }
+.mb-40 { margin-bottom: 2.5rem; }
+.mb-80 { margin-bottom: 5rem; }
 .text-center { text-align: center; }
 
 /* =========================================
-   Spacing Classes (섹션 여백 유틸리티)
+   Spacing Classes (섹션 내부 여백)
 ========================================= */
-
-/* 섹션 상하 패딩 (130px) */
 .py-130 {
-    padding-top: 8.125rem;
-    padding-bottom: 8.125rem;
+   padding-top: 8.125rem;
+   padding-bottom: 8.125rem;
 }
-
 
 /* =========================================
    Layout & Grid System (PC 기준 1440px)
 ========================================= */
-/* 공통 이너 컨테이너 (모든 섹션의 콘텐츠를 정중앙 1440px로 잡아줌) */
 .inner {
    max-width: 1440px;
    width: 100%;
    margin: 0 auto;
-   /* 브라우저 창이 1440px보다 작아질 때 내용이 벽에 붙지 않도록 최소한의 좌우 여백 추가 */
 }
 
-/* 12단 그리드 시스템 공통 클래스 */
 .grid-wrap {
    display: grid;
-   grid-template-columns: repeat(12, 1fr); /* 12개의 단을 동일한 비율(1fr)로 분배 */
-   gap: 24px; /* 피그마에 설정된 Gutter 값 적용 */
+   grid-template-columns: repeat(12, 1fr); /* 12단 그리드 */
+   gap: 24px;
 }
 
-/* 💡 반응형(Tablet, Mobile)을 위한 미디어 쿼리 세팅 (필요 시 수치 조정)
- 태블릿(보통 1024px 이하)에서는 8단이나 6단으로,
- 모바일(보통 768px 이하)에서는 4단이나 1단으로 떨어지도록 설정합니다.
-*/
+/* =========================================
+   Responsive Layout System (반응형 레이아웃)
+========================================= */
+
+/* 태블릿 (1024px 이하) */
 @media screen and (max-width: 1024px) {
+   .inner {
+      width: 100%;
+      padding: 0 64px; /* 피그마 Margin: 64 반영 */
+   }
    .grid-wrap {
-       grid-template-columns: repeat(8, 1fr); /* 태블릿은 8단으로 변경 */
-       gap: 20px; /* 간격도 살짝 줄여줌 */
+      grid-template-columns: repeat(8, 1fr); /* 8단 그리드 변환 */
+      gap: 24px; /* 피그마 Gutter: 24 반영 */
    }
-
    .py-130 {
-       padding-top: 5rem;
-       padding-bottom: 5rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
    }
-
-   .ft-32-b { font-size: 1.75rem; }  /* 28px */
-   .ft-18-r { font-size: 1rem; }     /* 16px */
 }
 
+/* 모바일 (768px 이하) */
 @media screen and (max-width: 768px) {
-   .grid-wrap {
-       grid-template-columns: repeat(4, 1fr); /* 모바일은 4단으로 변경 */
-       gap: 16px;
-   }
    .inner {
-       padding: 0 16px; /* 모바일 좌우 여백 */
+      padding: 0 16px; /* 모바일 Margin: 16 반영 */
    }
-
+   .grid-wrap {
+      grid-template-columns: repeat(6, 1fr); /* 모바일 6단 그리드 변환 */
+      gap: 16px; /* 모바일 Gutter: 16 반영 */
+   }
    .py-130 {
-       padding-top: 3.75rem;
-       padding-bottom: 3.75rem;
+      padding-top: 3.75rem;
+      padding-bottom: 3.75rem;
    }
-
-   .ft-32-b { font-size: 1.5rem; }   /* 24px */
-   .ft-18-r { font-size: 0.9375rem; } /* 15px */
 }
