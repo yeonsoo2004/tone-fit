@@ -14,7 +14,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('../images/kiosk-kv.png');
+    background-image: url('../images/kiosk-kv.webp');
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-    max-width: 36rem;
+    max-width: 42rem;
     text-align: left;
 }
 
@@ -563,7 +563,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-image: url('../images/kiosk-background.png');
+    background-image: url('../images/kiosk-background.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
