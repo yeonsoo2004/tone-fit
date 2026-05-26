@@ -6,14 +6,6 @@
 
 
 
-.contact-page {
-
-    padding-top: 112px;
-
-}
-
-
-
 /* =========================================
 
    KV Section — 758px
@@ -352,14 +344,6 @@
 
 @media screen and (max-width: 768px) {
 
-    .contact-page {
-
-        padding-top: 5rem;
-
-    }
-
-
-
     .contact-kv-inner {
 
         height: 24rem;
@@ -494,6 +478,8 @@
 
     border-bottom: 1px solid transparent;
 
+    transition: border-color 0.35s ease;
+
 }
 
 
@@ -510,7 +496,13 @@
 
 .contact-faq-trigger {
 
-    display: block;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1.5rem;
 
     width: 100%;
 
@@ -554,17 +546,79 @@
 
 
 
-.contact-faq-panel {
+.contact-faq-question {
 
-    overflow: hidden;
+    flex: 1;
+
+    min-width: 0;
 
 }
 
 
 
-.contact-faq-panel[hidden] {
+.contact-faq-icon {
 
-    display: none;
+    flex-shrink: 0;
+
+    width: 25px;
+
+    height: 15px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+
+}
+
+
+
+.contact-faq-list:not(:has(.is-open)) .contact-faq-item:first-child .contact-faq-icon {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+
+.contact-faq-item.is-open + .contact-faq-item .contact-faq-icon {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+
+.contact-faq-panel {
+
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    transition: grid-template-rows 0.35s ease;
+
+}
+
+
+
+.contact-faq-item.is-open .contact-faq-panel {
+
+    grid-template-rows: 1fr;
+
+}
+
+
+
+.contact-faq-panel-inner {
+
+    overflow: hidden;
+
+    min-height: 0;
 
 }
 
@@ -676,6 +730,20 @@
 
 
 
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-faq-item,
+    .contact-faq-panel,
+    .contact-faq-icon {
+
+        transition: none;
+
+    }
+
+}
+
+
+
 /* =========================================
 
    Inquiry Section — 제휴 문의 폼
@@ -686,7 +754,7 @@
 
 .contact-inquiry-section {
 
-    background-color: #FAF0F0;
+    background-color: #FFFFFF;
 
 }
 
@@ -850,11 +918,11 @@
 
     color: #4C4948;
 
-    background-color: rgba(255, 255, 255, 0.55);
+    background-color: #F6F6F6;
 
     border: none;
 
-    border-radius: 0;
+    border-radius: 5px;
 
     box-sizing: border-box;
 
@@ -904,7 +972,7 @@
 
 .contact-inquiry-file-row {
 
-    gap: 0;
+    gap: 20px;
 
 }
 
@@ -939,6 +1007,8 @@
     background-color: #4C4948;
 
     border: none;
+
+    border-radius: 20px;
 
     cursor: pointer;
 
