@@ -356,8 +356,14 @@
     border-radius: 50%;
     background-color: #fff;
     box-sizing: border-box;
+    transform-origin: center center;
+    will-change: transform;
 }
 
+.franchise-benefit-circle .franchise-benefit-plus,
+.franchise-benefit-circle .franchise-benefit-line {
+    opacity: 0;
+}
 
 .franchise-benefit-plus {
     font-size: 1.25rem;
@@ -459,14 +465,59 @@
    4. AI TONE FINDER SECTION
 ========================================= */
 .ai-tone-finder {
-    background-image: url(/assets/images/kiosk-buble.png);
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-tone-finder-visual {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ai-tone-finder-circle {
+    position: absolute;
+    top: 50%;
+    left: clamp(12rem, 48vw, 32rem);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.ai-tone-finder-circle-shape {
+    display: block;
+    width: min(30.875rem, 52vw);
+    aspect-ratio: 1;
+    background-image: url(/assets/images/circle.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
+    opacity: 0;
+}
+
+.ai-tone-finder-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: url(/assets/images/kiosk.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    opacity: 0;
+}
+
+.ai-tone-finder .inner {
+    position: relative;
+    z-index: 1;
 }
 
 .ai-tone-finder-header {
     text-align: end;
     margin-top: 5.625rem;
+}
+
+.ai-tone-finder-header:not(.is-header-visible) > * {
+    opacity: 0;
 }
 
 .ai-tone-finder-content {
@@ -516,6 +567,10 @@
    6. AI PERSONAL BG MATCHING SECTION
 ========================================= */
 
+.ai-personal-bg-content:not(.is-content-visible) > * {
+    opacity: 0;
+}
+
 .ai-personal-bg-content {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -535,6 +590,10 @@
 
 .ai-pet-section {
     margin-top: 8.125rem;
+}
+
+.ai-pet-content:not(.is-pet-content-visible) > * {
+    opacity: 0;
 }
 
 .ai-pet-content {
@@ -664,27 +723,22 @@ p {
 .review-content {
     padding: 5rem 0;
 }
-<<<<<<< Updated upstream
 
 
-.review-marquee {
+
+.review-swiper {
     width: 100%;
     overflow: hidden;
-    position: relative;
     mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
     -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
 }
 
-.review-track {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    width: max-content;
-    will-change: transform;
-    animation: review-marquee-left 28s linear infinite;
+.review-swiper .swiper-slide {
+    width: auto;
 }
 
 .review-feed {
+    display: block;
     width: auto;
     height: auto;
     max-width: none;
@@ -709,15 +763,11 @@ p {
 }
 
 .review-notice {
-=======
-.review-notice{
->>>>>>> Stashed changes
     text-align: center;
 }
 
 
 /* =========================================
-<<<<<<< Updated upstream
    9.   VIRAL SECTION
 ========================================= */
 .viral-content{
@@ -821,9 +871,6 @@ p {
 
 /* =========================================
    10. FOOTER
-=======
-   9. FOOTER
->>>>>>> Stashed changes
 ========================================= */
 
 .footer {

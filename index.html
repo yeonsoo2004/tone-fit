@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/common.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/component.css">
+    <link rel="stylesheet" href="./assets/css/libs/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -68,7 +69,7 @@
                 </div>
             </div>
             <div class="header-right">
-                <span class="gnb-btn ft-20-r">창업문의</span>
+                <span class="gnb-btn ft-20-r"><a href="subpage/contact.html">창업문의</a></span>
             </div>
         </div>
     </header>
@@ -111,12 +112,12 @@
                 </text> -->
                 </svg>
 
-                <div class="identity-texts ft-20-r">
-                    <h3 class="ft-32-b">TONE [색조, 분위기]</h3>
-                    <p class="color-main">모든 사람은 각자의 고유한 피부 톤과 분위기를 가지고 있습니다.<br>
+                <div class="identity-texts ft-20-r" data-fade-stagger>
+                    <h3 class="ft-32-b fade-up">TONE [색조, 분위기]</h3>
+                    <p class="color-main fade-up">모든 사람은 각자의 고유한 피부 톤과 분위기를 가지고 있습니다.<br>
                         톤핏은 유행을 좇는 대신, 누구나 가지고 있는 본연의 아름다운 '색'에 집중합니다.</p>
-                    <h3 class="ft-32-b">FIT [꼭 맞다, 조화롭다]</h3>
-                    <p class="color-main">AI 기술을 통해 당신의 톤에 가장 완벽하게 들어맞는 조명과 배경을 찾아냅니다. <br>
+                    <h3 class="ft-32-b fade-up">FIT [꼭 맞다, 조화롭다]</h3>
+                    <p class="color-main fade-up">AI 기술을 통해 당신의 톤에 가장 완벽하게 들어맞는 조명과 배경을 찾아냅니다. <br>
                         어떤 프레임을 선택하든 당신이 가장 돋보일 수 있도록, 오직 당신만을 위한 <br>
                         맞춤형 뷰티 테크 스튜디오를 경험해 보세요</p>
                 </div>
@@ -172,6 +173,12 @@
 
     <!-- ===== AI TONE FINDER SECTION ===== -->
     <section class="ai-tone-finder py-130 bg-light-gray">
+        <div class="ai-tone-finder-visual" aria-hidden="true">
+            <div class="ai-tone-finder-circle">
+                <span class="ai-tone-finder-circle-shape"></span>
+            </div>
+            <div class="ai-tone-finder-bg"></div>
+        </div>
         <div class="inner d-flex flex-col gap-100">
             <div class="ai-tone-finder-header d-flex flex-col gap-20">
                 <h3 class="ft-28-r title">무인 스튜디오의 새로운 패러다임</h3>
@@ -186,7 +193,7 @@
                         <p>가변형 스마트 조명 시스템</p>
                     </div>
                     <div class="ai-tone-finder-sec-tag d-flex flex-col">
-                        <p class="ai-tone-finder-sec ft-32-b color-main"><strong class="color-point">30</strong>초</p>
+                        <p class="ai-tone-finder-sec ft-32-b color-main"><strong class="color-point"><span class="counter-num" data-target="30">0</span></strong>초</p>
                         <p class="ai-tone-finder-tag ft-18-r color-main">#AI_퍼스널컬러 #맞춤형_스마트조명 #무보정_인생샷</p>
                     </div>
                 </div>
@@ -234,19 +241,19 @@
             <div class="frames d-flex jc-between">
                 <div class="frame">
                     <p>TONE:FIT 프렌즈 피크닉 콜라보 프레임 출시!</p>
-                    <button class="topage-btn">VIEW FRAME →</button>
+                    <a class="topage-btn" href="/subpage/frame.html">VIEW FRAME →</a>
                 </div>
                 <div class="frame">
                     <p>TONE:FIT 프렌즈 피크닉 콜라보 프레임 출시!</p>
-                    <button class="topage-btn">VIEW FRAME →</button>
+                    <a class="topage-btn" href="/subpage/frame.html">VIEW FRAME →</a>
                 </div>
                 <div class="frame">
                     <p>TONE:FIT 프렌즈 피크닉 콜라보 프레임 출시!</p>
-                    <button class="topage-btn">VIEW FRAME →</button>
+                    <a class="topage-btn" href="/subpage/frame.html">VIEW FRAME →</a>
                 </div>
                 <div class="frame">
                     <p>TONE:FIT 프렌즈 피크닉 콜라보 프레임 출시!</p>
-                    <button class="topage-btn">VIEW FRAME →</button>
+                    <a class="topage-btn" href="/subpage/frame.html">VIEW FRAME →</a>
                 </div>
             </div>
         </div>
@@ -257,24 +264,30 @@
             <h3 class="title color-point ft-48-b">실제 고객이 직접 공유한 반응</h3>
             <p class="color-point ft-20-r">촬영을 마친 고객이 자발적으로 SNS에 업로드한 콘텐츠입니다. 실제 사용자 반응은 어떤 광고보다 강력한 신뢰를 만듭니다.</p>
         </div>
-        <div class="review-content" aria-label="고객 후기 이미지 흐름">
-            <div class="review-marquee">
-                <div class="review-track">
-                    <img src="assets/images/insta-review1.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review2.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review3.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review4.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review5.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review6.jpg" alt="" class="review-feed">
-                    <img src="assets/images/insta-review7.jpg" alt="" class="review-feed">
-
-                    <img src="assets/images/insta-review1.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review2.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review3.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review4.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review5.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review6.jpg" alt="" class="review-feed" aria-hidden="true">
-                    <img src="assets/images/insta-review7.jpg" alt="" class="review-feed" aria-hidden="true">
+        <div class="review-content" aria-label="고객 후기 이미지 슬라이드">
+            <div class="swiper review-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review1.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review2.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review3.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review4.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review5.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review6.jpg" alt="" class="review-feed">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/insta-review7.jpg" alt="" class="review-feed">
+                    </div>
                 </div>
             </div>
         </div>
@@ -371,6 +384,7 @@
             </div>
     </footer>
     <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/libs/swiper-bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 
