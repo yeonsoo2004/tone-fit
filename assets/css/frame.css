@@ -2,15 +2,14 @@
 
 /* =========================================
    Frame Page — 서브페이지 헤더 오프셋
-   (서브페이지: 최초부터 white background 유지)
+   (헤더 높이 = 1rem + 3.25rem + 1rem = 5.25rem)
 ========================================= */
 
-.frame-page {
-    padding-top: 112px;
+.frame-page .frame-main {
+    padding-top: 5.25rem;
 }
 
 .frame-page .header {
-    min-height: 112px;
     background-color: #FFFFFF;
     color: #4C4948;
 }
@@ -20,6 +19,7 @@
     background-color: #FFFFFF;
     color: #4C4948;
 }
+
 
 
 /* =========================================
