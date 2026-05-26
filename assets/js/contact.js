@@ -1,6 +1,6 @@
 /**
  * Contact Page — FAQ accordion
- * 한 번에 하나만 열림 · 화면(섹션 밖) 클릭 시 전부 닫힘
+ * CSS grid 전환 · 한 번에 하나만 열림 · 같은 항목 재클릭 시 닫힘
  */
 (function () {
     'use strict';
@@ -12,34 +12,34 @@
 
     var items = faqSection.querySelectorAll('.contact-faq-item');
     var triggers = faqSection.querySelectorAll('.contact-faq-trigger');
-    var panels = faqSection.querySelectorAll('.contact-faq-panel');
+
+    function setItemState(item, isOpen) {
+        var trigger = item.querySelector('.contact-faq-trigger');
+        var panel = item.querySelector('.contact-faq-panel');
+
+        item.classList.toggle('is-open', isOpen);
+        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    }
 
     function closeAll() {
-        var i;
-        for (i = 0; i < items.length; i++) {
-            triggers[i].setAttribute('aria-expanded', 'false');
-            panels[i].hidden = true;
-            items[i].classList.remove('is-open');
-        }
+        items.forEach(function (item) {
+            setItemState(item, false);
+        });
     }
 
-    function openItem(index) {
-        closeAll();
-        triggers[index].setAttribute('aria-expanded', 'true');
-        panels[index].hidden = false;
-        items[index].classList.add('is-open');
-    }
-
-    triggers.forEach(function (trigger, index) {
+    triggers.forEach(function (trigger) {
         trigger.addEventListener('click', function (event) {
             event.stopPropagation();
 
-            if (items[index].classList.contains('is-open')) {
-                closeAll();
-                return;
-            }
+            var item = trigger.closest('.contact-faq-item');
+            var isOpen = item.classList.contains('is-open');
 
-            openItem(index);
+            closeAll();
+
+            if (!isOpen) {
+                setItemState(item, true);
+            }
         });
     });
 

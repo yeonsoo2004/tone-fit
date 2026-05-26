@@ -1,6 +1,9 @@
 @charset "utf-8";
 
-/* 1. 프리텐다드 폰트 불러오기 (CDN) */
+/* =========================================
+   Font Face (폰트 불러오기)
+========================================= */
+/* 1. 프리텐다드 폰트 불러오기 */
 @import url("../font/pretendard.min.css");
 
 /* 2. 잘난고딕 폰트 */
@@ -10,4 +13,81 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
+
+/* =========================================
+   Global Typography Base (기본 폰트 선언)
+========================================= */
+body {
+   font-family: 'Pretendard', sans-serif;
+   letter-spacing: 0;
+}
+
+.title {
+   font-family: 'jalnan gothic ttf', sans-serif;
+   font-weight: 400;
+}
+
+/* =========================================
+   Typography Classes - PC (기본 스케일)
+========================================= */
+/* 메인 클래스 */
+.ft-54-b  { font-size: 3.375rem; font-weight: 400; } /* 54px */
+.ft-48-b  { font-size: 3rem;     font-weight: 600; } /* 48px */
+.ft-32-b  { font-size: 2rem;     font-weight: 600; } /* 32px */
+.ft-28-r  { font-size: 1.75rem;  font-weight: 400; } /* 28px */
+.ft-20-r  { font-size: 1.25rem;  font-weight: 400; } /* 20px */
+.ft-20-sb { font-size: 1.25rem;  font-weight: 600; } /* 20px */
+.ft-18-r  { font-size: 1.125rem; font-weight: 400; } /* 18px */
+
+/* 서브페이지용 직관적 네이밍 동기화 (Kiosk 페이지 등) */
+.font-48  { font-size: 3rem;     font-weight: 700; } /* 48px */
+.font-32  { font-size: 2rem;     font-weight: 700; } /* 32px */
+.font-20  { font-size: 1.25rem;  font-weight: 400; } /* 20px */
+
+
+/* =========================================
+   Responsive Typography System (폰트 반응형)
+========================================= */
+
+/* 1. 태블릿 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+   .ft-54-b  { font-size: 2.625rem; } /* 42px */
+   .ft-48-b, 
+   .font-48  { font-size: 2.625rem; } /* 42px */
+   .ft-32-b, 
+   .font-32  { font-size: 1.75rem; }  /* 28px */
+   .ft-28-r  { font-size: 1.5rem; }   /* 24px */
+   .ft-20-r, 
+   .ft-20-sb,
+   .font-20  { font-size: 1.125rem; } /* 18px */
+   .ft-18-r  { font-size: 1rem; }      /* 16px */
+}
+
+/* 2. 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+   .ft-54-b  { font-size: 2rem; }   /* 32px */
+   .ft-48-b, 
+   .font-48  { font-size: 2rem; }   /* 32px */
+   .ft-32-b, 
+   .font-32  { font-size: 1.5rem; } /* 24px */
+   .ft-28-r  { font-size: 1.25rem; } /* 20px */
+   .ft-20-r, 
+   .ft-20-sb,
+   .font-20  { font-size: 1rem; }    /* 16px */
+   .ft-18-r  { font-size: 0.9375rem; } /* 15px */
+}
+
+/* 3. 소형 모바일 (402px 이하) */
+@media screen and (max-width: 402px) {
+   .ft-54-b  { font-size: 1.75rem; } /* 28px */
+   .ft-48-b, 
+   .font-48  { font-size: 1.75rem; } /* 28px */
+   .ft-32-b, 
+   .font-32  { font-size: 1.375rem; } /* 22px */
+   .ft-28-r  { font-size: 1.125rem; } /* 18px */
+   .ft-20-r, 
+   .ft-20-sb,
+   .font-20  { font-size: 0.9375rem; } /* 15px */
+   .ft-18-r  { font-size: 0.875rem; }  /* 14px */
 }
