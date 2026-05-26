@@ -163,7 +163,7 @@
 @media screen and (max-width: 1024px) {
     .kiosk-works-section .work-item .text-col,
     .kiosk-works-section .work-item .img-col {
-        grid-column: span 12;
+        grid-column: span 4;
     }
 
     .kiosk-works-section .work-item .img-col {
@@ -198,6 +198,11 @@
     .py-100 {
         padding-top: 3.75rem;
         padding-bottom: 3.75rem;
+    }
+
+    .kiosk-works-section .work-item .text-col,
+    .kiosk-works-section .work-item .img-col {
+        grid-column: span 6;
     }
 
     .kiosk-works-section .img-col img {
@@ -271,7 +276,7 @@
 
 .kiosk-frame-section .frame {
     width: 100%;
-    height: 26rem;
+    height: 39.1875rem;
     overflow: hidden;
 }
 
@@ -290,13 +295,13 @@
     }
 
     .kiosk-frame-section .frame {
-        height: 20rem;
+        height: 28.125rem;
     }
 }
 
 @media screen and (max-width: 768px) {
     .kiosk-frame-section .frame {
-        height: 14rem;
+        height: 18.75rem;
     }
 }
 
@@ -354,7 +359,7 @@
 
 @media screen and (max-width: 1024px) {
     .kiosk-cut-section .cut-item {
-        grid-column: span 6;
+        grid-column: span 4;
     }
 
     .kiosk-cut-section .cut-section-title {
@@ -369,7 +374,7 @@
 
 @media screen and (max-width: 768px) {
     .kiosk-cut-section .cut-item {
-        grid-column: span 12;
+        grid-column: span 6;
     }
 
     .kiosk-cut-section .cut-section-title {
@@ -415,7 +420,7 @@
 
 @media screen and (max-width: 1024px) {
     .kiosk-counting-section .count-item {
-        grid-column: span 6;
+        grid-column: span 4;
     }
 
     .kiosk-counting-section .count-title {
@@ -429,7 +434,7 @@
 
 @media screen and (max-width: 768px) {
     .kiosk-counting-section .count-item {
-        grid-column: span 12;
+        grid-column: span 6;
     }
 
     .kiosk-counting-section .count-title {
@@ -495,14 +500,14 @@
 
 @media screen and (max-width: 1024px) {
     .kiosk-tech-section .tech-item {
-        grid-column: span 6;
+        grid-column: span 4;
         padding: 2rem;
     }
 }
 
 @media screen and (max-width: 768px) {
     .kiosk-tech-section .tech-item {
-        grid-column: span 12;
+        grid-column: span 6;
         padding: 1.75rem;
     }
 
