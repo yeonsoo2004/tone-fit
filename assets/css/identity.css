@@ -349,7 +349,7 @@
     .identity-market-section .img-col,
     .identity-pet-section .text-col,
     .identity-pet-section .img-col {
-        grid-column: span 12;
+        grid-column: span 4;
     }
 
     .identity-feature-section .feature-title,
@@ -375,6 +375,15 @@
 }
 
 @media screen and (max-width: 768px) {
+    .identity-feature-section .text-col,
+    .identity-feature-section .img-col,
+    .identity-market-section .text-col,
+    .identity-market-section .img-col,
+    .identity-pet-section .text-col,
+    .identity-pet-section .img-col {
+        grid-column: span 6;
+    }
+
     .identity-feature-section .feature-title,
     .identity-market-section .market-title,
     .identity-pet-section .pet-title {
@@ -649,12 +658,8 @@
         font-size: 1rem;
     }
 
-    .identity-analysis-section .analysis-steps-wrap {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
     .identity-analysis-section .step-item {
-        grid-column: span 6;
+        grid-column: span 4;
     }
 
     .identity-analysis-section .step-card {
@@ -683,12 +688,8 @@
         margin-bottom: 2.5rem;
     }
 
-    .identity-analysis-section .analysis-steps-wrap {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
     .identity-analysis-section .step-item {
-        grid-column: span 12;
+        grid-column: span 6;
     }
 
     .identity-analysis-section .step-card {
@@ -771,7 +772,7 @@
 @media screen and (max-width: 1024px) {
     .identity-experience-section .img-col,
     .identity-experience-section .text-col {
-        grid-column: span 12;
+        grid-column: span 4;
     }
 
     .identity-experience-section .img-wrap img {
@@ -794,6 +795,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    .identity-experience-section .img-col,
+    .identity-experience-section .text-col {
+        grid-column: span 6;
+    }
+
     .identity-experience-section .text-col {
         margin-top: 2rem;
     }
@@ -866,12 +872,8 @@
         font-size: 1rem;
     }
 
-    .identity-counting-section .counting-wrap {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
     .identity-counting-section .count-item {
-        grid-column: span 6;
+        grid-column: span 4;
         border-right: none;
         border-bottom: none;
     }
@@ -904,7 +906,7 @@
     }
 
     .identity-counting-section .count-item {
-        grid-column: span 12;
+        grid-column: span 6;
         padding: 1.25rem 0;
         border-right: none;
         border-bottom: none;
@@ -1059,13 +1061,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .identity-season-section .grid-wrap {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
     .identity-season-section .text-col,
     .identity-season-section .slider-col {
-        grid-column: span 12;
+        grid-column: span 8;
         height: auto;
         min-height: 0;
     }
@@ -1103,6 +1101,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    .identity-season-section .text-col,
+    .identity-season-section .slider-col {
+        grid-column: span 6;
+    }
+
     .identity-season-section .season-title {
         font-size: 2rem;
     }
@@ -1225,13 +1228,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .identity-space-section .grid-wrap {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
     .identity-space-section .slider-col,
     .identity-space-section .text-col {
-        grid-column: span 12;
+        grid-column: span 8;
         margin-left: 0;
         width: 100%;
         justify-self: stretch;
@@ -1267,6 +1266,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    .identity-space-section .slider-col,
+    .identity-space-section .text-col {
+        grid-column: span 6;
+    }
+
     .identity-space-section .space-title {
         font-size: 2rem;
     }
