@@ -107,13 +107,14 @@
 .lnb-tab-btn.active {
   background-color: #D4734A;
   color: #FFFFFF;
-  border-radius: 20px;
+  border-radius: 50px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .lnb-tab-btn.active:hover {
   background-color: #D4734A;
   color: #FFFFFF;
+  border-radius: 50px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
 }
 
