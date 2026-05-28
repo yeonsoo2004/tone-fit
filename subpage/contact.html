@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../assets/css/component.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/contact.css">
+    <link rel="stylesheet" href="../assets/css/startup.css">
 
 </head>
 
@@ -81,12 +82,13 @@
     </header>
 
     <main class="sub-main contact-main">
-        <section class="contact-kv-section" aria-labelledby="contact-kv-title">
-            <div class="inner contact-kv-inner d-flex flex-col jc-center">
-                <h2 id="contact-kv-title" class="contact-kv-title ft-54-b title">가맹/제휴 문의</h2>
-                <p class="contact-kv-desc ft-20-r">Inquiries about collaboration and<br>partnerships</p>
-            </div>
-
+        <div class="contact-hero">
+            <section class="contact-kv-section" aria-labelledby="contact-kv-title">
+                <div class="inner contact-kv-inner d-flex flex-col">
+                    <h2 id="contact-kv-title" class="contact-kv-title ft-54-r title">가맹/제휴 문의</h2>
+                    <p class="contact-kv-desc ft-20-r">Inquiries about collaboration and<br>partnerships</p>
+                </div>
+            </section>
 
             <div class="contact-card-wrap">
                 <div class="contact-card">
@@ -115,13 +117,11 @@
                     </div>
                 </div>
             </div>
-
-
-        </section>
+        </div>
 
         <section class="contact-faq-section" aria-labelledby="contact-faq-title">
             <div class="inner">
-                <h2 id="contact-faq-title" class="contact-faq-title">자주 묻는 질문</h2>
+                <h2 id="contact-faq-title" class="contact-faq-title ft-32-b color-point">자주 묻는 질문</h2>
                 <div class="contact-faq-list">
                     <div class="contact-faq-item">
                         <button type="button" class="contact-faq-trigger ft-28-r" id="contact-faq-trigger-1" aria-expanded="false" aria-controls="contact-faq-panel-1">
@@ -212,60 +212,75 @@
             </div>
         </section>
 
-        <section class="contact-inquiry-section py-130" aria-labelledby="contact-inquiry-title">
+        <section class="startup-inquiry-section py-130" aria-labelledby="startup-inquiry-title">
             <div class="inner">
-                <div class="contact-inquiry-layout d-flex">
-                    <div class="contact-inquiry-info contact-fade-up d-flex flex-col">
-                        <h2 id="contact-inquiry-title" class="contact-inquiry-title title ft-48-b color-main">당신의 창업,<br><span class="contact-inquiry-title-line">TONE:FIT이 함께합니다.</span></h2>
-                        <div class="contact-inquiry-contact d-flex flex-col">
-                            <div class="contact-inquiry-email-row d-flex ai-center">
-                                <span class="contact-inquiry-email">tone_fit@ezen.com</span>
-                                <img class="contact-inquiry-email-icon" src="../assets/images/icon/email.svg" alt="" width="20" height="16" decoding="async">
+                <div class="startup-inquiry-layout d-flex">
+                    <div class="startup-inquiry-info startup-fade-up d-flex flex-col">
+                        <h2 id="startup-inquiry-title" class="startup-inquiry-title title color-main">당신의 창업,<br><span class="startup-inquiry-title-line">TONE:FIT이 함께합니다.</span></h2>
+                        <div class="startup-inquiry-contact d-flex flex-col">
+                            <div class="startup-inquiry-email-row d-flex ai-center">
+                                <span class="startup-inquiry-email">tone_fit@ezen.com</span>
+                                <img class="startup-inquiry-mail-icon" src="../assets/images/icon/mail.svg" alt="" width="20" height="16" decoding="async">
                             </div>
-                            <div class="contact-inquiry-phone-row d-flex ai-center">
-                                <span class="contact-inquiry-phone">000-1111-2222</span>
-                                <img class="contact-inquiry-phone-icon" src="../assets/images/icon/tellphone.svg" alt="" width="20" height="20" decoding="async">
+                            <div class="startup-inquiry-phone-row d-flex ai-center">
+                                <span class="startup-inquiry-phone">000-1111-2222</span>
+                                <img class="startup-inquiry-phone-icon" src="../assets/images/icon/phone.svg" alt="" width="20" height="20" decoding="async">
                             </div>
                         </div>
                     </div>
 
-                    <form class="contact-inquiry-form d-flex flex-col" action="#" method="post" novalidate>
-                        <div class="contact-inquiry-form-row d-flex">
-                            <div class="contact-inquiry-field contact-inquiry-field--half d-flex flex-col">
-                                <label class="contact-inquiry-label" for="contact-inquiry-name">이름</label>
-                                <input class="contact-inquiry-input contact-inquiry-input--half" type="text" id="contact-inquiry-name" name="name" autocomplete="name" placeholder="이름">
+                    <form class="startup-inquiry-form d-flex flex-col" action="#" method="post" novalidate>
+                        <div class="startup-inquiry-form-row d-flex">
+                            <div class="startup-inquiry-field startup-inquiry-field--half d-flex flex-col">
+                                <div class="startup-inquiry-label-row d-flex ai-center">
+                                    <label class="startup-inquiry-label" for="startup-inquiry-name">이름</label>
+                                    <span class="startup-inquiry-field-error" id="startup-inquiry-name-error" role="alert" aria-live="polite"></span>
+                                </div>
+                                <input class="startup-inquiry-input startup-inquiry-input--half" type="text" id="startup-inquiry-name" name="name" autocomplete="name" placeholder="이름" required aria-describedby="startup-inquiry-name-error">
                             </div>
-                            <div class="contact-inquiry-field contact-inquiry-field--half d-flex flex-col">
-                                <label class="contact-inquiry-label" for="contact-inquiry-tel">연락처</label>
-                                <input class="contact-inquiry-input contact-inquiry-input--half" type="tel" id="contact-inquiry-tel" name="tel" autocomplete="tel" placeholder="연락처">
-                            </div>
-                        </div>
-
-                        <div class="contact-inquiry-field d-flex flex-col">
-                            <label class="contact-inquiry-label" for="contact-inquiry-email">이메일</label>
-                            <input class="contact-inquiry-input contact-inquiry-input--full" type="email" id="contact-inquiry-email" name="email" autocomplete="email" placeholder="email">
-                        </div>
-
-                        <div class="contact-inquiry-field d-flex flex-col">
-                            <label class="contact-inquiry-label" for="contact-inquiry-message">문의내용</label>
-                            <textarea class="contact-inquiry-textarea" id="contact-inquiry-message" name="message" rows="6" placeholder="문의내용"></textarea>
-                        </div>
-
-                        <div class="contact-inquiry-field d-flex flex-col">
-                            <span class="contact-inquiry-label" id="contact-inquiry-file-label">파일첨부</span>
-                            <div class="contact-inquiry-file-row d-flex ai-center" aria-labelledby="contact-inquiry-file-label">
-                                <p class="contact-inquiry-file-name" id="contact-inquiry-file-name" role="status" aria-live="polite" aria-label="첨부 파일명"></p>
-                                <button class="contact-inquiry-file-btn" type="button" aria-controls="contact-inquiry-file">파일첨부</button>
-                                <input class="contact-inquiry-file-input" type="file" id="contact-inquiry-file" name="attachment" hidden>
+                            <div class="startup-inquiry-field startup-inquiry-field--half d-flex flex-col">
+                                <div class="startup-inquiry-label-row d-flex ai-center">
+                                    <label class="startup-inquiry-label" for="startup-inquiry-tel">연락처</label>
+                                    <span class="startup-inquiry-field-error" id="startup-inquiry-tel-error" role="alert" aria-live="polite"></span>
+                                </div>
+                                <input class="startup-inquiry-input startup-inquiry-input--half" type="tel" id="startup-inquiry-tel" name="tel" autocomplete="tel" placeholder="연락처" required aria-describedby="startup-inquiry-tel-error">
                             </div>
                         </div>
 
-                        <div class="contact-inquiry-agree-row d-flex ai-center">
-                            <input class="contact-inquiry-checkbox" type="checkbox" id="contact-inquiry-privacy" name="privacy_agree" value="yes">
-                            <label class="contact-inquiry-agree-label" for="contact-inquiry-privacy">개인정보수집 및 이용방침에 동의합니다.</label>
+                        <div class="startup-inquiry-field d-flex flex-col">
+                            <div class="startup-inquiry-label-row d-flex ai-center">
+                                <label class="startup-inquiry-label" for="startup-inquiry-email">이메일</label>
+                                <span class="startup-inquiry-field-error" id="startup-inquiry-email-error" role="alert" aria-live="polite"></span>
+                            </div>
+                            <input class="startup-inquiry-input startup-inquiry-input--full" type="email" id="startup-inquiry-email" name="email" autocomplete="email" placeholder="email" required aria-describedby="startup-inquiry-email-error">
                         </div>
 
-                        <button class="contact-inquiry-submit bg-point-orange" type="submit">제휴문의</button>
+                        <div class="startup-inquiry-field d-flex flex-col">
+                            <div class="startup-inquiry-label-row d-flex ai-center">
+                                <label class="startup-inquiry-label" for="startup-inquiry-message">문의내용</label>
+                                <span class="startup-inquiry-field-error" id="startup-inquiry-message-error" role="alert" aria-live="polite"></span>
+                            </div>
+                            <textarea class="startup-inquiry-textarea" id="startup-inquiry-message" name="message" rows="6" placeholder="문의내용" required aria-describedby="startup-inquiry-message-error"></textarea>
+                        </div>
+
+                        <div class="startup-inquiry-field d-flex flex-col">
+                            <span class="startup-inquiry-label" id="startup-inquiry-file-label">파일첨부</span>
+                            <div class="startup-inquiry-file-row d-flex ai-center" aria-labelledby="startup-inquiry-file-label">
+                                <p class="startup-inquiry-file-name" id="startup-inquiry-file-name" role="status" aria-live="polite" aria-label="첨부 파일명"></p>
+                                <button class="startup-inquiry-file-btn" type="button" aria-controls="startup-inquiry-file">파일첨부</button>
+                                <input class="startup-inquiry-file-input" type="file" id="startup-inquiry-file" name="attachment" hidden>
+                            </div>
+                        </div>
+
+                        <div class="startup-inquiry-agree-row d-flex ai-center">
+                            <input class="startup-inquiry-checkbox" type="checkbox" id="startup-inquiry-privacy" name="privacy_agree" value="yes" required aria-describedby="startup-inquiry-privacy-error">
+                            <div class="startup-inquiry-label-row d-flex ai-center">
+                                <label class="startup-inquiry-agree-label" for="startup-inquiry-privacy">개인정보수집 및 이용방침에 동의합니다.</label>
+                                <span class="startup-inquiry-field-error" id="startup-inquiry-privacy-error" role="alert" aria-live="polite"></span>
+                            </div>
+                        </div>
+
+                        <button class="startup-inquiry-submit bg-point-orange" type="submit">제휴문의</button>
                     </form>
                 </div>
             </div>
@@ -279,7 +294,7 @@
     <footer class="footer bg-deep-base">
         <div class="footer-container inner d-flex flex-col gap-20">
             <div class="footer-logo-sns d-flex jc-between">
-                <p class="footer-logo">TONE:FIT</p>
+                <p class="footer-logo ft-20-sb">TONE:FIT</p>
                 <div class="footer-sns-bar d-flex gap-20">
                     <img src="../assets/images/icon/icons_insta.svg" alt="" class="footer-sns-btn">
                     <img src="../assets/images/icon/icons_facebook.svg" alt="" class="footer-sns-btn">
@@ -287,9 +302,9 @@
                 </div>
             </div>
             <div class="footer-policy">
-                <p>이용약관 | 개인정보 처리방침</p>
+                <p class="ft-18-r">이용약관 | 개인정보 처리방침</p>
             </div>
-            <div class="footer-info-contact d-flex jc-between ai-end">
+            <div class="footer-info-contact d-flex jc-between ai-end ft-18-r">
                 <p class="footer-info">
                     우편번호 : 06236, 서울특별시 강남구 테헤란로 123 TONEFIT 타워<br>
                     Copyright: COPYRIGHT © 2026 TONE:FIT CO., LTD. ALL RIGHTS RESERVED.
@@ -305,6 +320,7 @@
 
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/franchise.js"></script>
     <script src="../assets/js/contact.js"></script>
 
 </body>

@@ -1239,20 +1239,23 @@
    Startup Fade-Up (KV · Feature · Growth)
 ========================================= */
 
-.startup-page .startup-fade-up {
+.startup-page .startup-fade-up,
+.contact-page .startup-fade-up {
     opacity: 0;
     transform: translateY(1.875rem);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     will-change: opacity, transform;
 }
 
-.startup-page .startup-fade-up.is-fade-active {
+.startup-page .startup-fade-up.is-fade-active,
+.contact-page .startup-fade-up.is-fade-active {
     opacity: 1;
     transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .startup-page .startup-fade-up {
+    .startup-page .startup-fade-up,
+    .contact-page .startup-fade-up {
         opacity: 1;
         transform: none;
         transition: none;
