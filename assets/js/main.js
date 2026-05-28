@@ -513,7 +513,6 @@
 
     gsap.fromTo(fadeEls, fadeFrom, {
         ...fadeTo,
-        stagger: 0.1,
         scrollTrigger: {
             trigger: section.querySelector('.frame-content') || section,
             start: 'top 70%',
