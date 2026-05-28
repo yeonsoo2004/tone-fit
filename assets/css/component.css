@@ -56,9 +56,14 @@ body:not(.page-home) .header {
     grid-template-rows: auto auto;
     align-items: start;
     column-gap: 2.5rem;
-    padding: var(--header-divider-gap) 0 0;
+    padding-top: var(--header-divider-gap);
     margin: 0 auto;
     overflow: visible;
+}
+
+/* Keep header top padding even when `.inner` adds responsive padding */
+.header-container.inner {
+    padding-top: var(--header-divider-gap);
 }
 
 .header-left {
@@ -256,6 +261,10 @@ body:not(.page-home) .header {
 .footer-logo {
     font-size: 1.25rem;
     font-weight: 600;
+}
+
+.page-home .footer-sns-bar {
+    gap: 10px;
 }
 
 .footer-sns-btn {
