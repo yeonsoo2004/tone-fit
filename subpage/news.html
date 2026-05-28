@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TONE:FIT - 커뮤니티</title>
+
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/font.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/component.css">
+    <link rel="stylesheet" href="../assets/css/news.css">
+</head>
+<body class="page-news bg-light-gray">
+    <script src="../assets/js/libs/jquery.min.js"></script>
+    <script src="../assets/js/libs/gsap.min.js"></script>
+    <script src="../assets/js/libs/ScrollTrigger.min.js"></script>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="header-container inner">
+            <div class="header-left">
+                <h1 class="logo"><a href="../index.html" style="color:inherit;text-decoration:none;">TONE:FIT</a></h1>
+            </div>
+            <div class="header-menu">
+                <nav class="header-nav ft-20-r" aria-label="주 메뉴" aria-haspopup="true" aria-expanded="false">
+                    <div class="header-nav-item has-submenu">
+                        <button type="button" class="header-nav-link">BRAND</button>
+                    </div>
+                    <div class="header-nav-item">
+                        <button type="button" class="header-nav-link">FRAME</button>
+                    </div>
+                    <div class="header-nav-item">
+                        <button type="button" class="header-nav-link">STORE</button>
+                    </div>
+                    <div class="header-nav-item has-submenu">
+                        <button type="button" class="header-nav-link">FRANCHISE</button>
+                    </div>
+                    <div class="header-nav-item has-submenu">
+                        <button type="button" class="header-nav-link community-active">COMMUNITY</button>
+                    </div>
+                </nav>
+                <div class="header-mega ft-18-r">
+                    <div class="header-mega-col">
+                        <ul class="header-mega-list">
+                            <li><a href="./identity.html">IDENTITY</a></li>
+                            <li><a href="./smart-kiosk.html">SMART KIOSK</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
+                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
+                    <div class="header-mega-col">
+                        <ul class="header-mega-list">
+                            <li><a href="./space.html">SPACE</a></li>
+                            <li><a href="./startup.html">STARTUP</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-mega-col">
+                        <ul class="header-mega-list">
+                            <li><a href="./news.html">NEWS</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="gnb-btn ft-20-r">창업문의</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="news-main">
+
+        <!-- 페이지 타이틀 -->
+        <section class="news-title-section">
+            <div class="inner">
+                <h2 class="news-page-title title">커뮤니티</h2>
+            </div>
+        </section>
+
+        <!-- LNB 탭 -->
+        <section class="news-lnb-section">
+            <div class="inner">
+                <div class="news-lnb-wrap">
+                    <div class="lnb-tab-bar" role="tablist" aria-label="이벤트 분류">
+                        <button
+                            type="button"
+                            class="lnb-tab-btn active"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="tab-panel-ongoing"
+                            data-tab="ongoing"
+                        >진행중 이벤트</button>
+                        <button
+                            type="button"
+                            class="lnb-tab-btn"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="tab-panel-ended"
+                            data-tab="ended"
+                        >완료된 이벤트</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 콘텐츠 -->
+        <section class="news-content-section">
+            <div class="inner">
+
+                <!-- 진행중 이벤트 탭 패널 -->
+                <div
+                    id="tab-panel-ongoing"
+                    role="tabpanel"
+                    aria-labelledby="tab-ongoing"
+                    class="news-tab-panel"
+                    data-panel="ongoing"
+                >
+                    <div class="news-grid">
+
+                        <!-- 카드 1 -->
+                        <article
+                            class="news-card"
+                            role="button"
+                            tabindex="0"
+                            aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-1"
+                        >
+                            <div class="news-card-img-wrap">
+                                <img src="../assets/images/Community-1.webp" alt="커뮤니티 이벤트 1">
+                            </div>
+                        </article>
+
+                        <!-- 카드 2 -->
+                        <article
+                            class="news-card"
+                            role="button"
+                            tabindex="0"
+                            aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-2"
+                        >
+                            <div class="news-card-img-wrap">
+                                <img src="../assets/images/Community-2.webp" alt="커뮤니티 이벤트 2">
+                            </div>
+                        </article>
+
+                        <!-- 카드 3 -->
+                        <article
+                            class="news-card"
+                            role="button"
+                            tabindex="0"
+                            aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-3"
+                        >
+                            <div class="news-card-img-wrap">
+                                <img src="../assets/images/Community-3.webp" alt="커뮤니티 이벤트 3">
+                            </div>
+                        </article>
+
+                        <!-- 카드 4 -->
+                        <article
+                            class="news-card"
+                            role="button"
+                            tabindex="0"
+                            aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-4"
+                        >
+                            <div class="news-card-img-wrap">
+                                <img src="../assets/images/Community-4.webp" alt="커뮤니티 이벤트 4">
+                            </div>
+                        </article>
+
+                        <!-- 카드 5 -->
+                        <article
+                            class="news-card"
+                            role="button"
+                            tabindex="0"
+                            aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-5"
+                        >
+                            <div class="news-card-img-wrap">
+                                <img src="../assets/images/Community-5.webp" alt="커뮤니티 이벤트 5">
+                            </div>
+                        </article>
+
+                        <!-- 카드 6 -->
+                        <article
+                            class="news-card"
+                            role="button"
+                            tabindex="0"
+                            aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-6"
+                        >
+                            <div class="news-card-img-wrap">
+                                <img src="../assets/images/Community-6.webp" alt="커뮤니티 이벤트 6">
+                            </div>
+                        </article>
+
+                        <!-- 카드 7 -->
+                        <article
+                            class="news-card"
+                            role="button"
+                            tabindex="0"
+                            aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-7"
+                        >
+                            <div class="news-card-img-wrap">
+                                <img src="../assets/images/Community-7.webp" alt="커뮤니티 이벤트 7">
+                            </div>
+                        </article>
+
+                        <!-- 카드 8 -->
+                        <article
+                            class="news-card"
+                            role="button"
+                            tabindex="0"
+                            aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-8"
+                        >
+                            <div class="news-card-img-wrap">
+                                <img src="../assets/images/Community-8.webp" alt="커뮤니티 이벤트 8">
+                            </div>
+                        </article>
+
+                        <!-- 카드 9 -->
+                        <article
+                            class="news-card"
+                            role="button"
+                            tabindex="0"
+                            aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-9"
+                        >
+                            <div class="news-card-img-wrap">
+                                <img src="../assets/images/Community-9.webp" alt="커뮤니티 이벤트 9">
+                            </div>
+                        </article>
+
+
+                    </div>
+                </div>
+
+                <!-- 완료된 이벤트 탭 패널 -->
+                <div
+                    id="tab-panel-ended"
+                    role="tabpanel"
+                    aria-labelledby="tab-ended"
+                    class="news-tab-panel"
+                    data-panel="ended"
+                    hidden
+                >
+                    <div class="news-grid">
+
+                        <!-- 완료된 이벤트 카드 -->
+                        <article
+                            class="news-card"
+                            role="button"
+                            tabindex="0"
+                            aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-end-1"
+                        >
+                            <div class="news-card-img-wrap">
+                                <img src="../assets/images/Community-end.webp" alt="완료된 이벤트">
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== MODAL ===== -->
+    <div
+        class="news-modal-overlay"
+        id="newsModalOverlay"
+        role="dialog"
+        aria-modal="true"
+        aria-label="이벤트 상세"
+    >
+        <div class="news-modal" id="newsModal">
+            <!-- 닫기 버튼 -->
+            <button
+                type="button"
+                class="news-modal-close"
+                id="newsModalClose"
+                aria-label="모달 닫기"
+            >
+                <img src="../assets/images/icon/Community-modal.svg" alt="닫기">
+            </button>
+            <!-- 모달 이미지 영역 (JS로 동적 교체) -->
+            <div class="news-modal-img-wrap" id="newsModalImgWrap">
+                <div class="news-modal-img-placeholder">이미지 준비 중</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-container inner d-flex flex-col gap-20">
+            <div class="footer-logo-sns d-flex jc-between">
+                <p class="footer-logo">TONE:FIT</p>
+                <div class="footer-sns-bar d-flex gap-20">
+                    <img src="../assets/images/icon/icons_insta.svg" alt="인스타그램" class="footer-sns-btn">
+                    <img src="../assets/images/icon/icons_facebook.svg" alt="페이스북" class="footer-sns-btn">
+                    <img src="../assets/images/icon/icons_youtube.svg" alt="유튜브" class="footer-sns-btn">
+                </div>
+            </div>
+            <div class="footer-policy">
+                <p>이용약관 | 개인정보 처리방침</p>
+            </div>
+            <div class="footer-info-contact d-flex jc-between ai-end">
+                <p class="footer-info">
+                    우편번호 : 06236, 서울특별시 강남구 테헤란로 123 TONEFIT 타워<br>
+                    Copyright: COPYRIGHT © 2026 TONE:FIT CO., LTD. ALL RIGHTS RESERVED.
+                </p>
+                <p class="email">
+                    Contact: support@tonefit.com
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/news.js"></script>
+</body>
+</html>
