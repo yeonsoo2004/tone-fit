@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TONE:FIT - Frame</title>
-
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/nomalize.css">
     <link rel="stylesheet" href="../assets/css/font.css">
@@ -15,481 +14,480 @@
 </head>
 <body class="frame-page">
 
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="header-container inner">
+            <div class="header-left">
+                <h1 class="logo"><a href="../index.html">TONE:FIT</a></h1>
+            </div>
+            <div class="header-menu">
+                <nav class="header-nav ft-20-r" aria-label="주 메뉴" aria-haspopup="true" aria-expanded="false">
+                    <div class="header-nav-item has-submenu">
+                        <a href="identity.html" class="header-nav-link">BRAND</a>
+                    </div>
+                    <div class="header-nav-item">
+                        <a href="frame.html" class="header-nav-link">FRAME</a>
+                    </div>
+                    <div class="header-nav-item">
+                        <a href="store.html" class="header-nav-link">STORE</a>
+                    </div>
+                    <div class="header-nav-item has-submenu">
+                        <a href="space.html" class="header-nav-link">FRANCHISE</a>
+                    </div>
+                    <div class="header-nav-item has-submenu">
+                        <a href="news.html" class="header-nav-link">COMMUNITY</a>
+                    </div>
+                </nav>
+                <div class="header-mega ft-18-r">
+                    <div class="header-mega-col">
+                        <ul class="header-mega-list">
+                            <li><a href="identity.html">IDENTITY</a></li>
+                            <li><a href="smart-kiosk.html">SMART KIOSK</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
+                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
+                    <div class="header-mega-col">
+                        <ul class="header-mega-list">
+                            <li><a href="space.html">SPACE</a></li>
+                            <li><a href="startup.html">STARTUP</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-mega-col">
+                        <ul class="header-mega-list">
+                            <li><a href="news.html">NEWS</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="gnb-btn ft-20-r"><a href="contact.html">창업문의</a></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
     <main class="sub-main frame-main">
         <section class="frame-section py-130">
             <div class="inner d-flex flex-col ai-center gap-50">
 
-                <!-- 타이틀 영역 -->
-                <div class="frame-head">
-                    <h1 class="frame-main-title title ft-48-b color-main">FRAME</h1>
-
-                    <!-- LNB 탭 버튼 -->
-                    <div class="frame-tab-bar d-flex gap-20 jc-center" role="tablist" aria-label="프레임 카테고리">
-                        <button
-                            type="button"
-                            class="frame-tab-btn ft-20-r active"
-                            role="tab"
-                            aria-selected="true"
-                            data-tab="artist"
-                        >아티스트 프레임</button>
-                        <button
-                            type="button"
-                            class="frame-tab-btn ft-20-r"
-                            role="tab"
-                            aria-selected="false"
-                            data-tab="character"
-                        >캐릭터 프레임</button>
-                        <button
-                            type="button"
-                            class="frame-tab-btn ft-20-r"
-                            role="tab"
-                            aria-selected="false"
-                            data-tab="season"
-                        >시즌 프레임</button>
+                <!-- 타이틀 + LNB 탭 -->
+                <div class="d-flex flex-col ai-center gap-20 text-center">
+                    <h2 class="title ft-48-r color-main">FRAME</h2>
+                    <div class="lnb-tab-bar jc-center" role="tablist" aria-label="프레임 카테고리">
+                        <button type="button" class="lnb-tab-btn frame-tab-btn ft-20-sb active" role="tab" aria-selected="true" data-tab="artist">아티스트 프레임</button>
+                        <button type="button" class="lnb-tab-btn frame-tab-btn ft-20-sb" role="tab" aria-selected="false" data-tab="character">캐릭터 프레임</button>
+                        <button type="button" class="lnb-tab-btn frame-tab-btn ft-20-sb" role="tab" aria-selected="false" data-tab="season">시즌 프레임</button>
                     </div>
                 </div>
 
-                <!-- 탭 패널 영역 -->
+                <!-- 탭 패널 -->
                 <div class="frame-tab-panels">
 
-                    <!-- 아티스트 프레임 패널 -->
+                    <!-- ─── 아티스트 프레임 ─── -->
                     <div class="frame-tab-panel is-active frame-fade-up" id="tab-artist" role="tabpanel">
                         <div class="frame-poster-grid">
-
-                            <!-- 01 소이 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/artist-frame-01.webp" alt="소이 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">소이 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.05.01 — 26.06.15</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT ARTIST FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT ARTIST FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">소이 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">소이 x 톤핏</p>
                             </div>
-
-                            <!-- 02 혜인 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/artist-frame-02.webp" alt="혜인 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">혜인 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.05.12 — 26.07.01</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT ARTIST FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT ARTIST FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">혜인 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">혜인 x 톤핏</p>
                             </div>
-
-                            <!-- 03 준서 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/artist-frame-03.webp" alt="준서 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">준서 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.06.01 — 26.07.20</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT ARTIST FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT ARTIST FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">준서 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">준서 x 톤핏</p>
                             </div>
-
-                            <!-- 04 kelly -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/artist-frame-04.webp" alt="kelly x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">kelly x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.05.20 — 26.07.10</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT ARTIST FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT ARTIST FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">kelly x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">kelly x 톤핏</p>
                             </div>
-
-                            <!-- 05 류진 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/artist-frame-05.webp" alt="류진 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">류진 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.06.10 — 26.08.01</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT ARTIST FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT ARTIST FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">류진 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">류진 x 톤핏</p>
                             </div>
-
-                            <!-- 06 은하 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/artist-frame-06.webp" alt="은하 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">은하 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.05.28 — 26.07.15</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT ARTIST FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT ARTIST FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">은하 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">은하 x 톤핏</p>
                             </div>
-
-                            <!-- 07 태영 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/artist-frame-07.webp" alt="태영 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">태영 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.06.15 — 26.08.10</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT ARTIST FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT ARTIST FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">태영 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">태영 x 톤핏</p>
                             </div>
-
-                            <!-- 08 NEON -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/artist-frame-08.webp" alt="NEON x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">NEON x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.07.01 — 26.08.20</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT ARTIST FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT ARTIST FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">NEON x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">NEON x 톤핏</p>
                             </div>
-
-                            <!-- 09 현우 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/artist-frame-09.webp" alt="현우 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">현우 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.07.10 — 26.09.01</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT ARTIST FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT ARTIST FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">현우 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">현우 x 톤핏</p>
                             </div>
-
                         </div>
                     </div>
 
-                    <!-- 캐릭터 프레임 패널 -->
+                    <!-- ─── 캐릭터 프레임 ─── -->
                     <div class="frame-tab-panel frame-fade-up" id="tab-character" role="tabpanel">
                         <div class="frame-poster-grid">
-
-                            <!-- 01 반석이의 온도 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/character-frame-01.webp" alt="반석이의 온도 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">반석이의 온도 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.05.10 — 26.07.20</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT CHARACTER FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT CHARACTER FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">반석이의 온도 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">반석이의 온도 x 톤핏</p>
                             </div>
-
-                            <!-- 02 숭이의 하루 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/character-frame-02.webp" alt="숭이의 하루 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">숭이의 하루 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.04.01 — 26.06.30</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT CHARACTER FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT CHARACTER FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">숭이의 하루 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">숭이의 하루 x 톤핏</p>
                             </div>
-
-                            <!-- 03 햄햄 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/character-frame-03.webp" alt="햄햄 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">햄햄 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.03.15 — 26.05.31</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT CHARACTER FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT CHARACTER FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">햄햄 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">햄햄 x 톤핏</p>
                             </div>
-
-                            <!-- 04 복실 다람쥐 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/character-frame-04.webp" alt="복실 다람쥐 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">복실 다람쥐 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.02.01 — 26.04.15</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT CHARACTER FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT CHARACTER FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">복실 다람쥐 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">복실 다람쥐 x 톤핏</p>
                             </div>
-
-                            <!-- 05 눈진감 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/character-frame-05.webp" alt="눈진감 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">눈진감 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">26.01.10 — 26.03.10</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT CHARACTER FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT CHARACTER FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">눈진감 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">눈진감 x 톤핏</p>
                             </div>
-
-                            <!-- 06 숭이의 하루 (2nd) -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/character-frame-06.webp" alt="숭이의 하루 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">숭이의 하루 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">25.12.01 — 26.01.31</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT CHARACTER FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT CHARACTER FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">숭이의 하루 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">숭이의 하루 x 톤핏</p>
                             </div>
-
-                            <!-- 07 룰루 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/character-frame-07.webp" alt="룰루 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">룰루 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">25.11.05 — 25.12.31</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT CHARACTER FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT CHARACTER FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">룰루 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">룰루 x 톤핏</p>
                             </div>
-
-                            <!-- 08 triplets -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/character-frame-08.webp" alt="triplets x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">triplets x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">25.10.01 — 25.11.30</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT CHARACTER FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT CHARACTER FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">triplets x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">triplets x 톤핏</p>
                             </div>
-
-                            <!-- 09 기니기니 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/character-frame-09.webp" alt="기니기니 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">기니기니 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">25.09.15 — 25.10.31</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT CHARACTER FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT CHARACTER FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">기니기니 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">기니기니 x 톤핏</p>
                             </div>
-
                         </div>
                     </div>
 
-                    <!-- 시즌 프레임 패널 -->
+                    <!-- ─── 시즌 프레임 ─── -->
                     <div class="frame-tab-panel frame-fade-up" id="tab-season" role="tabpanel">
                         <div class="frame-poster-grid">
-
-                            <!-- 01 봄 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/season-frame-01.webp" alt="봄 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">봄 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">MARCH</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT SEASON FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT SEASON FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">봄 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">봄 x 톤핏</p>
                             </div>
-
-                            <!-- 02 여름 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/season-frame-02.webp" alt="여름 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">여름 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">JUNE</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT SEASON FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT SEASON FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">여름 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">여름 x 톤핏</p>
                             </div>
-
-                            <!-- 03 가을 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/season-frame-03.webp" alt="가을 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">가을 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">SEPTEMBER</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT SEASON FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT SEASON FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">가을 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">가을 x 톤핏</p>
                             </div>
-
-                            <!-- 04 겨울 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/season-frame-04.webp" alt="겨울 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">겨울 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">DECEMBER</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT SEASON FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT SEASON FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">겨울 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">겨울 x 톤핏</p>
                             </div>
-
-                            <!-- 05 발렌타인데이 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/season-frame-05.webp" alt="발렌타인데이 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">발렌타인데이 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">FEBRUARY</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT SEASON FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT SEASON FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">발렌타인데이 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">발렌타인데이 x 톤핏</p>
                             </div>
-
-                            <!-- 06 벚꽃 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/season-frame-06.webp" alt="벚꽃 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
-                                            <p class="frame-poster-info-name ft-20-sb">꽃 x 톤핏</p>
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
+                                            <p class="frame-poster-info-name ft-20-sb">벚꽃 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">APRIL</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT SEASON FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT SEASON FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">꽃 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">벚꽃 x 톤핏</p>
                             </div>
-
-                            <!-- 07 썸머비치 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/season-frame-07.webp" alt="썸머비치 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">HBD x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">JULY</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT SEASON FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT SEASON FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">HBD x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">HBD x 톤핏</p>
                             </div>
-
-                            <!-- 08 크리스마스 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/season-frame-08.webp" alt="크리스마스 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">크리스마스 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">DECEMBER</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT SEASON FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT SEASON FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">크리스마스 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">크리스마스 x 톤핏</p>
                             </div>
-
-                            <!-- 09 스노우데이 -->
-                            <div class="frame-poster-card">
-                                <div class="frame-poster-img-wrap">
+                            <div class="frame-poster-card d-flex flex-col">
+                                <div class="frame-poster-img-wrap bg-light-gray">
                                     <img src="../assets/images/season-frame-09.webp" alt="스노우데이 x 톤핏 포스터">
-                                    <div class="frame-poster-overlay" aria-hidden="true">
-                                        <div class="frame-poster-info">
+                                    <div class="frame-poster-overlay d-flex ai-center jc-center" aria-hidden="true">
+                                        <div class="frame-poster-info d-flex flex-col ai-center text-center">
                                             <p class="frame-poster-info-name ft-20-sb">벚꽃 x 톤핏</p>
                                             <p class="frame-poster-info-date ft-18-r">JANUARY</p>
-                                            <p class="frame-poster-info-desc">TONE:FIT SEASON FRAME</p>
+                                            <p class="frame-poster-info-desc ft-18-r">TONE:FIT SEASON FRAME</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="frame-poster-name ft-20-r">벚꽃 x 톤핏</p>
+                                <p class="frame-poster-name ft-20-r color-main mt-10 mb-20 text-center">벚꽃 x 톤핏</p>
                             </div>
-
                         </div>
                     </div>
 
                 </div>
-                <!-- /frame-tab-panels -->
-
             </div>
         </section>
     </main>
 
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer bg-deep-base">
+        <div class="footer-container inner d-flex flex-col gap-20">
+            <div class="footer-logo-sns d-flex jc-between">
+                <p class="footer-logo">TONE:FIT</p>
+                <div class="footer-sns-bar d-flex gap-20">
+                    <img src="../assets/images/icon/icons_insta.svg" alt="인스타그램" class="footer-sns-btn">
+                    <img src="../assets/images/icon/icons_facebook.svg" alt="페이스북" class="footer-sns-btn">
+                    <img src="../assets/images/icon/icons_youtube.svg" alt="유튜브" class="footer-sns-btn">
+                </div>
+            </div>
+            <div class="footer-policy">
+                <p>이용약관 | 개인정보 처리방침</p>
+            </div>
+            <div class="footer-info-contact d-flex jc-between ai-end">
+                <p class="footer-info">
+                    우편번호 : 06236, 서울특별시 강남구 테헤란로 123 TONEFIT 타워<br>
+                    Copyright: COPYRIGHT © 2026 TONE:FIT CO., LTD. ALL RIGHTS RESERVED.
+                </p>
+                <p class="email">Contact: support@tonefit.com</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="../assets/js/libs/jquery.min.js"></script>
     <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/main.js"></script>
     <script>
         (function () {
-            /* ─── 탭 전환 ─── */
             var tabBtns   = document.querySelectorAll('.frame-tab-btn');
             var tabPanels = document.querySelectorAll('.frame-tab-panel');
 
@@ -512,7 +510,6 @@
                     var activePanel = document.getElementById('tab-' + target);
                     if (activePanel) {
                         activePanel.classList.add('is-active');
-                        /* 탭 전환 시 fade-up 재생 */
                         requestAnimationFrame(function () {
                             requestAnimationFrame(function () {
                                 activePanel.classList.add('is-visible');
@@ -522,7 +519,6 @@
                 });
             });
 
-            /* ─── 스크롤 진입 fade-up (IntersectionObserver) ─── */
             var fadeTargets = document.querySelectorAll('.frame-fade-up');
 
             if ('IntersectionObserver' in window) {
@@ -536,7 +532,6 @@
                 }, { threshold: 0.12 });
 
                 fadeTargets.forEach(function (el) {
-                    /* 비활성 패널은 관찰 대상에서 제외 */
                     if (!el.classList.contains('frame-tab-panel') || el.classList.contains('is-active')) {
                         observer.observe(el);
                     }

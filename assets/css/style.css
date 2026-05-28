@@ -514,15 +514,15 @@ body {
     align-content: center;
 }
 
-.ai-pet-section {
+.page-home .ai-pet-section {
     margin-top: 8.125rem;
 }
 
-.ai-pet-content:not(.is-pet-content-visible) > * {
+.page-home .ai-pet-content:not(.is-pet-content-visible) > * {
     opacity: 0;
 }
 
-.ai-pet-content {
+.page-home .ai-pet-content {
     display: flex;
     align-items: stretch;
     gap: 1.5rem;
@@ -530,7 +530,7 @@ body {
     min-width: 0;
 }
 
-.pet-img {
+.page-home .pet-img {
     background-image: url(/assets/images/dog-cat.webp);
     background-size: contain;
     background-repeat: no-repeat;
@@ -542,7 +542,7 @@ body {
     height: auto;
 }
 
-.pet-8img {
+.page-home .pet-8img {
     background-image: url(/assets/images/dog-cat-8imgs.webp);
     background-size: contain;
     background-repeat: no-repeat;
@@ -903,17 +903,17 @@ p {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .ai-pet-content {
+    .page-home .ai-pet-content {
         height: auto;
         min-height: 16rem;
     }
 
-    .pet-img {
+    .page-home .pet-img {
         flex: 0 1 42%;
         max-width: 22rem;
     }
 
-    .pet-8img {
+    .page-home .pet-8img {
         flex: 1 1 0;
         max-width: none;
     }
