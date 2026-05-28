@@ -1,6 +1,6 @@
 /* =========================================
    Startup Page (startup.html)
-   rem 기준: root 16px — 타이포·여백 rem, 고정 레이아웃·폼·마키 px 유지
+   rem 기준: root 16px — 타이포·여백 rem · 폼·프로세스 유동 스케일 · 마키·KV 등 특수 px 유지
 ========================================= */
 
 /* KV 풀블리드 — style.css 헤더(투명 → 스크롤 시 흰 배경) · common.js/main.js */
@@ -232,7 +232,7 @@
     max-width: none;
     flex-shrink: 0;
     padding: 0.35em 0.9em 0.65em;
-    font-family: 'Pretendard', sans-serif;
+    /* font-family: 'Pretendard', sans-serif; — font.css body */
     font-size: 1.125rem;
     font-weight: 600;
     line-height: 1.75rem;
@@ -451,15 +451,22 @@
         height: 470px;
     }
 
-    /* Growth · 오버레이 유지 · 그래프 스케일 */
+    /* Growth · 1440 구간 텍스트 겹침 방지: 수직 1단 */
     .startup-page .startup-growth-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
         min-height: 0;
-        grid-template-rows: minmax(0, auto);
+        grid-template-rows: auto;
     }
 
     .startup-page .startup-growth-copy {
-        max-width: 42%;
-        padding-right: 1.5rem;
+        position: relative;
+        grid-area: auto;
+        justify-self: stretch;
+        width: 100%;
+        max-width: 100%;
+        padding-right: 0;
         box-sizing: border-box;
     }
 
@@ -472,9 +479,13 @@
     }
 
     .startup-page .startup-growth-graphic {
-        width: 54%;
-        max-width: var(--growth-graph-max-w);
+        position: relative;
+        grid-area: auto;
+        justify-self: stretch;
+        width: 100%;
+        max-width: 100%;
         min-width: 0;
+        overflow: hidden;
     }
 
     .startup-page .startup-growth-graphic img {
@@ -649,23 +660,7 @@
         aspect-ratio: 412 / 483;
     }
 
-    /* Franchise · 2열 wrap */
-    .startup-page .startup-franchise-cards {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .startup-page .startup-franchise-card {
-        width: calc((100% - 1.5rem) / 2);
-        max-width: 464px;
-        height: auto;
-        min-height: 0;
-    }
-
-    .startup-page .startup-franchise-card-icon {
-        width: 6.25rem;
-        height: 6.25rem;
-    }
+    /* Franchise · Process · Inquiry — 최하단 1024px 격리 블록에서 제어 */
 
     .startup-page .startup-franchise-card-title {
         line-height: 2.25rem;
@@ -675,72 +670,12 @@
         line-height: 1.75rem;
     }
 
-    /* Process */
     .startup-page .startup-process-section .inner {
         gap: 3rem;
     }
 
     .startup-page .startup-process-title {
         line-height: 2.75rem;
-    }
-
-    .startup-page .startup-process-list {
-        flex-wrap: wrap;
-        row-gap: 2rem;
-        column-gap: 1.25rem;
-    }
-
-    .startup-page .startup-process-item {
-        flex: 0 1 calc((100% - 2.5rem) / 3);
-        max-width: calc((100% - 2.5rem) / 3);
-    }
-
-    /* Inquiry — 2단 → 1단 */
-    .startup-page .startup-inquiry-layout {
-        flex-direction: column;
-        gap: 3rem;
-    }
-
-    .startup-page .startup-inquiry-info {
-        min-width: 0;
-        width: 100%;
-    }
-
-    .startup-page .startup-inquiry-title {
-        line-height: 2.75rem;
-        width: 100%;
-    }
-
-    .startup-page .startup-inquiry-form {
-        flex: 1 1 auto;
-        min-width: 0;
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .startup-page .startup-inquiry-form-row {
-        flex-direction: column;
-    }
-
-    .startup-page .startup-inquiry-input--half,
-    .startup-page .startup-inquiry-input--full,
-    .startup-page .startup-inquiry-textarea,
-    .startup-page .startup-inquiry-file-row,
-    .startup-page .startup-inquiry-submit {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .startup-page .startup-inquiry-label {
-        font-size: 1.125rem;
-        line-height: 1.75rem;
-    }
-
-    .startup-page .startup-inquiry-input,
-    .startup-page .startup-inquiry-textarea,
-    .startup-page .startup-inquiry-file-name {
-        font-size: 1rem;
-        line-height: 1.6;
     }
 }
 
@@ -814,7 +749,7 @@
 
     /* 말풍선 — 모바일 */
     .startup-page .startup-growth-bubble-text {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         line-height: 1.25;
         padding: 0.24em 0.6em 0.45em;
     }
@@ -1256,7 +1191,7 @@
 
 .startup-inquiry-info {
     flex: 4 1 0;
-    min-width: max-content;
+    min-width: 0;
     text-align: left;
     gap: 1.875rem;
 }
@@ -1285,11 +1220,11 @@
 .startup-inquiry-email,
 .startup-inquiry-phone {
     margin: 0;
-    font-family: 'Pretendard', sans-serif;
+    /* font-family: 'Pretendard', sans-serif; — font.css */
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2rem;
-    color: #4C4948;
+    /* color: #4C4948; — .color-main */
 }
 
 .startup-inquiry-mail-icon {
@@ -1307,12 +1242,16 @@
 }
 
 .startup-inquiry-form {
+    box-sizing: border-box;
     flex: 6.5 1 0;
-    min-width: 784px;
-    max-width: 784px;
+    width: 100%;
+    max-width: 49rem;
+    min-width: 0;
 }
 
 .startup-inquiry-form-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
     gap: 1.25rem;
     align-items: flex-start;
 }
@@ -1331,7 +1270,8 @@
 }
 
 .startup-inquiry-field--half {
-    flex: 0 0 auto;
+    flex: 1 1 0%;
+    min-width: 0;
 }
 
 .startup-inquiry-label-row {
@@ -1340,17 +1280,17 @@
 }
 
 .startup-inquiry-label {
-    font-family: 'Pretendard', sans-serif;
+    /* font-family: 'Pretendard', sans-serif; — font.css */
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2rem;
-    color: #4C4948;
+    /* color: #4C4948; — .color-main */
     text-align: left;
 }
 
 .startup-inquiry-field-error {
     margin: 0;
-    font-family: 'Pretendard', sans-serif;
+    /* font-family: 'Pretendard', sans-serif; — font.css */
     font-size: 1rem;
     font-weight: 500;
     line-height: 2rem;
@@ -1370,7 +1310,7 @@
     border-radius: 0.3125rem;
     background-color: #F6F6F6;
     padding: 0.9375rem 1.5625rem;
-    font-family: 'Pretendard', sans-serif;
+    /* font-family: 'Pretendard', sans-serif; — font.css */
     font-size: 1.125rem;
     line-height: 2rem;
     color: #000000;
@@ -1383,24 +1323,29 @@
 }
 
 .startup-inquiry-input--half {
-    width: 381px;
+    width: 100%;
+    max-width: 100%;
     height: 3.375rem;
 }
 
 .startup-inquiry-input--full {
-    width: 784px;
+    width: 100%;
+    max-width: 100%;
     height: 3.375rem;
 }
 
 .startup-inquiry-textarea {
-    width: 784px;
+    width: 100%;
+    max-width: 100%;
     height: 12.625rem;
     resize: none;
 }
 
 .startup-inquiry-file-row {
+    box-sizing: border-box;
     gap: 1.25rem;
-    width: 784px;
+    width: 100%;
+    max-width: 100%;
 }
 
 .startup-inquiry-file-name {
@@ -1422,13 +1367,13 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 130px;
+    width: 8.125rem;
     height: 3.375rem;
     padding: 1.25rem 1.875rem;
     border: none;
     border-radius: 1.25rem;
     background-color: #4C4948;
-    font-family: 'Pretendard', sans-serif;
+    /* font-family: 'Pretendard', sans-serif; — font.css */
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1;
@@ -1466,11 +1411,11 @@
 }
 
 .startup-inquiry-agree-label {
-    font-family: 'Pretendard', sans-serif;
+    /* font-family: 'Pretendard', sans-serif; — font.css */
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.75rem;
-    color: #4C4948;
+    /* color: #4C4948; — .color-main */
     cursor: pointer;
 }
 
@@ -1480,12 +1425,13 @@
     align-items: center;
     justify-content: center;
     margin-top: 2.5rem;
-    width: 784px;
+    width: 100%;
+    max-width: 100%;
     height: 4.5rem;
     padding: 0;
     border: none;
     border-radius: 1.25rem;
-    font-family: 'Pretendard', sans-serif;
+    /* font-family: 'Pretendard', sans-serif; — font.css */
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1;
@@ -1516,5 +1462,448 @@
         transform: none;
         transition: none;
         will-change: auto;
+    }
+}
+
+/* =========================================
+   Responsive Overrides — Fluid Inquiry · Franchise · Process · Growth
+   (협업 Lock · common.css 미수정 · 1440 / 1024 / 768 / 430 격리)
+========================================= */
+
+/* [1] 가맹 경쟁력 — 노트북 (1440px) · 769px~ 모바일 직전까지 3열 유지 */
+@media screen and (max-width: 1440px) {
+    .startup-page .startup-franchise-cards {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .startup-page .startup-franchise-card {
+        flex: 0 1 calc(33.333% - 16px);
+        width: calc(33.333% - 16px);
+        max-width: calc(33.333% - 16px);
+        min-width: 0;
+    }
+
+    .startup-page .startup-franchise-card-icon {
+        width: auto;
+        max-width: 35%;
+        height: auto;
+    }
+
+    /* 제휴문의 — 1440 그리드~ · 줄바꿈 · 유동 축소 · 좌(메인) 우(폼) 1화면 */
+    .startup-page .startup-inquiry-layout {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: clamp(1.5rem, 4.5vw, 6.875rem);
+    }
+
+    .startup-page .startup-inquiry-info {
+        flex: 0 1 clamp(12rem, 36%, 28rem);
+        min-width: 0;
+        max-width: clamp(12rem, 36%, 28rem);
+    }
+
+    .startup-page .startup-inquiry-title {
+        width: 100%;
+        max-width: 100%;
+        line-height: clamp(2.125rem, 4.2vw, 3.875rem);
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    .startup-page .startup-inquiry-title-line {
+        white-space: normal;
+        word-break: keep-all;
+    }
+
+    .startup-page .startup-inquiry-contact {
+        gap: clamp(1rem, 2vw, 1.875rem);
+    }
+
+    .startup-page .startup-inquiry-email,
+    .startup-page .startup-inquiry-phone {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        word-break: break-all;
+    }
+
+    .startup-page .startup-inquiry-form {
+        flex: 1 1 0;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 49rem;
+        min-width: 0;
+    }
+
+    .startup-page .startup-inquiry-label {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .startup-page .startup-inquiry-form-row {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: clamp(0.75rem, 1.5vw, 1.25rem);
+    }
+
+    .startup-page .startup-inquiry-form-row > .startup-inquiry-field--half,
+    .startup-page .startup-inquiry-field--half {
+        flex: 1 1 0%;
+        min-width: 0;
+    }
+
+    .startup-page .startup-inquiry-input--half,
+    .startup-page .startup-inquiry-input--full,
+    .startup-page .startup-inquiry-textarea,
+    .startup-page .startup-inquiry-file-row,
+    .startup-page .startup-inquiry-submit {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .startup-page .startup-inquiry-input--half,
+    .startup-page .startup-inquiry-input--full,
+    .startup-page .startup-inquiry-file-name {
+        height: clamp(2.75rem, 4vw, 3.375rem);
+        padding: clamp(0.625rem, 1.2vw, 0.9375rem) clamp(0.75rem, 1.8vw, 1.5625rem);
+        font-size: 1.125rem;
+        line-height: 2rem;
+    }
+
+    .startup-page .startup-inquiry-textarea {
+        height: clamp(8rem, 22vw, 12.625rem);
+        padding: clamp(0.625rem, 1.2vw, 0.9375rem) clamp(0.75rem, 1.8vw, 1.5625rem);
+        font-size: 1.125rem;
+        line-height: 2rem;
+    }
+
+    .startup-page .startup-inquiry-file-btn {
+        width: clamp(6.5rem, 12vw, 8.125rem);
+        height: clamp(2.75rem, 4vw, 3.375rem);
+        padding: clamp(0.75rem, 1.5vw, 1.25rem) clamp(1rem, 2vw, 1.875rem);
+        font-size: 1.125rem;
+    }
+
+    .startup-page .startup-inquiry-submit {
+        height: clamp(3.25rem, 5vw, 4.5rem);
+        font-size: 1.125rem;
+    }
+
+    .startup-page .startup-inquiry-agree-label {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+}
+
+/* [1] 가맹 경쟁력 — 태블릿 (1024px) · 3열 강제 · 기존 2열 wrap 오버라이드 */
+@media screen and (max-width: 1024px) {
+    .startup-page .startup-franchise-cards {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .startup-page .startup-franchise-card {
+        flex: 0 1 calc(33.333% - 16px);
+        width: calc(33.333% - 16px);
+        max-width: calc(33.333% - 16px);
+        min-width: 0;
+    }
+
+    .startup-page .startup-franchise-card-icon {
+        width: auto;
+        max-width: 35%;
+        height: auto;
+    }
+
+    /* 계약 프로세스 — 2열 × 3행 · row-gap 40px */
+    .startup-page .startup-process-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 40px;
+        column-gap: 20px;
+    }
+
+    .startup-page .startup-process-item {
+        flex: 0 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        width: calc(50% - 10px);
+    }
+
+    .startup-page .startup-process-circle {
+        box-sizing: border-box;
+        width: 7.8125rem;
+        height: 7.8125rem;
+        border-radius: 50%;
+    }
+
+    .startup-page .startup-process-item:nth-child(1) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(2) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(3) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(4) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(5) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(6) .startup-process-icon {
+        width: auto;
+        height: auto;
+        max-width: 60%;
+        max-height: 60%;
+    }
+
+    /* 제휴문의 — 1024 이하 1단 전환 방지 · 줄바꿈·유동 축소 유지 */
+    .startup-page .startup-inquiry-layout {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: clamp(1.25rem, 3.5vw, 3rem);
+    }
+
+    .startup-page .startup-inquiry-info {
+        flex: 0 1 clamp(10rem, 34%, 24rem);
+        min-width: 0;
+        max-width: clamp(10rem, 34%, 24rem);
+    }
+
+    .startup-page .startup-inquiry-title {
+        width: 100%;
+        max-width: 100%;
+        line-height: clamp(2rem, 3.8vw, 2.75rem);
+    }
+
+    .startup-page .startup-inquiry-title-line {
+        white-space: normal;
+    }
+
+    .startup-page .startup-inquiry-form {
+        flex: 1 1 0;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 49rem;
+        min-width: 0;
+    }
+
+    .startup-page .startup-inquiry-email,
+    .startup-page .startup-inquiry-phone {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+
+    .startup-page .startup-inquiry-label {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+
+    /* 제휴문의 — 이름/연락처 가로 1줄 · 50% 분할 */
+    .startup-page .startup-inquiry-form-row {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .startup-page .startup-inquiry-form-row > .startup-inquiry-field--half {
+        flex: 1 1 0%;
+        min-width: 0;
+    }
+
+    .startup-page .startup-inquiry-field--half {
+        flex: 1 1 0%;
+        min-width: 0;
+    }
+
+    .startup-page .startup-inquiry-input--half {
+        width: 100%;
+        max-width: none;
+        padding: clamp(0.625rem, 2vw, 0.9375rem) clamp(0.75rem, 3vw, 1.5625rem);
+    }
+
+    .startup-page .startup-inquiry-input--full,
+    .startup-page .startup-inquiry-textarea,
+    .startup-page .startup-inquiry-file-row,
+    .startup-page .startup-inquiry-submit {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* 프로세스 — 중간 구간(769~1024): 1줄 3개 유지 */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .startup-page .startup-process-list {
+        row-gap: 2rem;
+        column-gap: 1.25rem;
+    }
+
+    .startup-page .startup-process-item {
+        flex: 0 1 calc((100% - 2.5rem) / 3);
+        max-width: calc((100% - 2.5rem) / 3);
+        width: calc((100% - 2.5rem) / 3);
+    }
+
+    /* 3열에서 텍스트 overflow로 옆 아이템과 겹침 방지 */
+    .startup-page .startup-process-item-body {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .startup-page .startup-process-item-desc {
+        width: 100%;
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: keep-all;
+    }
+}
+
+/* [3] 모바일 (768px) — 성장 지표 1단 · 가맹 1열 · 제휴문의 이름/연락처 1줄 */
+@media screen and (max-width: 768px) {
+    /* 성장 지표 — 오버레이 해제 · 수직 1단 */
+    .startup-page .startup-growth-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+        grid-template-rows: auto;
+    }
+
+    .startup-page .startup-growth-copy,
+    .startup-page .startup-growth-graphic {
+        position: relative;
+        grid-area: auto;
+        justify-self: stretch;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .startup-page .startup-growth-graphic {
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .startup-page .startup-growth-copy {
+        z-index: 1;
+        padding-right: 0;
+    }
+
+    .startup-page .startup-franchise-cards {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .startup-page .startup-franchise-card {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 auto;
+    }
+
+    .startup-page .startup-franchise-card-icon {
+        width: 45px;
+        max-width: 45px;
+        height: auto;
+    }
+
+    .startup-page .startup-process-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 40px;
+        column-gap: 20px;
+    }
+
+    .startup-page .startup-process-item {
+        flex: 0 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        width: calc(50% - 10px);
+    }
+
+    .startup-page .startup-process-circle {
+        box-sizing: border-box;
+        width: 7.8125rem;
+        height: 7.8125rem;
+        border-radius: 50%;
+    }
+
+    .startup-page .startup-process-item:nth-child(1) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(2) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(3) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(4) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(5) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(6) .startup-process-icon {
+        width: auto;
+        height: auto;
+        max-width: 55%;
+        max-height: 55%;
+    }
+
+    .startup-page .startup-inquiry-form-row {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .startup-page .startup-inquiry-form-row > .startup-inquiry-field--half {
+        flex: 1 1 0%;
+        min-width: 0;
+    }
+
+    .startup-page .startup-inquiry-field--half {
+        flex: 1 1 0%;
+        min-width: 0;
+    }
+
+    .startup-page .startup-inquiry-input--half {
+        width: 100%;
+        max-width: none;
+        padding: clamp(0.625rem, 2vw, 0.9375rem) clamp(0.75rem, 3vw, 1.25rem);
+    }
+
+    .startup-page .startup-inquiry-label-row {
+        flex-wrap: wrap;
+    }
+
+    /* 제휴문의 — 모바일: 세로 1단(가독성) · 폼 내부 이름/연락처 1줄 유지 */
+    .startup-page .startup-inquiry-layout {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .startup-page .startup-inquiry-info {
+        flex: 1 1 auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .startup-page .startup-inquiry-title {
+        line-height: 2.125rem;
+    }
+
+    .startup-page .startup-inquiry-title-line {
+        white-space: normal;
+    }
+
+    .startup-page .startup-inquiry-form {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+}
+
+/* 초소형 모바일 (430px) — 가맹 아이콘 40px */
+@media screen and (max-width: 430px) {
+    .startup-page .startup-franchise-card-icon {
+        width: 40px;
+        max-width: 40px;
+        height: auto;
     }
 }
