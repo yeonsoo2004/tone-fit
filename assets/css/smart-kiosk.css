@@ -646,3 +646,8 @@
         text-align: center;
     }
 }
+
+/* Footer (smart-kiosk page only) */
+.kiosk-main .footer-sns-bar {
+    gap: 0.625rem; /* 10px */
+}

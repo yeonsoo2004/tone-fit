@@ -1281,3 +1281,8 @@
         margin-top: 1.25rem;
     }
 }
+
+/* Footer (identity page only) */
+.identity-main .footer-sns-bar {
+    gap: 0.625rem; /* 10px */
+}
