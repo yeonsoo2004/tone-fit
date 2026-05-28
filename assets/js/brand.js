@@ -270,6 +270,7 @@
         gsap.registerPlugin(ScrollTrigger);
 
         const targets = fadeEls.length ? [bgArea, ...fadeEls] : [bgArea];
+        let played = false;
 
         function resetCta() {
             gsap.killTweensOf(targets);
@@ -300,13 +301,21 @@
 
         resetCta();
 
-        ScrollTrigger.create({
+        const st = ScrollTrigger.create({
             trigger: section,
             start: 'top 70%',
-            onEnter: playCta,
-            onEnterBack: playCta,
-            onLeave: resetCta,
-            onLeaveBack: resetCta,
+            onEnter: () => {
+                if (played) return;
+                played = true;
+                playCta();
+                st.kill(); // 한 번만 재생, 이후 유지
+            },
+            onEnterBack: () => {
+                if (played) return;
+                played = true;
+                playCta();
+                st.kill(); // 한 번만 재생, 이후 유지
+            },
         });
 
         ScrollTrigger.refresh();
