@@ -53,33 +53,3 @@
         }
     });
 })();
-
-/**
- * Contact Page — 파일 첨부
- */
-(function () {
-    'use strict';
-
-    var fileInput = document.getElementById('contact-inquiry-file');
-    var fileBtn = document.querySelector('.contact-inquiry-file-btn');
-    var fileNameEl = document.getElementById('contact-inquiry-file-name');
-
-    if (!fileInput || !fileBtn || !fileNameEl) {
-        return;
-    }
-
-    fileBtn.addEventListener('click', function () {
-        fileInput.click();
-    });
-
-    fileInput.addEventListener('change', function () {
-        var file = fileInput.files && fileInput.files[0];
-
-        if (!file) {
-            fileNameEl.textContent = '';
-            return;
-        }
-
-        fileNameEl.textContent = file.name;
-    });
-})();

@@ -61,8 +61,12 @@
             });
     }
 
+    function getInquiryPage() {
+        return $('.startup-page, .contact-page').first();
+    }
+
     function initStartupFadeUp() {
-        var $page = $('.startup-page');
+        var $page = getInquiryPage();
 
         if (!$page.length) {
             return;
@@ -131,7 +135,7 @@
     }
 
     function initStartupInquiryFile() {
-        var $page = $('.startup-page');
+        var $page = getInquiryPage();
 
         if (!$page.length) {
             return;
@@ -212,7 +216,7 @@
     }
 
     function initStartupInquirySubmit() {
-        var $page = $('.startup-page');
+        var $page = getInquiryPage();
 
         if (!$page.length) {
             return;

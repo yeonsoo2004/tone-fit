@@ -8,9 +8,21 @@
 
 /* =========================================
 
-   KV Section — 758px
+   Hero — KV 1920×758 + Card 1440×583 (별도 레이어)
 
 ========================================= */
+
+
+
+.contact-hero {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: calc(583px / 2);
+
+}
 
 
 
@@ -18,9 +30,15 @@
 
     position: relative;
 
+    z-index: 1;
+
     width: 100%;
 
-    padding-bottom: 18.4375rem;
+    height: 758px;
+
+    max-height: 758px;
+
+    overflow: hidden;
 
     background-image: url('../images/contact-main.webp');
 
@@ -39,7 +57,13 @@
 
     z-index: 1;
 
-    height: 758px;
+    box-sizing: border-box;
+
+    height: 100%;
+
+    padding-top: 237px;
+
+    padding-bottom: 372px;
 
     text-align: left;
 }
@@ -99,6 +123,16 @@
     box-sizing: border-box;
 
     transform: translate(-50%, 50%);
+
+    pointer-events: none;
+
+}
+
+
+
+.contact-card-wrap .contact-card {
+
+    pointer-events: auto;
 
 }
 
@@ -256,9 +290,9 @@
 
 @media screen and (max-width: 1024px) {
 
-    .contact-kv-inner {
+    .contact-hero {
 
-        height: 32rem;
+        margin-bottom: 8rem;
 
     }
 
@@ -266,7 +300,19 @@
 
     .contact-kv-section {
 
-        padding-bottom: 14rem;
+        height: 32rem;
+
+        max-height: 32rem;
+
+    }
+
+
+
+    .contact-kv-inner {
+
+        padding-top: 6rem;
+
+        padding-bottom: 9rem;
 
     }
 
@@ -344,9 +390,9 @@
 
 @media screen and (max-width: 768px) {
 
-    .contact-kv-inner {
+    .contact-hero {
 
-        height: 24rem;
+        margin-bottom: 5rem;
 
     }
 
@@ -354,7 +400,19 @@
 
     .contact-kv-section {
 
-        padding-bottom: 10rem;
+        height: 24rem;
+
+        max-height: 24rem;
+
+    }
+
+
+
+    .contact-kv-inner {
+
+        padding-top: 4rem;
+
+        padding-bottom: 6rem;
 
     }
 
@@ -438,7 +496,7 @@
 
 .contact-faq-section {
 
-    margin-top: calc(583px / 2);
+    margin-top: 0;
 
     padding-top: 8.125rem;
 
@@ -1325,9 +1383,9 @@
 
 @media screen and (max-width: 402px) {
 
-    .contact-kv-inner {
+    .contact-hero {
 
-        height: 20rem;
+        margin-bottom: 4rem;
 
     }
 
@@ -1335,7 +1393,19 @@
 
     .contact-kv-section {
 
-        padding-bottom: 8rem;
+        height: 20rem;
+
+        max-height: 20rem;
+
+    }
+
+
+
+    .contact-kv-inner {
+
+        padding-top: 3rem;
+
+        padding-bottom: 4rem;
 
     }
 
@@ -1424,6 +1494,56 @@
     font-weight: unset;
 
     line-height: unset;
+
+}
+
+
+
+/* =========================================
+
+   DB Section (startup-inquiry on contact page)
+
+========================================= */
+
+
+
+.contact-page .startup-inquiry-title {
+
+    font-size: 48px;
+
+    line-height: 1.25;
+
+}
+
+
+
+.contact-page .startup-inquiry-input,
+
+.contact-page .startup-inquiry-textarea {
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    color: #000000;
+
+}
+
+
+
+.contact-page .startup-inquiry-input::placeholder,
+
+.contact-page .startup-inquiry-textarea::placeholder {
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    color: rgba(0, 0, 0, 0.5);
+
+    opacity: 1;
 
 }
 
