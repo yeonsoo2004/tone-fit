@@ -104,6 +104,7 @@ body {
     z-index: 2;
     padding-top: 8.125rem;
     overflow: visible;
+    padding-bottom: 0;
 }
 
 .about-section > .inner {
