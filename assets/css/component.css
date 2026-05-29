@@ -288,6 +288,23 @@ body.is-header-nav-open {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .header-mobile-cta {
+        flex-shrink: 0;
+        padding: 1.25rem 1rem 2rem;
+        border-top: 1px solid rgba(76, 73, 72, 0.12);
+    }
+
+    .header-mobile-cta .gnb-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        box-sizing: border-box;
+        color: #fff;
+    }
+}
+
 /* ===================================
    Header Responsive
    =================================== */

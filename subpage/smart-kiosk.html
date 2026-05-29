@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../assets/css/libs/swiper-bundle.min.css">
 </head>
 <body>
+    <!-- ===== HEADER (index.html 동일) ===== -->
     <header class="header">
         <div class="header-container inner">
             <div class="header-left">
@@ -63,8 +64,46 @@
             </div>
             <div class="header-right">
                 <span class="gnb-btn ft-20-r"><a href="contact.html">창업문의</a></span>
+                <button type="button" class="header-menu-toggle" aria-label="메뉴 열기" aria-expanded="false"
+                    aria-controls="header-mobile-nav">
+                    <img src="../assets/images/icon/menu.svg" alt="" width="24" height="24">
+                </button>
             </div>
         </div>
+        <nav id="header-mobile-nav" class="header-mobile-nav ft-20-r" aria-label="모바일 메뉴" hidden>
+            <ul class="header-mobile-list">
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">BRAND</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="identity.html">IDENTITY</a></li>
+                        <li><a href="smart-kiosk.html">SMART KIOSK</a></li>
+                    </ul>
+                </li>
+                <li class="header-mobile-group">
+                    <a href="frame.html" class="header-mobile-link">FRAME</a>
+                </li>
+                <li class="header-mobile-group">
+                    <a href="store.html" class="header-mobile-link">STORE</a>
+                </li>
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">FRANCHISE</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="space.html">SPACE</a></li>
+                        <li><a href="startup.html">STARTUP</a></li>
+                    </ul>
+                </li>
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">COMMUNITY</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="news.html">NEWS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="header-mobile-cta">
+                <a href="contact.html" class="gnb-btn ft-20-r">창업문의</a>
+            </div>
+        </nav>
     </header>
 
     <main class="sub-main kiosk-main">
