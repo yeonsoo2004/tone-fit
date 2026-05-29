@@ -323,8 +323,41 @@ body.is-header-nav-open {
 }
 
 /* ===================================
+   Site Layout Gutter (노트북 · common.css 보완)
+   component.css는 common.css 이후 로드 → :root 덮어씀
+   =================================== */
+
+@media screen and (max-width: 1440px) {
+    :root {
+        --page-gutter-x: 10rem; /* 160px · 좌우 최소 여백 */
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --page-gutter-x: 64px;
+    }
+}
+
+@media screen and (max-width: 402px) {
+    :root {
+        --page-gutter-x: 16px;
+    }
+}
+
+/* ===================================
    Header Responsive
    =================================== */
+
+@media screen and (max-width: 1440px) {
+    .header-container {
+        column-gap: 1.5rem;
+    }
+
+    .header-menu {
+        column-gap: 1.5rem;
+    }
+}
 
 @media (max-width: 1024px) {
     .header {
