@@ -229,7 +229,7 @@ body:not(.page-home) .header {
     right: 0;
     z-index: 99;
     max-height: calc(100dvh - var(--header-divider-gap) - var(--header-bar-height) - var(--header-divider-gap));
-    overflow-y: auto;
+    overflow: hidden;
     background-color: #fff;
     color: #4C4948;
     box-shadow: 0 0.5rem 1.5rem rgba(30, 32, 34, 0.12);
@@ -240,13 +240,16 @@ body:not(.page-home) .header {
 }
 
 .header.is-mobile-nav-open .header-mobile-nav:not([hidden]) {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-mobile-list {
     margin: 0;
-    padding: 1.25rem 1rem 2rem;
+    padding: 1.25rem 1rem 1.25rem;
     list-style: none;
+    flex: 1;
+    overflow-y: auto;
 }
 
 .header-mobile-group + .header-mobile-group {
