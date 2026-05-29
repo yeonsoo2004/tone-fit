@@ -155,7 +155,7 @@
 
         $fileInput.on('change', function () {
             var file = this.files && this.files[0];
-            $fileName.text(file ? file.name : '');
+            $fileName.text(file ? file.name : '선택된 파일 없음');
         });
     }
 
@@ -282,7 +282,7 @@
             fields.forEach(function (field) {
                 setInquiryFieldError(field.$error, '');
             });
-            $page.find('#startup-inquiry-file-name').text('');
+            $page.find('#startup-inquiry-file-name').text('선택된 파일 없음');
         });
     }
 
