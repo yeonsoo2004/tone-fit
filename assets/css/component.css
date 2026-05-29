@@ -64,6 +64,8 @@ body:not(.page-home) .header {
 /* Keep header top padding even when `.inner` adds responsive padding */
 .header-container.inner {
     padding-top: var(--header-divider-gap);
+    padding-left: var(--page-gutter-x);
+    padding-right: var(--page-gutter-x);
 }
 
 .header-left {
@@ -246,7 +248,7 @@ body:not(.page-home) .header {
 
 .header-mobile-list {
     margin: 0;
-    padding: 1.25rem 1rem 1.25rem;
+    padding: 1.25rem var(--page-gutter-x) 1.25rem;
     list-style: none;
     flex: 1;
     overflow-y: auto;
@@ -282,6 +284,21 @@ body:not(.page-home) .header {
 .header-mobile-sublist a:hover,
 .header-mobile-link:hover {
     color: #D4734A;
+}
+
+.header-mobile-cta {
+    flex-shrink: 0;
+    padding: 1.25rem var(--page-gutter-x) 2rem;
+    border-top: 1px solid rgba(76, 73, 72, 0.12);
+}
+
+.header-mobile-cta .gnb-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: #fff;
 }
 
 body.is-header-nav-open {
