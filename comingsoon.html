@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TONE:FIT - COMING SOON</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    
+    <style>
+        /* 기본 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        /* 전체 화면 래퍼 */
+        .coming-soon-wrapper {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        /* 배경 비디오 */
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        /* 딤 & 블러 오버레이 레이어 (전환 애니메이션 효과 적용) */
+        .dim-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* [초기 상태] 딤 처리 40%, 블러 없음 */
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            z-index: 2;
+            /* 4초 시점에 부드럽게 변하도록 트랜지션 설정 (2초 동안 변경) */
+            transition: background-color 2s ease, backdrop-filter 2s ease, -webkit-backdrop-filter 2s ease;
+        }
+
+        /* [활성화 상태] 4초 이후 영상 끝날 쯤 변하는 스타일 */
+        .dim-overlay.active {
+            background-color: rgba(0, 0, 0, 0.75); /* 영상이 은은하게 깔리는 75% 어둠 */
+            backdrop-filter: blur(15px);          /* 영상을 완벽히 가려주는 100% 수준의 깊은 블러 */
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        /* 콘텐츠 영역 (글자 및 디데이 박스 전체) */
+        .content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: #FFFFFF;
+            width: 100%;
+            padding: 0 20px;
+            
+            /* [초기 상태] 완전히 투명하고 살짝 아래에 위치 */
+            opacity: 0;
+            transform: translateY(30px);
+            pointer-events: none; /* 나타나기 전 클릭 방지 */
+            /* 부드러운 등장 트랜지션 (2초 동안 페이드업) */
+            transition: opacity 2s ease, transform 2s ease;
+        }
+
+        /* [활성화 상태] 4초 이후 서서히 등장 */
+        .content.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* 로고/서브타이틀 */
+        .logo {
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #aaa;
+        }
+
+        /* 메인 타이틀 */
+        .main-title {
+            font-size: 120px;
+            font-weight: 800;
+            color: #E85D36;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        /* 설명 텍스트 */
+        .desc {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 60px;
+            color: #dddddd;
+        }
+        
+        .desc .highlight {
+            color: #E85D36;
+            font-weight: 600;
+        }
+
+        /* 카운트다운 컨테이너 */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 24px; 
+        }
+
+        /* 개별 카운트다운 박스 */
+        .countdown-box {
+            border: 1px solid #E85D36;
+            border-radius: 20px;
+            padding: 32px 40px; 
+            min-width: 180px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+        }
+
+        .countdown-box .number {
+            font-size: 72px;
+            font-weight: 700;
+            color: #E85D36;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .countdown-box .label {
+            font-size: 20px;
+            font-weight: 500;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+        }
+
+        /* 반응형 (태블릿) */
+        @media screen and (max-width: 768px) {
+            .main-title {
+                font-size: 60px;
+            }
+            .desc {
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+            .countdown-container {
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+            .countdown-box {
+                padding: 24px 32px;
+                min-width: 140px;
+                border-radius: 16px;
+            }
+            .countdown-box .number {
+                font-size: 52px;
+                margin-bottom: 12px;
+            }
+            .countdown-box .label {
+                font-size: 14px;
+            }
+        }
+
+        /* 반응형 (모바일) */
+        @media screen and (max-width: 480px) {
+            .main-title {
+                font-size: 48px;
+            }
+            .countdown-container {
+                gap: 12px;
+            }
+            .countdown-box {
+                width: calc(50% - 6px);
+                padding: 20px 16px;
+                min-width: auto;
+            }
+            .countdown-box .number {
+                font-size: 42px;
+            }
+            .countdown-box .label {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="coming-soon-wrapper">
+        <video class="bg-video" autoplay loop muted playsinline>
+            <source src="soon02.mp4" type="video/mp4">
+            브라우저가 비디오 태그를 지원하지 않습니다.
+        </video>
+        
+        <div class="dim-overlay"></div>
+
+        <div class="content">
+            <div class="logo">TONE:FIT</div>
+            <h1 class="main-title">COMING SOON</h1>
+            <p class="desc">AI가 운영하고 1020이 홍보하는 무인 공간, <span class="highlight">톤핏 공식 런칭</span></p>
+
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span class="number" id="days">00</span>
+                    <span class="label">DAYS</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">HOURS</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">MINUTES</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">SECONDS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* =========================================
+           1. 비디오 타임체크 및 인트로 전환 애니메이션
+        ========================================= */
+        const video = document.querySelector('.bg-video');
+        const dimOverlay = document.querySelector('.dim-overlay');
+        const content = document.querySelector('.content');
+        
+        let introTriggered = false; // 애니메이션이 한 번만 실행되도록 체크하는 플래그
+
+        video.addEventListener('timeupdate', () => {
+            // 영상 재생 시간이 4초 이상이 되었을 때 (딱 한 번만 실행)
+            if (!introTriggered && video.currentTime >= 4) {
+                introTriggered = true;
+                
+                // active 클래스를 추가하여 CSS 트랜지션 실행
+                dimOverlay.classList.add('active');
+                content.classList.add('active');
+            }
+        });
+
+        /* =========================================
+           2. 디데이 카운트다운 타이머 (6월 12일 목표)
+        ========================================= */
+        const targetDate = new Date("2026-06-12T00:00:00").getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const formatNumber = (num) => num < 10 ? `0${num}` : num;
+
+            document.getElementById("days").innerText = formatNumber(days);
+            document.getElementById("hours").innerText = formatNumber(hours);
+            document.getElementById("minutes").innerText = formatNumber(minutes);
+            document.getElementById("seconds").innerText = formatNumber(seconds);
+        };
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+</body>
+</html>
