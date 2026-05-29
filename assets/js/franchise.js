@@ -134,6 +134,63 @@
         observeFadeTargets($inquiryInfo);
     }
 
+    function initStartupFeatureVideo() {
+        var $page = $('.startup-page');
+
+        if (!$page.length) {
+            return;
+        }
+
+        var $section = $page.find('.startup-feature-section');
+        var video = $section.find('.startup-brand-video')[0];
+
+        if (!video || !$section.length) {
+            return;
+        }
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
+
+        function playVideo() {
+            video.muted = true;
+
+            var playPromise = video.play();
+
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(function () {});
+            }
+        }
+
+        function pauseVideo() {
+            if (!video.paused) {
+                video.pause();
+            }
+        }
+
+        if (!window.IntersectionObserver) {
+            playVideo();
+            return;
+        }
+
+        var observer = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        playVideo();
+                    } else {
+                        pauseVideo();
+                    }
+                });
+            },
+            {
+                threshold: 0.35
+            }
+        );
+
+        observer.observe($section[0]);
+    }
+
     function initStartupInquiryFile() {
         var $page = getInquiryPage();
 
@@ -282,7 +339,7 @@
             fields.forEach(function (field) {
                 setInquiryFieldError(field.$error, '');
             });
-            $page.find('#startup-inquiry-file-name').text('선택된 파일 없음');
+            $page.find('#startup-inquiry-file-name').text('선택된 파일 없음').removeClass('has-file');
         });
     }
 
@@ -297,6 +354,7 @@
         });
 
         initStartupFadeUp();
+        initStartupFeatureVideo();
         initStartupInquiryFile();
         initStartupInquirySubmit();
     });
