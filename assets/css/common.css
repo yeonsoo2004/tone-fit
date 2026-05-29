@@ -71,12 +71,18 @@ body {
 /* =========================================
    Layout & Grid System (PC 기준 1440px)
 ========================================= */
+:root {
+   --page-gutter-x: 0;
+}
+
 .inner {
    max-width: 1440px;
    width: 100%;
    margin: 0 auto;
    min-width: 0;
    box-sizing: border-box;
+   padding-left: var(--page-gutter-x);
+   padding-right: var(--page-gutter-x);
 }
 
 .grid-wrap {
@@ -91,10 +97,10 @@ body {
 
 /* 태블릿 (1024px 이하) */
 @media screen and (max-width: 1024px) {
-   .inner {
-      width: 100%;
-      padding: 0 64px; /* 피그마 Margin: 64 반영 */
+   :root {
+      --page-gutter-x: 64px;
    }
+
    .grid-wrap {
       grid-template-columns: repeat(8, 1fr); /* 8단 그리드 변환 */
       gap: 24px; /* 피그마 Gutter: 24 반영 */
@@ -105,11 +111,12 @@ body {
    }
 }
 
-/* 모바일 (768px 이하) */
+/* 태블릿 (768px 이하) — 좌우 최소 여백 64px 유지 */
 @media screen and (max-width: 768px) {
-   .inner {
-      padding: 0 16px; /* 모바일 Margin: 16 반영 */
+   :root {
+      --page-gutter-x: 64px;
    }
+
    .grid-wrap {
       grid-template-columns: repeat(6, 1fr); /* 모바일 6단 그리드 변환 */
       gap: 16px; /* 모바일 Gutter: 16 반영 */
@@ -117,5 +124,12 @@ body {
    .py-130 {
       padding-top: 3.75rem;
       padding-bottom: 3.75rem;
+   }
+}
+
+/* 모바일 (402px 이하) */
+@media screen and (max-width: 402px) {
+   :root {
+      --page-gutter-x: 16px;
    }
 }

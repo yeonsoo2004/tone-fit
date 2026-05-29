@@ -39,8 +39,7 @@ body {
     object-position: center;
 }
 
-.hero .inner,
-.hero .scroll-indicator {
+.hero .inner {
     position: relative;
     z-index: 1;
 }
@@ -71,13 +70,14 @@ body {
     gap: 20px;
 }
 
-.scroll-indicator {
+.hero .scroll-indicator {
     position: absolute;
     bottom: 0;
     left: 50%;
+    z-index: 1;
     display: block;
-    width: 6.25rem;
-    height: 6.25rem;
+    width: clamp(3rem, 10vw, 6.25rem);
+    height: clamp(3rem, 10vw, 6.25rem);
     transform: translateX(-50%);
     animation: bounce 2s infinite;
 }
@@ -1030,8 +1030,13 @@ p {
 
 @media (max-width: 768px) {
     .hero {
-        min-height: auto;
-        height: auto;
+        min-height: 100vh;
+        height: 100vh;
+    }
+
+    .hero .scroll-indicator {
+        width: clamp(2.5rem, 14vw, 4.5rem);
+        height: clamp(2.5rem, 14vw, 4.5rem);
     }
 
     .hero-title {
@@ -1122,22 +1127,18 @@ p {
     }
 }
 
+@media (max-width: 402px) {
+    .hero .scroll-indicator {
+        width: clamp(2rem, 18vw, 3.25rem);
+        height: clamp(2rem, 18vw, 3.25rem);
+    }
+}
+
 /* =========================================
    INDEX MOBILE HEADER CTA
 ========================================= */
 @media (max-width: 768px) {
-    .page-home .header-mobile-cta {
-        flex-shrink: 0;
-        padding: 1.25rem 1rem 2rem;
-        border-top: 1px solid rgba(76, 73, 72, 0.12);
-    }
-
     .page-home .header-mobile-cta .gnb-btn {
-        display: block;
-        width: 100%;
-        text-align: center;
-        text-decoration: none;
-        box-sizing: border-box;
         color: #fff;
     }
 }
