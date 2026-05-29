@@ -309,13 +309,11 @@
                         </div>
         
                         <div class="startup-inquiry-field d-flex flex-col">
-                            <label class="startup-inquiry-label" for="startup-inquiry-file" id="startup-inquiry-file-label">파일첨부</label>
-                            <div class="startup-inquiry-file-row d-flex ai-center">
-                                <p class="startup-inquiry-file-name" id="startup-inquiry-file-name" role="status" aria-live="polite">선택된 파일 없음</p>
-                                <!-- 3. aria-labelledby 속성 제거 (버튼 본연의 텍스트 활용) -->
-                                <button class="startup-inquiry-file-btn" type="button" aria-controls="startup-inquiry-file">파일 선택</button>
-                                <!-- input에 hidden 속성이 적용되어 탭 이동 시 스킵되므로 버튼에만 포커스가 갑니다. 아주 좋은 처리입니다! -->
-                                <input class="startup-inquiry-file-input" type="file" id="startup-inquiry-file" name="attachment" aria-describedby="startup-inquiry-file-name" hidden>
+                            <span class="startup-inquiry-label" id="startup-inquiry-file-label">파일첨부</span>
+                            <div class="startup-inquiry-file-row d-flex ai-center" aria-labelledby="startup-inquiry-file-label">
+                                <p class="startup-inquiry-file-name" id="startup-inquiry-file-name" role="status" aria-live="polite" aria-label="첨부 파일명">선택된 파일 없음</p>
+                                <button class="startup-inquiry-file-btn" type="button" aria-controls="startup-inquiry-file">파일첨부</button>
+                                <input class="startup-inquiry-file-input" type="file" id="startup-inquiry-file" name="attachment" hidden>
                             </div>
                         </div>
         

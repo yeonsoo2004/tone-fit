@@ -1547,3 +1547,6 @@
 
 }
 
+.contact-page .startup-inquiry-file-name:not(.has-file) {
+    opacity: 0.5;
+}

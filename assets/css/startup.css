@@ -1487,12 +1487,27 @@
         width: calc(33.333% - 16px);
         max-width: calc(33.333% - 16px);
         min-width: 0;
+        height: auto;
+        aspect-ratio: 464 / 473;
+        padding: clamp(2rem, 3.5vw, 3.75rem) clamp(1.125rem, 1.8vw, 1.75rem);
+        border-radius: clamp(2rem, 3.5vw, 3.125rem);
+        justify-content: center;
     }
 
     .startup-page .startup-franchise-card-icon {
         width: auto;
         max-width: 35%;
         height: auto;
+    }
+
+    .startup-page .startup-franchise-card-title {
+        margin-top: clamp(1.25rem, 2.5vw, 2.5rem);
+        line-height: 1.35;
+    }
+
+    .startup-page .startup-franchise-card-desc {
+        margin-top: clamp(0.625rem, 1.2vw, 1.25rem);
+        line-height: 1.5;
     }
 
     /* 제휴문의 — 1440 그리드~ · 줄바꿈 · 유동 축소 · 좌(메인) 우(폼) 1화면 */
@@ -1616,15 +1631,28 @@
         width: calc(33.333% - 16px);
         max-width: calc(33.333% - 16px);
         min-width: 0;
+        height: auto;
+        aspect-ratio: 464 / 473;
+        padding: 2.5rem 1.25rem;
+        border-radius: 2.5rem;
+        justify-content: center;
     }
 
     .startup-page .startup-franchise-card-icon {
         width: auto;
-        max-width: 35%;
+        max-width: 30%;
         height: auto;
     }
 
-    /* 계약 프로세스 — 2열 × 3행 · row-gap 40px */
+    .startup-page .startup-franchise-card-title {
+        margin-top: 2rem;
+        line-height: 1.35;
+    }
+
+    .startup-page .startup-franchise-card-desc {
+        margin-top: 1rem;
+        line-height: 1.5;
+    }
     .startup-page .startup-process-list {
         display: flex;
         flex-direction: row;
@@ -1804,12 +1832,27 @@
         width: 100%;
         max-width: 100%;
         flex: 1 1 auto;
+        height: auto;
+        aspect-ratio: auto;
+        padding: 1.5rem 1rem;
+        border-radius: 2.5rem;
+        justify-content: center;
     }
 
     .startup-page .startup-franchise-card-icon {
         width: 45px;
         max-width: 45px;
         height: auto;
+    }
+
+    .startup-page .startup-franchise-card-title {
+        margin-top: 1.5rem;
+        line-height: 1.35;
+    }
+
+    .startup-page .startup-franchise-card-desc {
+        margin-top: 0.75rem;
+        line-height: 1.5;
     }
 
     .startup-page .startup-process-list {
@@ -1902,11 +1945,68 @@
     }
 }
 
-/* 초소형 모바일 (430px) — 가맹 아이콘 40px */
+/* 초소형 모바일 (430px) — 가맹 카드 · 아이콘 40px */
 @media screen and (max-width: 430px) {
+    .startup-page .startup-franchise-card {
+        padding: 1.25rem 0.875rem;
+        border-radius: 2rem;
+    }
+
     .startup-page .startup-franchise-card-icon {
         width: 40px;
         max-width: 40px;
         height: auto;
     }
+
+    .startup-page .startup-franchise-card-title {
+        margin-top: 1.25rem;
+    }
+
+    .startup-page .startup-franchise-card-desc {
+        margin-top: 0.625rem;
+    }
+}
+
+/* 파일 첨부 — 웹 접근성 (visually-hidden · label 커서) */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.startup-inquiry-file-btn {
+    cursor: pointer;
+}
+
+.startup-page .startup-inquiry-file-name:not(.has-file) {
+    opacity: 0.5;
+}
+
+/* Feature 섹션 — 비디오 (플랫 복구 · 그리드 세로 중앙) */
+.startup-page .startup-feature-grid {
+    align-items: center;
+}
+
+.startup-page .startup-feature-video-col {
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+
+.startup-brand-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin-top: 0;
 }
