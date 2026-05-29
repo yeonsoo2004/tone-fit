@@ -85,6 +85,17 @@
 /* =========================================
    HOW IT WORKS Section
 ========================================= */
+.kiosk-works-section .color-point {
+    color: #D4734A;
+}
+
+.kiosk-works-section .title-area h2 {
+    margin-top: 0;
+    color: #D4734A;
+    line-height: 1.3;
+}
+
+
 
 .kiosk-works-section .work-item {
     align-items: center;
@@ -98,6 +109,13 @@
 .kiosk-works-section .slide-text-col {
     overflow: hidden;
 }
+
+.kiosk-works-section .step-title {
+    margin-top: 0;
+    color: #D4734A;
+    line-height: 1.3;
+}
+
 
 .kiosk-works-section .img-col img {
     width: 100%;
