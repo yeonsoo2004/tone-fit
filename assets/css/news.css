@@ -6,11 +6,7 @@
    1. PAGE TITLE SECTION
 ========================================= */
 
-/* news 페이지는 히어로 없이 배경색이므로 헤더 항상 고정 스타일 적용 */
-.page-news .header {
-    background-color: #fff !important;
-    color: #4C4948 !important;
-}
+/* news 페이지는 component.css의 body:not(.page-home) .header로 자동 처리 */
 
 .news-main {
     padding-top: 5.25rem; /* 헤더 높이 오프셋 */
