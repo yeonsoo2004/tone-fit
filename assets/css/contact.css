@@ -8,9 +8,21 @@
 
 /* =========================================
 
-   KV Section — 758px
+   Hero — KV 1920×758 + Card 1440×583 (별도 레이어)
 
 ========================================= */
+
+
+
+.contact-hero {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: calc(583px / 2);
+
+}
 
 
 
@@ -18,9 +30,15 @@
 
     position: relative;
 
+    z-index: 1;
+
     width: 100%;
 
-    padding-bottom: 18.4375rem;
+    height: 758px;
+
+    max-height: 758px;
+
+    overflow: hidden;
 
     background-image: url('../images/contact-main.webp');
 
@@ -29,7 +47,6 @@
     background-position: center;
 
     background-repeat: no-repeat;
-
 }
 
 
@@ -40,10 +57,15 @@
 
     z-index: 1;
 
-    height: 758px;
+    box-sizing: border-box;
+
+    height: 100%;
+
+    padding-top: 237px;
+
+    padding-bottom: 372px;
 
     text-align: left;
-
 }
 
 
@@ -101,6 +123,16 @@
     box-sizing: border-box;
 
     transform: translate(-50%, 50%);
+
+    pointer-events: none;
+
+}
+
+
+
+.contact-card-wrap .contact-card {
+
+    pointer-events: auto;
 
 }
 
@@ -258,9 +290,9 @@
 
 @media screen and (max-width: 1024px) {
 
-    .contact-kv-inner {
+    .contact-hero {
 
-        height: 32rem;
+        margin-bottom: 8rem;
 
     }
 
@@ -268,15 +300,19 @@
 
     .contact-kv-section {
 
-        padding-bottom: 14rem;
+        height: 32rem;
+
+        max-height: 32rem;
 
     }
 
 
 
-    .contact-kv-title {
+    .contact-kv-inner {
 
-        font-size: 2.625rem;
+        padding-top: 6rem;
+
+        padding-bottom: 9rem;
 
     }
 
@@ -286,7 +322,9 @@
 
         width: 100%;
 
-        padding: 0 1.25rem;
+        padding: 0 64px;
+
+        box-sizing: border-box;
 
     }
 
@@ -322,7 +360,7 @@
 
     .contact-card-divider {
 
-        margin: 50px 0;
+        margin: 2.5rem 0;
 
     }
 
@@ -338,15 +376,23 @@
 
     }
 
+
+
+    .contact-faq-section {
+
+        margin-top: 8rem;
+
+    }
+
 }
 
 
 
 @media screen and (max-width: 768px) {
 
-    .contact-kv-inner {
+    .contact-hero {
 
-        height: 24rem;
+        margin-bottom: 5rem;
 
     }
 
@@ -354,23 +400,19 @@
 
     .contact-kv-section {
 
-        padding-bottom: 12rem;
+        height: 24rem;
+
+        max-height: 24rem;
 
     }
 
 
 
-    .contact-kv-title {
+    .contact-kv-inner {
 
-        font-size: 2rem;
+        padding-top: 4rem;
 
-    }
-
-
-
-    .contact-kv-desc {
-
-        font-size: 1.125rem;
+        padding-bottom: 6rem;
 
     }
 
@@ -380,7 +422,9 @@
 
         width: 100%;
 
-        padding: 0 1rem;
+        padding: 0 16px;
+
+        box-sizing: border-box;
 
     }
 
@@ -410,7 +454,7 @@
 
     .contact-card-divider {
 
-        margin: 50px 0;
+        margin: 1.5rem 0;
 
     }
 
@@ -419,6 +463,22 @@
     .contact-details-row {
 
         gap: 2rem;
+
+    }
+
+
+
+    .contact-faq-section {
+
+        margin-top: 5rem;
+
+    }
+
+
+
+    .contact-detail-label {
+
+        margin-bottom: 0.625rem;
 
     }
 
@@ -436,7 +496,7 @@
 
 .contact-faq-section {
 
-    margin-top: calc(583px / 2);
+    margin-top: 0;
 
     padding-top: 8.125rem;
 
@@ -451,10 +511,6 @@
 .contact-faq-title {
 
     margin: 0 0 2.5rem;
-
-    font-size: 2rem;
-
-    font-weight: 500;
 
     line-height: 1.4;
 
@@ -682,8 +738,6 @@
 
         margin-bottom: 2rem;
 
-        font-size: 1.75rem;
-
     }
 
 
@@ -691,8 +745,6 @@
     .contact-faq-trigger {
 
         padding: 2rem 0;
-
-        font-size: 1.5rem;
 
     }
 
@@ -716,8 +768,6 @@
 
         margin-bottom: 1.5rem;
 
-        font-size: 1.5rem;
-
     }
 
 
@@ -725,8 +775,6 @@
     .contact-faq-trigger {
 
         padding: 1.5rem 0;
-
-        font-size: 1.25rem;
 
     }
 
@@ -775,7 +823,7 @@
 
     align-items: flex-start;
 
-    gap: 5rem;
+    gap: 110px;
 
 }
 
@@ -843,10 +891,6 @@
 
 .contact-inquiry-phone {
 
-    font-size: 1.5rem;
-
-    font-weight: 500;
-
     line-height: 1.5;
 
     color: #333446;
@@ -857,11 +901,15 @@
 
 .contact-inquiry-form {
 
-    flex: 1;
+    flex: 0 0 783px;
+
+    width: 783px;
+
+    max-width: 100%;
 
     min-width: 0;
 
-    gap: 1.25rem;
+    gap: 20px;
 
 }
 
@@ -869,7 +917,9 @@
 
 .contact-inquiry-form-row {
 
-    gap: 1.25rem;
+    gap: 19px;
+
+    width: 100%;
 
 }
 
@@ -877,15 +927,25 @@
 
 .contact-inquiry-field {
 
-    gap: 0.625rem;
+    flex-shrink: 0;
+
+    width: 783px;
+
+    max-width: 100%;
+
+    height: 84px;
+
+    gap: 10px;
+
+    box-sizing: border-box;
 
 }
 
 
 
-.contact-inquiry-field--half {
+.contact-inquiry-form-row .contact-inquiry-field--half {
 
-    flex: 1;
+    flex: none;
 
     min-width: 0;
 
@@ -893,13 +953,39 @@
 
 
 
+.contact-inquiry-form-row .contact-inquiry-field--half:first-child {
+
+    width: 370px;
+
+}
+
+
+
+.contact-inquiry-form-row .contact-inquiry-field--half:last-child {
+
+    width: 394px;
+
+}
+
+
+
+.contact-inquiry-field:has(.contact-inquiry-textarea) {
+
+    height: 232px;
+
+}
+
+
+
 .contact-inquiry-label {
 
-    font-size: 1.25rem;
+    flex-shrink: 0;
 
-    font-weight: 400;
+    height: 20px;
 
-    line-height: 1.5;
+    margin: 0;
+
+    line-height: 20px;
 
     color: #4C4948;
 
@@ -917,13 +1003,9 @@
 
     margin: 0;
 
-    padding: 0.875rem 1rem;
+    padding: 0 1rem;
 
     font-family: inherit;
-
-    font-size: 1.125rem;
-
-    font-weight: 400;
 
     line-height: 1.5;
 
@@ -941,13 +1023,21 @@
 
 
 
+.contact-inquiry-input {
+
+    flex: 1;
+
+    min-height: 0;
+
+    height: 54px;
+
+}
+
+
+
 .contact-inquiry-input::placeholder,
 
 .contact-inquiry-textarea::placeholder {
-
-    font-size: 1.125rem;
-
-    font-weight: 400;
 
     line-height: 1.5;
 
@@ -973,9 +1063,23 @@
 
 .contact-inquiry-textarea {
 
-    min-height: 12.5rem;
+    flex: 1;
 
-    resize: vertical;
+    min-height: 0;
+
+    height: 202px;
+
+    padding: 0.875rem 1rem;
+
+    resize: none;
+
+}
+
+
+
+.contact-inquiry-field:has(.contact-inquiry-file-row) {
+
+    height: 84px;
 
 }
 
@@ -983,7 +1087,13 @@
 
 .contact-inquiry-file-row {
 
+    flex: 1;
+
+    min-height: 0;
+
     gap: 20px;
+
+    height: 54px;
 
 }
 
@@ -993,7 +1103,11 @@
 
     flex: 1;
 
-    min-height: 3rem;
+    min-width: 0;
+
+    height: 54px;
+
+    min-height: 54px;
 
 }
 
@@ -1003,13 +1117,11 @@
 
     flex-shrink: 0;
 
-    padding: 0.875rem 1.5rem;
+    height: 54px;
+
+    padding: 0 1.5rem;
 
     font-family: inherit;
-
-    font-size: 1.25rem;
-
-    font-weight: 400;
 
     line-height: 1.5;
 
@@ -1039,6 +1151,14 @@
 
 .contact-inquiry-agree-row {
 
+    flex-shrink: 0;
+
+    width: 319px;
+
+    max-width: 100%;
+
+    height: 26px;
+
     gap: 0.625rem;
 
 }
@@ -1063,11 +1183,7 @@
 
 .contact-inquiry-agree-label {
 
-    font-size: 1.25rem;
-
-    font-weight: 400;
-
-    line-height: 1.5;
+    line-height: 26px;
 
     color: #4C4948;
 
@@ -1086,10 +1202,6 @@
     padding: 1.25rem 1.875rem;
 
     font-family: inherit;
-
-    font-size: 1.25rem;
-
-    font-weight: 600;
 
     line-height: 1.5;
 
@@ -1121,7 +1233,7 @@
 
         flex-direction: column;
 
-        gap: 3.125rem;
+        gap: 2.5rem;
 
     }
 
@@ -1133,6 +1245,38 @@
 
         width: 100%;
 
+        gap: 2rem;
+
+    }
+
+
+
+    .contact-inquiry-form {
+
+        flex: none;
+
+        width: 100%;
+
+    }
+
+
+
+    .contact-inquiry-form-row {
+
+        gap: 20px;
+
+    }
+
+
+
+    .contact-inquiry-field,
+
+    .contact-inquiry-form-row .contact-inquiry-field--half:first-child,
+
+    .contact-inquiry-form-row .contact-inquiry-field--half:last-child {
+
+        width: 100%;
+
     }
 
 }
@@ -1141,11 +1285,265 @@
 
 @media screen and (max-width: 768px) {
 
+    .contact-inquiry-layout {
+
+        gap: 2rem;
+
+    }
+
+
+
+    .contact-inquiry-info {
+
+        gap: 1.5rem;
+
+    }
+
+
+
     .contact-inquiry-form-row {
 
         flex-direction: column;
 
+        gap: 20px;
+
     }
+
+
+
+    .contact-inquiry-form-row .contact-inquiry-field--half:first-child,
+
+    .contact-inquiry-form-row .contact-inquiry-field--half:last-child {
+
+        width: 100%;
+
+    }
+
+
+
+    .contact-inquiry-field,
+
+    .contact-inquiry-field:has(.contact-inquiry-textarea),
+
+    .contact-inquiry-field:has(.contact-inquiry-file-row) {
+
+        height: auto;
+
+        min-height: 84px;
+
+    }
+
+
+
+    .contact-inquiry-field:has(.contact-inquiry-textarea) {
+
+        min-height: 12rem;
+
+    }
+
+
+
+    .contact-inquiry-textarea {
+
+        height: auto;
+
+        min-height: 9rem;
+
+    }
+
+
+
+    .contact-inquiry-agree-row {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 26px;
+
+    }
+
+
+
+    .contact-page .footer-info-contact {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 1.25rem;
+
+    }
+
+}
+
+
+
+/* 소형 모바일 — font.css 402px 구간과 동기 */
+
+@media screen and (max-width: 402px) {
+
+    .contact-hero {
+
+        margin-bottom: 4rem;
+
+    }
+
+
+
+    .contact-kv-section {
+
+        height: 20rem;
+
+        max-height: 20rem;
+
+    }
+
+
+
+    .contact-kv-inner {
+
+        padding-top: 3rem;
+
+        padding-bottom: 4rem;
+
+    }
+
+
+
+    .contact-card {
+
+        padding: 2rem 1.25rem;
+
+    }
+
+
+
+    .contact-faq-section {
+
+        margin-top: 4rem;
+
+    }
+
+
+
+    .contact-faq-trigger {
+
+        gap: 1rem;
+
+        padding: 1.25rem 0;
+
+    }
+
+
+
+    .contact-inquiry-layout {
+
+        gap: 1.5rem;
+
+    }
+
+
+
+    .contact-inquiry-file-row {
+
+        flex-wrap: wrap;
+
+        height: auto;
+
+        min-height: 54px;
+
+    }
+
+
+
+    .contact-inquiry-file-btn {
+
+        width: 100%;
+
+    }
+
+}
+
+
+
+/* =========================================
+
+   Footer — Contact page only (.contact-page)
+
+   font.css 클래스가 style.css 푸터 폰트보다 우선
+
+========================================= */
+
+
+
+.contact-page .footer .footer-logo,
+
+.contact-page .footer .footer-policy,
+
+.contact-page .footer .footer-policy p,
+
+.contact-page .footer .footer-info-contact,
+
+.contact-page .footer .footer-info,
+
+.contact-page .footer .email {
+
+    font-size: unset;
+
+    font-weight: unset;
+
+    line-height: unset;
+
+}
+
+
+
+/* =========================================
+
+   DB Section (startup-inquiry on contact page)
+
+========================================= */
+
+
+
+.contact-page .startup-inquiry-title {
+
+    font-size: 48px;
+
+    line-height: 1.25;
+
+}
+
+
+
+.contact-page .startup-inquiry-input,
+
+.contact-page .startup-inquiry-textarea {
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    color: #000000;
+
+}
+
+
+
+.contact-page .startup-inquiry-input::placeholder,
+
+.contact-page .startup-inquiry-textarea::placeholder {
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    color: rgba(0, 0, 0, 0.5);
+
+    opacity: 1;
 
 }
 
