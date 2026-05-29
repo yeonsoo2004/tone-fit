@@ -26,10 +26,23 @@ body {
     height: 100vh;
     min-height: 37.5rem;
     box-sizing: border-box;
-    background-image: url('../images/kv-bg-img.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero .inner,
+.hero .scroll-indicator {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
@@ -109,17 +122,21 @@ body {
     min-width: 0;
 }
 
-.about-circle {
+.about-circle-wrap {
     width: 100%;
     max-width: 650px;
-    height: auto;
     aspect-ratio: 1;
     border-radius: 50%;
-    background-image: url(/assets/images/tone-fit-about-brand.webp);
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
     justify-self: center;
-    overflow: visible;
+}
+
+.about-circle {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .identity-texts {
@@ -388,10 +405,8 @@ body {
     max-width: 100%;
     aspect-ratio: 1;
     flex-shrink: 0;
-    background-image: url(/assets/images/circle.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center right;
+    object-fit: contain;
+    object-position: center right;
     opacity: 0;
 }
 
@@ -422,10 +437,10 @@ body {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background-image: url(/assets/images/kiosk.webp);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left center;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
     opacity: 0;
 }
 
@@ -531,27 +546,23 @@ body {
 }
 
 .page-home .pet-img {
-    background-image: url(/assets/images/dog-cat.webp);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     flex: 0 1 29rem;
     width: auto;
     min-width: 0;
     max-width: 29rem;
     height: auto;
+    object-fit: contain;
+    object-position: center;
 }
 
 .page-home .pet-8img {
-    background-image: url(/assets/images/dog-cat-8imgs.webp);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     flex: 1 1 0;
     width: auto;
     min-width: 0;
     max-width: 59.5rem;
     height: auto;
+    object-fit: contain;
+    object-position: center;
 }
 
 /* =========================================
@@ -817,14 +828,14 @@ p {
     overflow: hidden;
 }
 
-.ai-24hour-bg{
+.ai-24hour-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url(/assets/images/24hour-bg.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     transform: scale(1.2);
     transform-origin: center center;
     will-change: transform;
