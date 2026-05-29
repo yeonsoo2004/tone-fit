@@ -4,7 +4,16 @@
 
 ========================================= */
 
+.contact-page,
+.contact-page .contact-main {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 
+/* fixed header 아래 KV 타이틀 여백 (component.css 헤더 높이와 동기) */
+.contact-page {
+    --contact-header-offset: calc(1rem + 3.25rem + 1rem);
+}
 
 /* =========================================
 
@@ -12,40 +21,28 @@
 
 ========================================= */
 
-
-
 .contact-hero {
-
     position: relative;
-
     width: 100%;
-
-    margin-bottom: calc(583px / 2);
-
+    max-width: 100%;
+    margin-bottom: min(18.4375rem, 42vw);
 }
 
 
 
 .contact-kv-section {
-
     position: relative;
-
     z-index: 1;
-
     width: 100%;
-
-    height: 758px;
-
-    max-height: 758px;
-
+    min-height: 20rem;
+    height: clamp(20rem, 39.5vw, 47.375rem);
+    max-height: none;
     overflow: hidden;
-
+    box-sizing: border-box;
+    padding-top: calc(var(--contact-header-offset) + 0.5rem);
     background-image: url('../images/contact-main.webp');
-
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
 }
 
@@ -59,11 +56,13 @@
 
     box-sizing: border-box;
 
-    height: 100%;
-
-    padding-top: 237px;
-
-    padding-bottom: 372px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: calc(100% - var(--contact-header-offset) - 0.5rem);
+    height: auto;
+    padding-top: clamp(1.25rem, 8vw, 14.8125rem);
+    padding-bottom: clamp(6rem, 20vw, 23.25rem);
 
     text-align: left;
 }
@@ -83,15 +82,8 @@
 
 
 .contact-kv-desc {
-
-    margin: 1.25rem 0 0;
-
-    font-weight: 400;
-
     line-height: 1.5;
-
     color: #FFFFFF;
-
 }
 
 
@@ -105,27 +97,17 @@
 
 
 .contact-card-wrap {
-
     position: absolute;
-
     bottom: 0;
-
     left: 50%;
-
     z-index: 2;
-
-    width: 1440px;
-
-    max-width: 100%;
-
-    padding: 0;
-
+    width: 100%;
+    max-width: 90rem;
+    padding-left: var(--page-gutter-x, 0);
+    padding-right: var(--page-gutter-x, 0);
     box-sizing: border-box;
-
     transform: translate(-50%, 50%);
-
     pointer-events: none;
-
 }
 
 
@@ -139,14 +121,11 @@
 
 
 .contact-card {
-
-    width: 1440px;
-
-    max-width: 100%;
-
-    height: 583px;
-
-    padding: 130px 122px;
+    width: 100%;
+    max-width: 90rem;
+    min-height: auto;
+    height: auto;
+    padding: clamp(2.5rem, 6vw, 8.125rem) clamp(1.5rem, 5vw, 7.625rem);
 
     background-color: #FFFFFF;
 
@@ -161,21 +140,14 @@
 
 
 .contact-card-inner {
-
     display: flex;
-
     flex-direction: column;
-
-    width: 1196px;
-
-    max-width: 100%;
-
-    height: 323px;
-
-    margin: 0;
-
+    width: 100%;
+    max-width: 74.75rem;
+    height: auto;
+    min-height: 0;
+    margin: 0 auto;
     box-sizing: border-box;
-
 }
 
 
@@ -195,20 +167,13 @@
 
 
 .contact-card-divider {
-
     flex-shrink: 0;
-
     display: block;
-
-    width: 1196px;
-
+    width: 100%;
     max-width: 100%;
-
     height: 1px;
-
     min-height: 1px;
-
-    margin: 50px 0;
+    margin: clamp(1.5rem, 4vw, 3.125rem) 0;
 
     padding: 0;
 
@@ -221,15 +186,11 @@
 
 
 .contact-details-row {
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
-    column-gap: 397px;
-
+    column-gap: clamp(1.25rem, 8vw, 24.8125rem);
+    row-gap: 2.5rem;
     align-items: start;
-
 }
 
 
@@ -289,199 +250,114 @@
 
 
 @media screen and (max-width: 1024px) {
+  /* 카드 absolute 겹침 해제 → FAQ가 카드에 가리지 않음 */
+  .contact-hero {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
 
-    .contact-hero {
+  .contact-kv-section {
+    min-height: 30rem;
+    height: auto;
+    max-height: none;
+    padding-top: max(6.5rem, calc(var(--contact-header-offset) + 2rem));
+    padding-bottom: 2.5rem;
+  }
 
-        margin-bottom: 8rem;
+  .contact-kv-inner {
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
 
-    }
+  .contact-card-wrap {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding-left: var(--page-gutter-x, 0);
+    padding-right: var(--page-gutter-x, 0);
+    box-sizing: border-box;
+  }
 
+  .contact-card {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 3.75rem 2.5rem;
+  }
 
+  .contact-card-inner {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
 
-    .contact-kv-section {
+  .contact-card-divider {
+    margin: 2.5rem 0;
+  }
 
-        height: 32rem;
+  .contact-details-row {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 2.5rem;
+  }
 
-        max-height: 32rem;
-
-    }
-
-
-
-    .contact-kv-inner {
-
-        padding-top: 6rem;
-
-        padding-bottom: 9rem;
-
-    }
-
-
-
-    .contact-card-wrap {
-
-        width: 100%;
-
-        padding: 0 64px;
-
-        box-sizing: border-box;
-
-    }
-
-
-
-    .contact-card {
-
-        width: 100%;
-
-        height: auto;
-
-        min-height: auto;
-
-        padding: 3.75rem 2.5rem;
-
-    }
-
-
-
-    .contact-card-inner {
-
-        width: 100%;
-
-        max-width: 1196px;
-
-        height: auto;
-
-        margin: 0 auto;
-
-    }
-
-
-
-    .contact-card-divider {
-
-        margin: 2.5rem 0;
-
-    }
-
-
-
-    .contact-details-row {
-
-        grid-template-columns: 1fr;
-
-        column-gap: 0;
-
-        row-gap: 2.5rem;
-
-    }
-
-
-
-    .contact-faq-section {
-
-        margin-top: 8rem;
-
-    }
-
+  .contact-faq-section {
+    margin-top: 2.5rem;
+    padding-top: 5rem;
+    position: relative;
+    z-index: 3;
+  }
 }
 
 
 
 @media screen and (max-width: 768px) {
+  .contact-page {
+    --contact-header-offset: calc(0.875rem + 3.25rem + 0.875rem);
+  }
 
-    .contact-hero {
+  .contact-kv-section {
+    min-height: 26rem;
+    padding-top: max(6.25rem, calc(var(--contact-header-offset) + 1.75rem));
+    padding-bottom: 2rem;
+  }
 
-        margin-bottom: 5rem;
+  .contact-kv-inner {
+    padding-bottom: 1.5rem;
+  }
 
-    }
+  .contact-card {
+    padding: 2.5rem 1.5rem;
+  }
 
+  .contact-card-divider {
+    margin: 1.5rem 0;
+  }
 
+  .contact-details-row {
+    gap: 2rem;
+  }
 
-    .contact-kv-section {
+  .contact-faq-section {
+    margin-top: 2rem;
+    padding-top: 3.75rem;
+  }
 
-        height: 24rem;
+  .contact-faq-trigger {
+    gap: 1rem;
+    padding: 1.25rem 0;
+  }
 
-        max-height: 24rem;
-
-    }
-
-
-
-    .contact-kv-inner {
-
-        padding-top: 4rem;
-
-        padding-bottom: 6rem;
-
-    }
-
-
-
-    .contact-card-wrap {
-
-        width: 100%;
-
-        padding: 0 16px;
-
-        box-sizing: border-box;
-
-    }
-
-
-
-    .contact-card {
-
-        width: 100%;
-
-        height: auto;
-
-        padding: 2.5rem 1.5rem;
-
-    }
-
-
-
-    .contact-card-inner {
-
-        width: 100%;
-
-        height: auto;
-
-    }
-
-
-
-    .contact-card-divider {
-
-        margin: 1.5rem 0;
-
-    }
-
-
-
-    .contact-details-row {
-
-        gap: 2rem;
-
-    }
-
-
-
-    .contact-faq-section {
-
-        margin-top: 5rem;
-
-    }
-
-
-
-    .contact-detail-label {
-
-        margin-bottom: 0.625rem;
-
-    }
-
+  .contact-detail-label {
+    margin-bottom: 0.625rem;
+  }
 }
 
 
@@ -509,13 +385,9 @@
 
 
 .contact-faq-title {
-
-    margin: 0 0 2.5rem;
-
+    margin: 0;
     line-height: 1.4;
-
     color: #1E2022;
-
 }
 
 
@@ -735,9 +607,7 @@
 
 
     .contact-faq-title {
-
-        margin-bottom: 2rem;
-
+        margin-bottom: 0;
     }
 
 
@@ -765,9 +635,7 @@
 
 
     .contact-faq-title {
-
-        margin-bottom: 1.5rem;
-
+        margin-bottom: 0;
     }
 
 
@@ -1382,87 +1250,43 @@
 /* 소형 모바일 — font.css 402px 구간과 동기 */
 
 @media screen and (max-width: 402px) {
+  .contact-kv-section {
+    min-height: 24rem;
+    padding-top: max(6rem, calc(var(--contact-header-offset) + 1.5rem));
+    padding-bottom: 1.5rem;
+  }
 
-    .contact-hero {
+  .contact-kv-inner {
+    padding-bottom: 1.25rem;
+  }
 
-        margin-bottom: 4rem;
+  .contact-card {
+    padding: 2rem 1.25rem;
+  }
 
-    }
+  .contact-faq-section {
+    margin-top: 1.5rem;
+    padding-top: 3.75rem;
+  }
 
+  .contact-faq-trigger {
+    gap: 1rem;
+    padding: 1.25rem 0;
+  }
 
+  .contact-inquiry-layout {
+    gap: 1.5rem;
+  }
 
-    .contact-kv-section {
+  .contact-inquiry-file-row {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 54px;
+  }
 
-        height: 20rem;
-
-        max-height: 20rem;
-
-    }
-
-
-
-    .contact-kv-inner {
-
-        padding-top: 3rem;
-
-        padding-bottom: 4rem;
-
-    }
-
-
-
-    .contact-card {
-
-        padding: 2rem 1.25rem;
-
-    }
-
-
-
-    .contact-faq-section {
-
-        margin-top: 4rem;
-
-    }
-
-
-
-    .contact-faq-trigger {
-
-        gap: 1rem;
-
-        padding: 1.25rem 0;
-
-    }
-
-
-
-    .contact-inquiry-layout {
-
-        gap: 1.5rem;
-
-    }
-
-
-
-    .contact-inquiry-file-row {
-
-        flex-wrap: wrap;
-
-        height: auto;
-
-        min-height: 54px;
-
-    }
-
-
-
-    .contact-inquiry-file-btn {
-
-        width: 100%;
-
-    }
-
+  .contact-inquiry-file-btn {
+    width: 100%;
+  }
 }
 
 
@@ -1502,53 +1326,198 @@
 
 
 /* =========================================
-
-   DB Section (startup-inquiry on contact page)
-
+   Inquiry — startup-inquiry on contact page
+   (startup.css 기본 + contact-page 반응형 오버라이드)
 ========================================= */
 
+.contact-page .startup-inquiry-section {
+    overflow: hidden;
+}
 
+.contact-page .startup-inquiry-layout {
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+    gap: 2.5rem;
+}
+
+@media screen and (min-width: 1025px) {
+    .contact-page .startup-inquiry-layout {
+        gap: 5rem;
+    }
+}
+
+.contact-page .startup-inquiry-info,
+.contact-page .startup-inquiry-contact {
+    gap: 1.25rem;
+}
+
+.contact-page .startup-inquiry-email,
+.contact-page .startup-inquiry-phone {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+.contact-page .startup-inquiry-info {
+    flex: 4 1 0;
+    min-width: 0;
+    max-width: 100%;
+    text-align: left;
+}
 
 .contact-page .startup-inquiry-title {
-
-    font-size: 48px;
-
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
     line-height: 1.25;
-
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
+.contact-page .startup-inquiry-title-line {
+    white-space: normal;
+}
 
+.contact-page .startup-inquiry-form {
+    flex: 6.5 1 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 49rem;
+    min-width: 0;
+    gap: 1.25rem;
+}
+
+.contact-page .startup-inquiry-field + .startup-inquiry-field,
+.contact-page .startup-inquiry-form-row + .startup-inquiry-field {
+    margin-top: 0;
+}
+
+.contact-page .startup-inquiry-form-row > .startup-inquiry-field + .startup-inquiry-field {
+    margin-top: 0;
+}
+
+.contact-page .startup-inquiry-form-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+}
+
+.contact-page .startup-inquiry-field--half {
+    flex: 1 1 0;
+    min-width: 0;
+}
 
 .contact-page .startup-inquiry-input,
-
-.contact-page .startup-inquiry-textarea {
-
-    font-size: 18px;
-
-    font-weight: 400;
-
-    line-height: 1.5;
-
-    color: #000000;
-
+.contact-page .startup-inquiry-textarea,
+.contact-page .startup-inquiry-file-name {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
+.contact-page .startup-inquiry-file-row {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
 
+.contact-page .startup-inquiry-submit {
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+}
 
 .contact-page .startup-inquiry-input::placeholder,
-
 .contact-page .startup-inquiry-textarea::placeholder {
-
-    font-size: 18px;
-
-    font-weight: 400;
-
     color: rgba(0, 0, 0, 0.5);
-
     opacity: 1;
-
 }
 
 .contact-page .startup-inquiry-file-name:not(.has-file) {
     opacity: 0.5;
+}
+
+@media screen and (max-width: 1024px) {
+    .contact-page .startup-inquiry-layout {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .contact-page .startup-inquiry-info,
+    .contact-page .startup-inquiry-form {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-page .startup-inquiry-form-row {
+        gap: 1.25rem;
+    }
+
+    .contact-faq-trigger {
+        gap: 1rem;
+    }
+
+    .contact-faq-question {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-page .startup-inquiry-layout {
+        gap: 2rem;
+    }
+
+    .contact-page .startup-inquiry-form-row {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .contact-page .startup-inquiry-form-row > .startup-inquiry-field--half {
+        flex: none;
+        width: 100%;
+    }
+
+    .contact-page .startup-inquiry-file-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.625rem;
+    }
+
+    .contact-page .startup-inquiry-file-btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-page .startup-inquiry-agree-row {
+        align-items: flex-start;
+    }
+
+    .contact-page .startup-inquiry-agree-label {
+        line-height: 1.5;
+    }
+
+    .contact-faq-trigger {
+        align-items: flex-start;
+        padding: 1.25rem 0;
+    }
+
+    .contact-faq-icon-wrap {
+        margin-top: 0.25rem;
+    }
+}
+
+@media screen and (max-width: 402px) {
+    .contact-page .startup-inquiry-layout {
+        gap: 1.5rem;
+    }
+
+    .contact-hero {
+        margin-bottom: 3.5rem;
+    }
 }
