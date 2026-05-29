@@ -1,25 +1,13 @@
 /* =========================================
    Identity Page (subpage/identity.html)
 ========================================= */
-/* PC 화면: 기획 의도대로 강제 줄바꿈 */
-.d-block {
-    display: block;
-}
+
 
 /* 텍스트가 자연스럽게 어절 단위로 끊어지도록 설정 (전체 텍스트 영역에 적용) */
 .kv-title, .kv-desc {
     word-break: keep-all;
 }
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
+
 
 /* 모바일 화면 (예: 768px 이하): 강제 줄바꿈 해제하고 자연스럽게 흐르도록 처리 */
 @media (max-width: 768px) {
@@ -1305,9 +1293,4 @@
     .identity-space-section .space-swiper .swiper-pagination {
         margin-top: 1.25rem;
     }
-}
-
-/* Footer (identity page only) */
-.identity-main .footer-sns-bar {
-    gap: 0.625rem; /* 10px */
 }
