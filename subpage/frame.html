@@ -18,53 +18,91 @@
     <header class="header">
         <div class="header-container inner">
             <div class="header-left">
-                <h1 class="logo"><a href="../index.html">TONE:FIT</a></h1>
+                <h1 class="logo"><a href="index.html">TONE:FIT</a></h1>
             </div>
             <div class="header-menu">
                 <nav class="header-nav ft-20-r" aria-label="주 메뉴" aria-haspopup="true" aria-expanded="false">
                     <div class="header-nav-item has-submenu">
-                        <a href="identity.html" class="header-nav-link">BRAND</a>
+                        <a href="subpage/identity.html" class="header-nav-link">BRAND</a>
                     </div>
                     <div class="header-nav-item">
-                        <a href="frame.html" class="header-nav-link">FRAME</a>
+                        <a href="subpage/frame.html" class="header-nav-link">FRAME</a>
                     </div>
                     <div class="header-nav-item">
-                        <a href="store.html" class="header-nav-link">STORE</a>
+                        <a href="subpage/store.html" class="header-nav-link">STORE</a>
                     </div>
                     <div class="header-nav-item has-submenu">
-                        <a href="space.html" class="header-nav-link">FRANCHISE</a>
+                        <a href="subpage/space.html" class="header-nav-link">FRANCHISE</a>
                     </div>
                     <div class="header-nav-item has-submenu">
-                        <a href="news.html" class="header-nav-link">COMMUNITY</a>
+                        <a href="subpage/news.html" class="header-nav-link">COMMUNITY</a>
                     </div>
                 </nav>
                 <div class="header-mega ft-18-r">
                     <div class="header-mega-col">
                         <ul class="header-mega-list">
-                            <li><a href="identity.html">IDENTITY</a></li>
-                            <li><a href="smart-kiosk.html">SMART KIOSK</a></li>
+                            <li><a href="subpage/identity.html">IDENTITY</a></li>
+                            <li><a href="subpage/smart-kiosk.html">SMART KIOSK</a></li>
                         </ul>
                     </div>
                     <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
                     <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
                     <div class="header-mega-col">
                         <ul class="header-mega-list">
-                            <li><a href="space.html">SPACE</a></li>
-                            <li><a href="startup.html">STARTUP</a></li>
+                            <li><a href="subpage/space.html">SPACE</a></li>
+                            <li><a href="subpage/startup.html">STARTUP</a></li>
                         </ul>
                     </div>
                     <div class="header-mega-col">
                         <ul class="header-mega-list">
-                            <li><a href="news.html">NEWS</a></li>
-                            <li><a href="contact.html">CONTACT</a></li>
+                            <li><a href="subpage/news.html">NEWS</a></li>
+                            <li><a href="subpage/contact.html">CONTACT</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="header-right">
-                <span class="gnb-btn ft-20-r"><a href="contact.html">창업문의</a></span>
+                <span class="gnb-btn ft-20-r"><a href="subpage/contact.html">창업문의</a></span>
+                <button type="button" class="header-menu-toggle" aria-label="메뉴 열기" aria-expanded="false"
+                    aria-controls="header-mobile-nav">
+                    <img src="assets/images/icon/menu.svg" alt="" width="24" height="24" aria-hidden="true">
+                </button>
             </div>
         </div>
+        <nav id="header-mobile-nav" class="header-mobile-nav ft-20-r" aria-label="모바일 메뉴" hidden>
+            <ul class="header-mobile-list">
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">BRAND</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="subpage/identity.html">IDENTITY</a></li>
+                        <li><a href="subpage/smart-kiosk.html">SMART KIOSK</a></li>
+                    </ul>
+                </li>
+                <li class="header-mobile-group">
+                    <a href="subpage/frame.html" class="header-mobile-link">FRAME</a>
+                </li>
+                <li class="header-mobile-group">
+                    <a href="subpage/store.html" class="header-mobile-link">STORE</a>
+                </li>
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">FRANCHISE</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="subpage/space.html">SPACE</a></li>
+                        <li><a href="subpage/startup.html">STARTUP</a></li>
+                    </ul>
+                </li>
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">COMMUNITY</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="subpage/news.html">NEWS</a></li>
+                        <li><a href="subpage/contact.html">CONTACT</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="header-mobile-cta">
+                <a href="subpage/contact.html" class="gnb-btn ft-20-r">창업문의</a>
+            </div>
+        </nav>
     </header>
 
     <!-- ===== MAIN ===== -->
@@ -464,10 +502,10 @@
         <div class="footer-container inner d-flex flex-col gap-20">
             <div class="footer-logo-sns d-flex jc-between">
                 <p class="footer-logo">TONE:FIT</p>
-                <div class="footer-sns-bar d-flex gap-20">
-                    <img src="../assets/images/icon/icons_insta.svg" alt="인스타그램" class="footer-sns-btn">
-                    <img src="../assets/images/icon/icons_facebook.svg" alt="페이스북" class="footer-sns-btn">
-                    <img src="../assets/images/icon/icons_youtube.svg" alt="유튜브" class="footer-sns-btn">
+                <div class="footer-sns-bar d-flex">
+                    <img src="assets/images/icon/icons_insta.svg" alt="TONE:FIT 인스타그램" class="footer-sns-btn">
+                    <img src="assets/images/icon/icons_facebook.svg" alt="TONE:FIT 페이스북" class="footer-sns-btn">
+                    <img src="assets/images/icon/icons_youtube.svg" alt="TONE:FIT 유튜브" class="footer-sns-btn">
                 </div>
             </div>
             <div class="footer-policy">
@@ -478,7 +516,9 @@
                     우편번호 : 06236, 서울특별시 강남구 테헤란로 123 TONEFIT 타워<br>
                     Copyright: COPYRIGHT © 2026 TONE:FIT CO., LTD. ALL RIGHTS RESERVED.
                 </p>
-                <p class="email">Contact: support@tonefit.com</p>
+                <p class="email">
+                    Contact: support@tonefit.com
+                </p>
             </div>
         </div>
     </footer>

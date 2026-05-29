@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="../assets/css/component.css">
     <link rel="stylesheet" href="../assets/css/news.css">
 </head>
+
 <body class="page-news bg-light-gray">
     <script src="../assets/js/libs/jquery.min.js"></script>
     <script src="../assets/js/libs/gsap.min.js"></script>
@@ -21,53 +23,91 @@
     <header class="header">
         <div class="header-container inner">
             <div class="header-left">
-                <h1 class="logo"><a href="../index.html" style="color:inherit;text-decoration:none;">TONE:FIT</a></h1>
+                <h1 class="logo"><a href="index.html">TONE:FIT</a></h1>
             </div>
             <div class="header-menu">
                 <nav class="header-nav ft-20-r" aria-label="주 메뉴" aria-haspopup="true" aria-expanded="false">
                     <div class="header-nav-item has-submenu">
-                        <button type="button" class="header-nav-link">BRAND</button>
+                        <a href="subpage/identity.html" class="header-nav-link">BRAND</a>
                     </div>
                     <div class="header-nav-item">
-                        <button type="button" class="header-nav-link">FRAME</button>
+                        <a href="subpage/frame.html" class="header-nav-link">FRAME</a>
                     </div>
                     <div class="header-nav-item">
-                        <button type="button" class="header-nav-link">STORE</button>
+                        <a href="subpage/store.html" class="header-nav-link">STORE</a>
                     </div>
                     <div class="header-nav-item has-submenu">
-                        <button type="button" class="header-nav-link">FRANCHISE</button>
+                        <a href="subpage/space.html" class="header-nav-link">FRANCHISE</a>
                     </div>
                     <div class="header-nav-item has-submenu">
-                        <button type="button" class="header-nav-link community-active">COMMUNITY</button>
+                        <a href="subpage/news.html" class="header-nav-link">COMMUNITY</a>
                     </div>
                 </nav>
                 <div class="header-mega ft-18-r">
                     <div class="header-mega-col">
                         <ul class="header-mega-list">
-                            <li><a href="./identity.html">IDENTITY</a></li>
-                            <li><a href="./smart-kiosk.html">SMART KIOSK</a></li>
+                            <li><a href="subpage/identity.html">IDENTITY</a></li>
+                            <li><a href="subpage/smart-kiosk.html">SMART KIOSK</a></li>
                         </ul>
                     </div>
                     <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
                     <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
                     <div class="header-mega-col">
                         <ul class="header-mega-list">
-                            <li><a href="./space.html">SPACE</a></li>
-                            <li><a href="./startup.html">STARTUP</a></li>
+                            <li><a href="subpage/space.html">SPACE</a></li>
+                            <li><a href="subpage/startup.html">STARTUP</a></li>
                         </ul>
                     </div>
                     <div class="header-mega-col">
                         <ul class="header-mega-list">
-                            <li><a href="./news.html">NEWS</a></li>
-                            <li><a href="#">CONTACT</a></li>
+                            <li><a href="subpage/news.html">NEWS</a></li>
+                            <li><a href="subpage/contact.html">CONTACT</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="header-right">
-                <span class="gnb-btn ft-20-r">창업문의</span>
+                <span class="gnb-btn ft-20-r"><a href="subpage/contact.html">창업문의</a></span>
+                <button type="button" class="header-menu-toggle" aria-label="메뉴 열기" aria-expanded="false"
+                    aria-controls="header-mobile-nav">
+                    <img src="assets/images/icon/menu.svg" alt="" width="24" height="24" aria-hidden="true">
+                </button>
             </div>
         </div>
+        <nav id="header-mobile-nav" class="header-mobile-nav ft-20-r" aria-label="모바일 메뉴" hidden>
+            <ul class="header-mobile-list">
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">BRAND</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="subpage/identity.html">IDENTITY</a></li>
+                        <li><a href="subpage/smart-kiosk.html">SMART KIOSK</a></li>
+                    </ul>
+                </li>
+                <li class="header-mobile-group">
+                    <a href="subpage/frame.html" class="header-mobile-link">FRAME</a>
+                </li>
+                <li class="header-mobile-group">
+                    <a href="subpage/store.html" class="header-mobile-link">STORE</a>
+                </li>
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">FRANCHISE</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="subpage/space.html">SPACE</a></li>
+                        <li><a href="subpage/startup.html">STARTUP</a></li>
+                    </ul>
+                </li>
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">COMMUNITY</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="subpage/news.html">NEWS</a></li>
+                        <li><a href="subpage/contact.html">CONTACT</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="header-mobile-cta">
+                <a href="subpage/contact.html" class="gnb-btn ft-20-r">창업문의</a>
+            </div>
+        </nav>
     </header>
 
     <!-- ===== MAIN ===== -->
@@ -85,22 +125,10 @@
             <div class="inner">
                 <div class="news-lnb-wrap">
                     <div class="lnb-tab-bar" role="tablist" aria-label="이벤트 분류">
-                        <button
-                            type="button"
-                            class="lnb-tab-btn active"
-                            role="tab"
-                            aria-selected="true"
-                            aria-controls="tab-panel-ongoing"
-                            data-tab="ongoing"
-                        >진행중 이벤트</button>
-                        <button
-                            type="button"
-                            class="lnb-tab-btn"
-                            role="tab"
-                            aria-selected="false"
-                            aria-controls="tab-panel-ended"
-                            data-tab="ended"
-                        >완료된 이벤트</button>
+                        <button type="button" class="lnb-tab-btn active" role="tab" aria-selected="true"
+                            aria-controls="tab-panel-ongoing" data-tab="ongoing">진행중 이벤트</button>
+                        <button type="button" class="lnb-tab-btn" role="tab" aria-selected="false"
+                            aria-controls="tab-panel-ended" data-tab="ended">완료된 이벤트</button>
                     </div>
                 </div>
             </div>
@@ -111,127 +139,77 @@
             <div class="inner">
 
                 <!-- 진행중 이벤트 탭 패널 -->
-                <div
-                    id="tab-panel-ongoing"
-                    role="tabpanel"
-                    aria-labelledby="tab-ongoing"
-                    class="news-tab-panel"
-                    data-panel="ongoing"
-                >
+                <div id="tab-panel-ongoing" role="tabpanel" aria-labelledby="tab-ongoing" class="news-tab-panel"
+                    data-panel="ongoing">
                     <div class="news-grid">
 
                         <!-- 카드 1 -->
-                        <article
-                            class="news-card"
-                            role="button"
-                            tabindex="0"
-                            aria-label="이벤트 상세 보기"
-                            data-modal-id="modal-1"
-                        >
+                        <article class="news-card" role="button" tabindex="0" aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-1">
                             <div class="news-card-img-wrap">
                                 <img src="../assets/images/Community-1.webp" alt="커뮤니티 이벤트 1">
                             </div>
                         </article>
 
                         <!-- 카드 2 -->
-                        <article
-                            class="news-card"
-                            role="button"
-                            tabindex="0"
-                            aria-label="이벤트 상세 보기"
-                            data-modal-id="modal-2"
-                        >
+                        <article class="news-card" role="button" tabindex="0" aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-2">
                             <div class="news-card-img-wrap">
                                 <img src="../assets/images/Community-2.webp" alt="커뮤니티 이벤트 2">
                             </div>
                         </article>
 
                         <!-- 카드 3 -->
-                        <article
-                            class="news-card"
-                            role="button"
-                            tabindex="0"
-                            aria-label="이벤트 상세 보기"
-                            data-modal-id="modal-3"
-                        >
+                        <article class="news-card" role="button" tabindex="0" aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-3">
                             <div class="news-card-img-wrap">
                                 <img src="../assets/images/Community-3.webp" alt="커뮤니티 이벤트 3">
                             </div>
                         </article>
 
                         <!-- 카드 4 -->
-                        <article
-                            class="news-card"
-                            role="button"
-                            tabindex="0"
-                            aria-label="이벤트 상세 보기"
-                            data-modal-id="modal-4"
-                        >
+                        <article class="news-card" role="button" tabindex="0" aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-4">
                             <div class="news-card-img-wrap">
                                 <img src="../assets/images/Community-4.webp" alt="커뮤니티 이벤트 4">
                             </div>
                         </article>
 
                         <!-- 카드 5 -->
-                        <article
-                            class="news-card"
-                            role="button"
-                            tabindex="0"
-                            aria-label="이벤트 상세 보기"
-                            data-modal-id="modal-5"
-                        >
+                        <article class="news-card" role="button" tabindex="0" aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-5">
                             <div class="news-card-img-wrap">
                                 <img src="../assets/images/Community-5.webp" alt="커뮤니티 이벤트 5">
                             </div>
                         </article>
 
                         <!-- 카드 6 -->
-                        <article
-                            class="news-card"
-                            role="button"
-                            tabindex="0"
-                            aria-label="이벤트 상세 보기"
-                            data-modal-id="modal-6"
-                        >
+                        <article class="news-card" role="button" tabindex="0" aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-6">
                             <div class="news-card-img-wrap">
                                 <img src="../assets/images/Community-6.webp" alt="커뮤니티 이벤트 6">
                             </div>
                         </article>
 
                         <!-- 카드 7 -->
-                        <article
-                            class="news-card"
-                            role="button"
-                            tabindex="0"
-                            aria-label="이벤트 상세 보기"
-                            data-modal-id="modal-7"
-                        >
+                        <article class="news-card" role="button" tabindex="0" aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-7">
                             <div class="news-card-img-wrap">
                                 <img src="../assets/images/Community-7.webp" alt="커뮤니티 이벤트 7">
                             </div>
                         </article>
 
                         <!-- 카드 8 -->
-                        <article
-                            class="news-card"
-                            role="button"
-                            tabindex="0"
-                            aria-label="이벤트 상세 보기"
-                            data-modal-id="modal-8"
-                        >
+                        <article class="news-card" role="button" tabindex="0" aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-8">
                             <div class="news-card-img-wrap">
                                 <img src="../assets/images/Community-8.webp" alt="커뮤니티 이벤트 8">
                             </div>
                         </article>
 
                         <!-- 카드 9 -->
-                        <article
-                            class="news-card"
-                            role="button"
-                            tabindex="0"
-                            aria-label="이벤트 상세 보기"
-                            data-modal-id="modal-9"
-                        >
+                        <article class="news-card" role="button" tabindex="0" aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-9">
                             <div class="news-card-img-wrap">
                                 <img src="../assets/images/Community-9.webp" alt="커뮤니티 이벤트 9">
                             </div>
@@ -242,24 +220,13 @@
                 </div>
 
                 <!-- 완료된 이벤트 탭 패널 -->
-                <div
-                    id="tab-panel-ended"
-                    role="tabpanel"
-                    aria-labelledby="tab-ended"
-                    class="news-tab-panel"
-                    data-panel="ended"
-                    hidden
-                >
+                <div id="tab-panel-ended" role="tabpanel" aria-labelledby="tab-ended" class="news-tab-panel"
+                    data-panel="ended" hidden>
                     <div class="news-grid">
 
                         <!-- 완료된 이벤트 카드 -->
-                        <article
-                            class="news-card"
-                            role="button"
-                            tabindex="0"
-                            aria-label="이벤트 상세 보기"
-                            data-modal-id="modal-end-1"
-                        >
+                        <article class="news-card" role="button" tabindex="0" aria-label="이벤트 상세 보기"
+                            data-modal-id="modal-end-1">
                             <div class="news-card-img-wrap">
                                 <img src="../assets/images/Community-end.webp" alt="완료된 이벤트">
                             </div>
@@ -274,21 +241,10 @@
     </main>
 
     <!-- ===== MODAL ===== -->
-    <div
-        class="news-modal-overlay"
-        id="newsModalOverlay"
-        role="dialog"
-        aria-modal="true"
-        aria-label="이벤트 상세"
-    >
+    <div class="news-modal-overlay" id="newsModalOverlay" role="dialog" aria-modal="true" aria-label="이벤트 상세">
         <div class="news-modal" id="newsModal">
             <!-- 닫기 버튼 -->
-            <button
-                type="button"
-                class="news-modal-close"
-                id="newsModalClose"
-                aria-label="모달 닫기"
-            >
+            <button type="button" class="news-modal-close" id="newsModalClose" aria-label="모달 닫기">
                 <img src="../assets/images/icon/Community-modal.svg" alt="닫기">
             </button>
             <!-- 모달 이미지 영역 (JS로 동적 교체) -->
@@ -299,14 +255,14 @@
     </div>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="footer">
+    <footer class="footer bg-deep-base">
         <div class="footer-container inner d-flex flex-col gap-20">
             <div class="footer-logo-sns d-flex jc-between">
                 <p class="footer-logo">TONE:FIT</p>
-                <div class="footer-sns-bar d-flex gap-20">
-                    <img src="../assets/images/icon/icons_insta.svg" alt="인스타그램" class="footer-sns-btn">
-                    <img src="../assets/images/icon/icons_facebook.svg" alt="페이스북" class="footer-sns-btn">
-                    <img src="../assets/images/icon/icons_youtube.svg" alt="유튜브" class="footer-sns-btn">
+                <div class="footer-sns-bar d-flex">
+                    <img src="assets/images/icon/icons_insta.svg" alt="TONE:FIT 인스타그램" class="footer-sns-btn">
+                    <img src="assets/images/icon/icons_facebook.svg" alt="TONE:FIT 페이스북" class="footer-sns-btn">
+                    <img src="assets/images/icon/icons_youtube.svg" alt="TONE:FIT 유튜브" class="footer-sns-btn">
                 </div>
             </div>
             <div class="footer-policy">
@@ -327,4 +283,5 @@
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/news.js"></script>
 </body>
+
 </html>
