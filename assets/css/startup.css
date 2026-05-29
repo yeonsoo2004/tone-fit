@@ -1966,3 +1966,47 @@
         margin-top: 0.625rem;
     }
 }
+
+/* 파일 첨부 — 웹 접근성 (visually-hidden · label 커서) */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.startup-inquiry-file-btn {
+    cursor: pointer;
+}
+
+.startup-page .startup-inquiry-file-name:not(.has-file) {
+    opacity: 0.5;
+}
+
+/* Feature 섹션 — 비디오 (플랫 복구 · 그리드 세로 중앙) */
+.startup-page .startup-feature-grid {
+    align-items: center;
+}
+
+.startup-page .startup-feature-video-col {
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+
+.startup-brand-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin-top: 0;
+}

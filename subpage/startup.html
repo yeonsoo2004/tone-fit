@@ -62,8 +62,43 @@
             </div>
             <div class="header-right">
                 <span class="gnb-btn ft-20-r"><a href="contact.html">창업문의</a></span>
+                <button type="button" class="header-menu-toggle" aria-label="메뉴 열기" aria-expanded="false"
+                    aria-controls="header-mobile-nav">
+                    <img src="../assets/images/icon/menu.svg" alt="" width="24" height="24">
+                </button>
             </div>
         </div>
+        <nav id="header-mobile-nav" class="header-mobile-nav ft-20-r" aria-label="모바일 메뉴" hidden>
+            <ul class="header-mobile-list">
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">BRAND</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="identity.html">IDENTITY</a></li>
+                        <li><a href="smart-kiosk.html">SMART KIOSK</a></li>
+                    </ul>
+                </li>
+                <li class="header-mobile-group">
+                    <a href="frame.html" class="header-mobile-link">FRAME</a>
+                </li>
+                <li class="header-mobile-group">
+                    <a href="store.html" class="header-mobile-link">STORE</a>
+                </li>
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">FRANCHISE</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="space.html">SPACE</a></li>
+                        <li><a href="startup.html">STARTUP</a></li>
+                    </ul>
+                </li>
+                <li class="header-mobile-group">
+                    <span class="header-mobile-label">COMMUNITY</span>
+                    <ul class="header-mobile-sublist">
+                        <li><a href="news.html">NEWS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main class="sub-main startup-main">
@@ -77,18 +112,27 @@
         </section>
 
         <section class="startup-feature-section py-130">
-            <div class="inner">
+            <div class="inner startup-feature-inner">
                 <div class="grid-wrap startup-feature-grid">
                     <div class="startup-feature-video-col">
                         <video
-                            class="startup-feature-video"
-                            src="../assets/videos/tone-fit.webm"
-                            width="828"
-                            height="470"
+                            class="startup-brand-video"
                             controls
+                            preload="auto"
                             playsinline
-                            preload="metadata"
-                            aria-label="AI 스캔 및 무인 운영 소개 영상"></video>
+                            muted
+                            poster="../assets/images/video-thumb.png"
+                            aria-label="TONE:FIT 브랜드 가치 및 무인 운영 시스템 소개 영상"
+                        >
+                            <source src="../assets/videos/tone-fit.webm" type="video/webm">
+                            <source src="../assets/video/brand-intro.mp4" type="video/mp4">
+                            <track kind="captions" src="../assets/video/captions_ko.vtt" srclang="ko" label="한국어 자막" default>
+                            현재 브라우저는 비디오 태그를 지원하지 않습니다.
+                        </video>
+
+                        <div class="media-transcript visually-hidden">
+                            [오디오 대본] 감각적인 공간과 안정적인 운영 시스템을 제공하는 TONE:FIT의 가맹 경쟁력 소개 영상입니다.
+                        </div>
                     </div>
                     <div class="startup-feature-text-col d-flex ai-center">
                         <div class="startup-feature-copy startup-fade-up d-flex flex-col">
@@ -130,7 +174,7 @@
         <section class="startup-profit-section py-130" aria-labelledby="startup-profit-title">
             <div class="inner">
                 <div class="startup-profit-head d-flex flex-col gap-20">
-                    <p class="startup-profit-eyebrow ft-32-r color-main">데이터가 증명하는 압도적 수익!</p>
+                    <h3 class="startup-profit-eyebrow ft-32-r color-main">데이터가 증명하는 압도적 수익!</h3>
                     <h2 id="startup-profit-title" class="startup-profit-title title color-main ft-48-r">핵심 상권을 장악한 TONE:FIT</h2>
                 </div>
             </div>
@@ -185,17 +229,17 @@
 
                 <div class="startup-franchise-cards startup-fade-up d-flex">
                     <article class="startup-franchise-card d-flex flex-col ai-center">
-                        <img class="startup-franchise-card-icon" src="../assets/images/icon/Profit.svg" alt="" width="100" height="100" decoding="async">
+                        <img class="startup-franchise-card-icon" src="../assets/images/icon/Profit.svg" alt="상승 그래프" width="100" height="100" decoding="async">
                         <h3 class="startup-franchise-card-title ft-32-b color-main">수익성 (Profit)</h3>
                         <p class="startup-franchise-card-desc ft-20-r color-main">인건비 제로,<br>AI 자동화 시스템으로 타 브랜드 대비<br>25% 높은 영업 이익률을 지향합니다.</p>
                     </article>
                     <article class="startup-franchise-card d-flex flex-col ai-center">
-                        <img class="startup-franchise-card-icon" src="../assets/images/icon/ease.svg" alt="" width="100" height="100" decoding="async">
+                        <img class="startup-franchise-card-icon" src="../assets/images/icon/ease.svg" alt="스마트폰폰" width="100" height="100" decoding="async">
                         <h3 class="startup-franchise-card-title ft-32-b color-main">운영 편의성 (Ease)</h3>
                         <p class="startup-franchise-card-desc ft-20-r color-main">스마트폰 원격 제어로<br>본업에 집중하세요.<br>주 2회 방문만으로 충분합니다.</p>
                     </article>
                     <article class="startup-franchise-card d-flex flex-col ai-center">
-                        <img class="startup-franchise-card-icon" src="../assets/images/icon/growth.svg" alt="" width="100" height="100" decoding="async">
+                        <img class="startup-franchise-card-icon" src="../assets/images/icon/growth.svg" alt="높은 방문율율" width="100" height="100" decoding="async">
                         <h3 class="startup-franchise-card-title ft-32-b color-main">브랜드 파워 (Growth)</h3>
                         <p class="startup-franchise-card-desc ft-20-r color-main">단순한 사진관이 아닙니다.<br>AI 퍼스널 컬러 진단이라는<br>독보적 기술로 재방문율을 높입니다.</p>
                     </article>
@@ -214,7 +258,7 @@
                 <div class="startup-process-list startup-fade-up d-flex gap-20" role="list">
                     <article class="startup-process-item d-flex flex-col ai-center" role="listitem">
                         <div class="startup-process-circle bg-point-orange d-flex ai-center jc-center">
-                            <img class="startup-process-icon" src="../assets/images/icon/process1.svg" alt="" width="100" height="100" decoding="async">
+                            <img class="startup-process-icon" src="../assets/images/icon/process1.svg" alt="상담담" width="100" height="100" decoding="async">
                         </div>
                         <div class="startup-process-item-body d-flex flex-col ai-center">
                             <h3 class="startup-process-item-title ft-20-sb">가맹 상담 및 실사</h3>
@@ -223,7 +267,7 @@
                     </article>
                     <article class="startup-process-item d-flex flex-col ai-center" role="listitem">
                         <div class="startup-process-circle bg-point-orange d-flex ai-center jc-center">
-                            <img class="startup-process-icon" src="../assets/images/icon/process2.svg" alt="" width="90" height="58" decoding="async">
+                            <img class="startup-process-icon" src="../assets/images/icon/process2.svg" alt="계약약" width="90" height="58" decoding="async">
                         </div>
                         <div class="startup-process-item-body d-flex flex-col ai-center">
                             <h3 class="startup-process-item-title ft-20-sb">가맹 계약 체결</h3>
@@ -232,7 +276,7 @@
                     </article>
                     <article class="startup-process-item d-flex flex-col ai-center" role="listitem">
                         <div class="startup-process-circle bg-point-orange d-flex ai-center jc-center">
-                            <img class="startup-process-icon" src="../assets/images/icon/process3.svg" alt="" width="80" height="80" decoding="async">
+                            <img class="startup-process-icon" src="../assets/images/icon/process3.svg" alt="설계 및 시공공" width="80" height="80" decoding="async">
                         </div>
                         <div class="startup-process-item-body d-flex flex-col ai-center">
                             <h3 class="startup-process-item-title ft-20-sb">공간 설계 및 시공</h3>
@@ -241,7 +285,7 @@
                     </article>
                     <article class="startup-process-item d-flex flex-col ai-center" role="listitem">
                         <div class="startup-process-circle bg-point-orange d-flex ai-center jc-center">
-                            <img class="startup-process-icon" src="../assets/images/icon/process4.svg" alt="" width="90" height="90" decoding="async">
+                            <img class="startup-process-icon" src="../assets/images/icon/process4.svg" alt="AI 시스템 세팅팅" width="90" height="90" decoding="async">
                         </div>
                         <div class="startup-process-item-body d-flex flex-col ai-center">
                             <h3 class="startup-process-item-title ft-20-sb">AI 시스템 세팅</h3>
@@ -250,7 +294,7 @@
                     </article>
                     <article class="startup-process-item d-flex flex-col ai-center" role="listitem">
                         <div class="startup-process-circle bg-point-orange d-flex ai-center jc-center">
-                            <img class="startup-process-icon" src="../assets/images/icon/process5.svg" alt="" width="90" height="90" decoding="async">
+                            <img class="startup-process-icon" src="../assets/images/icon/process5.svg" alt="운영 교육 및 리허설설" width="90" height="90" decoding="async">
                         </div>
                         <div class="startup-process-item-body d-flex flex-col ai-center">
                             <h3 class="startup-process-item-title ft-20-sb">운영 교육 및 리허설</h3>
@@ -259,7 +303,7 @@
                     </article>
                     <article class="startup-process-item d-flex flex-col ai-center" role="listitem">
                         <div class="startup-process-circle bg-point-orange d-flex ai-center jc-center">
-                            <img class="startup-process-icon" src="../assets/images/icon/process6.svg" alt="" width="90" height="90" decoding="async">
+                            <img class="startup-process-icon" src="../assets/images/icon/process6.svg" alt="오픈 및 관리리" width="90" height="90" decoding="async">
                         </div>
                         <div class="startup-process-item-body d-flex flex-col ai-center">
                             <h3 class="startup-process-item-title ft-20-sb">그랜드 오픈 및 관리</h3>
@@ -278,11 +322,11 @@
                         <div class="startup-inquiry-contact d-flex flex-col">
                             <div class="startup-inquiry-email-row d-flex ai-center">
                                 <span class="startup-inquiry-email">tone_fit@ezen.com</span>
-                                <img class="startup-inquiry-mail-icon" src="../assets/images/icon/mail.svg" alt="" width="20" height="16" decoding="async">
+                                <img class="startup-inquiry-mail-icon" src="../assets/images/icon/mail.svg" alt="이메일" width="20" height="16" decoding="async">
                             </div>
                             <div class="startup-inquiry-phone-row d-flex ai-center">
                                 <span class="startup-inquiry-phone">000-1111-2222</span>
-                                <img class="startup-inquiry-phone-icon" src="../assets/images/icon/phone.svg" alt="" width="20" height="20" decoding="async">
+                                <img class="startup-inquiry-phone-icon" src="../assets/images/icon/phone.svg" alt="전화기" width="20" height="20" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -322,11 +366,14 @@
                         </div>
 
                         <div class="startup-inquiry-field d-flex flex-col">
-                            <span class="startup-inquiry-label" id="startup-inquiry-file-label">파일첨부</span>
-                            <div class="startup-inquiry-file-row d-flex ai-center" aria-labelledby="startup-inquiry-file-label">
-                                <p class="startup-inquiry-file-name" id="startup-inquiry-file-name" role="status" aria-live="polite" aria-label="첨부 파일명"></p>
-                                <button class="startup-inquiry-file-btn" type="button" aria-controls="startup-inquiry-file">파일첨부</button>
-                                <input class="startup-inquiry-file-input" type="file" id="startup-inquiry-file" name="attachment" hidden>
+                            <span class="startup-inquiry-label" id="startup-inquiry-file-title">파일첨부</span>
+
+                            <div class="startup-inquiry-file-row d-flex ai-center">
+                                <p class="startup-inquiry-file-name" id="startup-inquiry-file-name" aria-live="polite">선택된 파일 없음</p>
+
+                                <input class="startup-inquiry-file-input visually-hidden" type="file" id="startup-inquiry-file" name="attachment" aria-labelledby="startup-inquiry-file-title">
+
+                                <label class="startup-inquiry-file-btn" for="startup-inquiry-file" id="startup-inquiry-file-label">파일첨부</label>
                             </div>
                         </div>
 
