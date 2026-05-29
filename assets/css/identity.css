@@ -2,6 +2,19 @@
    Identity Page (subpage/identity.html)
 ========================================= */
 
+
+/* 텍스트가 자연스럽게 어절 단위로 끊어지도록 설정 (전체 텍스트 영역에 적용) */
+.kv-title, .kv-desc {
+    word-break: keep-all;
+}
+
+
+/* 모바일 화면 (예: 768px 이하): 강제 줄바꿈 해제하고 자연스럽게 흐르도록 처리 */
+@media (max-width: 768px) {
+    .d-block {
+        display: inline; /* 모바일에서는 span이 다시 한 줄로 이어지게 함 */
+    }
+}
 .identity-kv-section {
     position: relative;
     width: 100%;
@@ -1280,9 +1293,4 @@
     .identity-space-section .space-swiper .swiper-pagination {
         margin-top: 1.25rem;
     }
-}
-
-/* Footer (identity page only) */
-.identity-main .footer-sns-bar {
-    gap: 0.625rem; /* 10px */
 }

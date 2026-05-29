@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="ko">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>TONE:FIT - Contact</title>
-
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/font.css">
     <link rel="stylesheet" href="../assets/css/common.css">
@@ -17,14 +11,11 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/contact.css">
     <link rel="stylesheet" href="../assets/css/startup.css">
-
 </head>
 
 <body class="contact-page">
     <script src="../assets/js/libs/jquery.min.js"></script>
-
     <script src="../assets/js/libs/gsap.min.js"></script>
-
     <script src="../assets/js/libs/ScrollTrigger.min.js"></script>
     <script src="../assets/js/libs/ScrollSmoother.min.js"></script>
     <!-- <script src="../assets/js/libs/MotionPathPlugin.min.js"></script> -->
@@ -124,34 +115,38 @@
             <section class="contact-kv-section" aria-labelledby="contact-kv-title">
                 <div class="inner contact-kv-inner d-flex flex-col">
                     <h2 id="contact-kv-title" class="contact-kv-title ft-54-r title">가맹/제휴 문의</h2>
-                    <p class="contact-kv-desc ft-20-r">Inquiries about collaboration and<br>partnerships</p>
+                    <p class="contact-kv-desc ft-20-r">Inquiries about collaboration and partnerships</p>
                 </div>
             </section>
-
+        
             <div class="contact-card-wrap">
                 <div class="contact-card">
                     <div class="contact-card-inner">
                         <p class="contact-brand-text ft-20-r">
-                            TONE:FIT은 세상의 모든 색과 브랜드가<br>
-                            가장 완벽한 빛을 찾을 수 있도록 돕습니다.
+                            TONE:FIT은 세상의 모든 색과 브랜드가 <span class="d-block">가장 완벽한 빛을 찾을 수 있도록 돕습니다.</span>
                         </p>
+                        
                         <hr class="contact-card-divider" aria-hidden="true">
-                        <div class="contact-details-row">
-                            <div class="contact-detail-col contact-detail-col--email">
-                                <p class="contact-detail-label ft-20-r">E-MAIL</p>
-                                <p class="contact-detail-value ft-20-r">
+                        
+                        <address class="contact-details-row" style="font-style: normal;">
+                            
+                            <dl class="contact-detail-col contact-detail-col--email" style="margin: 0;">
+                                <dt class="contact-detail-label ft-20-r">E-MAIL</dt>
+                                <dd class="contact-detail-value ft-20-r" style="margin-left: 0;">
                                     <a href="mailto:partnership@tonefit.co.kr">partnership@tonefit.co.kr</a>
-                                </p>
-                            </div>
-                            <div class="contact-detail-col contact-detail-col--office">
-                                <p class="contact-detail-label ft-20-r">OFFICE</p>
-                                <p class="contact-detail-value ft-20-r">
-                                    인천광역시 연수구 컨벤시아대로 165, 포스코타워 24층<br>
-                                    TONE:FIT HQ (24th floor, 165, Convensia-daero,<br>
-                                    Yeonsu-gu, Incheon, Republic of Korea)
-                                </p>
-                            </div>
-                        </div>
+                                </dd>
+                            </dl>
+                            
+                            <dl class="contact-detail-col contact-detail-col--office" style="margin: 0;">
+                                <dt class="contact-detail-label ft-20-r">OFFICE</dt>
+                                <dd class="contact-detail-value ft-20-r" style="margin-left: 0;">
+                                    인천광역시 연수구 컨벤시아대로 165, 포스코타워 24층 
+                                    <span class="d-block mt-10">TONE:FIT HQ (24th floor, 165, Convensia-daero,</span>
+                                    <span class="d-block">Yeonsu-gu, Incheon, Republic of Korea)</span>
+                                </dd>
+                            </dl>
+                            
+                        </address>
                     </div>
                 </div>
             </div>
@@ -160,11 +155,15 @@
         <section class="contact-faq-section" aria-labelledby="contact-faq-title">
             <div class="inner">
                 <h2 id="contact-faq-title" class="contact-faq-title ft-32-b color-point">자주 묻는 질문</h2>
+                
+                <!-- 참고: FAQ 리스트이므로 ul, li 마크업을 사용해도 좋지만, 아코디언 컴포넌트 특성상 현재의 div 구조도 웹 표준에 전혀 위배되지 않습니다. -->
                 <div class="contact-faq-list">
+                    
                     <div class="contact-faq-item">
                         <button type="button" class="contact-faq-trigger ft-28-r" id="contact-faq-trigger-1" aria-expanded="false" aria-controls="contact-faq-panel-1">
                             <span class="contact-faq-question">Q. 가맹점을 창업하고 싶은데 어떻게 하면 되나요?</span>
                             <span class="contact-faq-icon-wrap" aria-hidden="true">
+                                <!-- aria-expanded가 상태를 알려주므로, 시각적 장식인 아이콘의 alt는 비워둡니다 -->
                                 <img class="contact-faq-icon contact-faq-icon--down" src="../assets/images/icon/arrow-contact.svg" alt="" width="25" height="15" decoding="async">
                                 <img class="contact-faq-icon contact-faq-icon--up" src="../assets/images/icon/arrowup-contact.svg" alt="" width="25" height="15" decoding="async">
                             </span>
@@ -178,7 +177,7 @@
                             </div>
                         </div>
                     </div>
-
+        
                     <div class="contact-faq-item">
                         <button type="button" class="contact-faq-trigger ft-28-r" id="contact-faq-trigger-2" aria-expanded="false" aria-controls="contact-faq-panel-2">
                             <span class="contact-faq-question">Q. 창업 시 드는 비용은 어떻게 되나요?</span>
@@ -195,7 +194,7 @@
                             </div>
                         </div>
                     </div>
-
+        
                     <div class="contact-faq-item">
                         <button type="button" class="contact-faq-trigger ft-28-r" id="contact-faq-trigger-3" aria-expanded="false" aria-controls="contact-faq-panel-3">
                             <span class="contact-faq-question">Q. 인테리어 공사는 본사를 통해서 해야 하나요?</span>
@@ -212,7 +211,7 @@
                             </div>
                         </div>
                     </div>
-
+        
                     <div class="contact-faq-item">
                         <button type="button" class="contact-faq-trigger ft-28-r" id="contact-faq-trigger-4" aria-expanded="false" aria-controls="contact-faq-panel-4">
                             <span class="contact-faq-question">Q. 무인 매장 관리는 처음인데, 계약 기간과 재계약은 어떻게 되나요?</span>
@@ -229,7 +228,7 @@
                             </div>
                         </div>
                     </div>
-
+        
                     <div class="contact-faq-item">
                         <button type="button" class="contact-faq-trigger ft-28-r" id="contact-faq-trigger-5" aria-expanded="false" aria-controls="contact-faq-panel-5">
                             <span class="contact-faq-question">Q. 가맹점 오픈 시 본사의 지원은 어떻게 되나요?</span>
@@ -246,6 +245,7 @@
                             </div>
                         </div>
                     </div>
+        
                 </div>
             </div>
         </section>
@@ -254,20 +254,27 @@
             <div class="inner">
                 <div class="startup-inquiry-layout d-flex">
                     <div class="startup-inquiry-info startup-fade-up d-flex flex-col">
-                        <h2 id="startup-inquiry-title" class="startup-inquiry-title title color-main">당신의 창업,<br><span class="startup-inquiry-title-line">TONE:FIT이 함께합니다.</span></h2>
+                        <!-- 1. <br> 태그를 span으로 교체 -->
+                        <h2 id="startup-inquiry-title" class="startup-inquiry-title title color-main">
+                            <span class="d-block">당신의 창업,</span> <span class="startup-inquiry-title-line">TONE:FIT이 함께합니다.</span>
+                        </h2>
+                        
                         <div class="startup-inquiry-contact d-flex flex-col">
                             <div class="startup-inquiry-email-row d-flex ai-center">
                                 <span class="startup-inquiry-email">tone_fit@ezen.com</span>
-                                <img class="startup-inquiry-mail-icon" src="../assets/images/icon/mail.svg" alt="" width="20" height="16" decoding="async">
+                                <!-- 2. 정보 중복 방지를 위한 아이콘 숨김 처리 -->
+                                <img class="startup-inquiry-mail-icon" src="../assets/images/icon/mail.svg" alt="" aria-hidden="true" width="20" height="16" decoding="async">
                             </div>
                             <div class="startup-inquiry-phone-row d-flex ai-center">
                                 <span class="startup-inquiry-phone">000-1111-2222</span>
-                                <img class="startup-inquiry-phone-icon" src="../assets/images/icon/phone.svg" alt="" width="20" height="20" decoding="async">
+                                <!-- 2. 정보 중복 방지를 위한 아이콘 숨김 처리 -->
+                                <img class="startup-inquiry-phone-icon" src="../assets/images/icon/phone.svg" alt="" aria-hidden="true" width="20" height="20" decoding="async">
                             </div>
                         </div>
                     </div>
-
-                    <form class="startup-inquiry-form d-flex flex-col" action="#" method="post" novalidate>
+        
+                    <!-- 폼 영역: novalidate와 aria-live 처리가 매우 훌륭합니다! -->
+                    <form class="startup-inquiry-form d-flex flex-col" action="#" method="post" novalidate aria-labelledby="startup-inquiry-title">
                         <div class="startup-inquiry-form-row d-flex">
                             <div class="startup-inquiry-field startup-inquiry-field--half d-flex flex-col">
                                 <div class="startup-inquiry-label-row d-flex ai-center">
@@ -284,7 +291,7 @@
                                 <input class="startup-inquiry-input startup-inquiry-input--half" type="tel" id="startup-inquiry-tel" name="tel" autocomplete="tel" placeholder="연락처" required aria-describedby="startup-inquiry-tel-error">
                             </div>
                         </div>
-
+        
                         <div class="startup-inquiry-field d-flex flex-col">
                             <div class="startup-inquiry-label-row d-flex ai-center">
                                 <label class="startup-inquiry-label" for="startup-inquiry-email">이메일</label>
@@ -292,7 +299,7 @@
                             </div>
                             <input class="startup-inquiry-input startup-inquiry-input--full" type="email" id="startup-inquiry-email" name="email" autocomplete="email" placeholder="email" required aria-describedby="startup-inquiry-email-error">
                         </div>
-
+        
                         <div class="startup-inquiry-field d-flex flex-col">
                             <div class="startup-inquiry-label-row d-flex ai-center">
                                 <label class="startup-inquiry-label" for="startup-inquiry-message">문의내용</label>
@@ -300,16 +307,18 @@
                             </div>
                             <textarea class="startup-inquiry-textarea" id="startup-inquiry-message" name="message" rows="6" placeholder="문의내용" required aria-describedby="startup-inquiry-message-error"></textarea>
                         </div>
-
+        
                         <div class="startup-inquiry-field d-flex flex-col">
-                            <span class="startup-inquiry-label" id="startup-inquiry-file-label">파일첨부</span>
-                            <div class="startup-inquiry-file-row d-flex ai-center" aria-labelledby="startup-inquiry-file-label">
-                                <p class="startup-inquiry-file-name" id="startup-inquiry-file-name" role="status" aria-live="polite" aria-label="첨부 파일명"></p>
-                                <button class="startup-inquiry-file-btn" type="button" aria-controls="startup-inquiry-file">파일첨부</button>
-                                <input class="startup-inquiry-file-input" type="file" id="startup-inquiry-file" name="attachment" hidden>
+                            <label class="startup-inquiry-label" for="startup-inquiry-file" id="startup-inquiry-file-label">파일첨부</label>
+                            <div class="startup-inquiry-file-row d-flex ai-center">
+                                <p class="startup-inquiry-file-name" id="startup-inquiry-file-name" role="status" aria-live="polite">선택된 파일 없음</p>
+                                <!-- 3. aria-labelledby 속성 제거 (버튼 본연의 텍스트 활용) -->
+                                <button class="startup-inquiry-file-btn" type="button" aria-controls="startup-inquiry-file">파일 선택</button>
+                                <!-- input에 hidden 속성이 적용되어 탭 이동 시 스킵되므로 버튼에만 포커스가 갑니다. 아주 좋은 처리입니다! -->
+                                <input class="startup-inquiry-file-input" type="file" id="startup-inquiry-file" name="attachment" aria-describedby="startup-inquiry-file-name" hidden>
                             </div>
                         </div>
-
+        
                         <div class="startup-inquiry-agree-row d-flex ai-center">
                             <input class="startup-inquiry-checkbox" type="checkbox" id="startup-inquiry-privacy" name="privacy_agree" value="yes" required aria-describedby="startup-inquiry-privacy-error">
                             <div class="startup-inquiry-label-row d-flex ai-center">
@@ -317,7 +326,7 @@
                                 <span class="startup-inquiry-field-error" id="startup-inquiry-privacy-error" role="alert" aria-live="polite"></span>
                             </div>
                         </div>
-
+        
                         <button class="startup-inquiry-submit bg-point-orange" type="submit">제휴문의</button>
                     </form>
                 </div>
@@ -325,8 +334,6 @@
         </section>
 
     </main>
-
-
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer bg-deep-base">
@@ -354,16 +361,11 @@
         </div>
     </footer>
 
-
-
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/franchise.js"></script>
     <script src="../assets/js/contact.js"></script>
 
 </body>
-
-
-
 </html>
 
