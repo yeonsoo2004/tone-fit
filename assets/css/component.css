@@ -91,6 +91,7 @@ body:not(.page-home) .header {
 }
 
 .logo {
+    font-family: 'Poppins-Regular';
     font-size: 1.25rem;
     font-weight: 400;
     color: inherit;
