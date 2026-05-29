@@ -28,16 +28,20 @@ body {
    Color Classes (텍스트 & 배경 유틸리티)
 ========================================= */
 /* 1. Text Colors (폰트 컬러용) */
-.color-main { color: #4C4948; }
+/* .color-main { color: #4C4948; } */
+.color-main { color: #3a3837; }
 .color-point { color: #1E2022; }
-.color-orange { color: #D4734A; }
+/* .color-orange { color: #D4734A; } */
+.color-orange { color: #b85a34; }
 
 /* 2. Background Colors (배경 컬러용) */
 .bg-light-gray { background-color: #F6F6F6; }
 .bg-deep-base { background-color: #1E2022; }
 .bg-warm-white { background-color: #F8F5F0; }
-.bg-point-orange { background-color: #D4734A; }
-.bg-sub-orange { background-color: #BC8F76; }
+/* .bg-point-orange { background-color: #D4734A; } */
+.bg-point-orange { background-color: #b85a34; }
+/* .bg-sub-orange { background-color: #BC8F76; } */
+.bg-sub-orange { background-color: #7a5041; }
 
 /* =========================================
    Layout & Flex Classes (레이아웃 & 정렬)
