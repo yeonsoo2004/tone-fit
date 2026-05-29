@@ -9,6 +9,21 @@ body {
    background-color: #FFFFFF;
 }
 
+/* 웹전 - PC 화면: 기획 의도대로 강제 줄바꿈 */
+.d-block {
+   display: block;
+}
+.sr-only {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0, 0, 0, 0);
+   border: 0;
+}
+
 /* =========================================
    Color Classes (텍스트 & 배경 유틸리티)
 ========================================= */
