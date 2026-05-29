@@ -85,17 +85,6 @@
 /* =========================================
    HOW IT WORKS Section
 ========================================= */
-.kiosk-works-section .color-point {
-    color: #D4734A;
-}
-
-.kiosk-works-section .title-area h2 {
-    margin-top: 0;
-    color: #D4734A;
-    line-height: 1.3;
-}
-
-
 
 .kiosk-works-section .work-item {
     align-items: center;
@@ -109,13 +98,6 @@
 .kiosk-works-section .slide-text-col {
     overflow: hidden;
 }
-
-.kiosk-works-section .step-title {
-    margin-top: 0;
-    color: #D4734A;
-    line-height: 1.3;
-}
-
 
 .kiosk-works-section .img-col img {
     width: 100%;
@@ -609,21 +591,38 @@
 }
 
 .kiosk-cta-section .btn-group {
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 1.25rem;
+    width: 100%;
 }
 
-/* CTA 버튼: gnb-btn(채움) + topage-btn(테두리) — component.css 기준, 크기만 보강 */
-.kiosk-cta-section .gnb-btn,
-.kiosk-cta-section .topage-btn {
-    text-decoration: none;
+/* CTA 버튼: gnb-btn(채움) + topage-btn(테두리) — 동일 타이포·패딩 */
+.kiosk-cta-section .btn-group .gnb-btn,
+.kiosk-cta-section .btn-group .topage-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 12.5rem;
     padding: 1.125rem 2rem;
+    font-size: 1.25rem;
     font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1024px) {
     .kiosk-cta-section {
         min-height: 26rem;
+    }
+
+    .kiosk-cta-section .btn-group .gnb-btn,
+    .kiosk-cta-section .btn-group .topage-btn {
+        font-size: 1.125rem;
     }
 }
 
@@ -636,13 +635,14 @@
 
     .kiosk-cta-section .btn-group {
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
     }
 
-    .kiosk-cta-section .topage-btn,
-    .kiosk-cta-section .gnb-btn {
+    .kiosk-cta-section .btn-group .topage-btn,
+    .kiosk-cta-section .btn-group .gnb-btn {
         width: 100%;
         max-width: 18rem;
-        text-align: center;
+        font-size: 1rem;
     }
 }
