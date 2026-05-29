@@ -246,7 +246,6 @@
     min-width: 0;
 }
 
-/* Feature(92%, 18K+) · Market(700만+, 무인 운영, 시장 최초) 통계 수치 공통 */
 .identity-feature-section .stat-item strong,
 .identity-market-section .stat-item strong {
     display: block;
