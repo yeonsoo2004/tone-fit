@@ -1,7 +1,9 @@
 @charset "utf-8";
 
 /* =========================================
-   Frame Page — 서브페이지 헤더 오프셋
+   Frame Page — 공통 헤더/푸터 override
+   (스타일·동작: component.css / common.js 기준)
+   서브페이지: index 스크롤 적용 상태와 동일한 고정 헤더
    (헤더 높이 = 1rem + 3.25rem + 1rem = 5.25rem)
 ========================================= */
 
@@ -9,15 +11,38 @@
     padding-top: 5.25rem;
 }
 
-.frame-page .header {
+/* 히어로 없음 — 흰 배경 고정 (body:not(.page-home) .header 보강) */
+.frame-page .header,
+.frame-page .header.is-scrolled,
+.frame-page .header.is-mega-open,
+.frame-page .header.is-mobile-nav-open {
     background-color: #FFFFFF;
     color: #4C4948;
 }
 
-.frame-page .header.is-scrolled,
-.frame-page .header.is-mega-open {
-    background-color: #FFFFFF;
-    color: #4C4948;
+/* nomalize.css h1 기본값 충돌 방지 */
+.frame-page .header .logo {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* 모바일 드로어 — index .page-home 전용 스타일을 frame 서브페이지에 적용 */
+@media (max-width: 768px) {
+    .frame-page .header-mobile-cta {
+        flex-shrink: 0;
+        padding: 1.25rem 1rem 2rem;
+        border-top: 1px solid rgba(76, 73, 72, 0.12);
+    }
+
+    .frame-page .header-mobile-cta .gnb-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        box-sizing: border-box;
+        color: #fff;
+    }
 }
 
 
