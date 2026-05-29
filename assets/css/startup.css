@@ -15,10 +15,13 @@
     color: #4C4948;
 }
 
-/* KV 48.75rem · 배경 · 오버레이 — 특수 규격 */
+/* KV — PC: 뷰포트 세로 채움(히어로와 동일) · 배경 · 오버레이 */
 .startup-kv-section {
     position: relative;
-    height: 780px;
+    box-sizing: border-box;
+    min-height: 48.75rem;
+    height: 100vh;
+    height: 100dvh;
     background-image: url('../images/startup-kv.webp');
     background-size: cover;
     background-position: center;
@@ -430,11 +433,6 @@
     .startup-page .inner {
         max-width: none;
         width: 100%;
-    }
-
-    /* KV */
-    .startup-page .startup-kv-section {
-        height: 700px;
     }
 
     /* Feature · 7그리드 비디오 — height:auto+aspect-ratio 시 video 높이 0px 붕괴 방지 */
