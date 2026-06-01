@@ -109,6 +109,9 @@ body {
       padding-top: 5rem;
       padding-bottom: 5rem;
    }
+   .mb-80 {
+      margin-bottom: 3.75rem; 
+   }
 }
 
 /* 태블릿 (768px 이하) — 좌우 최소 여백 64px 유지 */
@@ -125,11 +128,17 @@ body {
       padding-top: 3.75rem;
       padding-bottom: 3.75rem;
    }
+   .mb-80 {
+      margin-bottom: 2.5rem;
+   }
 }
 
 /* 모바일 (402px 이하) */
 @media screen and (max-width: 402px) {
    :root {
       --page-gutter-x: 16px;
+   }
+   .mb-80 {
+      margin-bottom: 2rem;
    }
 }
