@@ -387,8 +387,8 @@
 .kiosk-tech-section .tech-item-title {
     margin-top: 0;
     line-height: 1.35;
+    font-weight: 600;
 }
-
 .kiosk-tech-section .tech-item-desc {
     margin: 0;
     line-height: 1.6;
