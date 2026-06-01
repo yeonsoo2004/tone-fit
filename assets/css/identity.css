@@ -162,7 +162,6 @@
     }
 
     .identity-vision-section .vision-content-wrap {
-        flex-direction: column;
         gap: 2rem;
     }
 
@@ -475,18 +474,39 @@
 }
 
 .identity-why-section .comparison-wrap {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
     width: 100%;
 }
 
-.identity-why-section .img-before,
-.identity-why-section .img-after {
+/* 이미지 + VS만 한 줄 → VS가 카드 세로 중앙에 위치 */
+.identity-why-section .comparison-visual-row,
+.identity-why-section .comparison-caption-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    column-gap: 2.5rem;
+    width: 100%;
+}
+
+.identity-why-section .comparison-caption-row {
+    align-items: start;
+}
+
+.identity-why-section .comparison-visual {
     width: 100%;
     min-width: 0;
-    text-align: center;
+}
+
+.identity-why-section .comparison-caption {
+    width: 100%;
+    min-width: 0;
+}
+
+.identity-why-section .comparison-caption-gap {
+    width: 3.75rem;
+    flex-shrink: 0;
 }
 
 .identity-why-section .why-img {
@@ -499,20 +519,19 @@
     object-position: center top;
 }
 
-.identity-why-section .img-before h3,
-.identity-why-section .img-after h3 {
+.identity-why-section .comparison-caption h3 {
     margin: 0;
     line-height: 1.2;
 }
 
-.identity-why-section .img-before p,
-.identity-why-section .img-after p {
+.identity-why-section .comparison-caption p {
     margin: 0;
     line-height: 1.6;
 }
 
 .identity-why-section .vs-circle {
     flex-shrink: 0;
+    align-self: center;
     width: 3.75rem;
     height: 3.75rem;
     border-radius: 50%;
@@ -526,8 +545,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .identity-why-section .comparison-wrap {
-        gap: 2rem;
+    .identity-why-section .comparison-visual-row,
+    .identity-why-section .comparison-caption-row {
+        column-gap: 2rem;
     }
 
     .identity-why-section .why-img {
@@ -541,14 +561,22 @@
     }
 
     .identity-why-section .comparison-wrap {
-        grid-template-columns: 1fr;
-        justify-items: center;
         gap: 1.5rem;
     }
 
-    .identity-why-section .img-before,
-    .identity-why-section .img-after {
-        width: 100%;
+    .identity-why-section .comparison-visual-row {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        row-gap: 1.25rem;
+    }
+
+    .identity-why-section .comparison-caption-row {
+        grid-template-columns: 1fr;
+        row-gap: 1.5rem;
+    }
+
+    .identity-why-section .comparison-caption-gap {
+        display: none;
     }
 
     .identity-why-section .why-img {
@@ -580,6 +608,7 @@
 .identity-analysis-section .step-item {
     grid-column: span 3;
     width: 100%;
+    gap: 1.25rem; /* 20px · badge ↔ card */
 }
 
 .identity-analysis-section .step-badge {
@@ -593,8 +622,9 @@
 
 .identity-analysis-section .step-card {
     width: 100%;
-    height: auto;
-    padding: 40px 20px;
+    height: 100%;
+    min-height: 0;
+    padding: 2.5rem 1.25rem; /* 40px 상·하 · 20px 좌·우 */
     background-color: #FFFFFF;
     border-radius: 1.25rem;
     box-shadow: 0 0.25rem 1.5rem rgba(30, 32, 34, 0.08);
@@ -673,13 +703,20 @@
         margin-bottom: 2.5rem;
     }
 
+    .identity-analysis-section .analysis-steps-wrap {
+        row-gap: 2.5rem;
+        column-gap: 1rem;
+    }
+
+    /* 6단 그리드 · span 3 → 2열 × 2행 */
     .identity-analysis-section .step-item {
-        grid-column: span 6;
+        grid-column: span 3;
+        gap: 0.625rem; /* 10px · badge ↔ card */
     }
 
     .identity-analysis-section .step-card {
-        height: auto;
-        padding: 2rem 1.25rem 1.75rem;
+        height: 100%;
+        padding: 2rem 1.25rem; /* 상·하 동일 */
     }
 
     .identity-analysis-section .step-badge {
@@ -696,6 +733,12 @@
         width: 6.25rem;
         max-height: 6.25rem;
     }
+}
+
+@media screen and (max-width: 402px) {
+  .identity-analysis-section .step-item {
+    grid-column: span 6;
+  }
 }
 
 

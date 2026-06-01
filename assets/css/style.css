@@ -104,6 +104,7 @@ body {
     z-index: 2;
     padding-top: 8.125rem;
     overflow: visible;
+    padding-bottom: 0;
 }
 
 .about-section > .inner {
@@ -580,10 +581,6 @@ body {
 /* =========================================
    7. FRAME SECTION
 ========================================= */
-.frame-section .section-header h3,
-p {
-    color: #fff;
-}
 
 .frame-content {
     width: 100%;

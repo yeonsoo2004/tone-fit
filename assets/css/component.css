@@ -840,6 +840,85 @@ body.is-policy-modal-open {
 }
 
 /* ===================================
+   Back to Top (플로팅)
+   =================================== */
+
+.back-to-top {
+    --back-to-top-offset: 2.5rem;
+    --back-to-top-right: 2.5rem;
+    position: fixed;
+    right: calc(var(--back-to-top-right) + env(safe-area-inset-right, 0px));
+    bottom: calc(var(--back-to-top-offset) + env(safe-area-inset-bottom, 0px));
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: #1E2022;
+    color: #FFFFFF;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.5rem);
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease,
+        bottom 0.2s ease,
+        right 0.2s ease,
+        background-color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top__icon {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+}
+
+.back-to-top:hover {
+    background-color: transparent;
+    border-color: #1E2022;
+    color: #1E2022;
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid #1E2022;
+    outline-offset: 3px;
+}
+
+@media screen and (max-width: 1024px) {
+    .back-to-top {
+        --back-to-top-right: var(--page-gutter-x);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .back-to-top {
+        --back-to-top-offset: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .back-to-top__icon {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
+
+/* ===================================
    Utility States
    =================================== */
 
