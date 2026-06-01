@@ -408,9 +408,9 @@
     line-height: 1.75rem;
 }
 
-/* 카드 그룹 하단 ~ 캡션: 3.75rem */
+/* 카드 그룹 하단 ~ 캡션: 1.25rem(20px) */
 .startup-franchise-action {
-    margin-top: 3.75rem;
+    margin-top: 1.25rem;
     width: 100%;
     text-align: center;
 }
@@ -501,19 +501,25 @@
         line-height: 3.75rem;
     }
 
-    /* Franchise */
-    .startup-page .startup-franchise-card {
-        width: calc((100% - 3rem) / 3);
-        max-width: 464px;
-        min-width: 0;
-    }
+    /* Franchise — 3열·비율은 하단 1440/1024 격리 블록에서 제어 */
 }
 
 /* 태블릿 (1024px 이하) */
 @media screen and (max-width: 1024px) {
-    /* KV — font ft-54-r 42px */
+    /* KV — 태블릿 풀스크린 · 최소 778px */
     .startup-page .startup-kv-section {
-        height: 600px;
+        min-height: max(48.625rem, 100vh);
+        min-height: max(48.625rem, 100dvh);
+        height: 100vh;
+        height: 100dvh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .startup-page .startup-kv-inner {
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
 
     .startup-page .startup-kv-title {
@@ -660,9 +666,12 @@
 
 /* 모바일 (768px 이하) */
 @media screen and (max-width: 768px) {
-    /* KV */
+    /* KV — 모바일 · 최소 778px · dvh 채움 */
     .startup-page .startup-kv-section {
-        height: 450px;
+        min-height: max(48.625rem, 100vh);
+        min-height: max(48.625rem, 100dvh);
+        height: 100vh;
+        height: 100dvh;
     }
 
     .startup-page .startup-kv-title {
@@ -752,42 +761,13 @@
         margin-right: 1.25rem;
     }
 
-    /* Franchise · 1열 100% */
+    /* Franchise · Process — 768px 태블릿 가로 배열은 최하단 격리 블록 */
     .startup-page .startup-franchise-title {
         line-height: 2.5rem;
     }
 
-    .startup-page .startup-franchise-cards {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1.25rem;
-        margin-top: 3rem;
-    }
-
-    .startup-page .startup-franchise-card {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        min-height: 0;
-        padding: 3rem 1.5rem;
-        border-radius: 2.5rem;
-    }
-
-    .startup-page .startup-franchise-card-title {
-        line-height: 2.25rem;
-    }
-
-    .startup-page .startup-franchise-card-desc {
-        line-height: 1.75rem;
-    }
-
-    .startup-page .startup-franchise-card-icon {
-        width: 6.25rem;
-        height: 6.25rem;
-    }
-
     .startup-page .startup-franchise-action {
-        margin-top: 3.75rem;
+        margin-top: 1.25rem;
         text-align: center;
     }
 
@@ -796,65 +776,12 @@
         text-align: center;
     }
 
-    /* Process */
     .startup-page .startup-process-section .inner {
         gap: 2.5rem;
     }
 
     .startup-page .startup-process-title {
         line-height: 2.125rem;
-    }
-
-    .startup-page .startup-process-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .startup-page .startup-process-item {
-        flex: 0 1 auto;
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .startup-page .startup-process-circle {
-        width: 8.5rem;
-        height: 8.5rem;
-    }
-
-    .startup-page .startup-process-item:nth-child(1) .startup-process-icon {
-        width: 5rem;
-        height: 5rem;
-        max-width: 5rem;
-        max-height: 5rem;
-    }
-
-    .startup-page .startup-process-item:nth-child(2) .startup-process-icon {
-        width: 4.5rem;
-        height: 2.875rem;
-        max-width: 4.5rem;
-        max-height: 2.875rem;
-    }
-
-    .startup-page .startup-process-item:nth-child(3) .startup-process-icon {
-        width: 4rem;
-        height: 4rem;
-        max-width: 4rem;
-        max-height: 4rem;
-    }
-
-    .startup-page .startup-process-item:nth-child(4) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(5) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(6) .startup-process-icon {
-        width: 4.5rem;
-        height: 4.5rem;
-        max-width: 4.5rem;
-        max-height: 4.5rem;
-    }
-
-    .startup-page .startup-process-item-desc {
-        white-space: normal;
-        max-width: 100%;
     }
 
     /* Inquiry */
@@ -887,10 +814,6 @@
 
 /* 소형 모바일 (402px 이하) — font.css 402 스케일 */
 @media screen and (max-width: 402px) {
-    .startup-page .startup-kv-section {
-        height: 22rem;
-    }
-
     .startup-page .startup-kv-title {
         line-height: 2.125rem;
     }
@@ -953,8 +876,9 @@
     }
 
     .startup-page .startup-franchise-card-icon {
-        width: 5rem;
-        height: 5rem;
+        width: 3.25rem;
+        height: 3.25rem;
+        max-width: 3.25rem;
     }
 
     .startup-page .startup-process-section .inner {
@@ -1537,76 +1461,51 @@
     }
 }
 
-/* [1] 가맹 경쟁력 — 태블릿 (1024px) · 3열 강제 · 기존 2열 wrap 오버라이드 */
+/* [1] 가맹 경쟁력 — 태블릿 (1024px) · 가로 3열 고정 · 576px 이하 1열은 최하단 */
 @media screen and (max-width: 1024px) {
     .startup-page .startup-franchise-cards {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: center;
         align-items: stretch;
+        gap: 24px;
+        width: 100%;
     }
 
     .startup-page .startup-franchise-card {
+        box-sizing: border-box;
         flex: 0 1 calc(33.333% - 16px);
         width: calc(33.333% - 16px);
         max-width: calc(33.333% - 16px);
         min-width: 0;
+        flex-shrink: 1;
         height: auto;
         aspect-ratio: 464 / 473;
-        padding: 2.5rem 1.25rem;
+        padding: 24px 16px;
         border-radius: 2.5rem;
         justify-content: center;
     }
 
     .startup-page .startup-franchise-card-icon {
+        display: block;
         width: auto;
         max-width: 30%;
         height: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .startup-page .startup-franchise-card-title {
-        margin-top: 2rem;
+        margin-top: 1.25rem;
         line-height: 1.35;
     }
 
     .startup-page .startup-franchise-card-desc {
-        margin-top: 1rem;
+        margin-top: 0.75rem;
         line-height: 1.5;
     }
-    .startup-page .startup-process-list {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        row-gap: 40px;
-        column-gap: 20px;
-    }
 
-    .startup-page .startup-process-item {
-        flex: 0 1 calc(50% - 10px);
-        max-width: calc(50% - 10px);
-        width: calc(50% - 10px);
-    }
-
-    .startup-page .startup-process-circle {
-        box-sizing: border-box;
-        width: 7.8125rem;
-        height: 7.8125rem;
-        border-radius: 50%;
-    }
-
-    .startup-page .startup-process-item:nth-child(1) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(2) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(3) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(4) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(5) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(6) .startup-process-icon {
-        width: auto;
-        height: auto;
-        max-width: 60%;
-        max-height: 60%;
-    }
+    /* Process 3×2 — 최하단 태블릿(577px~) 격리 블록 */
 
     /* 제휴문의 — 1024 이하 1단 전환 방지 · 줄바꿈·유동 축소 유지 */
     .startup-page .startup-inquiry-layout {
@@ -1672,35 +1571,7 @@
     }
 }
 
-/* 프로세스 — 중간 구간(769~1024): 1줄 3개 유지 */
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-    .startup-page .startup-process-list {
-        row-gap: 2rem;
-        column-gap: 1.25rem;
-    }
-
-    .startup-page .startup-process-item {
-        flex: 0 1 calc((100% - 2.5rem) / 3);
-        max-width: calc((100% - 2.5rem) / 3);
-        width: calc((100% - 2.5rem) / 3);
-    }
-
-    /* 3열에서 텍스트 overflow로 옆 아이템과 겹침 방지 */
-    .startup-page .startup-process-item-body {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .startup-page .startup-process-item-desc {
-        width: 100%;
-        max-width: 100%;
-        white-space: normal;
-        overflow-wrap: break-word;
-        word-break: keep-all;
-    }
-}
-
-/* [3] 모바일 (768px) — 성장 지표 1단 · 가맹 1열 · 제휴문의 이름/연락처 1줄 */
+/* [3] 태블릿/모바일 (768px) — 성장 지표 1단 · 가맹/프로세스 가로 배열은 최하단 격리 */
 @media screen and (max-width: 768px) {
     /* 성장 지표 — 오버레이 해제 · 수직 1단 */
     .startup-page .startup-growth-layout {
@@ -1727,75 +1598,6 @@
     .startup-page .startup-growth-copy {
         z-index: 1;
         padding-right: 0;
-    }
-
-    .startup-page .startup-franchise-cards {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: stretch;
-        width: 100%;
-    }
-
-    .startup-page .startup-franchise-card {
-        width: 100%;
-        max-width: 100%;
-        flex: 1 1 auto;
-        height: auto;
-        aspect-ratio: auto;
-        padding: 1.5rem 1rem;
-        border-radius: 2.5rem;
-        justify-content: center;
-    }
-
-    .startup-page .startup-franchise-card-icon {
-        width: 45px;
-        max-width: 45px;
-        height: auto;
-    }
-
-    .startup-page .startup-franchise-card-title {
-        margin-top: 1.5rem;
-        line-height: 1.35;
-    }
-
-    .startup-page .startup-franchise-card-desc {
-        margin-top: 0.75rem;
-        line-height: 1.5;
-    }
-
-    .startup-page .startup-process-list {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        row-gap: 40px;
-        column-gap: 20px;
-    }
-
-    .startup-page .startup-process-item {
-        flex: 0 1 calc(50% - 10px);
-        max-width: calc(50% - 10px);
-        width: calc(50% - 10px);
-    }
-
-    .startup-page .startup-process-circle {
-        box-sizing: border-box;
-        width: 7.8125rem;
-        height: 7.8125rem;
-        border-radius: 50%;
-    }
-
-    .startup-page .startup-process-item:nth-child(1) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(2) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(3) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(4) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(5) .startup-process-icon,
-    .startup-page .startup-process-item:nth-child(6) .startup-process-icon {
-        width: auto;
-        height: auto;
-        max-width: 55%;
-        max-height: 55%;
     }
 
     .startup-page .startup-inquiry-form-row {
@@ -1861,9 +1663,9 @@
     }
 
     .startup-page .startup-franchise-card-icon {
-        width: 40px;
-        max-width: 40px;
-        height: auto;
+        width: 2.5rem;
+        max-width: 2.5rem;
+        height: 2.5rem;
     }
 
     .startup-page .startup-franchise-card-title {
@@ -2072,5 +1874,398 @@
     .startup-page .py-130 {
         padding-top: 3rem;
         padding-bottom: 3rem;
+    }
+}
+
+/* =========================================
+   태블릿 768px 표준 — 가맹 3열 · 프로세스 3×2 (577px~ · 최하단 격리)
+========================================= */
+@media screen and (min-width: 577px) {
+    /* 가맹 경쟁력 — 가로 3열 */
+    .startup-page .startup-franchise-cards {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .startup-page .startup-franchise-card {
+        box-sizing: border-box;
+        flex: 0 1 calc(33.333% - 16px);
+        width: calc(33.333% - 16px);
+        max-width: calc(33.333% - 16px);
+        min-width: 0;
+        flex-shrink: 1;
+        height: auto;
+        aspect-ratio: 464 / 473;
+        padding: 24px 16px;
+        border-radius: 2.5rem;
+        justify-content: center;
+    }
+
+    .startup-page .startup-franchise-card-icon {
+        display: block;
+        width: auto;
+        max-width: 30%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .startup-page .startup-franchise-card-title {
+        margin-top: 1.25rem;
+        line-height: 1.35;
+    }
+
+    .startup-page .startup-franchise-card-desc {
+        margin-top: 0.75rem;
+        line-height: 1.5;
+    }
+
+    /* 계약 프로세스 — 3×2 */
+    .startup-page .startup-process-grid-list,
+    .startup-page .startup-process-list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 24px;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .startup-page .startup-process-grid-item,
+    .startup-page .startup-process-item {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        width: calc(33.333% - 16px);
+        max-width: calc(33.333% - 16px);
+        min-width: 0;
+    }
+
+    .startup-page .startup-process-grid-item .startup-process-item-body,
+    .startup-page .startup-process-item .startup-process-item-body {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .startup-page .startup-process-grid-item .startup-process-item-desc,
+    .startup-page .startup-process-item .startup-process-item-desc {
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: keep-all;
+    }
+}
+
+/* 태블릿 768px — 유동 축소(Fluid Scale) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .startup-page .startup-franchise-card {
+        padding: 20px 12px;
+    }
+
+    .startup-page .startup-franchise-card-icon {
+        max-width: 28%;
+    }
+
+    .startup-page .startup-process-circle {
+        width: clamp(5.75rem, 14vw, 8.5rem);
+        height: clamp(5.75rem, 14vw, 8.5rem);
+    }
+
+    .startup-page .startup-process-grid-item:nth-child(1) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(1) .startup-process-icon {
+        width: clamp(3.75rem, 10vw, 5rem);
+        height: clamp(3.75rem, 10vw, 5rem);
+        max-width: clamp(3.75rem, 10vw, 5rem);
+        max-height: clamp(3.75rem, 10vw, 5rem);
+    }
+
+    .startup-page .startup-process-grid-item:nth-child(2) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(2) .startup-process-icon {
+        width: clamp(3.375rem, 9vw, 4.5rem);
+        height: clamp(2.125rem, 6vw, 2.875rem);
+        max-width: clamp(3.375rem, 9vw, 4.5rem);
+        max-height: clamp(2.125rem, 6vw, 2.875rem);
+    }
+
+    .startup-page .startup-process-grid-item:nth-child(3) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(3) .startup-process-icon {
+        width: clamp(3rem, 8vw, 4rem);
+        height: clamp(3rem, 8vw, 4rem);
+        max-width: clamp(3rem, 8vw, 4rem);
+        max-height: clamp(3rem, 8vw, 4rem);
+    }
+
+    .startup-page .startup-process-grid-item:nth-child(4) .startup-process-icon,
+    .startup-page .startup-process-grid-item:nth-child(5) .startup-process-icon,
+    .startup-page .startup-process-grid-item:nth-child(6) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(4) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(5) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(6) .startup-process-icon {
+        width: clamp(3.375rem, 9vw, 4.5rem);
+        height: clamp(3.375rem, 9vw, 4.5rem);
+        max-width: clamp(3.375rem, 9vw, 4.5rem);
+        max-height: clamp(3.375rem, 9vw, 4.5rem);
+    }
+}
+
+/* 모바일(576px 이하) — 가맹 · 프로세스 수직 1열 전환 */
+@media screen and (max-width: 576px) {
+    .startup-page .startup-franchise-cards {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 1.25rem;
+        margin-top: 3rem;
+    }
+
+    .startup-page .startup-franchise-card {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 auto;
+        aspect-ratio: auto;
+        padding: 3rem 1.5rem;
+    }
+
+    .startup-page .startup-franchise-card-icon {
+        width: 3.5rem;
+        max-width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    /* 계약 프로세스 — 모바일 2열 × 3행 */
+    .startup-page .startup-process-grid-list,
+    .startup-page .startup-process-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5rem 1rem;
+        width: 100%;
+    }
+
+    .startup-page .startup-process-grid-item,
+    .startup-page .startup-process-item {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        width: calc(50% - 0.5rem);
+        max-width: calc(50% - 0.5rem);
+        min-width: 0;
+        gap: 0.75rem;
+    }
+
+    .startup-page .startup-process-circle {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .startup-page .startup-process-item-body {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .startup-page .startup-process-item-title {
+        font-size: 0.875rem;
+        line-height: 1.35;
+    }
+
+    .startup-page .startup-process-item-desc {
+        width: 100%;
+        max-width: 100%;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    .startup-page .startup-process-grid-item:nth-child(1) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(1) .startup-process-icon {
+        width: 3rem;
+        height: 3rem;
+        max-width: 3rem;
+        max-height: 3rem;
+    }
+
+    .startup-page .startup-process-grid-item:nth-child(2) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(2) .startup-process-icon {
+        width: 2.75rem;
+        height: 1.75rem;
+        max-width: 2.75rem;
+        max-height: 1.75rem;
+    }
+
+    .startup-page .startup-process-grid-item:nth-child(3) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(3) .startup-process-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        max-width: 2.5rem;
+        max-height: 2.5rem;
+    }
+
+    .startup-page .startup-process-grid-item:nth-child(4) .startup-process-icon,
+    .startup-page .startup-process-grid-item:nth-child(5) .startup-process-icon,
+    .startup-page .startup-process-grid-item:nth-child(6) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(4) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(5) .startup-process-icon,
+    .startup-page .startup-process-item:nth-child(6) .startup-process-icon {
+        width: 2.75rem;
+        height: 2.75rem;
+        max-width: 2.75rem;
+        max-height: 2.75rem;
+    }
+}
+
+/* 가맹 경쟁력 — 카드 행 풀폭 · 섹션 좌우 패딩 0 · 카드만 16px 마진 */
+.startup-page .startup-franchise-section > .inner {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.startup-page .startup-franchise-section .startup-franchise-title,
+.startup-page .startup-franchise-section .startup-franchise-action {
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+}
+
+.startup-page .startup-franchise-action {
+    margin-top: 1.25rem;
+}
+
+.startup-page .startup-franchise-cards {
+    box-sizing: border-box;
+    width: calc(100% - 32px);
+    max-width: none;
+    margin-left: 16px;
+    margin-right: 16px;
+    align-items: stretch;
+}
+
+.startup-page .startup-franchise-card {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    align-self: stretch;
+    aspect-ratio: 464 / 473;
+}
+
+@media screen and (min-width: 577px) {
+    .startup-page .startup-franchise-cards {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .startup-page .startup-franchise-card {
+        flex: 1 1 0;
+        flex-shrink: 1;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .startup-page .startup-franchise-cards {
+        width: calc(100% - 32px);
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .startup-page .startup-franchise-card {
+        flex: 0 1 auto;
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: auto;
+    }
+}
+
+/* KV — 소형 태블릿·모바일 · 최소 778px · 디바이스 높이 채움 */
+@media screen and (max-width: 768px) {
+    .startup-page .startup-kv-section {
+        min-height: max(48.625rem, 100vh);
+        min-height: max(48.625rem, 100dvh);
+        height: 100vh;
+        height: 100dvh;
+    }
+}
+
+/* KV — PC/태블릿: 모바일 전용 줄바꿈 숨김 */
+.startup-page .startup-kv-copy br.mo-only {
+    display: none;
+}
+
+/* KV — 모바일 텍스트 줄바꿈 · 767px 이하 */
+@media screen and (max-width: 767px) {
+    .startup-page .startup-kv-copy {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .startup-page .startup-kv-title,
+    .startup-page .startup-kv-desc {
+        width: 100%;
+        max-width: 100%;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    .startup-page .startup-kv-title {
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+
+    .startup-page .startup-kv-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .startup-page .startup-kv-title br:not(.mo-only),
+    .startup-page .startup-kv-desc br:not(.mo-only) {
+        display: none;
+    }
+
+    .startup-page .startup-kv-title br.mo-only,
+    .startup-page .startup-kv-desc br.mo-only {
+        display: block;
+    }
+}
+
+/* KV — 320px 최하단 */
+@media screen and (max-width: 320px) {
+    .startup-page .startup-kv-title {
+        font-size: 1.75rem;
+    }
+
+    .startup-page .startup-kv-desc {
+        font-size: 0.875rem;
+    }
+}
+
+/* 가맹 3카드 — 태블릿(577~1024px) 타이포 */
+@media screen and (min-width: 577px) and (max-width: 1024px) {
+    .startup-page .startup-franchise-card-title {
+        font-size: 1rem;
+        line-height: 1.35;
+    }
+
+    .startup-page .startup-franchise-card-desc {
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+}
+
+/* Profit 캡션 — 모바일 한 줄 · 컨테이너 가로 채움 · margin-top 20px(1.25rem) */
+@media screen and (max-width: 767px) {
+    .startup-page .startup-profit-caption {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 1.25rem;
+        font-size: clamp(0.875rem, 3.8vw, 1.125rem);
+        line-height: 1.4;
+        word-break: keep-all;
     }
 }
