@@ -231,24 +231,39 @@
         return;
     }
 
-    if (typeof ScrollTrigger === 'undefined') return;
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-    gsap.registerPlugin(ScrollTrigger);
+    function runCounter() {
+        gsap.to(counter, {
+            innerHTML: targetNumber,
+            duration: 1.5,
+            ease: 'power2.out',
+            snap: { innerHTML: 1 },
+            onUpdate: function () {
+                counter.textContent = String(Math.floor(this.targets()[0].innerHTML));
+            }
+        });
+    }
 
-    gsap.to(counter, {
-        innerHTML: targetNumber,
-        duration: 1.5,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: section,
-            start: 'top 70%',
-            once: true
-        },
-        snap: { innerHTML: 1 },
-        onUpdate: function () {
-            counter.textContent = String(Math.floor(this.targets()[0].innerHTML));
-        }
-    });
+    if (!window.IntersectionObserver) {
+        runCounter();
+        return;
+    }
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            runCounter();
+            observer.unobserve(entry.target);
+        });
+    }, observerOptions);
+
+    const triggerTarget = section.querySelector('.ai-tone-finder-header h2') || section;
+    observer.observe(triggerTarget);
 })();
 
 (function () {
@@ -396,24 +411,38 @@
         return;
     }
 
-    if (typeof ScrollTrigger === 'undefined') return;
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-    gsap.registerPlugin(ScrollTrigger);
+    function runCounter() {
+        gsap.to(counter, {
+            innerHTML: targetNumber,
+            duration: 1,
+            ease: 'power2.out',
+            snap: { innerHTML: 1 },
+            onUpdate: function () {
+                counter.textContent = String(Math.floor(this.targets()[0].innerHTML));
+            }
+        });
+    }
 
-    gsap.to(counter, {
-        innerHTML: targetNumber,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: mega,
-            start: 'top 70%',
-            once: true
-        },
-        snap: { innerHTML: 1 },
-        onUpdate: function () {
-            counter.textContent = String(Math.floor(this.targets()[0].innerHTML));
-        }
-    });
+    if (!window.IntersectionObserver) {
+        runCounter();
+        return;
+    }
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            runCounter();
+            observer.unobserve(entry.target);
+        });
+    }, observerOptions);
+
+    observer.observe(mega);
 })();
 
 (function () {

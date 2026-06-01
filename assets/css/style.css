@@ -104,6 +104,7 @@ body {
     z-index: 2;
     padding-top: 8.125rem;
     overflow: visible;
+    padding-bottom: 0;
 }
 
 .about-section > .inner {
@@ -203,9 +204,21 @@ body {
     grid-row: 2;
     margin: 1.25rem;
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 300;
     color: #4C4948;
     align-self: flex-end;
+}
+
+/* 프로모션 데코(선 + 로고) — PC/노트북: 부모 폭에 맞춰 유동 축소 */
+.franchise-promo-deco {
+    max-width: 100%;
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+.franchise-side-label.franchise-promo-deco {
+    margin: clamp(0.75rem, 1.5vw, 1.25rem);
+    font-size: clamp(0.875rem, 1.2vw, 1.25rem);
 }
 
 .franchise-benefits {
@@ -886,9 +899,23 @@ body {
         min-width: 0;
     }
 
+    /* 태블릿(1024px)부터 데코 레이어 삭제 + 레이아웃 1열 안착 */
+    .franchise-promo-deco {
+        display: none;
+    }
+
     .franchise-layout {
-        column-gap: 1.5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 2rem;
         min-width: 0;
+    }
+
+    .franchise-texts,
+    .franchise-benefits,
+    .franchise-mega {
+        grid-column: 1;
+        grid-row: auto;
     }
 
     .franchise-benefits {
@@ -1136,5 +1163,45 @@ body {
 @media (max-width: 768px) {
     .page-home .header-mobile-cta .gnb-btn {
         color: #fff;
+    }
+}
+
+/* =========================================
+   PROMO CIRCLE SIZING SYNC (ABOUT 원형 = MEGA 혜택 원)
+   - PC~노트북: fluid downscale
+   - Tablet(1024)부터: 컴팩트 동일 크기
+========================================= */
+
+.page-home {
+    --promo-circle-size: clamp(18rem, 35vw, 40.625rem); /* 288px ~ 650px */
+}
+
+.page-home .about-circle-wrap {
+    max-width: var(--promo-circle-size);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.page-home .franchise-mega .round {
+    width: var(--promo-circle-size);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 1024px) {
+    .page-home {
+        --promo-circle-size: min(20rem, 70vw);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-home {
+        --promo-circle-size: min(18rem, 80vw);
+    }
+}
+
+@media screen and (max-width: 402px) {
+    .page-home {
+        --promo-circle-size: min(16rem, 90vw);
     }
 }
