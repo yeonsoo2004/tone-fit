@@ -65,7 +65,7 @@
                 <span class="gnb-btn ft-20-r"><a href="contact.html">창업문의</a></span>
                 <button type="button" class="header-menu-toggle" aria-label="메뉴 열기" aria-expanded="false"
                     aria-controls="header-mobile-nav">
-                    <img src="assets/images/icon/menu.svg" alt="" width="24" height="24" aria-hidden="true">
+                    <img src="../assets/images/icon/menu.svg" alt="" width="24" height="24" aria-hidden="true">
                 </button>
             </div>
         </div>
@@ -509,7 +509,11 @@
                 </div>
             </div>
             <div class="footer-policy">
-                <p>이용약관 | 개인정보 처리방침</p>
+                <p class="footer-policy-links">
+                    <button type="button" class="footer-policy-link" data-policy-open="terms">이용약관</button>
+                    <span class="footer-policy-divider" aria-hidden="true">|</span>
+                    <button type="button" class="footer-policy-link" data-policy-open="privacy">개인정보처리방침</button>
+                </p>
             </div>
             <div class="footer-info-contact d-flex jc-between ai-end">
                 <p class="footer-info">
@@ -525,6 +529,7 @@
 
     <script src="../assets/js/libs/jquery.min.js"></script>
     <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/policy-modal.js"></script>
     <script src="../assets/js/main.js"></script>
     <script>
         (function () {
