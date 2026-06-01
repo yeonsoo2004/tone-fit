@@ -95,6 +95,13 @@ body {
    Responsive Layout System (반응형 레이아웃)
 ========================================= */
 
+/* 노트북 (1440px 이하) */
+@media screen and (max-width: 1440px) {
+   :root {
+      --page-gutter-x: 64px;
+   }
+}
+
 /* 태블릿 (1024px 이하) */
 @media screen and (max-width: 1024px) {
    :root {
