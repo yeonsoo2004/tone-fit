@@ -568,10 +568,6 @@ body {
 /* =========================================
    7. FRAME SECTION
 ========================================= */
-.frame-section .section-header h3,
-p {
-    color: #fff;
-}
 
 .frame-content {
     width: 100%;

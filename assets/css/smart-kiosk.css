@@ -292,14 +292,15 @@
 }
 
 @media screen and (max-width: 768px) {
+    /* 6단 그리드 · span 3 → 2열 × 2행 */
     .kiosk-cut-section .cut-item {
-        grid-column: span 6;
+        grid-column: span 3;
     }
 
     .kiosk-cut-section .cut-card {
         min-height: 12rem;
-        max-width: 20rem;
-        margin: 0 auto;
+        max-width: none;
+        margin: 0;
         padding: 1.5rem 1.25rem;
     }
 
@@ -590,6 +591,10 @@
     line-height: 1.6;
 }
 
+.kiosk-cta-section .cta-desc-br {
+    display: none;
+}
+
 .kiosk-cta-section .btn-group {
     display: flex;
     flex-wrap: wrap;
@@ -633,16 +638,21 @@
         padding: 3rem 0;
     }
 
+    .kiosk-cta-section .cta-desc-br {
+        display: inline;
+    }
+
     .kiosk-cta-section .btn-group {
-        flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
     .kiosk-cta-section .btn-group .topage-btn,
     .kiosk-cta-section .btn-group .gnb-btn {
-        width: 100%;
-        max-width: 18rem;
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        padding: 0.625rem 1.875rem; /* 10px 30px */
         font-size: 1rem;
     }
 }
