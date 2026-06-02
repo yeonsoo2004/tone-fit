@@ -165,6 +165,8 @@
 
     margin: 0;
 
+    font-size: 2rem;
+
     font-weight: 400;
 
     line-height: 1.5;
@@ -359,11 +361,6 @@
     padding-top: 3.75rem;
   }
 
-  .contact-faq-trigger {
-    gap: 1rem;
-    padding: 1.25rem 0;
-  }
-
   .contact-detail-label {
     margin-bottom: 0.625rem;
   }
@@ -373,25 +370,16 @@
 
 /* =========================================
 
-   FAQ Section — accordion
+   FAQ Section — accordion (store accordion style)
 
 ========================================= */
 
-
-
 .contact-faq-section {
-
     margin-top: 0;
-
     padding-top: 8.125rem;
-
     padding-bottom: 8.125rem;
-
     background-color: #FFFFFF;
-
 }
-
-
 
 .contact-faq-title {
     margin: 0;
@@ -399,283 +387,147 @@
     color: #1E2022;
 }
 
-
-
 .contact-faq-list {
-
     width: 100%;
-
 }
-
-
 
 .contact-faq-item {
-
-    border-top: 1px solid transparent;
-
-    border-bottom: 1px solid transparent;
-
-    transition: border-color 0.35s ease;
-
+    border-bottom: 1px solid #D9D9D9;
 }
-
-
-
-.contact-faq-item.is-open {
-
-    border-top-color: #1E2022;
-
-    border-bottom-color: #1E2022;
-
-}
-
-
 
 .contact-faq-trigger {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 1.5rem;
-
     width: 100%;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.625rem;
     margin: 0;
-
-    padding: 2.5rem 0;
-
+    padding: 2.5rem 1.25rem;
     font-weight: 400;
-
     line-height: 1.5;
-
     text-align: left;
-
     color: #1E2022;
-
     background: none;
-
     border: none;
-
     cursor: pointer;
-
+    transition: background-color 0.2s ease;
 }
 
-
-
-.contact-faq-item.is-open .contact-faq-trigger {
-
-    padding-bottom: 0;
-
+.contact-faq-trigger:hover {
+    background-color: #FAFAFA;
 }
-
-
 
 .contact-faq-trigger:focus-visible {
-
     outline: 2px solid #D4734A;
-
     outline-offset: 2px;
-
 }
-
-
 
 .contact-faq-question {
-
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #1E2022;
     flex: 1;
-
     min-width: 0;
-
 }
-
-
-
-.contact-faq-icon-wrap {
-
-    flex-shrink: 0;
-
-    display: block;
-
-    width: 25px;
-
-    height: 15px;
-
-}
-
-
 
 .contact-faq-icon {
-
-    display: block;
-
-    width: 25px;
-
-    height: 15px;
-
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    color: #4C4948;
 }
 
-
-
-.contact-faq-icon--up {
-
-    display: none;
-
+.contact-faq-icon svg {
+    width: 1rem;
+    height: 1rem;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
-
-
-.contact-faq-item.is-open .contact-faq-icon--down {
-
-    display: none;
-
+.contact-faq-item.is-open .contact-faq-icon {
+    transform: rotate(180deg);
+    color: #D4734A;
 }
-
-
-
-.contact-faq-item.is-open .contact-faq-icon--up {
-
-    display: block;
-
-}
-
-
 
 .contact-faq-panel {
-
-    display: grid;
-
-    grid-template-rows: 0fr;
-
-    transition: grid-template-rows 0.35s ease;
-
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
 }
-
-
 
 .contact-faq-item.is-open .contact-faq-panel {
-
-    grid-template-rows: 1fr;
-
+    max-height: 60rem;
 }
-
-
-
-.contact-faq-panel-inner {
-
-    overflow: hidden;
-
-    min-height: 0;
-
-}
-
-
 
 .contact-faq-answer {
-
-    padding: 1.25rem 0 2.5rem;
-
+    padding: 2.5rem 1.25rem;
 }
-
-
 
 .contact-faq-answer-block {
-
     margin: 0;
-
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1.25rem;
     font-weight: 400;
-
     line-height: 1.5;
-
-    color: #A3A3A3;
-
+    color: #1E2022;
 }
-
-
 
 .contact-faq-answer-block + .contact-faq-answer-block {
-
     margin-top: 1.25rem;
-
 }
-
-
 
 @media screen and (max-width: 1024px) {
-
     .contact-faq-section {
-
         padding-top: 5rem;
-
         padding-bottom: 5rem;
-
     }
-
-
 
     .contact-faq-title {
         margin-bottom: 0;
     }
-
-
-
-    .contact-faq-trigger {
-
-        padding: 2rem 0;
-
-    }
-
 }
-
-
 
 @media screen and (max-width: 768px) {
-
     .contact-faq-section {
-
         padding-top: 3.75rem;
-
         padding-bottom: 3.75rem;
-
     }
-
-
 
     .contact-faq-title {
         margin-bottom: 0;
     }
 
-
+    .contact-faq-question {
+        font-size: 1.25rem;
+    }
 
     .contact-faq-trigger {
-
-        padding: 1.5rem 0;
-
+        padding: 1.25rem 1rem;
     }
-
-
 
     .contact-faq-answer {
-
-        padding-bottom: 1.5rem;
-
+        padding: 1.25rem 1rem;
     }
 
+    .contact-faq-answer-block {
+        font-size: 1rem;
+    }
 }
 
-
-
 @media (prefers-reduced-motion: reduce) {
-
     .contact-faq-item,
-    .contact-faq-panel {
-
+    .contact-faq-panel,
+    .contact-faq-icon {
         transition: none;
-
     }
-
 }
 
 
@@ -1278,11 +1130,6 @@
     padding-top: 3.75rem;
   }
 
-  .contact-faq-trigger {
-    gap: 1rem;
-    padding: 1.25rem 0;
-  }
-
   .contact-inquiry-layout {
     gap: 1.5rem;
   }
@@ -1335,23 +1182,6 @@
 
 
 /* 제휴문의 폼 — startup.html 마크업 · startup.css 스타일 그대로 사용 (섹션에 .startup-page) */
-
-@media screen and (max-width: 1024px) {
-    .contact-faq-trigger {
-        gap: 1rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .contact-faq-trigger {
-        align-items: flex-start;
-        padding: 1.25rem 0;
-    }
-
-    .contact-faq-icon-wrap {
-        margin-top: 0.25rem;
-    }
-}
 
 @media screen and (max-width: 402px) {
     .contact-hero {
