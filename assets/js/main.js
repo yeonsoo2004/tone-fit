@@ -267,39 +267,77 @@
 })();
 
 (function () {
-    const content = document.querySelector('.ai-personal-bg-content');
-    if (!content || typeof gsap === 'undefined') return;
+    const section = document.querySelector('.ai-personal-bg');
+    const content = section?.querySelector('.ai-personal-bg-content');
+    if (!section || !content || typeof gsap === 'undefined') return;
 
-    const fadeEls = content.children;
+    const fadeEls = content.querySelectorAll('.fade-up');
     if (!fadeEls.length) return;
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const showContent = function () {
         content.classList.add('is-content-visible');
+        gsap.set(fadeEls, { opacity: 1, y: 0, clearProps: 'transform' });
+    };
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        showContent();
         return;
     }
 
-    if (typeof ScrollTrigger === 'undefined') return;
+    if (typeof ScrollTrigger === 'undefined') {
+        showContent();
+        return;
+    }
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.set(fadeEls, { y: 50, opacity: 0 });
-
-    gsap.to(fadeEls, {
+    const fadeFrom = { y: 50, opacity: 0 };
+    const fadeTo = {
         y: 0,
         opacity: 1,
         duration: 0.9,
         ease: 'power3.out',
-        stagger: 0.1,
+        clearProps: 'transform'
+    };
+
+    gsap.set(fadeEls, fadeFrom);
+
+    gsap.fromTo(fadeEls, fadeFrom, {
+        ...fadeTo,
+        stagger: 0.12,
         scrollTrigger: {
-            trigger: content,
-            start: 'top 70%',
-            once: true
+            trigger: section,
+            start: 'top 75%',
+            once: true,
+            invalidateOnRefresh: true
         },
         onComplete: function () {
             content.classList.add('is-content-visible');
-            gsap.set(fadeEls, { clearProps: 'all' });
+            gsap.set(fadeEls, { clearProps: 'opacity,transform' });
         }
     });
+
+    const refreshScroll = function () {
+        ScrollTrigger.refresh();
+    };
+
+    window.addEventListener('load', refreshScroll);
+
+    const imgs = content.querySelectorAll('img');
+    if (imgs.length) {
+        let loaded = 0;
+        imgs.forEach(function (img) {
+            const onImgReady = function () {
+                loaded += 1;
+                if (loaded === imgs.length) refreshScroll();
+            };
+            if (img.complete) onImgReady();
+            else {
+                img.addEventListener('load', onImgReady, { once: true });
+                img.addEventListener('error', onImgReady, { once: true });
+            }
+        });
+    }
 })();
 
 (function () {
