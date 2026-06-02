@@ -12,6 +12,10 @@ body {
     overflow-x: clip;
 }
 
+.page-home {
+    word-break: keep-all;
+}
+
 /* =========================================
    1. HERO SECTION
 ========================================= */
@@ -147,10 +151,6 @@ body {
     align-self: center;
     align-content: center;
     min-width: 0;
-}
-
-.identity-texts p {
-    overflow-wrap: break-word;
 }
 
 .identity-texts p:nth-child(2) {
@@ -888,11 +888,8 @@ body {
     --viral-flow-flex: 1 1 var(--viral-flow-basis);
     --viral-flow-inner-gap: 1.25rem;
     --viral-icon: 8.875rem;
-    --viral-h4: 1.75rem;
-    --viral-p: 1.25rem;
     --viral-label-py: 0.625rem;
     --viral-label-px: 1.25rem;
-    --viral-label-fs: 1rem;
     --viral-arrow-min: 1.5rem;
     --viral-arrow-max: 2.75rem;
 
@@ -940,21 +937,17 @@ body {
 }
 
 .viral-userflow>h4 {
-    font-size: var(--viral-h4);
     font-weight: 500;
     color: #1e2022;
 }
 
-.viral-userflow p {
-    font-size: var(--viral-p);
+.viral-userflow>p.ft-20-r {
     font-weight: 400;
-    word-break: keep-all;
     color: #4C4948;
 }
 
 .viral-userflow>.userflow-label {
     padding: var(--viral-label-py) var(--viral-label-px);
-    font-size: var(--viral-label-fs);
     background: #fff;
     display: inline-block;
     width: fit-content;
@@ -1042,11 +1035,8 @@ body {
         --viral-flow-basis: 8rem;
         --viral-flow-inner-gap: 1.125rem;
         --viral-icon: 8rem;
-        --viral-h4: 1.625rem;
-        --viral-p: 1.125rem;
         --viral-label-py: 0.5625rem;
         --viral-label-px: 1.125rem;
-        --viral-label-fs: 0.9375rem;
         --viral-arrow-min: 1.375rem;
         --viral-arrow-max: 2.5rem;
     }
@@ -1064,11 +1054,8 @@ body {
         --viral-flow-basis: 7.5rem;
         --viral-flow-inner-gap: 1rem;
         --viral-icon: 7.5rem;
-        --viral-h4: 1.5rem;
-        --viral-p: 1.0625rem;
         --viral-label-py: 0.5rem;
         --viral-label-px: 1rem;
-        --viral-label-fs: 0.875rem;
         --viral-arrow-min: 1.25rem;
         --viral-arrow-max: 2.25rem;
     }
@@ -1191,11 +1178,8 @@ body {
         --viral-flow-flex: 1 1 calc(33.333% - 1rem);
         --viral-flow-inner-gap: 0.875rem;
         --viral-icon: 7rem;
-        --viral-h4: 1.375rem;
-        --viral-p: 1rem;
         --viral-label-py: 0.5rem;
         --viral-label-px: 0.875rem;
-        --viral-label-fs: 0.875rem;
         --viral-arrow-min: 1.125rem;
         --viral-arrow-max: 2rem;
     }
@@ -1254,11 +1238,8 @@ body {
         --viral-flow-flex: 1 1 calc(50% - 0.75rem);
         --viral-flow-inner-gap: 0.75rem;
         --viral-icon: min(7rem, 18vw);
-        --viral-h4: 1.25rem;
-        --viral-p: 0.9375rem;
         --viral-label-py: 0.4375rem;
         --viral-label-px: 0.75rem;
-        --viral-label-fs: 0.8125rem;
         --viral-arrow-min: 1rem;
         --viral-arrow-max: 1.75rem;
     }
@@ -1294,11 +1275,8 @@ body {
         --viral-flow-flex: 1 1 calc(50% - 0.5rem);
         --viral-flow-inner-gap: 0.625rem;
         --viral-icon: 5.5rem;
-        --viral-h4: 1.125rem;
-        --viral-p: 0.875rem;
         --viral-label-py: 0.375rem;
         --viral-label-px: 0.75rem;
-        --viral-label-fs: 0.75rem;
         --viral-arrow-min: 0.875rem;
         --viral-arrow-max: 1.5rem;
     }
@@ -1544,11 +1522,8 @@ body {
         --viral-flow-flex: 1 1 calc(50% - 0.375rem);
         --viral-flow-inner-gap: 0.5rem;
         --viral-icon: 4.75rem;
-        --viral-h4: 1rem;
-        --viral-p: 0.8125rem;
         --viral-label-py: 0.3125rem;
         --viral-label-px: 0.625rem;
-        --viral-label-fs: 0.6875rem;
         --viral-arrow-min: 0.75rem;
         --viral-arrow-max: 1.25rem;
     }
