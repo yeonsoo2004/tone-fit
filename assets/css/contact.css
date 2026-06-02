@@ -1325,139 +1325,9 @@
 
 
 
-/* =========================================
-   Inquiry — startup-inquiry on contact page
-   (startup.css 기본 + contact-page 반응형 오버라이드)
-========================================= */
-
-.contact-page .startup-inquiry-section {
-    overflow: hidden;
-}
-
-.contact-page .startup-inquiry-layout {
-    align-items: flex-start;
-    width: 100%;
-    min-width: 0;
-    gap: 2.5rem;
-}
-
-@media screen and (min-width: 1025px) {
-    .contact-page .startup-inquiry-layout {
-        gap: 5rem;
-    }
-}
-
-.contact-page .startup-inquiry-info,
-.contact-page .startup-inquiry-contact {
-    gap: 1.25rem;
-}
-
-.contact-page .startup-inquiry-email,
-.contact-page .startup-inquiry-phone {
-    margin: 0;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-}
-
-.contact-page .startup-inquiry-info {
-    flex: 4 1 0;
-    min-width: 0;
-    max-width: 100%;
-    text-align: left;
-}
-
-.contact-page .startup-inquiry-title {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    line-height: 1.25;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-}
-
-.contact-page .startup-inquiry-title-line {
-    white-space: normal;
-}
-
-.contact-page .startup-inquiry-form {
-    flex: 6.5 1 0;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 49rem;
-    min-width: 0;
-    gap: 1.25rem;
-}
-
-.contact-page .startup-inquiry-field + .startup-inquiry-field,
-.contact-page .startup-inquiry-form-row + .startup-inquiry-field {
-    margin-top: 0;
-}
-
-.contact-page .startup-inquiry-form-row > .startup-inquiry-field + .startup-inquiry-field {
-    margin-top: 0;
-}
-
-.contact-page .startup-inquiry-form-row {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    width: 100%;
-    min-width: 0;
-}
-
-.contact-page .startup-inquiry-field--half {
-    flex: 1 1 0;
-    min-width: 0;
-}
-
-.contact-page .startup-inquiry-input,
-.contact-page .startup-inquiry-textarea,
-.contact-page .startup-inquiry-file-name {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-.contact-page .startup-inquiry-file-row {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-}
-
-.contact-page .startup-inquiry-submit {
-    width: 100%;
-    max-width: 100%;
-    align-self: stretch;
-}
-
-.contact-page .startup-inquiry-input::placeholder,
-.contact-page .startup-inquiry-textarea::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-    opacity: 1;
-}
-
-.contact-page .startup-inquiry-file-name:not(.has-file) {
-    opacity: 0.5;
-}
+/* 제휴문의 폼 — startup.html 마크업 · startup.css 스타일 그대로 사용 (섹션에 .startup-page) */
 
 @media screen and (max-width: 1024px) {
-    .contact-page .startup-inquiry-layout {
-        flex-direction: column;
-        gap: 2.5rem;
-    }
-
-    .contact-page .startup-inquiry-info,
-    .contact-page .startup-inquiry-form {
-        flex: none;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .contact-page .startup-inquiry-form-row {
-        gap: 1.25rem;
-    }
-
     .contact-faq-trigger {
         gap: 1rem;
     }
@@ -1469,39 +1339,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .contact-page .startup-inquiry-layout {
-        gap: 2rem;
-    }
-
-    .contact-page .startup-inquiry-form-row {
-        flex-direction: column;
-        gap: 1.25rem;
-    }
-
-    .contact-page .startup-inquiry-form-row > .startup-inquiry-field--half {
-        flex: none;
-        width: 100%;
-    }
-
-    .contact-page .startup-inquiry-file-row {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.625rem;
-    }
-
-    .contact-page .startup-inquiry-file-btn {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .contact-page .startup-inquiry-agree-row {
-        align-items: flex-start;
-    }
-
-    .contact-page .startup-inquiry-agree-label {
-        line-height: 1.5;
-    }
-
     .contact-faq-trigger {
         align-items: flex-start;
         padding: 1.25rem 0;
@@ -1513,10 +1350,6 @@
 }
 
 @media screen and (max-width: 402px) {
-    .contact-page .startup-inquiry-layout {
-        gap: 1.5rem;
-    }
-
     .contact-hero {
         margin-bottom: 3.5rem;
     }
