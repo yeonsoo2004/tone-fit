@@ -3,17 +3,8 @@
 ========================================= */
 
 
-/* 텍스트가 자연스럽게 어절 단위로 끊어지도록 설정 (전체 텍스트 영역에 적용) */
-.kv-title, .kv-desc {
+.identity-main {
     word-break: keep-all;
-}
-
-
-/* 모바일 화면 (예: 768px 이하): 강제 줄바꿈 해제하고 자연스럽게 흐르도록 처리 */
-@media (max-width: 768px) {
-    .d-block {
-        display: inline; /* 모바일에서는 span이 다시 한 줄로 이어지게 함 */
-    }
 }
 .identity-kv-section {
     position: relative;
@@ -37,7 +28,17 @@
     position: relative;
     z-index: 2;
     height: 100%;
-    text-align: center;
+}
+
+.identity-kv-section .kv-text-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.25rem;
+    height: 100%;
+    max-width: 42rem;
+    text-align: left;
     color: #FFFFFF;
 }
 
@@ -53,12 +54,13 @@
 }
 
 @media screen and (max-width: 768px) {
-    .identity-kv-section .kv-desc {
+    .identity-kv-section .kv-text-wrap {
         max-width: 100%;
+        gap: 1rem;
     }
 
-    .identity-kv-section .inner {
-        gap: 1rem;
+    .identity-kv-section .kv-desc {
+        max-width: 100%;
     }
 }
 

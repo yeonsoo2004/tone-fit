@@ -61,6 +61,32 @@ body {
 .text-center { text-align: center; }
 
 /* =========================================
+   Line break · word-break: keep-all
+========================================= */
+.break-keep-all-wrap {
+   word-break: keep-all;
+   overflow-wrap: break-word;
+}
+
+/* PC·태블릿: 모바일 전용 줄바꿈 숨김 */
+br.mo-only,
+.break-mo-only {
+   display: none;
+}
+
+@media screen and (max-width: 768px) {
+   br.pc-only,
+   .break-pc-only {
+      display: none;
+   }
+
+   br.mo-only,
+   .break-mo-only {
+      display: block;
+   }
+}
+
+/* =========================================
    Spacing Classes (섹션 내부 여백)
 ========================================= */
 .py-130 {

@@ -2,6 +2,10 @@
    Smart Kiosk Page (subpage/smart-kiosk.html)
 ========================================= */
 
+.kiosk-main {
+    word-break: keep-all;
+}
+
 .py-100 {
     padding-top: 6.25rem;
     padding-bottom: 6.25rem;
@@ -108,24 +112,7 @@
     object-position: center;
 }
 
-/* HOW IT WORKS — 모바일 전용 줄바꿈 */
-.kiosk-works-section .step-desc br.mo-only {
-    display: none;
-}
-
-@media screen and (max-width: 768px) {
-    .kiosk-works-section .step-desc {
-        word-break: keep-all;
-    }
-
-    .kiosk-works-section .step-desc br.pc-only {
-        display: none;
-    }
-
-    .kiosk-works-section .step-desc br.mo-only {
-        display: block;
-    }
-}
+/* HOW IT WORKS — 반응형 줄바꿈: common.css br.mo-only / br.pc-only */
 
 @media screen and (max-width: 1024px) {
     .kiosk-works-section .work-item .text-col,
@@ -620,10 +607,6 @@
     line-height: 1.6;
 }
 
-.kiosk-cta-section .cta-desc-br {
-    display: none;
-}
-
 .kiosk-cta-section .btn-group {
     display: flex;
     flex-wrap: wrap;
@@ -665,10 +648,6 @@
         height: auto;
         min-height: 22rem;
         padding: 3rem 0;
-    }
-
-    .kiosk-cta-section .cta-desc-br {
-        display: inline;
     }
 
     .kiosk-cta-section .btn-group {
