@@ -13,6 +13,15 @@
 /* fixed header 아래 KV 타이틀 여백 (component.css 헤더 높이와 동기) */
 .contact-page {
     --contact-header-offset: calc(1rem + 3.25rem + 1rem);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* 이메일·연락처 등 긴 연속 문자는 넘침 방지 */
+.contact-page .contact-detail-value a,
+.contact-page .startup-inquiry-email,
+.contact-page .startup-inquiry-phone {
+    word-break: break-all;
 }
 
 /* =========================================
@@ -1330,11 +1339,6 @@
 @media screen and (max-width: 1024px) {
     .contact-faq-trigger {
         gap: 1rem;
-    }
-
-    .contact-faq-question {
-        word-break: keep-all;
-        overflow-wrap: break-word;
     }
 }
 
