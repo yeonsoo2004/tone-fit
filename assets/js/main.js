@@ -339,6 +339,29 @@
 })();
 
 (function () {
+    const titleSpan = document.querySelector('.franchise-promo-title span');
+    if (titleSpan) {
+        const fullTitle = titleSpan.textContent.trim();
+        const mobileTitleMql = window.matchMedia('(max-width: 402px)');
+
+        function applyFranchiseTitleBreak() {
+            if (mobileTitleMql.matches) {
+                titleSpan.innerHTML = fullTitle.replace('기념 ', '기념<br>');
+            } else {
+                titleSpan.textContent = fullTitle;
+            }
+        }
+
+        applyFranchiseTitleBreak();
+        if (typeof mobileTitleMql.addEventListener === 'function') {
+            mobileTitleMql.addEventListener('change', applyFranchiseTitleBreak);
+        } else if (typeof mobileTitleMql.addListener === 'function') {
+            mobileTitleMql.addListener(applyFranchiseTitleBreak);
+        }
+    }
+})();
+
+(function () {
     const benefits = document.querySelector('.franchise-benefits');
     if (!benefits || typeof gsap === 'undefined') return;
 
@@ -397,6 +420,21 @@
             offset + 0.6
         );
     });
+
+    const franchiseLayoutMql = window.matchMedia('(max-width: 402px)');
+    function refreshFranchiseScroll() {
+        if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+        }
+    }
+
+    if (typeof franchiseLayoutMql.addEventListener === 'function') {
+        franchiseLayoutMql.addEventListener('change', refreshFranchiseScroll);
+    } else if (typeof franchiseLayoutMql.addListener === 'function') {
+        franchiseLayoutMql.addListener(refreshFranchiseScroll);
+    }
+
+    window.addEventListener('resize', refreshFranchiseScroll, { passive: true });
 })();
 
 (function () {
