@@ -102,8 +102,8 @@ function renderAccordion() {
                 'aria-expanded="false" ' +
                 'aria-controls="store-panel-' + index + '" ' +
                 'id="store-trigger-' + index + '">' +
-                '<span class="store-name">' + store.name + '</span>' +
-                '<span class="store-address-preview" aria-hidden="true">' + store.address + '</span>' +
+                '<span class="store-name ft-28-r color-point">' + store.name + '</span>' +
+                '<span class="store-address-preview ft-20-r color-main" aria-hidden="true">' + store.address + '</span>' +
                 '<span class="store-accordion-icon" aria-hidden="true">' +
                     '<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>' +
                 '</span>' +
@@ -114,24 +114,24 @@ function renderAccordion() {
                 'aria-labelledby="store-trigger-' + index + '">' +
                 '<div class="store-detail">' +
                     '<div class="store-detail-item">' +
-                        '<span class="store-detail-label">주소</span>' +
-                        '<span class="store-detail-value">' + store.address + '</span>' +
+                        '<span class="store-detail-label ft-18-r color-orange">주소</span>' +
+                        '<span class="store-detail-value ft-20-r color-point">' + store.address + '</span>' +
                     '</div>' +
                     '<div class="store-detail-item">' +
-                        '<span class="store-detail-label">전화번호</span>' +
-                        '<span class="store-detail-value">' + store.tel + '</span>' +
+                        '<span class="store-detail-label ft-18-r color-orange">전화번호</span>' +
+                        '<span class="store-detail-value ft-20-r color-point">' + store.tel + '</span>' +
                     '</div>' +
                     '<div class="store-detail-item">' +
-                        '<span class="store-detail-label">영업시간</span>' +
-                        '<span class="store-detail-value">' + store.hours + '</span>' +
+                        '<span class="store-detail-label ft-18-r color-orange">영업시간</span>' +
+                        '<span class="store-detail-value ft-20-r color-point">' + store.hours + '</span>' +
                     '</div>' +
                     '<div class="store-detail-item">' +
-                        '<span class="store-detail-label">주차</span>' +
-                        '<span class="store-detail-value">' + store.parking + '</span>' +
+                        '<span class="store-detail-label ft-18-r color-orange">주차</span>' +
+                        '<span class="store-detail-value ft-20-r color-point">' + store.parking + '</span>' +
                     '</div>' +
                     '<div class="store-detail-item">' +
-                        '<span class="store-detail-label">지도</span>' +
-                        '<a href="' + kakaoMapUrl + '" target="_blank" rel="noopener noreferrer" class="store-map-link">' +
+                        '<span class="store-detail-label ft-18-r color-orange">지도</span>' +
+                        '<a href="' + kakaoMapUrl + '" target="_blank" rel="noopener noreferrer" class="store-map-link ft-20-r">' +
                             '카카오맵에서 보기' +
                             '<svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"></line>' +
                             '<polyline points="7 7 17 7 17 17"></polyline></svg>' +
