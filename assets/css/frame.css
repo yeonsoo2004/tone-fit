@@ -1,6 +1,15 @@
 @charset "utf-8";
 
 /* =========================================
+   Frame Page — 텍스트 줄바꿈 (어절 단위 keep-all)
+========================================= */
+
+.frame-page {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* =========================================
    Frame Page — 공통 헤더/푸터 override
    (스타일·동작: component.css / common.js 기준)
    서브페이지: index 스크롤 적용 상태와 동일한 고정 헤더
