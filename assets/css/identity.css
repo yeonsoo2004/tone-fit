@@ -162,6 +162,7 @@
     }
 
     .identity-vision-section .vision-content-wrap {
+        flex-direction: column;
         gap: 2rem;
     }
 

@@ -166,11 +166,6 @@
     color: #FFFFFF;
 }
 
-.kiosk-frame-section .kiosk-frame-subtitle {
-    display: block;
-    line-height: 1.4;
-}
-
 .kiosk-frame-section .kiosk-frame-title {
     margin-top: 0;
     line-height: 1.25;
@@ -340,18 +335,14 @@
 
 @media screen and (max-width: 768px) {
     .kiosk-counting-section .count-item {
-        grid-column: span 6;
+        /* 6단 그리드에서 2열 × 2행 */
+        grid-column: span 3;
     }
 }
 
 /* =========================================
    AI Technology Section
 ========================================= */
-.kiosk-tech-section .kiosk-tech-subtitle {
-    display: block;
-    line-height: 1.4;
-}
-
 .kiosk-tech-section .kiosk-tech-title {
     margin-top: 0;
     line-height: 1.25;
@@ -419,11 +410,6 @@
 ========================================= */
 .kiosk-compare-section {
     background-color: #F6F6F6;
-}
-
-.kiosk-compare-section .compare-subtitle {
-    display: block;
-    line-height: 1.4;
 }
 
 .kiosk-compare-section .compare-main-title {
@@ -574,11 +560,6 @@
 .kiosk-cta-section .cta-title,
 .kiosk-cta-section .cta-desc {
     color: #FFFFFF;
-}
-
-.kiosk-cta-section .cta-subtitle {
-    display: block;
-    line-height: 1.4;
 }
 
 .kiosk-cta-section .cta-title {
