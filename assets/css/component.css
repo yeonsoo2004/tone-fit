@@ -313,7 +313,7 @@ body.is-header-nav-open {
 
 @media screen and (max-width: 1440px) {
     :root {
-        --page-gutter-x: 10rem; /* 160px · 좌우 최소 여백 */
+        --page-gutter-x: 64px;
     }
 }
 
