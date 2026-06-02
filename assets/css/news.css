@@ -49,6 +49,12 @@
     justify-content: center;
 }
 
+/* LNB 버튼 폰트 오버라이드 */
+.page-news .lnb-tab-btn {
+    font-size: 1.25rem;  /* 20px */
+    font-weight: 400;
+}
+
 /* =========================================
    3. CONTENT SECTION
 ========================================= */
