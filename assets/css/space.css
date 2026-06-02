@@ -450,3 +450,18 @@
         will-change: auto;
     }
 }
+
+/* Pinkish Mood 캡션 — PC/태블릿: 모바일 전용 줄바꿈 숨김 */
+.space-page .space-caption br.mo-only {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .space-page .space-caption {
+        word-break: keep-all;
+    }
+
+    .space-page .space-caption br.mo-only {
+        display: block;
+    }
+}

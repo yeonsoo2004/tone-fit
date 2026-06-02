@@ -2257,8 +2257,36 @@
     }
 }
 
-/* Profit 캡션 — 모바일 한 줄 · 컨테이너 가로 채움 · margin-top 20px(1.25rem) */
+/* Growth(그래프) · Profit — 모바일 타이포 */
 @media screen and (max-width: 767px) {
+    .startup-page .startup-growth-title {
+        font-size: 1.5rem; /* 24px */
+        line-height: 1.35;
+    }
+
+    .startup-page .startup-profit-head {
+        text-align: center;
+        align-items: center;
+    }
+
+    .startup-page .startup-profit-eyebrow,
+    .startup-page .startup-profit-title {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        word-break: keep-all;
+    }
+
+    .startup-page .startup-profit-eyebrow {
+        font-size: 1.25rem; /* 20px */
+        line-height: 1.5;
+    }
+
+    .startup-page .startup-profit-title {
+        font-size: 1.5rem; /* 24px */
+        line-height: 1.35;
+    }
+
     .startup-page .startup-profit-caption {
         box-sizing: border-box;
         width: 100%;
