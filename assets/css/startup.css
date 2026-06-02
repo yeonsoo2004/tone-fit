@@ -6,6 +6,8 @@
 /* KV 풀블리드 — style.css 헤더(투명 → 스크롤 시 흰 배경) · common.js/main.js */
 .startup-page .startup-main {
     padding-top: 0;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 /* 스크롤·메가메뉴 시에만 흰 배경 (기본: style.css transparent + #fff 텍스트) */
@@ -364,6 +366,7 @@
     background-color: #FFFFFF;
     border-radius: 3.125rem;
     justify-content: flex-start;
+    overflow: visible;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -391,8 +394,20 @@
 .startup-franchise-card-icon {
     display: block;
     flex-shrink: 0;
+    box-sizing: border-box;
     width: 5.625rem;
     height: 5.625rem;
+    max-width: none;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    object-fit: contain;
+    object-position: center;
+}
+
+.startup-franchise-card-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 /* .color-main — 1.75rem · 아이콘 하단 ~ 2.5rem */
@@ -875,12 +890,6 @@
         line-height: 1.6;
     }
 
-    .startup-page .startup-franchise-card-icon {
-        width: 3.25rem;
-        height: 3.25rem;
-        max-width: 3.25rem;
-    }
-
     .startup-page .startup-process-section .inner {
         gap: 2rem;
     }
@@ -1351,16 +1360,9 @@
         max-width: calc(33.333% - 16px);
         min-width: 0;
         height: auto;
-        aspect-ratio: 464 / 473;
         padding: clamp(2rem, 3.5vw, 3.75rem) clamp(1.125rem, 1.8vw, 1.75rem);
         border-radius: clamp(2rem, 3.5vw, 3.125rem);
-        justify-content: center;
-    }
-
-    .startup-page .startup-franchise-card-icon {
-        width: auto;
-        max-width: 35%;
-        height: auto;
+        justify-content: flex-start;
     }
 
     .startup-page .startup-franchise-card-title {
@@ -1480,19 +1482,9 @@
         min-width: 0;
         flex-shrink: 1;
         height: auto;
-        aspect-ratio: 464 / 473;
         padding: 24px 16px;
         border-radius: 2.5rem;
-        justify-content: center;
-    }
-
-    .startup-page .startup-franchise-card-icon {
-        display: block;
-        width: auto;
-        max-width: 30%;
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
+        justify-content: flex-start;
     }
 
     .startup-page .startup-franchise-card-title {
@@ -1655,17 +1647,11 @@
     }
 }
 
-/* 초소형 모바일 (430px) — 가맹 카드 · 아이콘 40px */
+/* 초소형 모바일 (430px) — 가맹 카드 */
 @media screen and (max-width: 430px) {
     .startup-page .startup-franchise-card {
         padding: 1.25rem 0.875rem;
         border-radius: 2rem;
-    }
-
-    .startup-page .startup-franchise-card-icon {
-        width: 2.5rem;
-        max-width: 2.5rem;
-        height: 2.5rem;
     }
 
     .startup-page .startup-franchise-card-title {
@@ -1899,19 +1885,9 @@
         min-width: 0;
         flex-shrink: 1;
         height: auto;
-        aspect-ratio: 464 / 473;
         padding: 24px 16px;
         border-radius: 2.5rem;
-        justify-content: center;
-    }
-
-    .startup-page .startup-franchise-card-icon {
-        display: block;
-        width: auto;
-        max-width: 30%;
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
+        justify-content: flex-start;
     }
 
     .startup-page .startup-franchise-card-title {
@@ -1963,10 +1939,6 @@
 @media screen and (min-width: 577px) and (max-width: 768px) {
     .startup-page .startup-franchise-card {
         padding: 20px 12px;
-    }
-
-    .startup-page .startup-franchise-card-icon {
-        max-width: 28%;
     }
 
     .startup-page .startup-process-circle {
@@ -2031,7 +2003,6 @@
 
     .startup-page .startup-franchise-card-icon {
         width: 3.5rem;
-        max-width: 3.5rem;
         height: 3.5rem;
     }
 
@@ -2152,7 +2123,6 @@
     max-width: none;
     height: auto;
     align-self: stretch;
-    aspect-ratio: 464 / 473;
 }
 
 @media screen and (min-width: 577px) {
@@ -2257,36 +2227,8 @@
     }
 }
 
-/* Growth(그래프) · Profit — 모바일 타이포 */
+/* Profit 캡션 — 모바일 한 줄 · 컨테이너 가로 채움 · margin-top 20px(1.25rem) */
 @media screen and (max-width: 767px) {
-    .startup-page .startup-growth-title {
-        font-size: 1.5rem; /* 24px */
-        line-height: 1.35;
-    }
-
-    .startup-page .startup-profit-head {
-        text-align: center;
-        align-items: center;
-    }
-
-    .startup-page .startup-profit-eyebrow,
-    .startup-page .startup-profit-title {
-        width: 100%;
-        max-width: 100%;
-        text-align: center;
-        word-break: keep-all;
-    }
-
-    .startup-page .startup-profit-eyebrow {
-        font-size: 1.25rem; /* 20px */
-        line-height: 1.5;
-    }
-
-    .startup-page .startup-profit-title {
-        font-size: 1.5rem; /* 24px */
-        line-height: 1.35;
-    }
-
     .startup-page .startup-profit-caption {
         box-sizing: border-box;
         width: 100%;

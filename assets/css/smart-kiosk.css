@@ -2,10 +2,6 @@
    Smart Kiosk Page (subpage/smart-kiosk.html)
 ========================================= */
 
-.kiosk-main {
-    word-break: keep-all;
-}
-
 .py-100 {
     padding-top: 6.25rem;
     padding-bottom: 6.25rem;
@@ -111,8 +107,6 @@
     object-fit: cover;
     object-position: center;
 }
-
-/* HOW IT WORKS — 반응형 줄바꿈: common.css br.mo-only / br.pc-only */
 
 @media screen and (max-width: 1024px) {
     .kiosk-works-section .work-item .text-col,
@@ -229,11 +223,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .kiosk-frame-section .kiosk-frame-title {
-        font-size: 1.5rem; /* 24px */
-        line-height: 1.35;
-    }
-
     .kiosk-frame-section .frame {
         height: 18.75rem;
     }
@@ -444,17 +433,13 @@
 
 .kiosk-compare-section .compare-table {
     width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    --compare-scale: 1;
 }
 
 .kiosk-compare-section .compare-row {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    column-gap: calc(1.5rem * var(--compare-scale));
-    padding: calc(1.5rem * var(--compare-scale)) 0;
+    padding: 1.5rem 0;
     border-bottom: 1px solid #E5E5E5;
 }
 
@@ -464,16 +449,13 @@
 
 .kiosk-compare-section .table-header {
     padding-top: 0;
-    padding-bottom: calc(1.5rem * var(--compare-scale));
+    padding-bottom: 1.5rem;
 }
 
 .kiosk-compare-section .col-title {
     display: flex;
     align-items: center;
-    min-width: 0;
     text-align: left;
-    word-break: keep-all;
-    overflow-wrap: break-word;
 }
 
 .kiosk-compare-section .col-normal,
@@ -482,56 +464,58 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 0;
     text-align: center;
-    word-break: keep-all;
-    overflow-wrap: break-word;
 }
 
 .kiosk-compare-section .col-tonefit {
     color: #D4734A;
 }
 
-.kiosk-compare-section .table-header .col-normal,
-.kiosk-compare-section .table-header .col-tonefit,
-.kiosk-compare-section .compare-row:not(.table-header) .col-title {
-    font-size: calc(1.25rem * var(--compare-scale));
-    line-height: 1.4;
-}
-
 .kiosk-compare-section .compare-value {
     display: block;
-    margin-bottom: calc(0.625rem * var(--compare-scale));
-    font-size: calc(2rem * var(--compare-scale));
     line-height: 1.2;
 }
 
 .kiosk-compare-section .desc {
     display: block;
-    font-size: calc(1.25rem * var(--compare-scale));
     line-height: 1.5;
 }
 
-/* PC 표 형태 유지 · 뷰포트별 균일 축소 */
 @media screen and (max-width: 1024px) {
-    .kiosk-compare-section .compare-table {
-        --compare-scale: 0.9;
+    .kiosk-compare-section .compare-row {
+        padding: 1.25rem 0;
     }
+
 }
 
 @media screen and (max-width: 768px) {
-    .kiosk-compare-section .compare-table {
-        --compare-scale: 0.78;
-    }
-
     .kiosk-compare-section .compare-row {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 1.25rem;
+        padding: 1.5rem 0;
     }
-}
 
-@media screen and (max-width: 402px) {
-    .kiosk-compare-section .compare-table {
-        --compare-scale: 0.68;
+    .kiosk-compare-section .table-header .col-title {
+        display: none;
+    }
+
+    .kiosk-compare-section .table-header {
+        padding-bottom: 1rem;
+    }
+
+    .kiosk-compare-section .compare-row:not(.table-header) .col-title {
+        grid-column: 1 / -1;
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.25rem;
+        border-bottom: 1px solid #E5E5E5;
+    }
+
+    .kiosk-compare-section .compare-row:not(.table-header) .col-normal {
+        grid-column: 1;
+    }
+
+    .kiosk-compare-section .compare-row:not(.table-header) .col-tonefit {
+        grid-column: 2;
     }
 }
 
@@ -607,6 +591,10 @@
     line-height: 1.6;
 }
 
+.kiosk-cta-section .cta-desc-br {
+    display: none;
+}
+
 .kiosk-cta-section .btn-group {
     display: flex;
     flex-wrap: wrap;
@@ -648,6 +636,10 @@
         height: auto;
         min-height: 22rem;
         padding: 3rem 0;
+    }
+
+    .kiosk-cta-section .cta-desc-br {
+        display: inline;
     }
 
     .kiosk-cta-section .btn-group {
