@@ -3,8 +3,17 @@
 ========================================= */
 
 
-.identity-main {
+/* 텍스트가 자연스럽게 어절 단위로 끊어지도록 설정 (전체 텍스트 영역에 적용) */
+.kv-title, .kv-desc {
     word-break: keep-all;
+}
+
+
+/* 모바일 화면 (예: 768px 이하): 강제 줄바꿈 해제하고 자연스럽게 흐르도록 처리 */
+@media (max-width: 768px) {
+    .d-block {
+        display: inline; /* 모바일에서는 span이 다시 한 줄로 이어지게 함 */
+    }
 }
 .identity-kv-section {
     position: relative;
@@ -28,17 +37,7 @@
     position: relative;
     z-index: 2;
     height: 100%;
-}
-
-.identity-kv-section .kv-text-wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1.25rem;
-    height: 100%;
-    max-width: 42rem;
-    text-align: left;
+    text-align: center;
     color: #FFFFFF;
 }
 
@@ -54,13 +53,12 @@
 }
 
 @media screen and (max-width: 768px) {
-    .identity-kv-section .kv-text-wrap {
-        max-width: 100%;
-        gap: 1rem;
-    }
-
     .identity-kv-section .kv-desc {
         max-width: 100%;
+    }
+
+    .identity-kv-section .inner {
+        gap: 1rem;
     }
 }
 
@@ -164,23 +162,12 @@
     }
 
     .identity-vision-section .vision-content-wrap {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
         gap: 2rem;
     }
 
-    .identity-vision-section .vision-item {
-        flex: 1 1 0;
-        min-width: 0;
-    }
-
     .identity-vision-section .circle-container {
-        width: 100%;
-        max-width: 14rem;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        margin-inline: auto;
+        width: 14rem;
+        height: 14rem;
     }
 
     .identity-vision-section .vision-connector {
@@ -505,11 +492,6 @@
     text-align: center;
 }
 
-.identity-why-section .comparison-visual picture {
-    display: block;
-    width: 100%;
-}
-
 .identity-why-section .comparison-visual {
     width: 100%;
     min-width: 0;
@@ -533,10 +515,11 @@
 .identity-why-section .why-img {
     width: 100%;
     max-width: none;
+    max-height: 25.4375rem;
     height: auto;
     display: block;
-    object-fit: contain;
-    object-position: center center;
+    object-fit: cover;
+    object-position: center top;
 }
 
 .identity-why-section .comparison-label {
@@ -565,6 +548,10 @@
 @media screen and (max-width: 1024px) {
     .identity-why-section .comparison-wrap {
         column-gap: 2rem;
+    }
+
+    .identity-why-section .why-img {
+        max-height: 17rem;
     }
 
     /* 태블릿 — 이미지↔텍스트 20px(캡션 margin-top) · BEFORE/AFTER 24px · 본문 14px */
@@ -603,6 +590,10 @@
         grid-template-columns: 1fr;
         justify-items: center;
         row-gap: 1.5rem;
+    }
+
+    .identity-why-section .why-img {
+        max-height: 28rem;
     }
 
     /* 768px — 이미지↔텍스트 10px · BEFORE/AFTER 24px(1.5rem) · 본문 14px */
@@ -788,25 +779,6 @@
         grid-column: span 6;
     }
 
-    /* Vision — 원 2개가 inner 안에 맞도록 축소 */
-    .identity-vision-section .vision-content-wrap {
-        gap: 0.75rem;
-    }
-
-    .identity-vision-section .circle-container {
-        max-width: 100%;
-    }
-
-    .identity-vision-section .circle-text {
-        gap: 0.625rem;
-        padding-inline: 0.375rem;
-        box-sizing: border-box;
-    }
-
-    .identity-vision-section .vision-connector {
-        gap: 0.5rem;
-    }
-
     /* 무엇이 다른가 — 이미지↔텍스트 10px */
     .identity-why-section .comparison-item {
         gap: 0.625rem;
@@ -943,6 +915,10 @@
 
     .identity-experience-section .text-col {
         margin-top: 2rem;
+    }
+
+    .identity-experience-section .notice-text {
+        font-size: 0.8125rem;
     }
 }
 

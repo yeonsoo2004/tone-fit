@@ -6,6 +6,8 @@
 /* 상단 KV 없음 — 고정 헤더 높이만큼 본문 여백 */
 .space-page .space-main {
     padding-top: calc(1rem + 3.25rem + 1rem);
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 /* 라이트 배경 페이지: 기본 흰 헤더 (KV 투명 효과 미적용) */
@@ -448,20 +450,5 @@
         transform: none;
         transition: none;
         will-change: auto;
-    }
-}
-
-/* Pinkish Mood 캡션 — PC/태블릿: 모바일 전용 줄바꿈 숨김 */
-.space-page .space-caption br.mo-only {
-    display: none;
-}
-
-@media screen and (max-width: 768px) {
-    .space-page .space-caption {
-        word-break: keep-all;
-    }
-
-    .space-page .space-caption br.mo-only {
-        display: block;
     }
 }
