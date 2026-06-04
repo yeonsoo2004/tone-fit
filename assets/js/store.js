@@ -302,55 +302,7 @@ function initKakaoMap() {
 }
 
 /* =========================================
-   5. 헤더 스크롤 처리 (서브페이지 — 항상 배경 표시)
-========================================= */
-(function () {
-    const header = document.querySelector('.header');
-    if (!header) return;
-    // store 페이지는 히어로 배경이 없으므로 항상 scrolled 상태 유지
-    header.classList.add('is-scrolled');
-
-    const headerMenu = header.querySelector('.header-menu');
-    const headerNav = header.querySelector('.header-nav');
-    const closeDelay = 120;
-    let closeTimer = null;
-
-    function setMegaOpen(isOpen) {
-        header.classList.toggle('is-mega-open', isOpen);
-        if (headerNav) {
-            headerNav.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        }
-    }
-
-    if (headerMenu) {
-        headerMenu.addEventListener('mouseenter', function () {
-            clearTimeout(closeTimer);
-            setMegaOpen(true);
-        });
-        headerMenu.addEventListener('mouseleave', function () {
-            closeTimer = setTimeout(function () { setMegaOpen(false); }, closeDelay);
-        });
-        headerMenu.addEventListener('focusin', function () {
-            clearTimeout(closeTimer);
-            setMegaOpen(true);
-        });
-        headerMenu.addEventListener('focusout', function (e) {
-            if (!headerMenu.contains(e.relatedTarget)) {
-                closeTimer = setTimeout(function () { setMegaOpen(false); }, closeDelay);
-            }
-        });
-    }
-
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-            clearTimeout(closeTimer);
-            setMegaOpen(false);
-        }
-    });
-})();
-
-/* =========================================
-   6. 초기화
+   5. 초기화 (헤더 — common.js + include.js)
 ========================================= */
 document.addEventListener('DOMContentLoaded', function () {
     renderAccordion();

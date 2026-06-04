@@ -176,11 +176,11 @@
     line-height: 1.6;
 }
 
-/* index.html .frame-content / .frame 동일 스펙 */
+/* 슬라이드는 .inner 밖 — 타이틀 .mb-80만으로 간격 (메인 .frame-content 5rem과 중복 적용 금지) */
 .kiosk-frame-section .kiosk-frame-content {
     width: 100%;
     max-width: none;
-    margin-top: 5rem;
+    margin-top: 0;
 }
 
 .kiosk-frame-section .kiosk-frame-swiper {
@@ -192,10 +192,16 @@
     box-sizing: border-box;
 }
 
+/* style.css .frame — 호버용 ::before·grid는 메인(index) 전용. 키오스크는 이미지만 표시 */
 .kiosk-frame-section .frame {
+    display: block;
     width: 100%;
     height: 39.1875rem;
     overflow: hidden;
+}
+
+.kiosk-frame-section .frame::before {
+    content: none;
 }
 
 .kiosk-frame-section .frame img {
