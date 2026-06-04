@@ -236,17 +236,13 @@ body {
 
 .franchise-benefit-item {
     flex: 0 0 auto;
-}
-
-.franchise-benefit-circle {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.25rem;
-    width: 188px;
-    height: 188px;
-    padding: 1rem;
+    width: clamp(140px, 10vw, 188px);
+    aspect-ratio: 1;
     border: 1px solid #4C4948;
     border-radius: 50%;
     background-color: #fff;
@@ -255,8 +251,8 @@ body {
     will-change: transform;
 }
 
-.franchise-benefit-circle .franchise-benefit-plus,
-.franchise-benefit-circle .franchise-benefit-line {
+.franchise-benefit-item .franchise-benefit-plus,
+.franchise-benefit-item .franchise-benefit-line {
     opacity: 0;
 }
 
@@ -299,6 +295,8 @@ body {
     width: 100%;
     height: 1px;
     background-color: #4C4948;
+    position: relative;
+    z-index: -2;
 }
 
 .franchise-mega {
@@ -310,32 +308,23 @@ body {
     overflow: visible;
 }
 
-.franchise-mega .round {
-    position: absolute;
-    right: -100px;
-    top: 50%;
-    z-index: 3;
-    width: 35vw;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: #F8F5F0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
-    transform: translateY(-70%);
+.franchise-mega .franchise-mega-content {
+    width: 60%;
+    position: relative;
+    justify-self: flex-end;
 }
 
-.franchise-mega-content {
-    width: 70%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    align-self: center;
-    justify-content: center;
-    gap: 0.25rem;
-    box-sizing: border-box;
+.franchise-mega .franchise-mega-content::before {
+    content: "";
+    width: 120%;
+    aspect-ratio: 1;
+    background-color: #F8F5F0;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
 }
 
 .franchise-mega-label {
@@ -375,23 +364,6 @@ body {
     --ai-tone-finder-bg-width: 440px;
 }
 
-@media (min-width: 1440px) {
-    .ai-tone-finder {
-        --ai-tone-finder-bg-width: 600px;
-    }
-}
-
-@media (min-width: 1680px) {
-    .ai-tone-finder {
-        --ai-tone-finder-bg-width: 780px;
-    }
-}
-
-@media (min-width: 1920px) {
-    .ai-tone-finder {
-        --ai-tone-finder-bg-width: 870px;
-    }
-}
 
 .ai-tone-finder-visual {
     position: absolute;
@@ -477,21 +449,6 @@ body {
     opacity: 0;
 }
 
-@media (min-width: 1024px) {
-    .ai-tone-finder-visual {
-        inset: auto;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: var(--ai-tone-finder-bg-width);
-    }
-
-    .ai-tone-finder-bg {
-        width: var(--ai-tone-finder-bg-width);
-        max-width: var(--ai-tone-finder-bg-width);
-        height: 100%;
-    }
-}
 
 .ai-tone-finder .inner {
     position: relative;
@@ -750,7 +707,7 @@ body {
     text-align: center;
 }
 
-.frame-hover > p {
+.frame-hover>p {
     margin: 0;
     max-width: calc(100% - 2rem);
     font-size: 1rem;
@@ -759,7 +716,7 @@ body {
     color: #fff;
 }
 
-.frame-hover > .topage-btn {
+.frame-hover>.topage-btn {
     margin: 0;
     flex-shrink: 0;
 }
@@ -813,7 +770,7 @@ body {
 
 .review-track img {
     display: block;
-    width: 360px;
+    width: clamp(300px, 22vw, 393px);
     height: auto;
     max-width: none;
     border-radius: 0;
@@ -822,35 +779,6 @@ body {
     user-select: none;
 }
 
-@media (min-width: 1680px) {
-    .review-track img {
-        width: 393px;
-    }
-}
-
-@media (max-width: 1440px) {
-    .review-track img {
-        width: 330px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .review-track img {
-        width: 290px;
-    }
-}
-
-@media (max-width: 768px) {
-    .review-track img {
-        width: 170px;
-    }
-}
-
-@media (max-width: 402px) {
-    .review-track img {
-        width: 150px;
-    }
-}
 
 @keyframes review-marquee-left {
     from {
@@ -1102,13 +1030,12 @@ body {
         grid-row: auto;
     }
 
-    .franchise-benefits {
-        justify-content: flex-start;
+    .franchise-mega .franchise-mega-content{
+        width: 30%;
     }
 
-    .franchise-benefit-circle {
-        width: min(160px, 26vw);
-        height: min(160px, 26vw);
+    .franchise-benefits {
+        justify-content: flex-start;
     }
 
     .franchise-benefits,
@@ -1116,6 +1043,8 @@ body {
         height: auto;
         min-height: 160px;
     }
+
+
 
     .ai-pet-section.inner,
     .ai-personal-bg .inner {
@@ -1217,10 +1146,6 @@ body {
 }
 
 @media (min-width: 769px) and (max-width: 960px) {
-    .franchise-benefit-circle {
-        width: min(140px, 24vw);
-        height: min(140px, 24vw);
-    }
 
     .franchise-benefit-line,
     .franchise-benefit-plus {
@@ -1397,11 +1322,6 @@ body {
         height: auto;
     }
 
-    .franchise-benefit-circle {
-        width: 188px;
-        height: 188px;
-    }
-
     .franchise-right-row {
         height: auto;
         padding-top: 1.25rem;
@@ -1567,9 +1487,10 @@ body {
         font-size: 24px;
     }
 
-    .review-section .section-header{
+    .review-section .section-header {
         text-align: start;
     }
+
     .review-section .section-header h3 {
         font-size: 24px;
     }
