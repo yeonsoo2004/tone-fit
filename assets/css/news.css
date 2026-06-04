@@ -131,8 +131,7 @@
     position: relative;
     background-color: #FFFFFF;
     border-radius: 12px;
-    width: 80%;
-    max-width: 723px;
+    width: clamp(320px, 85%, 560px);
     overflow-y: auto;
     padding: 0;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);

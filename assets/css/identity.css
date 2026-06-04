@@ -39,17 +39,20 @@
     height: 100%;
     text-align: center;
     color: #FFFFFF;
+    align-items: flex-start;
 }
 
 .identity-kv-section .kv-title {
     line-height: 1.2;
     margin: 0;
+    text-align: left;
 }
 
 .identity-kv-section .kv-desc {
-    max-width: 40rem;
+    max-width: 90rem;
     line-height: 1.6;
     margin: 0;
+    text-align: left;
 }
 
 @media screen and (max-width: 768px) {
@@ -820,7 +823,6 @@
 
 .identity-experience-section .notice-text {
     margin: 0.75rem 0 0;
-    font-size: 0.875rem;
     color: #9A9A9A;
     line-height: 1.5;
 }
