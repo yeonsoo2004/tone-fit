@@ -1017,20 +1017,11 @@ body {
     }
 
     .franchise-layout {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        row-gap: 2rem;
-        min-width: 0;
+        display: flex;
+        flex-direction: column;
     }
 
-    .franchise-texts,
-    .franchise-benefits,
-    .franchise-mega {
-        grid-column: 1;
-        grid-row: auto;
-    }
-
-    .franchise-mega .franchise-mega-content{
+    .franchise-mega .franchise-mega-content {
         width: 30%;
     }
 
@@ -1293,13 +1284,11 @@ body {
         height: auto;
     }
 
-    .franchise-mega .round {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 474px;
-        max-width: 100%;
-        transform: none;
+    .franchise-mega .franchise-mega-content{
+        width: 60%;
+        aspect-ratio: 1;
+        align-content: center;
+        margin: 2rem 0;
     }
 
     .franchise-divider-v {
@@ -1462,6 +1451,9 @@ body {
         font-size: 1.5rem;
     }
 
+    .ai-pet-content{
+        flex-direction: column;
+    }
     .ai-personal-bg-content,
     .ai-personal-bg-group {
         gap: 0.875rem;
