@@ -117,6 +117,7 @@ br.mo-only,
    gap: 24px;
 }
 
+
 /* =========================================
    Responsive Layout System (반응형 레이아웃)
 ========================================= */
@@ -145,6 +146,9 @@ br.mo-only,
    .mb-80 {
       margin-bottom: 3.75rem; 
    }
+   .br-none {
+      display: none;
+   }
 }
 
 /* 태블릿 (768px 이하) — 좌우 최소 여백 64px 유지 */
@@ -164,6 +168,9 @@ br.mo-only,
    .mb-80 {
       margin-bottom: 2.5rem;
    }
+   .br-none {
+      display: none;
+   }
 }
 
 /* 모바일 (402px 이하) */
@@ -173,5 +180,8 @@ br.mo-only,
    }
    .mb-80 {
       margin-bottom: 2rem;
+   }
+   .br-none {
+      display: none;
    }
 }
