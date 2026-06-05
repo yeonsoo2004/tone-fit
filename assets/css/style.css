@@ -321,13 +321,14 @@ body {
 
 .franchise-mega .franchise-mega-content {
     width: 60%;
+    padding: 40px;
     position: relative;
     justify-self: flex-end;
 }
 
 .franchise-mega .franchise-mega-content::before {
     content: "";
-    width: 120%;
+    width: 100%;
     aspect-ratio: 1;
     background-color: #F8F5F0;
     position: absolute;
@@ -658,7 +659,6 @@ body {
 .frame-content {
     width: 100%;
     max-width: 100%;
-    margin-top: 5rem;
     overflow: hidden;
 }
 
@@ -1556,11 +1556,7 @@ body {
         object-fit: cover;
     }
 
-    .frame-section .section-header {
-        text-align: end;
-        align-items: flex-end;
-    }
-
+   
     .frame-section .section-header h3 {
         font-size: 24px;
     }
