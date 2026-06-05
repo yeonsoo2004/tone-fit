@@ -220,10 +220,21 @@ body:not(.page-home) .header {
     cursor: pointer;
 }
 
-.header-menu-toggle img {
+.header-menu-toggle img,
+.header-menu-toggle i {
     display: block;
     width: 1.5rem;
     height: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.header-menu-toggle i {
+    color: inherit;
+}
+
+.header-menu-toggle img {
+    filter: none;
 }
 
 .page-home .header:not(.is-scrolled):not(.is-mobile-nav-open) .header-menu-toggle img {
