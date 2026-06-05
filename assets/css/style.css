@@ -514,20 +514,24 @@ body {
     justify-content: center;
     width: 100%;
     min-width: 0;
+    container-type: inline-size;
 }
 
 .ai-personal-bg-group {
     display: flex;
     flex: 0 0 auto;
-    flex-shrink: 0;
     flex-direction: row;
     align-items: center;
     gap: 1.5rem;
+    width: max-content;
+    max-width: 100%;
     min-width: 0;
 }
 
 .ai-personal-bg-candidates {
-    width: fit-content;
+    width: max-content;
+    max-width: 100%;
+    min-width: 0;
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
@@ -539,6 +543,12 @@ body {
     min-width: 0;
     object-fit: cover;
     flex-shrink: 1;
+}
+
+@media (min-width: 1025px) {
+    .ai-personal-bg-content img {
+        width: min(200px, calc((100cqw - 16rem) / 5));
+    }
 }
 
 .ai-personal-bg-content p {
@@ -949,11 +959,6 @@ body {
         gap: 1rem;
     }
 
-    .ai-personal-bg-content img {
-        width: clamp(100px, 16%, 200px);
-        height: auto;
-    }
-
     .viral-content {
         --viral-pad-y: 4.5rem;
         --viral-gap: 1.125rem;
@@ -1045,8 +1050,10 @@ body {
         align-items: center;
     }
 
-    .ai-personal-bg-group {
-        flex-shrink: 1;
+    .ai-personal-bg-group,
+    .ai-personal-bg-candidates {
+        width: auto;
+        max-width: none;
     }
 
     .ai-personal-bg-content,
