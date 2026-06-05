@@ -21,97 +21,8 @@
     <script src="./assets/js/libs/ScrollTrigger.min.js"></script>
     <script src="./assets/js/libs/ScrollSmoother.min.js"></script>
 
-    <!-- ===== HEADER ===== -->
-    <header class="header">
-        <div class="header-container inner">
-            <div class="header-left">
-                <h1 class="logo"><a href="index.html">TONE:FIT</a></h1>
-            </div>
-            <div class="header-menu">
-                <nav class="header-nav ft-20-r" aria-label="주 메뉴" aria-haspopup="true" aria-expanded="false">
-                    <div class="header-nav-item has-submenu">
-                        <a href="subpage/identity.html" class="header-nav-link">BRAND</a>
-                    </div>
-                    <div class="header-nav-item">
-                        <a href="subpage/frame.html" class="header-nav-link">FRAME</a>
-                    </div>
-                    <div class="header-nav-item">
-                        <a href="subpage/store.html" class="header-nav-link">STORE</a>
-                    </div>
-                    <div class="header-nav-item has-submenu">
-                        <a href="subpage/space.html" class="header-nav-link">FRANCHISE</a>
-                    </div>
-                    <div class="header-nav-item has-submenu">
-                        <a href="subpage/news.html" class="header-nav-link">COMMUNITY</a>
-                    </div>
-                </nav>
-                <div class="header-mega ft-18-r">
-                    <div class="header-mega-col">
-                        <ul class="header-mega-list">
-                            <li><a href="subpage/identity.html">IDENTITY</a></li>
-                            <li><a href="subpage/smart-kiosk.html">SMART KIOSK</a></li>
-                        </ul>
-                    </div>
-                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
-                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
-                    <div class="header-mega-col">
-                        <ul class="header-mega-list">
-                            <li><a href="subpage/space.html">SPACE</a></li>
-                            <li><a href="subpage/startup.html">STARTUP</a></li>
-                        </ul>
-                    </div>
-                    <div class="header-mega-col">
-                        <ul class="header-mega-list">
-                            <li><a href="subpage/news.html">NEWS</a></li>
-                            <li><a href="subpage/contact.html">CONTACT</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="header-right">
-                <span class="gnb-btn ft-20-r"><a href="subpage/contact.html">창업문의</a></span>
-                <button type="button" class="header-menu-toggle" aria-label="메뉴 열기" aria-expanded="false"
-                    aria-controls="header-mobile-nav">
-                    <img src="assets/images/icon/menu.svg" alt="" width="24" height="24" aria-hidden="true">
-                </button>
-            </div>
-        </div>
-        <nav id="header-mobile-nav" class="header-mobile-nav ft-20-r" aria-label="모바일 메뉴" hidden>
-            <ul class="header-mobile-list">
-                <li class="header-mobile-group">
-                    <span class="header-mobile-label">BRAND</span>
-                    <ul class="header-mobile-sublist">
-                        <li><a href="subpage/identity.html">IDENTITY</a></li>
-                        <li><a href="subpage/smart-kiosk.html">SMART KIOSK</a></li>
-                    </ul>
-                </li>
-                <li class="header-mobile-group">
-                    <a href="subpage/frame.html" class="header-mobile-link">FRAME</a>
-                </li>
-                <li class="header-mobile-group">
-                    <a href="subpage/store.html" class="header-mobile-link">STORE</a>
-                </li>
-                <li class="header-mobile-group">
-                    <span class="header-mobile-label">FRANCHISE</span>
-                    <ul class="header-mobile-sublist">
-                        <li><a href="subpage/space.html">SPACE</a></li>
-                        <li><a href="subpage/startup.html">STARTUP</a></li>
-                    </ul>
-                </li>
-                <li class="header-mobile-group">
-                    <span class="header-mobile-label">COMMUNITY</span>
-                    <ul class="header-mobile-sublist">
-                        <li><a href="subpage/news.html">NEWS</a></li>
-                        <li><a href="subpage/contact.html">CONTACT</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="header-mobile-cta">
-                <a href="subpage/contact.html" class="gnb-btn ft-20-r">창업문의</a>
-            </div>
-        </nav>
-    </header>
-
+    <div data-include="./assets/components/header-main.html"></div>
+    
     <!-- ===== HERO SECTION ===== -->
     <section class="hero py-130">
         <img class="hero-bg" src="assets/images/kv-bg-img.webp" alt="TONE:FIT 무인 사진 스튜디오 키비주얼">
@@ -449,35 +360,8 @@
                 전용 모바일 앱을 활용한 실시간 기기 제어 및 스마트 무인 운영 시스템</p>
         </div>
     </section>
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer bg-deep-base">
-        <div class="footer-container inner d-flex flex-col gap-20">
-            <div class="footer-logo-sns d-flex jc-between">
-                <p class="footer-logo">TONE:FIT</p>
-                <div class="footer-sns-bar d-flex">
-                    <img src="assets/images/icon/icons_insta.svg" alt="TONE:FIT 인스타그램" class="footer-sns-btn">
-                    <img src="assets/images/icon/icons_facebook.svg" alt="TONE:FIT 페이스북" class="footer-sns-btn">
-                    <img src="assets/images/icon/icons_youtube.svg" alt="TONE:FIT 유튜브" class="footer-sns-btn">
-                </div>
-            </div>
-            <div class="footer-policy">
-                <p class="footer-policy-links">
-                    <button type="button" class="footer-policy-link" data-policy-open="terms">이용약관</button>
-                    <span class="footer-policy-divider" aria-hidden="true">|</span>
-                    <button type="button" class="footer-policy-link" data-policy-open="privacy">개인정보처리방침</button>
-                </p>
-            </div>
-            <div class="footer-info-contact d-flex jc-between ai-end">
-                <p class="footer-info">
-                    우편번호 : 06236, 서울특별시 강남구 테헤란로 123 TONEFIT 타워<br>
-                    Copyright: COPYRIGHT © 2026 TONE:FIT CO., LTD. ALL RIGHTS RESERVED.
-                </p>
-                <p class="email">
-                    Contact: support@tonefit.com
-                </p>
-            </div>
-        </div>
-    </footer>
+    <div data-include="./assets/components/footer.html" data-include-base="./"></div>
+    <script src="./assets/js/include.js"></script>
     <script src="./assets/js/common.js"></script>
     <script src="./assets/js/policy-modal.js"></script>
     <script src="./assets/js/libs/swiper-bundle.min.js"></script>

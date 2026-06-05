@@ -1,6 +1,5 @@
 /**
- * Contact Page — FAQ accordion
- * CSS grid 전환 · 한 번에 하나만 열림 · 같은 항목 재클릭 시 닫힘
+ * Contact Page — FAQ accordion (store accordion behavior)
  */
 (function () {
     'use strict';
@@ -11,45 +10,60 @@
     }
 
     var items = faqSection.querySelectorAll('.contact-faq-item');
-    var triggers = faqSection.querySelectorAll('.contact-faq-trigger');
 
-    function setItemState(item, isOpen) {
+    function closeItem(item) {
         var trigger = item.querySelector('.contact-faq-trigger');
         var panel = item.querySelector('.contact-faq-panel');
 
-        item.classList.toggle('is-open', isOpen);
-        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        item.classList.remove('is-open');
+        if (trigger) {
+            trigger.setAttribute('aria-expanded', 'false');
+        }
+        if (panel) {
+            panel.setAttribute('aria-hidden', 'true');
+        }
     }
 
-    function closeAll() {
-        items.forEach(function (item) {
-            setItemState(item, false);
-        });
+    function openItem(item) {
+        var trigger = item.querySelector('.contact-faq-trigger');
+        var panel = item.querySelector('.contact-faq-panel');
+
+        item.classList.add('is-open');
+        if (trigger) {
+            trigger.setAttribute('aria-expanded', 'true');
+        }
+        if (panel) {
+            panel.setAttribute('aria-hidden', 'false');
+        }
     }
 
-    triggers.forEach(function (trigger) {
-        trigger.addEventListener('click', function (event) {
-            event.stopPropagation();
+    items.forEach(function (item) {
+        var trigger = item.querySelector('.contact-faq-trigger');
+        if (!trigger) {
+            return;
+        }
 
-            var item = trigger.closest('.contact-faq-item');
+        trigger.addEventListener('click', function () {
             var isOpen = item.classList.contains('is-open');
 
-            closeAll();
+            items.forEach(function (other) {
+                if (other !== item && other.classList.contains('is-open')) {
+                    closeItem(other);
+                }
+            });
 
-            if (!isOpen) {
-                setItemState(item, true);
+            if (isOpen) {
+                closeItem(item);
+            } else {
+                openItem(item);
             }
         });
-    });
 
-    document.addEventListener('click', function () {
-        closeAll();
-    });
-
-    faqSection.addEventListener('click', function (event) {
-        if (!event.target.closest('.contact-faq-trigger')) {
-            closeAll();
-        }
+        trigger.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                trigger.click();
+            }
+        });
     });
 })();

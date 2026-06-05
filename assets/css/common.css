@@ -61,6 +61,32 @@ body {
 .text-center { text-align: center; }
 
 /* =========================================
+   Line break · word-break: keep-all
+========================================= */
+.break-keep-all-wrap {
+   word-break: keep-all;
+   overflow-wrap: break-word;
+}
+
+/* PC·태블릿: 모바일 전용 줄바꿈 숨김 */
+br.mo-only,
+.break-mo-only {
+   display: none;
+}
+
+@media screen and (max-width: 768px) {
+   br.pc-only,
+   .break-pc-only {
+      display: none;
+   }
+
+   br.mo-only,
+   .break-mo-only {
+      display: block;
+   }
+}
+
+/* =========================================
    Spacing Classes (섹션 내부 여백)
 ========================================= */
 .py-130 {
@@ -91,6 +117,7 @@ body {
    gap: 24px;
 }
 
+
 /* =========================================
    Responsive Layout System (반응형 레이아웃)
 ========================================= */
@@ -116,6 +143,12 @@ body {
       padding-top: 5rem;
       padding-bottom: 5rem;
    }
+   .mb-80 {
+      margin-bottom: 3.75rem; 
+   }
+   .br-none {
+      display: none;
+   }
 }
 
 /* 태블릿 (768px 이하) — 좌우 최소 여백 64px 유지 */
@@ -132,11 +165,23 @@ body {
       padding-top: 3.75rem;
       padding-bottom: 3.75rem;
    }
+   .mb-80 {
+      margin-bottom: 2.5rem;
+   }
+   .br-none {
+      display: none;
+   }
 }
 
 /* 모바일 (402px 이하) */
 @media screen and (max-width: 402px) {
    :root {
       --page-gutter-x: 16px;
+   }
+   .mb-80 {
+      margin-bottom: 2rem;
+   }
+   .br-none {
+      display: none;
    }
 }

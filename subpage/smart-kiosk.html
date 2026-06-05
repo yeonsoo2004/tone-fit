@@ -15,107 +15,18 @@
     <link rel="stylesheet" href="../assets/css/libs/swiper-bundle.min.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-container inner">
-            <div class="header-left">
-                <h1 class="logo"><a href="../index.html">TONE:FIT</a></h1>
-            </div>
-            <div class="header-menu">
-                <nav class="header-nav ft-20-r" aria-label="주 메뉴" aria-haspopup="true" aria-expanded="false">
-                    <div class="header-nav-item has-submenu">
-                        <a href="identity.html" class="header-nav-link">BRAND</a>
-                    </div>
-                    <div class="header-nav-item">
-                        <a href="frame.html" class="header-nav-link">FRAME</a>
-                    </div>
-                    <div class="header-nav-item">
-                        <a href="store.html" class="header-nav-link">STORE</a>
-                    </div>
-                    <div class="header-nav-item has-submenu">
-                        <a href="space.html" class="header-nav-link">FRANCHISE</a>
-                    </div>
-                    <div class="header-nav-item has-submenu">
-                        <a href="news.html" class="header-nav-link">COMMUNITY</a>
-                    </div>
-                </nav>
-                <div class="header-mega ft-18-r">
-                    <div class="header-mega-col">
-                        <ul class="header-mega-list">
-                            <li><a href="identity.html">IDENTITY</a></li>
-                            <li><a href="smart-kiosk.html">SMART KIOSK</a></li>
-                        </ul>
-                    </div>
-                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
-                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
-                    <div class="header-mega-col">
-                        <ul class="header-mega-list">
-                            <li><a href="space.html">SPACE</a></li>
-                            <li><a href="startup.html">STARTUP</a></li>
-                        </ul>
-                    </div>
-                    <div class="header-mega-col">
-                        <ul class="header-mega-list">
-                            <li><a href="news.html">NEWS</a></li>
-                            <li><a href="contact.html">CONTACT</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="header-right">
-                <span class="gnb-btn ft-20-r"><a href="contact.html">창업문의</a></span>
-                <button type="button" class="header-menu-toggle" aria-label="메뉴 열기" aria-expanded="false"
-                    aria-controls="header-mobile-nav">
-                    <img src="../assets/images/icon/menu.svg" alt="" width="24" height="24" aria-hidden="true">
-                </button>
-            </div>
-        </div>
-        <nav id="header-mobile-nav" class="header-mobile-nav ft-20-r" aria-label="모바일 메뉴" hidden>
-            <ul class="header-mobile-list">
-                <li class="header-mobile-group">
-                    <span class="header-mobile-label">BRAND</span>
-                    <ul class="header-mobile-sublist">
-                        <li><a href="identity.html">IDENTITY</a></li>
-                        <li><a href="smart-kiosk.html">SMART KIOSK</a></li>
-                    </ul>
-                </li>
-                <li class="header-mobile-group">
-                    <a href="frame.html" class="header-mobile-link">FRAME</a>
-                </li>
-                <li class="header-mobile-group">
-                    <a href="store.html" class="header-mobile-link">STORE</a>
-                </li>
-                <li class="header-mobile-group">
-                    <span class="header-mobile-label">FRANCHISE</span>
-                    <ul class="header-mobile-sublist">
-                        <li><a href="space.html">SPACE</a></li>
-                        <li><a href="startup.html">STARTUP</a></li>
-                    </ul>
-                </li>
-                <li class="header-mobile-group">
-                    <span class="header-mobile-label">COMMUNITY</span>
-                    <ul class="header-mobile-sublist">
-                        <li><a href="news.html">NEWS</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="header-mobile-cta">
-                <a href="contact.html" class="gnb-btn ft-20-r">창업문의</a>
-            </div>
-        </nav>
-    </header>
+    <div data-include="../assets/components/header-sub.html"></div>
 
     <main class="sub-main kiosk-main">
         <section class="kiosk-kv-section">
             <div class="inner">
                 <div class="kv-text-wrap kv-fade-group">
-                    <span class="kv-subtitle ft-20-sb color-orange mb-10">AI PERSONAL FRAME</span>
                     <h2 class="kv-title ft-48-r title mb-20">
-                        고객의 퍼스널 컬러를 찾아주는<br>
+                        고객의 퍼스널 컬러를 찾아주는<br class="br-none">
                         완벽한 AI 프레임
                     </h2>
-                    <p class="kv-desc ft-18-r mb-40">
-                        0.8초 AI 톤 스캔이 방문객의 피부 톤을 정확히 읽어내고<br>
+                    <p class="kv-desc ft-20-r mb-40">
+                        0.8초 AI 톤 스캔이 방문객의 피부 톤을 정확히 읽어내고<br class="br-none">
                         웜/쿨톤에 최적화된 프레임과 조명을 자동으로 세팅합니다
                     </p>
 
@@ -137,7 +48,7 @@
                         <div class="text-col slide-text-col">
                             <h3 class="step-title ft-32-b color-orange mb-20">STEP 01</h3>
                             <p class="step-desc ft-20-r color-main">
-                                키오스크 카메라 앞에 서는 순간 30초 안에 피부 언더톤, 명도, 채도를 <br>3가지 지표로 동시 분석합니다. 별도의 진단 없이 자동으로 웜/쿨 계열을 판별해요.
+                                키오스크 카메라 앞에 서는 순간 30초 안에 피부 언더톤, 명도, 채도를 <br class="br-none">3가지 지표로 동시 분석합니다. 별도의 진단 없이 자동으로 웜/쿨 계열을 판별해요.
                             </p>
                         </div>
                         <div class="img-col">
@@ -152,7 +63,7 @@
                         <div class="text-col slide-text-col">
                             <h3 class="step-title ft-32-b color-orange mb-20">STEP 02</h3>
                             <p class="step-desc ft-20-r color-main">
-                                스캔 결과를 바탕으로 나에게 어울리는 프레임과 조명 색온도, 배경 톤을 자동으로 <br>세팅합니다. 이것저것 고를 필요 없이 최적의 조합이 완성됩니다.
+                                스캔 결과를 바탕으로 나에게 어울리는 프레임과 조명 색온도, 배경 톤을 자동으로 <br class="br-none">세팅합니다. 이것저것 고를 필요 없이 최적의 조합이 완성됩니다.
                             </p>
                         </div>
                     </div>
@@ -161,7 +72,7 @@
                         <div class="text-col slide-text-col">
                             <h3 class="step-title ft-32-b color-orange mb-20">STEP 03</h3>
                             <p class="step-desc ft-20-r color-main">
-                                웜톤에는 2700~3500K 소프트 웜 조명을, 쿨톤에는 5000~6500K 쿨 화이트 조명을 <br>자동 적용합니다. 같은 공간에서도 나만의 스튜디오 환경이 완성됩니다.
+                                웜톤에는 2700~3500K 소프트 웜 조명을, 쿨톤에는 5000~6500K 쿨 화이트 조명을 <br class="br-none">자동 적용합니다. 같은 공간에서도 나만의 스튜디오 환경이 완성됩니다.
                             </p>
                         </div>
                         <div class="img-col">
@@ -176,9 +87,8 @@
         <section class="kiosk-frame-section frame-section py-130 bg-deep-base">
             <div class="inner">
                 <div class="title-area text-center mb-80">
-                    <span class="kiosk-frame-subtitle ft-20-sb color-orange mb-10 title">AI PERSONAL FRAME COLLECTION</span>
                     <h2 class="kiosk-frame-title ft-48-r title mb-20">퍼스널 컬러별 시그니처 프레임</h2>
-                    <p class="kiosk-frame-desc ft-18-r">웜톤과 쿨톤, 각각의 계열에 최적화된 프레임 라인업</p>
+                    <p class="kiosk-frame-desc ft-20-r">웜톤과 쿨톤, 각각의 계열에 최적화된 프레임 라인업</p>
                 </div>
             </div>
 
@@ -275,9 +185,8 @@
         <section class="kiosk-tech-section py-100">
             <div class="inner">
                 <div class="title-area mb-80">
-                    <span class="kiosk-tech-subtitle ft-20-sb color-orange mb-10 title">AI TECHNOLOGY</span>
                     <h2 class="kiosk-tech-title ft-48-r color-point mb-20 title">기술이 만드는 완벽한 한 컷</h2>
-                    <p class="kiosk-tech-desc ft-18-r color-main">초격차 AI 뷰티 테크의 핵심 기술을 소개합니다</p>
+                    <p class="kiosk-tech-desc ft-20-r color-main">초격차 AI 뷰티 테크의 핵심 기술을 소개합니다</p>
                 </div>
         
                 <div class="grid-wrap tech-list">
@@ -286,9 +195,9 @@
                         <div class="icon-wrap mb-20">
                             <img src="../assets/images/icon/kiosk-tech01.svg" alt="AI 톤 파인더 아이콘">
                         </div>
-                        <h3 class="tech-item-title ft-32-b color-main mb-10">AI 톤 파인더</h3>
+                        <h3 class="tech-item-title ft-28-r color-main mb-10">AI 톤 파인더</h3>
                         <p class="tech-item-desc ft-20-r color-main">
-                            30초 내 피부 톤 스캔 및 웜/쿨 계열 자동 분류. <br>조명 조건에 따른 보정 알고리즘 내장.
+                            30초 내 피부 톤 스캔 및 웜/쿨 계열 자동 분류. <br class="br-none">조명 조건에 따른 보정 알고리즘 내장.
                         </p>
                     </div>
         
@@ -296,9 +205,9 @@
                         <div class="icon-wrap mb-20">
                             <img src="../assets/images/icon/kiosk-tech02.svg" alt="가변형 조명 시스템 아이콘">
                         </div>
-                        <h3 class="tech-item-title ft-32-b color-main mb-10">가변형 조명 시스템</h3>
+                        <h3 class="tech-item-title ft-28-r color-main mb-10">가변형 조명 시스템</h3>
                         <p class="tech-item-desc ft-20-r color-main">
-                            색온도 2700K~6500K 실시간 조정. <br>퍼스널 컬러에 따른 조명 프리셋 자동 적용.
+                            색온도 2700K~6500K 실시간 조정. <br class="br-none">퍼스널 컬러에 따른 조명 프리셋 자동 적용.
                         </p>
                     </div>
         
@@ -306,9 +215,9 @@
                         <div class="icon-wrap mb-20">
                             <img src="../assets/images/icon/kiosk-tech03.svg" alt="스마트 프레임 매칭 아이콘">
                         </div>
-                        <h3 class="tech-item-title ft-32-b color-main mb-10">스마트 프레임 매칭</h3>
+                        <h3 class="tech-item-title ft-28-r color-main mb-10">스마트 프레임 매칭</h3>
                         <p class="tech-item-desc ft-20-r color-main">
-                            톤 분석 결과 기반으로 200+ 프레임 중 최적 조합을 자동 추천. <br>계절/트렌드 반영.
+                            톤 분석 결과 기반으로 200+ 프레임 중 최적 조합을 자동 추천. <br class="br-none">계절/트렌드 반영.
                         </p>
                     </div>
         
@@ -316,7 +225,7 @@
                         <div class="icon-wrap mb-20">
                             <img src="../assets/images/icon/kiosk-tech04.svg" alt="원격 관리 앱 아이콘">
                         </div>
-                        <h3 class="tech-item-title ft-32-b color-main mb-10">원격 관리 앱</h3>
+                        <h3 class="tech-item-title ft-28-r color-main mb-10">원격 관리 앱</h3>
                         <p class="tech-item-desc ft-20-r color-main">
                             점주 전용 앱으로 프레임 업데이트, 기기 모니터링, 매출 현황을 실시간 확인.
                         </p>
@@ -329,7 +238,6 @@
         <section class="kiosk-compare-section py-100 bg-light-gray">
             <div class="inner">
                 <div class="title-area mb-80">
-                    <span class="compare-subtitle ft-20-sb color-orange mb-10 title">BY THE NUMBERS</span>
                     <h2 class="compare-main-title ft-48-r color-point title">수치로 보는 차이</h2>
                 </div>
         
@@ -398,13 +306,13 @@
             
             <div class="inner">
                 <div class="cta-text-wrap text-center">
-                    <span class="cta-subtitle ft-20-sb mb-10 fade-up title color-orange">AI PERSONAL KIOSK</span>
                     <h2 class="cta-title ft-48-r mb-20 fade-up title">
-                        타사에 없는 30초 AI 스캔,<br>
+                        타사에 없는 30초 AI 스캔,<br class="br-none">
                         압도적인 매출의 비결입니다
                     </h2>
                     <p class="cta-desc ft-20-r mb-40 fade-up">
-                        트렌드에 민감한 고객들의 발길을 이끄는 톤핏만의 스마트한 키오스크를 도입해 보세요<br>
+                        트렌드에 민감한 고객들의 발길을 이끄는<br class="cta-desc-br" aria-hidden="true">
+                        톤핏만의 스마트한 키오스크를 도입해 보세요<br class="br-none">
                         실패 없는 무인 스튜디오 창업의 해답을 제시합니다
                     </p>
                     
@@ -418,39 +326,20 @@
     </main>
 
     <!-- ===== FOOTER (index.html 동일) ===== -->
-    <footer class="footer bg-deep-base">
-        <div class="footer-container inner d-flex flex-col gap-20">
-            <div class="footer-logo-sns d-flex jc-between">
-                <p class="footer-logo">TONE:FIT</p>
-                <div class="footer-sns-bar d-flex">
-                    <img src="../assets/images/icon/icons_insta.svg" alt="TONE:FIT 인스타그램" class="footer-sns-btn">
-                    <img src="../assets/images/icon/icons_facebook.svg" alt="TONE:FIT 페이스북" class="footer-sns-btn">
-                    <img src="../assets/images/icon/icons_youtube.svg" alt="TONE:FIT 유튜브" class="footer-sns-btn">
-                </div>
-            </div>
-            <div class="footer-policy">
-                <p class="footer-policy-links">
-                    <button type="button" class="footer-policy-link" data-policy-open="terms">이용약관</button>
-                    <span class="footer-policy-divider" aria-hidden="true">|</span>
-                    <button type="button" class="footer-policy-link" data-policy-open="privacy">개인정보처리방침</button>
-                </p>
-            </div>
-            <div class="footer-info-contact d-flex jc-between ai-end">
-                <p class="footer-info">
-                    우편번호 : 06236, 서울특별시 강남구 테헤란로 123 TONEFIT 타워<br>
-                    Copyright: COPYRIGHT © 2026 TONE:FIT CO., LTD. ALL RIGHTS RESERVED.
-                </p>
-                <p class="email">
-                    Contact: support@tonefit.com
-                </p>
-            </div>
-        </div>
-    </footer>
+    <div data-include="../assets/components/footer.html" data-include-base="../"></div>
+
+    <button type="button" class="back-to-top" aria-label="맨 위로 이동">
+        <svg class="back-to-top__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 5V19M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
 
     <script src="../assets/js/libs/gsap.min.js"></script>
     <script src="../assets/js/libs/ScrollTrigger.min.js"></script>
     <script src="../assets/js/libs/swiper-bundle.min.js"></script>
+    <script src="../assets/js/include.js"></script>
     <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/back-to-top.js"></script>
     <script src="../assets/js/policy-modal.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/brand.js"></script>

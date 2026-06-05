@@ -140,6 +140,11 @@
 
     function bindTriggers() {
         document.querySelectorAll('[data-policy-open]').forEach(function (btn) {
+            if (btn.dataset.policyBound === 'true') {
+                return;
+            }
+
+            btn.dataset.policyBound = 'true';
             btn.addEventListener('click', function () {
                 var type = btn.getAttribute('data-policy-open');
                 openModal(type);
@@ -162,9 +167,17 @@
         bindTriggers();
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
+    function boot() {
         init();
+    }
+
+    if (document.querySelector('[data-include]')) {
+        document.addEventListener('includes:loaded', boot);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', boot);
+    } else {
+        boot();
     }
 })();

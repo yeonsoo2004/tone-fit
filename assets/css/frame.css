@@ -48,6 +48,42 @@
 
 
 /* =========================================
+   타이틀 · LNB 탭 — 가로 정렬 · 간격(rem)
+========================================= */
+
+.frame-section-inner {
+    gap: 0;
+    width: 100%;
+}
+
+.frame-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.frame-head .title {
+    margin: 0 0 1.25rem;
+}
+
+.frame-page .lnb-tab-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    width: 100%;
+}
+
+.frame-tab-panels {
+    width: 100%;
+    margin-top: 1.25rem;
+}
+
+/* =========================================
    LNB 탭 버튼 — component.css lnb-tab-btn 오버라이드
    (FRAME 전용 크기·색상·인터랙션 차이만 유지)
 ========================================= */
@@ -95,9 +131,6 @@
    탭 패널 (show / hide)
 ========================================= */
 
-.frame-tab-panels {
-    width: 100%;
-}
 
 .frame-tab-panel {
     display: none;
@@ -255,9 +288,27 @@
         column-gap: 12px;
     }
 
-    .frame-tab-btn {
-        padding: 8px 20px;
-        height: 42px;
+    /* 탭바 — 스페이스 모바일(768) 패턴 · 3열 1줄 · 14px */
+    .frame-page .lnb-tab-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .frame-page .frame-tab-btn {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        padding: 0.4375rem 0.75rem;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        text-align: center;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
     }
 
     .frame-poster-card:hover .frame-poster-img-wrap img {
@@ -278,7 +329,7 @@
 /* =========================================
    반응형 — 402px 이하 (Small Mobile)
    포스터: 2열 (181×208 기준 비율)
-   탭 버튼: 세로 스택
+   탭 버튼: 가로 정렬 유지
 ========================================= */
 
 @media screen and (max-width: 402px) {
@@ -287,15 +338,14 @@
         column-gap: 10px;
     }
 
-    .lnb-tab-bar {
-        flex-direction: column;
-        align-items: stretch;
+    .frame-page .lnb-tab-bar {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.375rem;
     }
 
-    .frame-tab-btn {
-        width: 100%;
-        padding: 10px 20px;
-        height: auto;
+    .frame-page .frame-tab-btn {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.875rem;
     }
 }
 

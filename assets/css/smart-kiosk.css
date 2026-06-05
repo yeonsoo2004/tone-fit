@@ -166,11 +166,6 @@
     color: #FFFFFF;
 }
 
-.kiosk-frame-section .kiosk-frame-subtitle {
-    display: block;
-    line-height: 1.4;
-}
-
 .kiosk-frame-section .kiosk-frame-title {
     margin-top: 0;
     line-height: 1.25;
@@ -181,11 +176,11 @@
     line-height: 1.6;
 }
 
-/* index.html .frame-content / .frame 동일 스펙 */
+/* 슬라이드는 .inner 밖 — 타이틀 .mb-80만으로 간격 (메인 .frame-content 5rem과 중복 적용 금지) */
 .kiosk-frame-section .kiosk-frame-content {
     width: 100%;
     max-width: none;
-    margin-top: 5rem;
+    margin-top: 0;
 }
 
 .kiosk-frame-section .kiosk-frame-swiper {
@@ -197,10 +192,16 @@
     box-sizing: border-box;
 }
 
+/* style.css .frame — 호버용 ::before·grid는 메인(index) 전용. 키오스크는 이미지만 표시 */
 .kiosk-frame-section .frame {
+    display: block;
     width: 100%;
     height: 39.1875rem;
     overflow: hidden;
+}
+
+.kiosk-frame-section .frame::before {
+    content: none;
 }
 
 .kiosk-frame-section .frame img {
@@ -292,14 +293,15 @@
 }
 
 @media screen and (max-width: 768px) {
+    /* 6단 그리드 · span 3 → 2열 × 2행 */
     .kiosk-cut-section .cut-item {
-        grid-column: span 6;
+        grid-column: span 3;
     }
 
     .kiosk-cut-section .cut-card {
         min-height: 12rem;
-        max-width: 20rem;
-        margin: 0 auto;
+        max-width: none;
+        margin: 0;
         padding: 1.5rem 1.25rem;
     }
 
@@ -339,18 +341,14 @@
 
 @media screen and (max-width: 768px) {
     .kiosk-counting-section .count-item {
-        grid-column: span 6;
+        /* 6단 그리드에서 2열 × 2행 */
+        grid-column: span 3;
     }
 }
 
 /* =========================================
    AI Technology Section
 ========================================= */
-.kiosk-tech-section .kiosk-tech-subtitle {
-    display: block;
-    line-height: 1.4;
-}
-
 .kiosk-tech-section .kiosk-tech-title {
     margin-top: 0;
     line-height: 1.25;
@@ -387,8 +385,8 @@
 .kiosk-tech-section .tech-item-title {
     margin-top: 0;
     line-height: 1.35;
+    font-weight: 600;
 }
-
 .kiosk-tech-section .tech-item-desc {
     margin: 0;
     line-height: 1.6;
@@ -418,11 +416,6 @@
 ========================================= */
 .kiosk-compare-section {
     background-color: #F6F6F6;
-}
-
-.kiosk-compare-section .compare-subtitle {
-    display: block;
-    line-height: 1.4;
 }
 
 .kiosk-compare-section .compare-main-title {
@@ -575,11 +568,6 @@
     color: #FFFFFF;
 }
 
-.kiosk-cta-section .cta-subtitle {
-    display: block;
-    line-height: 1.4;
-}
-
 .kiosk-cta-section .cta-title {
     margin-top: 0;
     line-height: 1.25;
@@ -588,6 +576,10 @@
 .kiosk-cta-section .cta-desc {
     margin-top: 0;
     line-height: 1.6;
+}
+
+.kiosk-cta-section .cta-desc-br {
+    display: none;
 }
 
 .kiosk-cta-section .btn-group {
@@ -633,16 +625,21 @@
         padding: 3rem 0;
     }
 
+    .kiosk-cta-section .cta-desc-br {
+        display: inline;
+    }
+
     .kiosk-cta-section .btn-group {
-        flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
     .kiosk-cta-section .btn-group .topage-btn,
     .kiosk-cta-section .btn-group .gnb-btn {
-        width: 100%;
-        max-width: 18rem;
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        padding: 0.625rem 1.875rem; /* 10px 30px */
         font-size: 1rem;
     }
 }

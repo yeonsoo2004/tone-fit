@@ -15,101 +15,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-container inner">
-            <div class="header-left">
-                <h1 class="logo"><a href="../index.html">TONE:FIT</a></h1>
-            </div>
-            <div class="header-menu">
-                <nav class="header-nav ft-20-r" aria-label="주 메뉴" aria-haspopup="true" aria-expanded="false">
-                    <div class="header-nav-item has-submenu">
-                        <a href="identity.html" class="header-nav-link">BRAND</a>
-                    </div>
-                    <div class="header-nav-item">
-                        <a href="frame.html" class="header-nav-link">FRAME</a>
-                    </div>
-                    <div class="header-nav-item">
-                        <a href="store.html" class="header-nav-link">STORE</a>
-                    </div>
-                    <div class="header-nav-item has-submenu">
-                        <a href="space.html" class="header-nav-link">FRANCHISE</a>
-                    </div>
-                    <div class="header-nav-item has-submenu">
-                        <a href="news.html" class="header-nav-link">COMMUNITY</a>
-                    </div>
-                </nav>
-                <div class="header-mega ft-18-r">
-                    <div class="header-mega-col">
-                        <ul class="header-mega-list">
-                            <li><a href="identity.html">IDENTITY</a></li>
-                            <li><a href="smart-kiosk.html">SMART KIOSK</a></li>
-                        </ul>
-                    </div>
-                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
-                    <div class="header-mega-col header-mega-col--empty" aria-hidden="true"></div>
-                    <div class="header-mega-col">
-                        <ul class="header-mega-list">
-                            <li><a href="space.html">SPACE</a></li>
-                            <li><a href="startup.html">STARTUP</a></li>
-                        </ul>
-                    </div>
-                    <div class="header-mega-col">
-                        <ul class="header-mega-list">
-                            <li><a href="news.html">NEWS</a></li>
-                            <li><a href="contact.html">CONTACT</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="header-right">
-                <span class="gnb-btn ft-20-r"><a href="contact.html">창업문의</a></span>
-                <button type="button" class="header-menu-toggle" aria-label="메뉴 열기" aria-expanded="false"
-                    aria-controls="header-mobile-nav">
-                    <img src="../assets/images/icon/menu.svg" alt="" width="24" height="24" aria-hidden="true">
-                </button>
-            </div>
-        </div>
-        <nav id="header-mobile-nav" class="header-mobile-nav ft-20-r" aria-label="모바일 메뉴" hidden>
-            <ul class="header-mobile-list">
-                <li class="header-mobile-group">
-                    <span class="header-mobile-label">BRAND</span>
-                    <ul class="header-mobile-sublist">
-                        <li><a href="identity.html">IDENTITY</a></li>
-                        <li><a href="smart-kiosk.html">SMART KIOSK</a></li>
-                    </ul>
-                </li>
-                <li class="header-mobile-group">
-                    <a href="frame.html" class="header-mobile-link">FRAME</a>
-                </li>
-                <li class="header-mobile-group">
-                    <a href="store.html" class="header-mobile-link">STORE</a>
-                </li>
-                <li class="header-mobile-group">
-                    <span class="header-mobile-label">FRANCHISE</span>
-                    <ul class="header-mobile-sublist">
-                        <li><a href="space.html">SPACE</a></li>
-                        <li><a href="startup.html">STARTUP</a></li>
-                    </ul>
-                </li>
-                <li class="header-mobile-group">
-                    <span class="header-mobile-label">COMMUNITY</span>
-                    <ul class="header-mobile-sublist">
-                        <li><a href="news.html">NEWS</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="header-mobile-cta">
-                <a href="contact.html" class="gnb-btn ft-20-r">창업문의</a>
-            </div>
-        </nav>
-    </header>
+    <div data-include="../assets/components/header-sub.html"></div>
 
     <main class="sub-main identity-main">
         <section class="identity-kv-section">
-            <div class="inner d-flex flex-col jc-center ai-center gap-20">
-                <h2 class="kv-title ft-54-r title fade-up">TONE:FIT<br>BRAND STORY</h2>
-                <p class="kv-desc ft-18-r fade-up">TONE:FIT은 독보적인 AI 컬러 분석 기술로 <br>모든 고객의 고유한 분위기를 가장 완벽하게 이끌어냅니다</p>
+            <div class="inner">
+                <div class="kv-text-wrap">
+                    <h2 class="kv-title ft-54-r title fade-up">TONE:FIT<br>BRAND STORY</h2>
+                    <p class="kv-desc ft-20-r fade-up">TONE:FIT은 독보적인 AI 컬러 분석 기술로 <br class="br-none">모든 고객의 고유한 분위기를 가장 완벽하게 이끌어냅니다</p>
+                </div>
             </div>
         </section>
 
@@ -158,13 +72,13 @@
             <div class="inner">
                 <div class="grid-wrap">
                     <div class="text-col">
-                        <h2 class="feature-title ft-54-r title mb-20 color-point">
+                        <h2 class="feature-title ft-48-r title mb-20 color-point">
                             아직 아무도 만들지 않은<br>
                             <span class="color-orange">AI 퍼스널 컬러</span><br>
                             무인 포토부스
                         </h2>
 
-                        <p class="ft-18-r color-main mb-20">
+                        <p class="ft-20-r color-main mb-20">
                             일반 포토부스가 프레임을 선택하는 동안,<br>
                             TONE:FIT은 AI가 피부를 분석해 가장 어울리는<br>
                             조명·필터·컬러를 자동으로 설정합니다.
@@ -204,13 +118,13 @@
             <div class="inner">
                 <div class="grid-wrap">
                     <div class="text-col">
-                        <h2 class="market-title ft-54-r title mb-20 color-point">
+                        <h2 class="market-title ft-48-r title mb-20 color-point">
                             퍼스널컬러 검색량,<br>
                             5년 새 <span class="color-orange">1,200% <span class="color-point">폭증</span></span>
                         </h2>
 
-                        <p class="ft-18-r color-main mb-20">
-                            MZ세대를 중심으로 퍼스널컬러 진단 수요가 폭발적으로 <br>성장하고 있습니다. 반려동물 양육 가구도 700만을 돌파했습니다. <br> 그러나 이 두 시장을 동시에 공략한 무인 포토부스 브랜드는 아직 없습니다.
+                        <p class="ft-20-r color-main mb-20">
+                            MZ세대를 중심으로 퍼스널컬러 진단 수요가 폭발적으로 <br class="br-none">성장하고 있습니다. 반려동물 양육 가구도 700만을 돌파했습니다. <br class="br-none"> 그러나 이 두 시장을 동시에 공략한 무인 포토부스 브랜드는 아직 없습니다.
                         </p>
 
                         <div class="stats-wrap d-flex gap-20 fade-up">
@@ -241,34 +155,48 @@
 
         <section class="identity-why-section bg-warm-white py-130">
             <div class="inner">
-                <h2 class="why-title ft-54-r title text-center mb-20 color-point">무엇이 다른가</h2>
-                <p class="why-desc ft-18-r color-main text-center mb-80">
+                <h2 class="why-title ft-48-r title text-center mb-20 color-point">무엇이 다른가</h2>
+                <p class="why-desc ft-20-r color-main text-center mb-80">
                     일반 포토부스가 제공하는 '선택'과 달리, TONE:FIT은 AI가 분석하여 최적의 환경을 자동 설정합니다.
                 </p>
 
                 <div class="comparison-wrap" data-fade-stagger="0">
-                    <div class="img-before d-flex flex-col ai-center gap-20 fade-up">
-                        <img
-                            class="why-img"
-                            src="../assets/images/identity-why-1.webp"
-                            alt="일반 무인 포토부스 BEFORE">
-                        <h3 class="ft-32-b color-orange">BEFORE</h3>
-                        <p class="ft-18-r color-main">일반 무인 포토부스</p>
+                    <div class="comparison-item fade-up">
+                        <div class="comparison-visual">
+                            <picture>
+                                <source media="(max-width: 402px)" srcset="../assets/images/identity-why-1-mo.webp">
+                                <img
+                                    class="why-img"
+                                    src="../assets/images/identity-why-1.webp"
+                                    alt="일반 무인 포토부스 BEFORE">
+                            </picture>
+                        </div>
+                        <div class="comparison-caption d-flex flex-col ai-center text-center">
+                            <h3 class="comparison-label ft-32-b color-orange mb-0">BEFORE</h3>
+                            <p class="comparison-desc ft-18-r color-main mb-0">일반 무인 포토부스</p>
+                        </div>
                     </div>
 
                     <div class="vs-circle d-flex jc-center ai-center fade-up">
                         <span class="vs-text ft-18-r">VS</span>
                     </div>
 
-                    <div class="img-after d-flex flex-col ai-center gap-20 fade-up">
-                        <img
-                            class="why-img"
-                            src="../assets/images/identity-why-2.webp"
-                            alt="TONE:FIT AI 포토부스 AFTER">
-                        <h3 class="ft-32-b color-orange">AFTER</h3>
-                        <p class="ft-18-r color-main">
-                            <span class="ft-32-b color-orange">18K+</span> AI 퍼스널 컬러 분석
-                        </p>
+                    <div class="comparison-item fade-up">
+                        <div class="comparison-visual">
+                            <picture>
+                                <source media="(max-width: 402px)" srcset="../assets/images/identity-why-2-mo.webp">
+                                <img
+                                    class="why-img"
+                                    src="../assets/images/identity-why-2.webp"
+                                    alt="TONE:FIT AI 포토부스 AFTER">
+                            </picture>
+                        </div>
+                        <div class="comparison-caption d-flex flex-col ai-center text-center">
+                            <h3 class="comparison-label ft-32-b color-orange mb-0">AFTER</h3>
+                            <p class="comparison-desc ft-18-r color-main mb-0">
+                                <span class="comparison-highlight ft-32-b color-orange">18K+</span> AI 퍼스널 컬러 분석
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -276,16 +204,16 @@
 
         <section class="identity-analysis-section py-130">
             <div class="inner">
-                <h2 class="analysis-title ft-54-r title text-center mb-20 color-point">
-                    촬영이 아니라 <span class="color-point">분석</span>에 가까운 기술
+                <h2 class="analysis-title ft-48-r title text-center mb-20 color-point">
+                    촬영이 아니라 <span class="color-orange">분석</span>에 가까운 기술
                 </h2>
-                <p class="analysis-desc ft-18-r color-main text-center mb-80">
+                <p class="analysis-desc ft-20-r color-main text-center mb-80">
                     고객이 키오스크 앞에 서는 순간부터 결과물 출력까지, AI가 전 과정을 자동 처리합니다.
                 </p>
 
                 <div class="grid-wrap analysis-steps-wrap" data-fade-stagger>
                     
-                    <div class="step-item fade-up d-flex flex-col ai-center gap-20">
+                    <div class="step-item fade-up d-flex flex-col ai-center">
                         <div class="step-badge ft-32-b bg-point-orange d-flex jc-center ai-center">01</div>
                         <div class="step-card d-flex flex-col ai-center gap-40">
                             <div class="icon-wrap d-flex jc-center ai-center">
@@ -297,7 +225,7 @@
                         </div>
                     </div>
         
-                    <div class="step-item fade-up d-flex flex-col ai-center gap-20">
+                    <div class="step-item fade-up d-flex flex-col ai-center">
                         <div class="step-badge ft-32-b bg-point-orange d-flex jc-center ai-center">02</div>
                         <div class="step-card d-flex flex-col ai-center gap-40">
                             <div class="icon-wrap d-flex jc-center ai-center">
@@ -309,7 +237,7 @@
                         </div>
                     </div>
         
-                    <div class="step-item fade-up d-flex flex-col ai-center gap-20">
+                    <div class="step-item fade-up d-flex flex-col ai-center">
                         <div class="step-badge ft-32-b bg-point-orange d-flex jc-center ai-center">03</div>
                         <div class="step-card d-flex flex-col ai-center gap-40">
                             <div class="icon-wrap d-flex jc-center ai-center">
@@ -321,7 +249,7 @@
                         </div>
                     </div>
         
-                    <div class="step-item fade-up d-flex flex-col ai-center gap-20">
+                    <div class="step-item fade-up d-flex flex-col ai-center">
                         <div class="step-badge ft-32-b bg-point-orange d-flex jc-center ai-center">04</div>
                         <div class="step-card d-flex flex-col ai-center gap-40">
                             <div class="icon-wrap d-flex jc-center ai-center">
@@ -363,36 +291,36 @@
 
         <section class="identity-counting-section py-130">
             <div class="inner">
-                <h2 class="counting-head ft-54-r title text-center mb-20">기술력으로 증명합니다</h2>
-                <p class="counting-sub ft-18-r text-center mb-80">TONE:FIT AI가 쌓아온 데이터와 정확도</p>
+                <h2 class="counting-head ft-48-r title text-center mb-20">기술력으로 증명합니다</h2>
+                <p class="counting-sub ft-20-r text-center mb-80">TONE:FIT AI가 쌓아온 데이터와 정확도</p>
 
                 <div class="grid-wrap counting-wrap" data-fade-stagger>
                     <div class="count-item text-center fade-up">
-                        <strong class="count-title ft-54-r mb-20">
+                        <strong class="count-title ft-48-r mb-20">
                             <span class="counter-num" data-target="92">0</span>%
                         </strong>
-                        <p class="count-desc ft-18-r">AI 퍼스널컬러<br>분석 정확도</p>
+                        <p class="count-desc ft-20-r">AI 퍼스널컬러<br>분석 정확도</p>
                     </div>
 
                     <div class="count-item text-center fade-up">
-                        <strong class="count-title ft-54-r mb-20">
+                        <strong class="count-title ft-48-r mb-20">
                             <span class="counter-num" data-target="18000">0</span>+
                         </strong>
-                        <p class="count-desc ft-18-r">누적 피부 분석<br>데이터 건수</p>
+                        <p class="count-desc ft-20-r">누적 피부 분석<br>데이터 건수</p>
                     </div>
 
                     <div class="count-item text-center fade-up">
-                        <strong class="count-title ft-54-r mb-20">
+                        <strong class="count-title ft-48-r mb-20">
                             <span class="counter-num" data-target="15">0</span>가지
                         </strong>
-                        <p class="count-desc ft-18-r">피부톤 세부<br>분류 유형</p>
+                        <p class="count-desc ft-20-r">피부톤 세부<br>분류 유형</p>
                     </div>
 
                     <div class="count-item text-center fade-up">
-                        <strong class="count-title ft-54-r mb-20">
+                        <strong class="count-title ft-48-r mb-20">
                             <span class="counter-num" data-target="30">0</span>초
                         </strong>
-                        <p class="count-desc ft-18-r">키오스크 내<br>AI 처리 속도</p>
+                        <p class="count-desc ft-20-r">키오스크 내<br>AI 처리 속도</p>
                     </div>
                 </div>
             </div>
@@ -402,13 +330,12 @@
             <div class="inner">
                 <div class="grid-wrap">
                     <div class="text-col d-flex flex-col gap-20">
-                        <span class="sub-title ft-18-r color-orange">Pet Friendly Zone</span>
-                        <h2 class="pet-title ft-54-r title color-point">
+                        <h2 class="pet-title ft-48-r title color-point">
                             반려동물과 함께하는<br>
                             소중한 순간
                         </h2>
-                        <p class="ft-18-r color-main">
-                            TONE:FIT은 반려동물과 함께 입장할 수 있는 AI 무인 포토부스입니다.<br>
+                        <p class="ft-20-r color-main">
+                            TONE:FIT은 반려동물과 함께 입장할 수 있는 AI 무인 포토부스입니다.<br class="br-none">
                             가족 구성원이 된 반려동물과 함께, 최적의 사진을 남겨드립니다.
                         </p>
                     </div>
@@ -428,7 +355,7 @@
                                 </div>
                                 <div class="text-box">
                                     <h3 class="ft-20-sb color-main mb-10">반려동물 동반 촬영</h3>
-                                    <p class="color-main">소형견·고양이 등 소형 반려동물과 함께 촬영. 매장 청결 기준을 준수합니다.</p>
+                                    <p class="color-main ft-18-r">소형견·고양이 등 소형 반려동물과 함께 촬영. 매장 청결 기준을 준수합니다.</p>
                                 </div>
                             </div>
 
@@ -438,7 +365,7 @@
                                 </div>
                                 <div class="text-box">
                                     <h3 class="ft-20-sb color-main mb-10">AI 자동 최적화</h3>
-                                    <p class="color-main">반려동물이 있어도 AI가 조명과 필터를 자동 최적화하여 선명하고 아름다운 결과물을 만듭니다.</p>
+                                    <p class="color-main ft-18-r">반려동물이 있어도 AI가 조명과 필터를 자동 최적화하여 선명하고 아름다운 결과물을 만듭니다.</p>
                                 </div>
                             </div>
                         </div>
@@ -452,11 +379,11 @@
                 <div class="grid-wrap">
                     <div class="text-col d-flex flex-col">
                         <div class="text-col-upper d-flex flex-col gap-20">
-                            <h2 class="season-title ft-54-r title color-point">
-                                FRAME<br>
-                                & SEASON CONTENT
+                            <h2 class="season-title ft-48-r title color-point">
+                                FRAME &<br>
+                                SEASON CONTENT
                             </h2>
-                            <p class="ft-18-r color-main">
+                            <p class="ft-20-r color-main">
                                 계절과 트렌드, 다양한 콜라보 콘텐츠를 반영한<br>
                                 새로운 프레임 경험을 시즌별로 선보입니다.
                             </p>
@@ -470,8 +397,8 @@
                                 </div>
                             </div>
 
-                            <p class="ft-18-r color-main fade-up">
-                                TONE:FIT은 퍼스널 컬러 기반의 다양한 톤과 무드를 적용해<br>
+                            <p class="ft-20-r color-main fade-up">
+                                TONE:FIT은 퍼스널 컬러 기반의 다양한 톤과 무드를 적용해<br class="br-none">
                                 사용자에게 가장 잘 어울리는 프리미엄 경험을 제공합니다.
                             </p>
                         </div>
@@ -522,12 +449,12 @@
                     </div>
 
                     <div class="text-col d-flex flex-col jc-center">
-                        <h2 class="space-title ft-54-r title mb-20 color-point">
+                        <h2 class="space-title ft-48-r title mb-20 color-point">
                             사람과 반려동물이<br>
                             함께 가장 예쁘게<br>
                             기록되는 공간
                         </h2>
-                        <p class="space-desc ft-18-r color-main">
+                        <p class="space-desc ft-20-r color-main">
                             <span class="color-orange">TONE:FIT AI PERSONAL COLOR</span>를 통해<br>
                             자연스러운 순간을 기록합니다.
                         </p>
@@ -536,40 +463,20 @@
             </div>
         </section>
     </main>
+    <div data-include="../assets/components/footer.html" data-include-base="../"></div>
 
-    <footer class="footer bg-deep-base">
-        <div class="footer-container inner d-flex flex-col gap-20">
-            <div class="footer-logo-sns d-flex jc-between">
-                <p class="footer-logo">TONE:FIT</p>
-                <div class="footer-sns-bar d-flex">
-                    <img src="../assets/images/icon/icons_insta.svg" alt="TONE:FIT 인스타그램" class="footer-sns-btn">
-                    <img src="../assets/images/icon/icons_facebook.svg" alt="TONE:FIT 페이스북" class="footer-sns-btn">
-                    <img src="../assets/images/icon/icons_youtube.svg" alt="TONE:FIT 유튜브" class="footer-sns-btn">
-                </div>
-            </div>
-            <div class="footer-policy">
-                <p class="footer-policy-links">
-                    <button type="button" class="footer-policy-link" data-policy-open="terms">이용약관</button>
-                    <span class="footer-policy-divider" aria-hidden="true">|</span>
-                    <button type="button" class="footer-policy-link" data-policy-open="privacy">개인정보처리방침</button>
-                </p>
-            </div>
-            <div class="footer-info-contact d-flex jc-between ai-end">
-                <p class="footer-info">
-                    우편번호 : 06236, 서울특별시 강남구 테헤란로 123 TONEFIT 타워<br>
-                    Copyright: COPYRIGHT © 2026 TONE:FIT CO., LTD. ALL RIGHTS RESERVED.
-                </p>
-                <p class="email">
-                    Contact: support@tonefit.com
-                </p>
-            </div>
-        </div>
-    </footer>
+    <button type="button" class="back-to-top" aria-label="맨 위로 이동">
+        <svg class="back-to-top__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 5V19M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
 
     <script src="../assets/js/libs/gsap.min.js"></script>
     <script src="../assets/js/libs/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../assets/js/include.js"></script>
     <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/back-to-top.js"></script>
     <script src="../assets/js/policy-modal.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/brand.js"></script>
