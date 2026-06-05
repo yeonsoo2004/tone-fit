@@ -126,18 +126,38 @@ body {
     min-width: 0;
 }
 
+.rotate-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 115%;
+    transform-origin: center center;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
 .about-circle-wrap {
     width: 100%;
+    position: relative;
     max-width: 650px;
     aspect-ratio: 1;
-    border-radius: 50%;
-    overflow: hidden;
+    overflow: visible;
     justify-self: center;
 }
 
 .about-circle {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
     object-fit: cover;
     object-position: center;
     display: block;
@@ -726,7 +746,17 @@ body {
 
 .frame-hover>.topage-btn {
     margin: 0;
-    flex-shrink: 0;
+    max-width: 100%;
+    min-width: 0;
+    width: auto;
+    padding: clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 4vw, 1.875rem);
+    font-size: clamp(0.875rem, 2.5vw, 1.25rem);
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .frame:hover::before {
@@ -819,8 +849,9 @@ body {
 .viral-content {
     --viral-pad-y: 5rem;
     --viral-gap: 1.25rem;
-    --viral-flow-max: 12.5rem;
-    --viral-flow-basis: 8.5rem;
+    --viral-flow-max: 13rem;
+    --viral-flow-min: 10rem;
+    --viral-flow-basis: 10rem;
     --viral-flow-flex: 1 1 var(--viral-flow-basis);
     --viral-flow-inner-gap: 1.25rem;
     --viral-icon: 8.875rem;
@@ -828,6 +859,8 @@ body {
     --viral-label-px: 1.25rem;
     --viral-arrow-min: 1.5rem;
     --viral-arrow-max: 2.75rem;
+    --viral-arrow-size: clamp(var(--viral-arrow-min), 4vw, var(--viral-arrow-max));
+    --viral-arrow-gap: 1.5rem;
 
     padding: var(--viral-pad-y) 0;
     gap: var(--viral-gap);
@@ -836,25 +869,38 @@ body {
     min-width: 0;
 }
 
-.viral-content>img {
-    flex: 0 0 auto;
-    width: clamp(var(--viral-arrow-min), 4vw, var(--viral-arrow-max));
-    height: auto;
-    align-self: center;
-}
-
 .viral-content.fade-up {
     will-change: transform, opacity;
 }
 
 .viral-userflow {
     flex: var(--viral-flow-flex);
-    min-width: 0;
+    min-width: var(--viral-flow-min);
     max-width: var(--viral-flow-max);
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: var(--viral-flow-inner-gap);
+}
+
+/* 화살표 + 카드를 한 세트로 wrap (첫 번째 단계 제외) */
+.viral-userflow:not(:first-child) {
+    position: relative;
+    padding-left: calc(var(--viral-arrow-size) + var(--viral-arrow-gap));
+    min-width: calc(var(--viral-flow-min) + var(--viral-arrow-size) + var(--viral-arrow-gap));
+    max-width: calc(var(--viral-flow-max) + var(--viral-arrow-size) + var(--viral-arrow-gap));
+    box-sizing: border-box;
+}
+
+.viral-userflow:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--viral-arrow-size);
+    height: var(--viral-arrow-size);
+    background: url('../images/icon/arrow_right-viral.svg') center / contain no-repeat;
 }
 
 .userflow-img {
@@ -892,7 +938,29 @@ body {
     color: #1e2022;
 }
 
+/* 550px 이하: 첫 번째 단계에도 투명 화살표 영역을 맞춰 너비 정렬 */
+@media (max-width: 550px) {
+    .viral-userflow:first-child {
+        position: relative;
+        padding-left: calc(var(--viral-arrow-size) + var(--viral-arrow-gap));
+        min-width: calc(var(--viral-flow-min) + var(--viral-arrow-size) + var(--viral-arrow-gap));
+        max-width: calc(var(--viral-flow-max) + var(--viral-arrow-size) + var(--viral-arrow-gap));
+        box-sizing: border-box;
+    }
 
+    .viral-userflow:first-child::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: var(--viral-arrow-size);
+        height: var(--viral-arrow-size);
+        background: url('../images/icon/arrow_right-viral.svg') center / contain no-repeat;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
 
 /* =========================================
    10. 24HOUR SECTION
@@ -962,14 +1030,16 @@ body {
     .viral-content {
         --viral-pad-y: 4.5rem;
         --viral-gap: 1.125rem;
-        --viral-flow-max: 11.5rem;
-        --viral-flow-basis: 8rem;
+        --viral-flow-max: 12rem;
+        --viral-flow-min: 9.5rem;
+        --viral-flow-basis: 9.5rem;
         --viral-flow-inner-gap: 1.125rem;
         --viral-icon: 8rem;
         --viral-label-py: 0.5625rem;
         --viral-label-px: 1.125rem;
         --viral-arrow-min: 1.375rem;
         --viral-arrow-max: 2.5rem;
+        --viral-arrow-gap: 1.25rem;
     }
 }
 
@@ -981,14 +1051,16 @@ body {
     .viral-content {
         --viral-pad-y: 4rem;
         --viral-gap: 1rem;
-        --viral-flow-max: 11rem;
-        --viral-flow-basis: 7.5rem;
+        --viral-flow-max: 11.5rem;
+        --viral-flow-min: 9rem;
+        --viral-flow-basis: 9rem;
         --viral-flow-inner-gap: 1rem;
         --viral-icon: 7.5rem;
         --viral-label-py: 0.5rem;
         --viral-label-px: 1rem;
         --viral-arrow-min: 1.25rem;
         --viral-arrow-max: 2.25rem;
+        --viral-arrow-gap: 1.125rem;
     }
 
     .ai-personal-bg-candidates {
@@ -1103,7 +1175,8 @@ body {
     .viral-content {
         --viral-pad-y: 3.5rem;
         --viral-gap: 0.875rem;
-        --viral-flow-max: 10rem;
+        --viral-flow-max: 10.5rem;
+        --viral-flow-min: 8.5rem;
         --viral-flow-flex: 1 1 calc(33.333% - 1rem);
         --viral-flow-inner-gap: 0.875rem;
         --viral-icon: 7rem;
@@ -1111,6 +1184,7 @@ body {
         --viral-label-px: 0.875rem;
         --viral-arrow-min: 1.125rem;
         --viral-arrow-max: 2rem;
+        --viral-arrow-gap: 1rem;
     }
 
     .hero-title {
@@ -1159,7 +1233,8 @@ body {
     .viral-content {
         --viral-pad-y: 3rem;
         --viral-gap: 0.75rem;
-        --viral-flow-max: 9.5rem;
+        --viral-flow-max: 10rem;
+        --viral-flow-min: 8rem;
         --viral-flow-flex: 1 1 calc(50% - 0.75rem);
         --viral-flow-inner-gap: 0.75rem;
         --viral-icon: min(7rem, 18vw);
@@ -1167,6 +1242,7 @@ body {
         --viral-label-px: 0.75rem;
         --viral-arrow-min: 1rem;
         --viral-arrow-max: 1.75rem;
+        --viral-arrow-gap: 0.875rem;
     }
 }
 
@@ -1196,7 +1272,8 @@ body {
     .viral-content {
         --viral-pad-y: 2.5rem;
         --viral-gap: 0.625rem;
-        --viral-flow-max: 9rem;
+        --viral-flow-max: 9.5rem;
+        --viral-flow-min: 7.5rem;
         --viral-flow-flex: 1 1 calc(50% - 0.5rem);
         --viral-flow-inner-gap: 0.625rem;
         --viral-icon: 5.5rem;
@@ -1204,6 +1281,7 @@ body {
         --viral-label-px: 0.75rem;
         --viral-arrow-min: 0.875rem;
         --viral-arrow-max: 1.5rem;
+        --viral-arrow-gap: 0.75rem;
     }
 
     .frame-section .section-header h3>span,
@@ -1293,7 +1371,7 @@ body {
         height: auto;
     }
 
-    .franchise-mega .franchise-mega-content{
+    .franchise-mega .franchise-mega-content {
         width: 60%;
         aspect-ratio: 1;
         align-content: center;
@@ -1436,7 +1514,8 @@ body {
     .viral-content {
         --viral-pad-y: 2rem;
         --viral-gap: 0.5rem;
-        --viral-flow-max: 8rem;
+        --viral-flow-max: 8.5rem;
+        --viral-flow-min: 7rem;
         --viral-flow-flex: 1 1 calc(50% - 0.375rem);
         --viral-flow-inner-gap: 0.5rem;
         --viral-icon: 4.75rem;
@@ -1444,6 +1523,7 @@ body {
         --viral-label-px: 0.625rem;
         --viral-arrow-min: 0.75rem;
         --viral-arrow-max: 1.25rem;
+        --viral-arrow-gap: 0.625rem;
     }
 
     .ai-pet-section.inner,
@@ -1460,9 +1540,10 @@ body {
         font-size: 1.5rem;
     }
 
-    .ai-pet-content{
+    .ai-pet-content {
         flex-direction: column;
     }
+
     .ai-personal-bg-content,
     .ai-personal-bg-group {
         gap: 0.875rem;
@@ -1520,7 +1601,7 @@ body {
         text-align: left;
     }
 
-    .franchise-texts > .ft-20-r.color-main {
+    .franchise-texts>.ft-20-r.color-main {
         font-size: 0.875rem;
         line-height: 1.5;
         text-align: left;
