@@ -151,6 +151,19 @@ body:not(.page-home) .header {
     font: inherit;
 }
 
+.header-nav-link.is-current {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 1px;
+}
+
+.header-mobile-link.is-current,
+.header-mobile-sublist a.is-current {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 1px;
+}
+
 .header-mega {
     grid-column: 1 / -1;
     grid-row: 2;
