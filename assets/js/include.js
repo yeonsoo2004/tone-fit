@@ -88,9 +88,28 @@
         }
     }
 
+    function isHomePage() {
+        var currentPage = getCurrentPageName();
+
+        return document.body.classList.contains('page-home')
+            || currentPage === 'index.html';
+    }
+
+    function clearActiveHeaderNav(header) {
+        header.querySelectorAll('.header-nav-link, .header-mobile-link, .header-mobile-sublist a').forEach(function (link) {
+            link.classList.remove('is-current');
+            link.removeAttribute('aria-current');
+        });
+    }
+
     function markActiveHeaderNav() {
         var header = document.querySelector('.header');
         if (!header) {
+            return;
+        }
+
+        if (isHomePage()) {
+            clearActiveHeaderNav(header);
             return;
         }
 

@@ -151,6 +151,12 @@ body:not(.page-home) .header {
     font: inherit;
 }
 
+.page-home .header-nav-link,
+.page-home .header-mobile-link,
+.page-home .header-mobile-sublist a {
+    text-decoration: none;
+}
+
 .header-nav-link.is-current {
     text-decoration: underline;
     text-underline-offset: 0.3em;
