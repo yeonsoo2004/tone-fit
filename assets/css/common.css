@@ -74,6 +74,12 @@ br.mo-only,
    display: none;
 }
 
+/* PC·태블릿: 402px 이하 전용 줄바꿈 숨김 */
+br.br-402-only,
+.break-402-only {
+   display: none;
+}
+
 @media screen and (max-width: 768px) {
    br.pc-only,
    .break-pc-only {
@@ -99,6 +105,8 @@ br.mo-only,
 ========================================= */
 :root {
    --page-gutter-x: 0;
+   /* store · contact 아코디언 아이콘 — 최소 16px · 최대 24px */
+   --accordion-icon-size: clamp(1rem, 0.625rem + 0.75vw, 1.5rem);
 }
 
 .inner {
@@ -183,5 +191,9 @@ br.mo-only,
    }
    .br-none {
       display: none;
+   }
+   br.br-402-only,
+   .break-402-only {
+      display: block;
    }
 }
