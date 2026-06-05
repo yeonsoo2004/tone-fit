@@ -392,21 +392,6 @@
     min-width: 0;
 }
 
-.contact-faq-icon {
-    flex-shrink: 0;
-    width: var(--accordion-icon-size);
-    height: var(--accordion-icon-size);
-    background-color: #4C4948;
-    -webkit-mask: url('../images/icon/acodian.svg') no-repeat center / contain;
-    mask: url('../images/icon/acodian.svg') no-repeat center / contain;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.contact-faq-item.is-open .contact-faq-icon {
-    transform: rotate(180deg);
-    background-color: #D4734A;
-}
-
 .contact-faq-panel {
     max-height: 0;
     overflow: hidden;
@@ -1695,23 +1680,6 @@
     line-height: 2.5rem;
 }
 
-.contact-page .contact-faq-section .store-accordion-icon,
-.contact-page .contact-faq-section .contact-faq-icon {
-    flex-shrink: 0;
-    width: var(--accordion-icon-size);
-    height: var(--accordion-icon-size);
-    background-color: #4C4948;
-    -webkit-mask: url('../images/icon/acodian.svg') no-repeat center / contain;
-    mask: url('../images/icon/acodian.svg') no-repeat center / contain;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.contact-page .contact-faq-section .store-accordion-item.is-open .store-accordion-icon,
-.contact-page .contact-faq-section .contact-faq-item.is-open .contact-faq-icon {
-    transform: rotate(180deg);
-    background-color: #D4734A;
-}
-
 .contact-page .contact-faq-section .store-accordion-panel,
 .contact-page .contact-faq-section .contact-faq-panel {
     display: block;
@@ -1784,9 +1752,7 @@
 
 @media (prefers-reduced-motion: reduce) {
     .contact-page .contact-faq-section .store-accordion-panel,
-    .contact-page .contact-faq-section .contact-faq-panel,
-    .contact-page .contact-faq-section .store-accordion-icon,
-    .contact-page .contact-faq-section .contact-faq-icon {
+    .contact-page .contact-faq-section .contact-faq-panel {
         transition: none;
     }
 }

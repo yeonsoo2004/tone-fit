@@ -105,8 +105,22 @@ br.br-402-only,
 ========================================= */
 :root {
    --page-gutter-x: 0;
-   /* store · contact 아코디언 아이콘 — 최소 16px · 최대 24px */
-   --accordion-icon-size: clamp(1rem, 0.625rem + 0.75vw, 1.5rem);
+   /* store · contact 아코디언 아이콘 — 모바일 clamp · PC 32px(1025px~) */
+   --accordion-icon-size: clamp(1rem, 0.625rem + 1vw, 1.75rem);
+}
+
+/* store · contact 아코디언 아이콘 — assets/images/icon/acodian.svg */
+.store-accordion-icon {
+   flex-shrink: 0;
+   width: var(--accordion-icon-size);
+   height: var(--accordion-icon-size);
+   background: url('../images/icon/acodian.svg') no-repeat center / contain;
+   transition: transform 0.3s ease;
+}
+
+.store-accordion-item.is-open .store-accordion-icon,
+.contact-faq-item.is-open .store-accordion-icon {
+   transform: rotate(180deg);
 }
 
 .inner {
@@ -129,6 +143,13 @@ br.br-402-only,
 /* =========================================
    Responsive Layout System (반응형 레이아웃)
 ========================================= */
+
+/* PC (1025px 이상) — 아코디언 아이콘 32px */
+@media screen and (min-width: 1025px) {
+   :root {
+      --accordion-icon-size: 2rem;
+   }
+}
 
 /* 노트북 (1440px 이하) */
 @media screen and (max-width: 1440px) {

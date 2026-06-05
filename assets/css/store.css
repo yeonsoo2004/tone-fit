@@ -144,22 +144,6 @@
     pointer-events: none;
 }
 
-/* 아코디언 아이콘 — assets/images/icon/acodian.svg */
-.store-accordion-icon {
-    flex-shrink: 0;
-    width: var(--accordion-icon-size);
-    height: var(--accordion-icon-size);
-    background-color: #4C4948;
-    -webkit-mask: url('../images/icon/acodian.svg') no-repeat center / contain;
-    mask: url('../images/icon/acodian.svg') no-repeat center / contain;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.store-accordion-item.is-open .store-accordion-icon {
-    transform: rotate(180deg);
-    background-color: #D4734A;
-}
-
 /* =========================================
    6. ACCORDION PANEL (상세 정보)
 ========================================= */
