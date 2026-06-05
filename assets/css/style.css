@@ -132,7 +132,7 @@ body {
     left: 50%;
     width: 115%;
     transform-origin: center center;
-    animation: rotate 4s linear infinite;
+    animation: rotate 8s linear infinite;
 }
 
 @keyframes rotate {
@@ -320,7 +320,7 @@ body {
 }
 
 .franchise-mega .franchise-mega-content {
-    width: 60%;
+    width: clamp(360px,60%,60%);
     padding: 40px;
     position: relative;
     justify-self: flex-end;
@@ -337,6 +337,15 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+}
+
+.curved-logo{
+    position: absolute;
+    width: 115%;
+    aspect-ratio: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .franchise-mega-label {
@@ -1044,6 +1053,11 @@ body {
 }
 
 @media (max-width: 1280px) {
+
+    .franchise-mega .franchise-mega-content {
+        width: clamp(360px,70%,70%);
+    }
+
     .ai-personal-bg-content {
         gap: 1rem;
     }
@@ -1062,6 +1076,7 @@ body {
         --viral-arrow-max: 2.25rem;
         --viral-arrow-gap: 1.125rem;
     }
+
 
     .ai-personal-bg-candidates {
         gap: 0.75rem;
@@ -1086,28 +1101,69 @@ body {
         min-width: 0;
     }
 
-    /* 태블릿(1024px)부터 데코 레이어 삭제 + 레이아웃 1열 안착 */
+    /* 태블릿(1024px)부터 데코 레이어 삭제 + 1열 레이아웃 */
     .franchise-promo-deco {
         display: none;
     }
 
     .franchise-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 2rem;
+        margin-bottom: 100px;
+    }
+
+    .franchise-texts,
+    .franchise-side-label,
+    .franchise-benefits,
+    .franchise-divider-v,
+    .franchise-right-row,
+    .franchise-mega {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .franchise-mega {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        height: auto;
     }
 
     .franchise-mega .franchise-mega-content {
-        width: 30%;
+        width: 60%;
+        aspect-ratio: 1;
+        align-content: center;
+        margin: 2rem 0;
+    }
+
+    .franchise-divider-v {
+        display: none;
+    }
+
+    .franchise-texts {
+        margin-bottom: 8px;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .franchise-texts .franchise-promo-title span {
+        text-align: left;
+        transform-origin: left center;
     }
 
     .franchise-benefits {
-        justify-content: flex-start;
+        justify-content: center;
+        height: auto;
     }
 
-    .franchise-benefits,
     .franchise-right-row {
         height: auto;
-        min-height: 160px;
+        padding-top: 1.25rem;
+    }
+
+    .franchise-divider-h {
+        display: block;
     }
 
 
@@ -1348,65 +1404,6 @@ body {
         gap: 20px;
     }
 
-    .franchise-layout {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        row-gap: 2rem;
-        margin-bottom: 100px;
-    }
-
-    .franchise-texts,
-    .franchise-side-label,
-    .franchise-benefits,
-    .franchise-divider-v,
-    .franchise-right-row,
-    .franchise-mega {
-        grid-column: 1;
-        grid-row: auto;
-    }
-
-    .franchise-mega {
-        display: flex;
-        justify-content: center;
-        height: auto;
-    }
-
-    .franchise-mega .franchise-mega-content {
-        width: 60%;
-        aspect-ratio: 1;
-        align-content: center;
-        margin: 2rem 0;
-    }
-
-    .franchise-divider-v {
-        display: none;
-    }
-
-    .franchise-texts {
-        margin-bottom: 8px;
-        text-align: left;
-        align-items: flex-start;
-    }
-
-    .franchise-texts .franchise-promo-title span {
-        text-align: left;
-        transform-origin: left center;
-    }
-
-    .franchise-benefits {
-        justify-content: center;
-        height: auto;
-    }
-
-    .franchise-right-row {
-        height: auto;
-        padding-top: 1.25rem;
-    }
-
-    .franchise-divider-h {
-        display: block;
-    }
-
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
@@ -1556,7 +1553,7 @@ body {
         object-fit: cover;
     }
 
-   
+
     .frame-section .section-header h3 {
         font-size: 24px;
     }
@@ -1703,16 +1700,16 @@ body {
     .page-home {
         --promo-circle-size: min(20rem, 70vw);
     }
+
+    .page-home .franchise-mega .round {
+        width: 474px;
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .page-home {
         --promo-circle-size: min(18rem, 80vw);
-    }
-
-    .page-home .franchise-mega .round {
-        width: 474px;
-        max-width: 100%;
     }
 }
 
