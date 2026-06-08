@@ -74,18 +74,28 @@
     align-items: center;
 }
 
-/* 7그리드 · 동영상 828×729 */
+/* 7그리드 · 동영상 828×470 — 플레이어 래퍼가 너비 기준으로 균일 축소 */
 .startup-feature-video-col {
     grid-column: span 7;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    min-width: 0;
+    width: 100%;
+}
+
+.startup-feature-video-player {
+    width: 100%;
+    max-width: min(100%, 51.75rem);
+    min-width: 0;
 }
 
 .startup-feature-video {
     display: block;
     width: 100%;
-    max-width: min(100%, 51.75rem);
+    max-width: 100%;
     height: auto;
-    aspect-ratio: 828 / 470;
-    max-height: clamp(16rem, 28vw, 29.375rem);
+    vertical-align: top;
 }
 
 /* 5그리드 · 수직 중앙 */
@@ -492,13 +502,12 @@
     .startup-page .startup-feature-text-col {
         grid-column: auto;
         width: 100%;
+        min-width: 0;
     }
 
-    .startup-page .startup-feature-video {
+    .startup-page .startup-feature-video-player {
         width: 100%;
         max-width: 100%;
-        height: auto;
-        aspect-ratio: 828 / 470;
     }
 
     .startup-page .startup-feature-title {
@@ -963,8 +972,14 @@
 .startup-inquiry-email,
 .startup-inquiry-phone {
     margin: 0;
-    font-size: 1.5rem;
     font-weight: 500;
+    line-height: 1.6;
+    /* font-size — ft-20-r · font.css 반응형 스케일 위임 */
+}
+
+.startup-page .startup-inquiry-email,
+.startup-page .startup-inquiry-phone {
+    font-size: 1.5rem;
     line-height: 2rem;
 }
 
@@ -1095,6 +1110,18 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    color: #000000;
+}
+
+.startup-inquiry-file-name:not(.has-file) {
+    color: #000000;
+    opacity: 0.5;
+}
+
+.startup-inquiry-file-name.has-file {
+    opacity: 1;
 }
 
 .startup-inquiry-file-btn {
@@ -1419,21 +1446,6 @@
 
 .startup-inquiry-file-btn {
     cursor: pointer;
-}
-
-.startup-page .startup-inquiry-file-name:not(.has-file) {
-    opacity: 0.5;
-}
-
-/* Feature 섹션 — 비디오 (플랫 복구 · 그리드 세로 중앙) */
-.startup-page .startup-feature-grid {
-    align-items: center;
-}
-
-.startup-page .startup-feature-video-col {
-    display: flex;
-    align-items: center;
-    align-self: center;
 }
 
 .startup-brand-video {

@@ -1084,11 +1084,9 @@
 .startup-inquiry-email,
 .startup-inquiry-phone {
     margin: 0;
-    /* font-family: 'Pretendard', sans-serif; — font.css */
-    font-size: 1.5rem;
     font-weight: 500;
-    line-height: 2rem;
-    /* color: #4C4948; — .color-main */
+    line-height: 1.6;
+    /* font-size — ft-20-r · font.css 반응형 스케일 위임 */
 }
 
 .startup-inquiry-mail-icon {
@@ -1223,6 +1221,18 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    color: #000000;
+}
+
+.startup-inquiry-file-name:not(.has-file) {
+    color: #000000;
+    opacity: 0.5;
+}
+
+.startup-inquiry-file-name.has-file {
+    opacity: 1;
 }
 
 .startup-inquiry-file-btn {
@@ -1466,9 +1476,7 @@
         line-height: 1.25;
     }
 
-    .contact-page .startup-inquiry-label,
-    .contact-page .startup-inquiry-email,
-    .contact-page .startup-inquiry-phone {
+    .contact-page .startup-inquiry-label {
         font-size: 1.125rem;
         line-height: 1.6;
     }
@@ -1550,8 +1558,6 @@
     }
 
     .contact-page .startup-inquiry-label,
-    .contact-page .startup-inquiry-email,
-    .contact-page .startup-inquiry-phone,
     .contact-page .startup-inquiry-agree-label {
         font-size: 1rem;
         line-height: 1.6;

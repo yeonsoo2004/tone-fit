@@ -260,6 +260,7 @@
     .space-page .space-subtitle {
         margin-top: 1.25rem;
         line-height: 1.875rem;
+        font-weight: 500;
     }
 
     .space-page .space-caption {
@@ -344,6 +345,7 @@
     .space-page .space-subtitle {
         margin-top: 1rem;
         line-height: 1.75rem;
+        font-weight: 500;
     }
 
     .space-page .space-caption {
