@@ -1092,6 +1092,10 @@ body {
     .ai-tone-finder-sec-tag strong {
         font-size: clamp(3rem, 8vw, 6.25rem);
     }
+
+    .ai-24hour-section {
+        height: 30.5rem;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -1504,6 +1508,10 @@ body {
     .ai-tone-finder-system {
         border-color: rgba(255, 255, 255, 0.5);
     }
+
+    .ai-24hour-section {
+        height: 20.9375rem;
+    }
 }
 
 @media (max-width: 402px) {
@@ -1669,6 +1677,10 @@ body {
 
     .franchise-mega-unit {
         font-size: 1.25rem;
+    }
+
+    .ai-24hour-section {
+        height: 18.1875rem;
     }
 }
 
