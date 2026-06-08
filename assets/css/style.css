@@ -1379,7 +1379,7 @@ body {
 
     .ai-pet-section .ai-pet-content,
     .page-home .ai-pet-content {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
     }
 
