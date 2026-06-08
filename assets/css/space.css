@@ -35,16 +35,50 @@
     line-height: 3.875rem;
 }
 
-
-/* Space 탭바 — 3탭 균등 분할·반응형 grid (비주얼: component.css) */
-.space-page .space-tab-bar {
-    flex-wrap: nowrap;
+/* 탭 버튼 — component.css 오버라이드 · 특수 규격 유지 */
+.space-tab-bar .tab-btn {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5rem 2.5rem;
+    line-height: 2rem;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(51, 52, 70, 0.1);
+    border-radius: 3.125rem;
+    cursor: pointer;
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    -webkit-appearance: none;
 }
 
-.space-page .space-tab-bar .lnb-tab-btn,
-.space-page .space-tab-bar .tab-btn {
-    min-width: 0;
-    max-width: 100%;
+.space-tab-bar .tab-btn:hover:not(.active) {
+    box-shadow: 0px 0px 3px 0px #D4734A;
+}
+
+.space-tab-bar .tab-btn.active {
+    color: #FFFFFF;
+    background-color: #D4734A;
+    border: 1px solid rgba(51, 52, 70, 0.1);
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.space-tab-bar .tab-btn.active:hover {
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.space-tab-bar .tab-btn:focus,
+.space-tab-bar .tab-btn:focus-visible {
+    outline: none;
+}
+
+.space-tab-bar .tab-btn:focus-visible:not(.active) {
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.space-tab-bar .tab-btn.active:focus,
+.space-tab-bar .tab-btn.active:focus-visible {
+    color: #FFFFFF;
+    background-color: #D4734A;
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
 .space-tab-panels {
@@ -62,7 +96,7 @@
 
 /* .ft-32-b .color-main */
 .space-subtitle {
-    margin: 1.875rem 0 0;
+    margin: 1.9375rem 0 0;
     line-height: 2.75rem;
     text-align: center;
 }
@@ -203,10 +237,13 @@
         max-width: 100%;
     }
 
-
-    .space-page .space-tab-bar .lnb-tab-btn,
     .space-page .space-tab-bar .tab-btn {
         width: 100%;
+        min-width: 0;
+        padding: 0.5rem 1rem;
+        line-height: 1.6;
+        text-align: center;
+        white-space: nowrap;
     }
 
     /* 메인 이미지 상단 · 2×2 바둑판 하단 */
@@ -260,7 +297,6 @@
     .space-page .space-subtitle {
         margin-top: 1.25rem;
         line-height: 1.875rem;
-        font-weight: 500;
     }
 
     .space-page .space-caption {
@@ -276,11 +312,13 @@
         max-width: 100%;
     }
 
-    .space-page .space-tab-bar .lnb-tab-btn,
     .space-page .space-tab-bar .tab-btn {
         width: 100%;
+        min-width: 0;
+        padding: 0.4375rem 0.75rem;
+        line-height: 1.6;
+        text-align: center;
         white-space: nowrap;
-        word-break: keep-all;
         overflow: visible;
         text-overflow: clip;
     }
@@ -345,7 +383,6 @@
     .space-page .space-subtitle {
         margin-top: 1rem;
         line-height: 1.75rem;
-        font-weight: 500;
     }
 
     .space-page .space-caption {
@@ -357,11 +394,14 @@
         gap: 0.375rem;
     }
 
-    .space-page .space-tab-bar .lnb-tab-btn,
     .space-page .space-tab-bar .tab-btn {
         width: 100%;
+        min-width: 0;
+        font-size: 14px;
+        padding: 0.375rem 0.625rem;
+        line-height: 1.6;
+        text-align: center;
         white-space: nowrap;
-        word-break: keep-all;
         overflow: visible;
         text-overflow: clip;
     }

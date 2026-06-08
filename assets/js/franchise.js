@@ -149,26 +149,13 @@
             return;
         }
 
-        var emptyLabel = $fileName.data('empty-label') || '선택된 파일 없음';
-
-        function setFileNameState(file) {
-            if (file) {
-                $fileName.text(file.name).addClass('has-file');
-                return;
-            }
-
-            $fileName.text(emptyLabel).removeClass('has-file');
-        }
-
-        setFileNameState(null);
-
         $fileBtn.on('click', function () {
             $fileInput.trigger('click');
         });
 
         $fileInput.on('change', function () {
             var file = this.files && this.files[0];
-            setFileNameState(file || null);
+            $fileName.text(file ? file.name : '');
         });
     }
 
@@ -295,9 +282,7 @@
             fields.forEach(function (field) {
                 setInquiryFieldError(field.$error, '');
             });
-            var $fileName = $page.find('#startup-inquiry-file-name');
-            var emptyLabel = $fileName.data('empty-label') || '선택된 파일 없음';
-            $fileName.text(emptyLabel).removeClass('has-file');
+            $page.find('#startup-inquiry-file-name').text('');
         });
     }
 
