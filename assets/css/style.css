@@ -522,8 +522,6 @@ body {
 }
 
 .section-header hr {
-    margin-top: 1.875rem;
-    margin-bottom: 5rem;
     width: min(33.75rem, 100%);
     margin-left: auto;
     margin-right: auto;
@@ -793,9 +791,6 @@ body {
 /* =========================================
    8. REVIEW SECTION
 ========================================= */
-.review-content {
-    padding-bottom: 5rem;
-}
 
 .review-marquee {
     width: 100%;
@@ -1342,9 +1337,7 @@ body {
         flex-direction: column;
     }
 
-    .section-header hr {
-        margin: 20px auto 0;
-    }
+
 
     .viral-content {
         --viral-pad-y: 2.5rem;
