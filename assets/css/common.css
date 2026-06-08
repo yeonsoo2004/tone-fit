@@ -25,6 +25,28 @@ body {
 .bg-sub-orange { background-color: #BC8F76; }
 
 /* =========================================
+   Layout & Grid System (PC 기준 1440px)
+========================================= */
+:root {
+   --page-gutter-x: 0;
+}
+
+.inner {
+   max-width: 1440px;
+   width: 100%;
+   margin: 0 auto;
+   min-width: 0;
+   box-sizing: border-box;
+   padding-left: var(--page-gutter-x);
+   padding-right: var(--page-gutter-x);
+}
+
+.grid-wrap {
+   display: grid;
+   grid-template-columns: repeat(12, 1fr); /* 12단 그리드 */
+   gap: 24px;
+}
+/* =========================================
    Layout & Flex Classes (레이아웃 & 정렬)
 ========================================= */
 .d-flex { display: flex; }
@@ -94,28 +116,7 @@ br.mo-only,
    padding-bottom: 8.125rem;
 }
 
-/* =========================================
-   Layout & Grid System (PC 기준 1440px)
-========================================= */
-:root {
-   --page-gutter-x: 0;
-}
 
-.inner {
-   max-width: 1440px;
-   width: 100%;
-   margin: 0 auto;
-   min-width: 0;
-   box-sizing: border-box;
-   padding-left: var(--page-gutter-x);
-   padding-right: var(--page-gutter-x);
-}
-
-.grid-wrap {
-   display: grid;
-   grid-template-columns: repeat(12, 1fr); /* 12단 그리드 */
-   gap: 24px;
-}
 
 
 /* =========================================
