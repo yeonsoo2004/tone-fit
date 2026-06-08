@@ -151,25 +151,6 @@ body:not(.page-home) .header {
     font: inherit;
 }
 
-.page-home .header-nav-link,
-.page-home .header-mobile-link,
-.page-home .header-mobile-sublist a {
-    text-decoration: none;
-}
-
-.header-nav-link.is-current {
-    text-decoration: underline;
-    text-underline-offset: 0.3em;
-    text-decoration-thickness: 1px;
-}
-
-.header-mobile-link.is-current,
-.header-mobile-sublist a.is-current {
-    text-decoration: underline;
-    text-underline-offset: 0.3em;
-    text-decoration-thickness: 1px;
-}
-
 .header-mega {
     grid-column: 1 / -1;
     grid-row: 2;
@@ -572,95 +553,65 @@ body.is-header-nav-open {
 
 
 /* ===================================
-   3. Tab Bar — Space Concept 기준 공통 컴포넌트
-   HTML: .lnb-tab-bar + .lnb-tab-btn.ft-20-r
-   Space JS 훅: .space-tab-bar .tab-btn (동일 서식)
+   3. LNB Tab Button (Left Navigation Tab Button)
    =================================== */
 
-.lnb-tab-bar,
-.space-tab-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+.lnb-tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
 }
 
-.lnb-tab-btn,
-.space-tab-bar .tab-btn {
-  box-sizing: border-box;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Default state */
+.lnb-tab-btn {
+  display: block;
   background-color: #FFFFFF;
   color: #D4734A;
-  padding: 0.5rem 2.5rem;
-  line-height: 2rem;
-  height: auto;
-  border: 1px solid rgba(51, 52, 70, 0.1);
-  border-radius: 3.125rem;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0 40px;
+  height: 68px;
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  transition: all 0.25s ease;
-  white-space: nowrap;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  text-align: center;
-  appearance: none;
-  -webkit-appearance: none;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.lnb-tab-btn:hover:not(.active),
-.space-tab-bar .tab-btn:hover:not(.active) {
+.lnb-tab-btn:hover {
   background-color: #FFFFFF;
   color: #D4734A;
-  border: 1px solid rgba(51, 52, 70, 0.1);
   box-shadow: 0 0 3px 0 #D4734A;
 }
 
-.lnb-tab-btn.active,
-.lnb-tab-btn.active:hover,
-.space-tab-bar .tab-btn.active,
-.space-tab-bar .tab-btn.active:hover {
+/* Active state */
+.lnb-tab-btn.active {
   background-color: #D4734A;
   color: #FFFFFF;
-  border: 1px solid rgba(51, 52, 70, 0.1);
-  border-radius: 3.125rem;
-  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
 }
 
-.lnb-tab-btn:disabled,
-.space-tab-bar .tab-btn:disabled {
+.lnb-tab-btn.active:hover {
+  background-color: #D4734A;
+  color: #FFFFFF;
+  border-radius: 50px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.lnb-tab-btn:disabled {
   background-color: #f5f5f5;
   color: #a9a9a9;
-  border: 1px solid rgba(51, 52, 70, 0.1);
   cursor: not-allowed;
   box-shadow: none;
 }
 
-.lnb-tab-btn:focus,
-.lnb-tab-btn:focus-visible,
-.space-tab-bar .tab-btn:focus,
-.space-tab-bar .tab-btn:focus-visible {
-  outline: none;
-}
-
-.lnb-tab-btn:focus-visible:not(.active),
-.space-tab-bar .tab-btn:focus-visible:not(.active) {
-  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-}
-
-.lnb-tab-btn.active:focus,
-.lnb-tab-btn.active:focus-visible,
-.space-tab-bar .tab-btn.active:focus,
-.space-tab-bar .tab-btn.active:focus-visible {
-  color: #FFFFFF;
-  background-color: #D4734A;
-  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+.lnb-tab-btn:focus-visible {
+  outline: 2px solid #D4734A;
+  outline-offset: 2px;
 }
 
 
