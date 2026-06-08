@@ -522,8 +522,6 @@ body {
 }
 
 .section-header hr {
-    margin-top: 1.875rem;
-    margin-bottom: 5rem;
     width: min(33.75rem, 100%);
     margin-left: auto;
     margin-right: auto;
@@ -793,9 +791,6 @@ body {
 /* =========================================
    8. REVIEW SECTION
 ========================================= */
-.review-content {
-    padding: 5rem 0;
-}
 
 .review-marquee {
     width: 100%;
@@ -1030,6 +1025,10 @@ body {
 .ai-24hour-section .section-header .title,
 .ai-24hour-section .color-main {
     color: #fff;
+}
+
+.br{
+    display: none;
 }
 
 /* =========================================
@@ -1338,9 +1337,7 @@ body {
         flex-direction: column;
     }
 
-    .section-header hr {
-        margin: 20px auto 0;
-    }
+
 
     .viral-content {
         --viral-pad-y: 2.5rem;
@@ -1522,6 +1519,10 @@ body {
     .ai-24hour-section {
         height: 20.9375rem;
     }
+
+    .br{
+        display: block;
+    }
 }
 
 @media (max-width: 402px) {
@@ -1598,6 +1599,7 @@ body {
 
     /* franchise-layout — 402px 모바일 */
     .franchise-layout {
+        position: relative;
         margin-top: 3rem;
         margin-bottom: 3rem;
         row-gap: 1.25rem;
@@ -1627,6 +1629,7 @@ body {
     }
 
     .franchise-benefits {
+        position: absolute;
         justify-content: flex-start;
         flex-wrap: nowrap;
         gap: 0.5rem;
