@@ -861,8 +861,6 @@ body {
 .viral-content {
     --viral-pad-y: 5rem;
     --viral-gap: 1.25rem;
-    --viral-flow-max: 13rem;
-    --viral-flow-min: 10rem;
     --viral-flow-basis: 10rem;
     --viral-flow-flex: 1 1 var(--viral-flow-basis);
     --viral-flow-inner-gap: 1.25rem;
@@ -874,7 +872,8 @@ body {
     --viral-arrow-size: clamp(var(--viral-arrow-min), 4vw, var(--viral-arrow-max));
     --viral-arrow-gap: 1.5rem;
 
-    padding: var(--viral-pad-y) 0;
+    padding-top: var(--viral-pad-y);
+    padding-bottom: var(--viral-pad-y);
     gap: var(--viral-gap);
     flex-wrap: wrap;
     justify-content: center;
@@ -896,7 +895,7 @@ body {
 }
 
 /* 화살표 + 카드를 한 세트로 wrap (첫 번째 단계 제외) */
-.viral-userflow:not(:first-child) {
+.viral-userflow{
     position: relative;
     padding-left: calc(var(--viral-arrow-size) + var(--viral-arrow-gap));
     min-width: calc(var(--viral-flow-min) + var(--viral-arrow-size) + var(--viral-arrow-gap));
@@ -904,7 +903,7 @@ body {
     box-sizing: border-box;
 }
 
-.viral-userflow:not(:first-child)::before {
+.viral-userflow::before {
     content: '';
     position: absolute;
     left: 0;
@@ -914,6 +913,17 @@ body {
     height: var(--viral-arrow-size);
     background: url('../images/icon/arrow_right-viral.svg') center / contain no-repeat;
 }
+
+.viral-content>div:first-child>.viral-userflow:first-child::before{
+    display: none;
+}
+
+.viral-content>div:first-child>.viral-userflow:first-child{
+    padding-left: 0;
+}
+
+
+
 
 .userflow-img {
     background-color: #fff;
@@ -969,8 +979,6 @@ body {
         width: var(--viral-arrow-size);
         height: var(--viral-arrow-size);
         background: url('../images/icon/arrow_right-viral.svg') center / contain no-repeat;
-        opacity: 0;
-        pointer-events: none;
     }
 }
 
