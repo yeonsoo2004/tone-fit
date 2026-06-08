@@ -104,9 +104,7 @@ function renderAccordion() {
                 'id="store-trigger-' + index + '">' +
                 '<span class="store-name ft-28-r color-point">' + store.name + '</span>' +
                 '<span class="store-address-preview ft-20-r color-main" aria-hidden="true">' + store.address + '</span>' +
-                '<span class="store-accordion-icon" aria-hidden="true">' +
-                    '<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>' +
-                '</span>' +
+                '<span class="store-accordion-icon" aria-hidden="true"></span>' +
             '</button>' +
             '<div class="store-accordion-panel" ' +
                 'id="store-panel-' + index + '" ' +
