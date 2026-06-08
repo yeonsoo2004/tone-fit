@@ -794,7 +794,7 @@ body {
    8. REVIEW SECTION
 ========================================= */
 .review-content {
-    padding: 5rem 0;
+    padding-bottom: 5rem;
 }
 
 .review-marquee {
