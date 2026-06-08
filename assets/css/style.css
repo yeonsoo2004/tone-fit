@@ -36,7 +36,7 @@ body {
 .hero-bg {
     position: absolute;
     inset: 0;
-    z-index: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -78,7 +78,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 50%;
-    z-index: 1;
+    z-index: 10;
     display: block;
     width: clamp(3rem, 10vw, 6.25rem);
     height: clamp(3rem, 10vw, 6.25rem);
@@ -124,6 +124,25 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 5rem;
     min-width: 0;
+}
+
+.rotate-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 115%;
+    transform-origin: center center;
+    animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 .about-circle-wrap {
@@ -301,32 +320,33 @@ body {
     overflow: visible;
 }
 
-.franchise-mega .round {
-    position: absolute;
-    right: -100px;
-    top: 50%;
-    z-index: 3;
-    width: 35vw;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: #F8F5F0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
-    transform: translateY(-70%);
+.franchise-mega .franchise-mega-content {
+    width: clamp(360px, 60%, 60%);
+    padding: 40px;
+    position: relative;
+    justify-self: flex-end;
 }
 
-.franchise-mega-content {
-    width: 70%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    align-self: center;
-    justify-content: center;
-    gap: 0.25rem;
-    box-sizing: border-box;
+.franchise-mega .franchise-mega-content::before {
+    content: "";
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #F8F5F0;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.curved-logo {
+    position: absolute;
+    width: 115%;
+    aspect-ratio: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .franchise-mega-label {
@@ -386,7 +406,10 @@ body {
 
 .ai-tone-finder-visual {
     position: absolute;
-    inset: 0;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
     z-index: 2;
     pointer-events: none;
 }
@@ -463,8 +486,8 @@ body {
     width: 100%;
     height: 100%;
     max-width: 100%;
-    object-fit: contain;
-    object-position: left center;
+    object-fit: cover;
+    object-position: right;
     opacity: 0;
 }
 
@@ -532,8 +555,6 @@ body {
 }
 
 .section-header hr {
-    margin-top: 1.875rem;
-    margin-bottom: 5rem;
     width: min(33.75rem, 100%);
     margin-left: auto;
     margin-right: auto;
@@ -668,7 +689,6 @@ body {
 .frame-content {
     width: 100%;
     max-width: 100%;
-    margin-top: 5rem;
     overflow: hidden;
 }
 
@@ -777,9 +797,6 @@ body {
 /* =========================================
    8. REVIEW SECTION
 ========================================= */
-.review-content {
-    padding: 5rem 0;
-}
 
 .review-marquee {
     width: 100%;
@@ -884,7 +901,8 @@ body {
     --viral-arrow-min: 1.5rem;
     --viral-arrow-max: 2.75rem;
 
-    padding: var(--viral-pad-y) 0;
+    padding-top: var(--viral-pad-y);
+    padding-bottom: var(--viral-pad-y);
     gap: var(--viral-gap);
     flex-wrap: wrap;
     justify-content: center;
@@ -911,6 +929,37 @@ body {
     flex-direction: column;
     gap: var(--viral-flow-inner-gap);
 }
+
+/* 화살표 + 카드를 한 세트로 wrap (첫 번째 단계 제외) */
+.viral-userflow {
+    position: relative;
+    padding-left: calc(var(--viral-arrow-size) + var(--viral-arrow-gap));
+    min-width: calc(var(--viral-flow-min) + var(--viral-arrow-size) + var(--viral-arrow-gap));
+    max-width: calc(var(--viral-flow-max) + var(--viral-arrow-size) + var(--viral-arrow-gap));
+    box-sizing: border-box;
+}
+
+.viral-userflow::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--viral-arrow-size);
+    height: var(--viral-arrow-size);
+    background: url('../images/icon/arrow_right-viral.svg') center / contain no-repeat;
+}
+
+.viral-content>div:first-child>.viral-userflow:first-child::before {
+    display: none;
+}
+
+.viral-content>div:first-child>.viral-userflow:first-child {
+    padding-left: 0;
+}
+
+
+
 
 .userflow-img {
     background-color: #fff;
@@ -947,6 +996,17 @@ body {
     color: #1e2022;
 }
 
+
+    .viral-userflow:first-child::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: var(--viral-arrow-size);
+        height: var(--viral-arrow-size);
+        background: url('../images/icon/arrow_right-viral.svg') center / contain no-repeat;
+    }
 
 
 /* =========================================
@@ -997,6 +1057,10 @@ body {
     color: #fff;
 }
 
+.br{
+    display: none;
+}
+
 /* =========================================
    INDEX RESPONSIVE (769px ~ : horizontal scroll prevention)
    Tablet layout: max-width 768px (applied separately)
@@ -1034,6 +1098,11 @@ body {
 }
 
 @media (max-width: 1280px) {
+
+    .franchise-mega .franchise-mega-content {
+        width: clamp(360px, 70%, 70%);
+    }
+
     .ai-personal-bg-content {
         gap: 1rem;
     }
@@ -1051,6 +1120,7 @@ body {
         --viral-arrow-max: 2.25rem;
     }
 
+
     .ai-personal-bg-candidates {
         gap: 0.75rem;
     }
@@ -1061,6 +1131,10 @@ body {
 
     .ai-tone-finder-sec-tag strong {
         font-size: clamp(3rem, 8vw, 6.25rem);
+    }
+
+    .ai-24hour-section {
+        height: 30.5rem;
     }
 }
 
@@ -1074,38 +1148,69 @@ body {
         min-width: 0;
     }
 
-    /* 태블릿(1024px)부터 데코 레이어 삭제 + 레이아웃 1열 안착 */
+    /* 태블릿(1024px)부터 데코 레이어 삭제 + 1열 레이아웃 */
     .franchise-promo-deco {
         display: none;
     }
 
     .franchise-layout {
+        display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         row-gap: 2rem;
-        min-width: 0;
+        margin-bottom: 100px;
     }
 
     .franchise-texts,
+    .franchise-side-label,
     .franchise-benefits,
+    .franchise-divider-v,
+    .franchise-right-row,
     .franchise-mega {
         grid-column: 1;
         grid-row: auto;
     }
 
+    .franchise-mega {
+        display: flex;
+        justify-content: center;
+        height: auto;
+    }
+
+    .franchise-mega .franchise-mega-content {
+        width: 60%;
+        aspect-ratio: 1;
+        align-content: center;
+        margin: 2rem 0;
+    }
+
+    .franchise-divider-v {
+        display: none;
+    }
+
+    .franchise-texts {
+        margin-bottom: 8px;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .franchise-texts .franchise-promo-title span {
+        text-align: left;
+        transform-origin: left center;
+    }
+
     .franchise-benefits {
-        justify-content: flex-start;
+        justify-content: center;
+        height: auto;
     }
 
-    .franchise-benefit-circle {
-        width: min(160px, 26vw);
-        height: min(160px, 26vw);
-    }
-
-    .franchise-benefits,
     .franchise-right-row {
         height: auto;
-        min-height: 160px;
+        padding-top: 1.25rem;
+    }
+
+    .franchise-divider-h {
+        display: block;
     }
 
     .ai-pet-section.inner,
@@ -1255,9 +1360,7 @@ body {
         flex-direction: column;
     }
 
-    .section-header hr {
-        margin: 20px auto 0;
-    }
+
 
     .viral-content {
         --viral-pad-y: 2.5rem;
@@ -1304,7 +1407,7 @@ body {
 
     .ai-pet-section .ai-pet-content,
     .page-home .ai-pet-content {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
     }
 
@@ -1336,67 +1439,6 @@ body {
         gap: 20px;
     }
 
-    .franchise-layout {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        row-gap: 2rem;
-        margin-bottom: 100px;
-    }
-
-    .franchise-texts,
-    .franchise-side-label,
-    .franchise-benefits,
-    .franchise-divider-v,
-    .franchise-right-row,
-    .franchise-mega {
-        grid-column: 1;
-        grid-row: auto;
-    }
-
-    .franchise-mega {
-        display: flex;
-        justify-content: center;
-        height: auto;
-    }
-
-    .franchise-mega .round {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 474px;
-        max-width: 100%;
-        transform: none;
-    }
-
-    .franchise-divider-v {
-        display: none;
-    }
-
-    .franchise-texts {
-        margin-bottom: 8px;
-        text-align: left;
-        align-items: flex-start;
-    }
-
-    .franchise-texts .franchise-promo-title span {
-        text-align: left;
-        transform-origin: left center;
-    }
-
-    .franchise-benefits {
-        justify-content: center;
-        height: auto;
-    }
-
-    .franchise-right-row {
-        height: auto;
-        padding-top: 1.25rem;
-    }
-
-    .franchise-divider-h {
-        display: block;
-    }
-
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
@@ -1418,8 +1460,9 @@ body {
     }
 
     .ai-tone-finder-visual {
-        inset: 0;
-        width: 100%;
+        width: 50%;
+        top: 0;
+        left: 0;
         z-index: 0;
     }
 
@@ -1437,7 +1480,7 @@ body {
         max-width: none;
         height: 100%;
         object-fit: cover;
-        object-position: 55% center;
+        object-position: right;
     }
 
     .ai-tone-finder .inner {
@@ -1457,6 +1500,10 @@ body {
     .ai-tone-finder-header,
     .ai-tone-finder-lower {
         grid-column: 1;
+    }
+
+    .ai-tone-finder-visual {
+        width: 100%;
     }
 
     .ai-tone-finder-grid .ai-tone-finder-header,
@@ -1488,6 +1535,14 @@ body {
 
     .ai-tone-finder-system {
         border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .ai-24hour-section {
+        height: 20.9375rem;
+    }
+
+    .br{
+        display: block;
     }
 }
 
@@ -1540,10 +1595,6 @@ body {
         object-fit: cover;
     }
 
-    .frame-section .section-header {
-        text-align: end;
-        align-items: flex-end;
-    }
 
     .frame-section .section-header h3 {
         font-size: 24px;
@@ -1562,6 +1613,7 @@ body {
 
     /* franchise-layout — 402px 모바일 */
     .franchise-layout {
+        position: relative;
         margin-top: 3rem;
         margin-bottom: 3rem;
         row-gap: 1.25rem;
@@ -1591,6 +1643,7 @@ body {
     }
 
     .franchise-benefits {
+        position: absolute;
         justify-content: flex-start;
         flex-wrap: nowrap;
         gap: 0.5rem;
@@ -1652,6 +1705,10 @@ body {
     .franchise-mega-unit {
         font-size: 1.25rem;
     }
+
+    .ai-24hour-section {
+        height: 18.1875rem;
+    }
 }
 
 /* =========================================
@@ -1690,16 +1747,20 @@ body {
     .page-home {
         --promo-circle-size: min(20rem, 70vw);
     }
+
+    .page-home .franchise-mega .round {
+        width: 474px;
+        max-width: 100%;
+    }
+
+    .ai-tone-finder-divider {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .page-home {
         --promo-circle-size: min(18rem, 80vw);
-    }
-
-    .page-home .franchise-mega .round {
-        width: 474px;
-        max-width: 100%;
     }
 }
 
