@@ -425,6 +425,7 @@
 .startup-franchise-card-title {
     margin: clamp(1.25rem, 2.5vw, 2.5rem) 0 0;
     line-height: 2.25rem;
+    font-weight: 600;
 }
 
 /* .ft-20-r .color-main · 타이틀 하단 ~ 1.25rem */
