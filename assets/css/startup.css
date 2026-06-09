@@ -74,18 +74,28 @@
     align-items: center;
 }
 
-/* 7그리드 · 동영상 828×729 */
+/* 7그리드 · 동영상 828×470 — 플레이어 래퍼가 너비 기준으로 균일 축소 */
 .startup-feature-video-col {
     grid-column: span 7;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    min-width: 0;
+    width: 100%;
+}
+
+.startup-feature-video-player {
+    width: 100%;
+    max-width: min(100%, 51.75rem);
+    min-width: 0;
 }
 
 .startup-feature-video {
     display: block;
     width: 100%;
-    max-width: min(100%, 51.75rem);
+    max-width: 100%;
     height: auto;
-    aspect-ratio: 828 / 470;
-    max-height: clamp(16rem, 28vw, 29.375rem);
+    vertical-align: top;
 }
 
 /* 5그리드 · 수직 중앙 */
@@ -415,6 +425,7 @@
 .startup-franchise-card-title {
     margin: clamp(1.25rem, 2.5vw, 2.5rem) 0 0;
     line-height: 2.25rem;
+    font-weight: 600;
 }
 
 /* .ft-20-r .color-main · 타이틀 하단 ~ 1.25rem */
@@ -540,13 +551,12 @@
     .startup-page .startup-feature-text-col {
         grid-column: auto;
         width: 100%;
+        min-width: 0;
     }
 
-    .startup-page .startup-feature-video {
+    .startup-page .startup-feature-video-player {
         width: 100%;
         max-width: 100%;
-        height: auto;
-        aspect-ratio: 828 / 470;
     }
 
     .startup-page .startup-feature-title {
@@ -1510,17 +1520,6 @@
 
 .startup-page .startup-inquiry-file-name:not(.has-file) {
     opacity: 0.5;
-}
-
-/* Feature 섹션 — 비디오 (플랫 복구 · 그리드 세로 중앙) */
-.startup-page .startup-feature-grid {
-    align-items: center;
-}
-
-.startup-page .startup-feature-video-col {
-    display: flex;
-    align-items: center;
-    align-self: center;
 }
 
 .startup-brand-video {
