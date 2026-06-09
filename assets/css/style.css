@@ -331,7 +331,7 @@ body {
 
 .franchise-mega .franchise-mega-content {
     width: clamp(25.1875rem, 60%, 60%);
-    padding: clamp(1rem,2vw,2.5rem);
+    padding: clamp(1rem, 2vw, 2.5rem);
     position: relative;
     justify-self: flex-end;
 }
@@ -1128,9 +1128,10 @@ body {
         margin: 2rem 0;
     }
 
-    .franchise-mega-value{
-        font-size: clamp(5rem,13vw,6.25rem);
+    .franchise-mega-value {
+        font-size: clamp(5rem, 13vw, 6.25rem);
     }
+
     .franchise-divider-v {
         display: none;
     }
@@ -1316,6 +1317,10 @@ body {
         --viral-arrow-min: 0.875rem;
         --viral-arrow-max: 1.5rem;
         --viral-arrow-gap: 0.75rem;
+    }
+
+    .identity-header span {
+        display: none;
     }
 
     .frame-section .section-header h3>span,
@@ -1633,8 +1638,8 @@ body {
         transform: none;
     }
 
-    .franchise-mega .franchise-mega-content{
-        padding: clamp(2rem,8vw,2.5rem);
+    .franchise-mega .franchise-mega-content {
+        padding: clamp(2rem, 8vw, 2.5rem);
     }
 
     .franchise-mega-label {

@@ -5,7 +5,8 @@
 ========================================= */
 body {
    line-height: 1.5;
-   color: #4C4948; /* 기본 텍스트 컬러 */
+   color: #4C4948;
+   /* 기본 텍스트 컬러 */
    background-color: #FFFFFF;
 }
 
@@ -13,16 +14,38 @@ body {
    Color Classes (텍스트 & 배경 유틸리티)
 ========================================= */
 /* 1. Text Colors (폰트 컬러용) */
-.color-main { color: #4C4948; }
-.color-point { color: #1E2022; }
-.color-orange { color: #D4734A; }
+.color-main {
+   color: #4C4948;
+}
+
+.color-point {
+   color: #1E2022;
+}
+
+.color-orange {
+   color: #D4734A;
+}
 
 /* 2. Background Colors (배경 컬러용) */
-.bg-light-gray { background-color: #F6F6F6; }
-.bg-deep-base { background-color: #1E2022; }
-.bg-warm-white { background-color: #F8F5F0; }
-.bg-point-orange { background-color: #D4734A; }
-.bg-sub-orange { background-color: #BC8F76; }
+.bg-light-gray {
+   background-color: #F6F6F6;
+}
+
+.bg-deep-base {
+   background-color: #1E2022;
+}
+
+.bg-warm-white {
+   background-color: #F8F5F0;
+}
+
+.bg-point-orange {
+   background-color: #D4734A;
+}
+
+.bg-sub-orange {
+   background-color: #BC8F76;
+}
 
 /* =========================================
    Layout & Grid System (PC 기준 1440px)
@@ -43,44 +66,107 @@ body {
 
 .grid-wrap {
    display: grid;
-   grid-template-columns: repeat(12, 1fr); /* 12단 그리드 */
+   grid-template-columns: repeat(12, 1fr);
+   /* 12단 그리드 */
    gap: 24px;
 }
+
 /* =========================================
    Layout & Flex Classes (레이아웃 & 정렬)
 ========================================= */
-.d-flex { display: flex; }
-.flex-col { flex-direction: column; }
+.d-flex {
+   display: flex;
+}
+
+.flex-col {
+   flex-direction: column;
+}
 
 /* 주축 정렬 (Justify Content) */
-.jc-start { justify-content: flex-start; }
-.jc-center { justify-content: center; }
-.jc-end { justify-content: flex-end; }
-.jc-between { justify-content: space-between; }
+.jc-start {
+   justify-content: flex-start;
+}
+
+.jc-center {
+   justify-content: center;
+}
+
+.jc-end {
+   justify-content: flex-end;
+}
+
+.jc-between {
+   justify-content: space-between;
+}
 
 /* 교차축 정렬 (Align Items) */
-.ai-start { align-items: flex-start; }
-.ai-center { align-items: center; }
-.ai-end { align-items: flex-end; }
+.ai-start {
+   align-items: flex-start;
+}
+
+.ai-center {
+   align-items: center;
+}
+
+.ai-end {
+   align-items: flex-end;
+}
 
 /* =========================================
    Gap Classes (Flex/Grid 간격 유틸리티)
 ========================================= */
-.gap-100 { gap: 6.25rem; } /* 100px */
-.gap-80 { gap: 5rem; }     /* 80px */
-.gap-50 { gap: 3.125rem; }  /* 50px */
-.gap-20 { gap: 1.25rem; }   /* 20px */
-.gap-40 { gap: 2.5rem; }    /* 40px */
+.gap-100 {
+   gap: 6.25rem;
+}
+
+/* 100px */
+.gap-80 {
+   gap: 5rem;
+}
+
+/* 80px */
+.gap-50 {
+   gap: 3.125rem;
+}
+
+/* 50px */
+.gap-20 {
+   gap: 1.25rem;
+}
+
+/* 20px */
+.gap-40 {
+   gap: 2.5rem;
+}
+
+/* 40px */
 
 /* =========================================
    Margin & Text Align (여백 및 정렬 유틸리티)
 ========================================= */
-.mt-10 { margin-top: 0.625rem; }
-.mb-10 { margin-bottom: 0.625rem; }
-.mb-20 { margin-bottom: 1.25rem; }
-.mb-40 { margin-bottom: 2.5rem; }
-.mb-80 { margin-bottom: 5rem; }
-.text-center { text-align: center; }
+.mt-10 {
+   margin-top: 0.625rem;
+}
+
+.mb-10 {
+   margin-bottom: 0.625rem;
+}
+
+.mb-20 {
+   margin-bottom: 1.25rem;
+}
+
+.mb-40 {
+   margin-bottom: 2.5rem;
+}
+
+.mb-80 {
+   margin-bottom: 5rem;
+}
+
+.text-center {
+   text-align: center;
+}
 
 /* =========================================
    Line break · word-break: keep-all
@@ -97,6 +183,7 @@ br.mo-only,
 }
 
 @media screen and (max-width: 768px) {
+
    br.pc-only,
    .break-pc-only {
       display: none;
@@ -137,16 +224,21 @@ br.mo-only,
    }
 
    .grid-wrap {
-      grid-template-columns: repeat(8, 1fr); /* 8단 그리드 변환 */
-      gap: 24px; /* 피그마 Gutter: 24 반영 */
+      grid-template-columns: repeat(8, 1fr);
+      /* 8단 그리드 변환 */
+      gap: 24px;
+      /* 피그마 Gutter: 24 반영 */
    }
+
    .py-130 {
       padding-top: 5rem;
       padding-bottom: 5rem;
    }
+
    .mb-80 {
-      margin-bottom: 3.75rem; 
+      margin-bottom: 3.75rem;
    }
+
    .br-none {
       display: none;
    }
@@ -159,16 +251,21 @@ br.mo-only,
    }
 
    .grid-wrap {
-      grid-template-columns: repeat(6, 1fr); /* 모바일 6단 그리드 변환 */
-      gap: 16px; /* 모바일 Gutter: 16 반영 */
+      grid-template-columns: repeat(6, 1fr);
+      /* 모바일 6단 그리드 변환 */
+      gap: 16px;
+      /* 모바일 Gutter: 16 반영 */
    }
+
    .py-130 {
       padding-top: 3.75rem;
       padding-bottom: 3.75rem;
    }
+
    .mb-80 {
       margin-bottom: 2.5rem;
    }
+
    .br-none {
       display: none;
    }
@@ -179,9 +276,15 @@ br.mo-only,
    :root {
       --page-gutter-x: 16px;
    }
+
    .mb-80 {
       margin-bottom: 2rem;
    }
+
+   .gap-20 {
+      gap: 0.625rem;
+   }
+
    .br-none {
       display: none;
    }
