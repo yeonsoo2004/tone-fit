@@ -313,7 +313,7 @@ body {
 }
 
 .franchise-divider-h {
-    width: 100%;
+    width: 70%;
     height: 1px;
     background-color: #4C4948;
     position: relative;
@@ -347,15 +347,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-}
-
-.curved-logo {
-    position: absolute;
-    width: 115%;
-    aspect-ratio: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .franchise-mega-label {
@@ -1351,7 +1342,7 @@ body {
     .userflow-img {
         flex: 0 0 50%;
         max-width: calc(50% - 1.25rem);
-        aspect-ratio: 1;
+        aspect-ratio: 1.5;
         padding: 0;
         margin: 0 auto;
         background: transparent;
