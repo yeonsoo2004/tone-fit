@@ -49,11 +49,31 @@
     justify-content: center;
 }
 
-/* [레거시 보관] LNB 버튼 폰트 오버라이드 — 최하단 TAB BAR UNIFIED 블록 참고 */
+/* [레거시 보관] 탭 버튼 비주얼 — 최하단 TAB BAR UNIFIED 블록 참고 */
 /*
-.page-news .lnb-tab-btn {
-    font-size: 1.25rem;
-    font-weight: 400;
+.page-news .lnb-tab-bar .lnb-tab-btn {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5rem 2.5rem;
+    line-height: 2rem;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(51, 52, 70, 0.1);
+    border-radius: 3.125rem;
+    cursor: pointer;
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.page-news .lnb-tab-bar .lnb-tab-btn:hover:not(.active) {
+    box-shadow: 0px 0px 3px 0px #D4734A;
+}
+
+.page-news .lnb-tab-bar .lnb-tab-btn.active {
+    color: #FFFFFF;
+    background-color: #D4734A;
+    border: 1px solid rgba(51, 52, 70, 0.1);
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
 }
 */
 
@@ -262,6 +282,13 @@
     }
 }
 
+/* 태블릿 (1024px 이하) — 탭바 갭만 조정 (버튼 비주얼은 TAB BAR UNIFIED) */
+@media screen and (max-width: 1024px) {
+    .page-news .lnb-tab-bar {
+        gap: 1.25rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .page-news .inner {
         padding-left: 4rem;          /* 64px */
@@ -290,11 +317,8 @@
         gap: 24px;
     }
 
-    .page-news .lnb-tab-btn {
-        /* font-size — TAB BAR UNIFIED · ft-20-r 768(16px) */
-        padding: 1.125rem 1.6875rem; /* 18px 27px */
-        border-radius: 50px;
-        height: auto;
+    .page-news .lnb-tab-bar {
+        gap: 0.5rem;
     }
 
     .news-modal-overlay {
@@ -343,15 +367,6 @@
         gap: 14px;
     }
 
-    .page-news .lnb-tab-btn {
-        /* font-size — TAB BAR UNIFIED · ft-20-r 480(16px) */
-    }
-}
-
-@media screen and (max-width: 468px) {
-    .page-news .lnb-tab-bar {
-        gap: 0.625rem;               /* 10px */
-    }
 }
 
 @media screen and (max-width: 402px) {
@@ -386,11 +401,8 @@
         aspect-ratio: 464 / 619;
     }
 
-    .page-news .lnb-tab-btn {
-        /* font-size — TAB BAR UNIFIED · ft-20-r 402(16px) */
-        padding: 0.5625rem 1rem;     /* 9px 16px */
-        border-radius: 50px;
-        height: auto;
+    .page-news .lnb-tab-bar {
+        gap: 0.375rem;
     }
 
     .news-modal-overlay {
@@ -430,9 +442,18 @@
 
 /* =========================================
    TAB BAR UNIFIED — Space Figma baseline (Community / news.css)
-   · community.css 대체 · 비주얼·호버·active 3페이지 공통
-   · 상단 MQ: 패딩/폰트 가변 축 유지
+   · Frame·Space TAB BAR UNIFIED와 동일 비주얼
+   · 탭 2개 — 가로: 텍스트+패딩만(fit-content) · 세로: line-height 1.4 고정
 ========================================= */
+
+.page-news .lnb-tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+}
 
 .page-news .lnb-tab-bar .lnb-tab-btn {
     box-sizing: border-box;
@@ -440,12 +461,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    flex: 0 0 auto;
+    align-self: center;
+    min-width: 0;
+    min-height: 0;
     height: auto;
-    padding: 0.5rem 2.5rem;
+    padding: 0.5rem 1.25rem;
     letter-spacing: 0;
     font-size: 1.25rem;   /* 20px · ft-20-r PC */
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.4;
     background-color: #FFFFFF;
     color: #D4734A;
     border: 1px solid rgba(51, 52, 70, 0.1);
@@ -456,6 +483,8 @@
     white-space: nowrap;
     word-break: keep-all;
     overflow-wrap: normal;
+    overflow: hidden;
+    text-align: center;
     appearance: none;
     -webkit-appearance: none;
 }
@@ -469,8 +498,8 @@
 
 .page-news .lnb-tab-bar .lnb-tab-btn.active,
 .page-news .lnb-tab-bar .lnb-tab-btn.active:hover {
-    background-color: #D4734A;
     color: #FFFFFF;
+    background-color: #D4734A;
     border: 1px solid rgba(51, 52, 70, 0.1);
     border-radius: 3.125rem;
     box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
@@ -495,29 +524,23 @@
 @media screen and (max-width: 1024px) {
     .page-news .lnb-tab-bar .lnb-tab-btn {
         font-size: 1.125rem;  /* 18px · ft-20-r 1024 */
-        line-height: 1.6;
+        padding: 0.5rem 1rem;
+        line-height: 1.4;
     }
 }
 
 @media screen and (max-width: 768px) {
     .page-news .lnb-tab-bar .lnb-tab-btn {
         font-size: 1rem;      /* 16px · ft-20-r 768 */
-        padding: 1.125rem 1.6875rem;
-        line-height: 1.6;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .page-news .lnb-tab-bar .lnb-tab-btn {
-        font-size: 1rem;      /* 16px · ft-20-r 480 */
-        line-height: 1.6;
+        padding: 0.4375rem 0.75rem;
+        line-height: 1.4;
     }
 }
 
 @media screen and (max-width: 402px) {
     .page-news .lnb-tab-bar .lnb-tab-btn {
         font-size: 1rem;      /* 16px · ft-20-r 402 */
-        padding: 0.5625rem 1rem;
-        line-height: 1.6;
+        padding: 0.375rem 0.625rem;
+        line-height: 1.4;
     }
 }
