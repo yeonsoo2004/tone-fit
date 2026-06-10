@@ -841,9 +841,9 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-    .frame-section .frame {
+    /* .frame-section .frame {
         height: 28.125rem;
-    }
+    } */
 
     .frame-section .frame-swiper .custom-prev,
     .frame-section .frame-swiper .custom-next {
