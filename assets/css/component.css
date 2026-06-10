@@ -220,13 +220,29 @@ body:not(.page-home) .header {
     cursor: pointer;
 }
 
-.header-menu-toggle img {
+.header-menu-toggle-icon {
     display: block;
     width: 1.5rem;
     height: 1.5rem;
 }
 
-.page-home .header:not(.is-scrolled):not(.is-mobile-nav-open) .header-menu-toggle img {
+.header-menu-toggle-icon--close {
+    display: none;
+}
+
+.header.is-mobile-nav-open .header-menu-toggle-icon--menu {
+    display: none;
+}
+
+.header.is-mobile-nav-open .header-menu-toggle-icon--close {
+    display: block;
+}
+
+.page-home .header:not(.is-scrolled) .header-menu-toggle-icon--menu {
+    filter: brightness(0) invert(1);
+}
+
+.page-home .header:not(.is-scrolled) .header-menu-toggle-icon--close {
     filter: brightness(0) invert(1);
 }
 
