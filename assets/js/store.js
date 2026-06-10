@@ -5,7 +5,7 @@
 /* =========================================
    1. 매장 데이터
 ========================================= */
-const STORE_DATA = [
+const storeData = [
     {
         name: '시흥 능곡점',
         address: '경기도 시흥시 능곡안민길 22 다나삼꼬지타 110호',
@@ -89,7 +89,7 @@ function renderAccordion() {
 
     const fragment = document.createDocumentFragment();
 
-    STORE_DATA.forEach(function (store, index) {
+    storeData.forEach(function (store, index) {
         const li = document.createElement('li');
         li.className = 'store-accordion-item';
         li.setAttribute('data-index', index);
@@ -172,7 +172,7 @@ function bindAccordion() {
             if (isOpen) {
                 closeItem(item);
             } else {
-                openItem(item);
+                openItem(item, { scrollToMap: true });
             }
         });
 
@@ -186,20 +186,45 @@ function bindAccordion() {
     });
 }
 
-function openItem(item) {
+function scrollToMapSection() {
+    var mapSection = document.querySelector('.store-map-section');
+    if (!mapSection) {
+        return;
+    }
+
+    var header = document.querySelector('.header');
+    var headerOffset = header ? header.offsetHeight : 0;
+    var top = window.scrollY + mapSection.getBoundingClientRect().top - headerOffset;
+
+    window.scrollTo({
+        top: top,
+        behavior: 'smooth'
+    });
+}
+
+function openItem(item, options) {
+    options = options || {};
     const trigger = item.querySelector('.store-accordion-trigger');
     item.classList.add('is-open');
     trigger.setAttribute('aria-expanded', 'true');
 
-    // 해당 매장 마커로 지도 이동 + 확대
+    // 해당 매장 마커로 지도 이동 + 확대 · 좌측 목록 동기화
     const index = parseInt(item.getAttribute('data-index'), 10);
-    if (!isNaN(index) && window._storeMarkers && window._storeMarkers[index]) {
-        const marker = window._storeMarkers[index];
-        const map = window._kakaoMap;
-        if (map) {
-            map.setLevel(4, { animate: true });          // 레벨 4로 확대 (숫자 낮을수록 더 확대)
-            map.panTo(marker.getPosition());             // 해당 마커 위치로 이동
+    if (!isNaN(index)) {
+        ensureSidebarShowsStore(index);
+
+        if (window._storeMarkers && window._storeMarkers[index]) {
+            const marker = window._storeMarkers[index];
+            const map = window._kakaoMap;
+            if (map) {
+                map.setLevel(4, { animate: true });
+                map.panTo(marker.getPosition());
+            }
         }
+    }
+
+    if (options.scrollToMap) {
+        scrollToMapSection();
     }
 }
 
@@ -207,6 +232,8 @@ function closeItem(item) {
     const trigger = item.querySelector('.store-accordion-trigger');
     item.classList.remove('is-open');
     trigger.setAttribute('aria-expanded', 'false');
+
+    syncSidebarWithOpenAccordion();
 
     // 열린 항목이 하나도 없으면 전국 뷰로 복귀
     const anyOpen = document.querySelector('.store-accordion-item.is-open');
@@ -216,49 +243,297 @@ function closeItem(item) {
     }
 }
 
+function openAccordionByIndex(index) {
+    var items = document.querySelectorAll('.store-accordion-item');
+    var target = items[index];
+
+    if (!target) {
+        return;
+    }
+
+    items.forEach(function (other) {
+        if (other !== target && other.classList.contains('is-open')) {
+            closeItem(other);
+        }
+    });
+
+    if (!target.classList.contains('is-open')) {
+        openItem(target);
+    }
+}
+
 /* =========================================
-   4. 카카오맵 초기화
+   4. 지도 패널 — 좌측 검색·목록 + 카카오맵
 ========================================= */
-function initKakaoMap() {
+var storeMapState = {
+    activeIndex: -1,
+    filterText: '',
+    markerImage: null
+};
+
+function getFilteredStoreIndices(filterText) {
+    var query = (filterText || '').trim().toLowerCase();
+
+    if (!query) {
+        return storeData.map(function (_, index) {
+            return index;
+        });
+    }
+
+    return storeData.reduce(function (indices, store, index) {
+        var name = store.name.toLowerCase();
+        var address = store.address.toLowerCase();
+
+        if (name.indexOf(query) !== -1 || address.indexOf(query) !== -1) {
+            indices.push(index);
+        }
+
+        return indices;
+    }, []);
+}
+
+function createMarkerImage() {
+    if (storeMapState.markerImage) {
+        return storeMapState.markerImage;
+    }
+
+    var svgMarker =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" viewBox="0 0 32 42">' +
+            '<path d="M16 0C7.163 0 0 7.163 0 16c0 10.5 16 26 16 26S32 26.5 32 16C32 7.163 24.837 0 16 0z" fill="#D4734A"/>' +
+            '<circle cx="16" cy="16" r="6" fill="#fff"/>' +
+        '</svg>';
+    var svgBlob = new Blob([svgMarker], { type: 'image/svg+xml' });
+    var svgUrl = URL.createObjectURL(svgBlob);
+    var markerImageSize = new kakao.maps.Size(32, 42);
+    var markerImageOption = { offset: new kakao.maps.Point(16, 42) };
+
+    storeMapState.markerImage = new kakao.maps.MarkerImage(svgUrl, markerImageSize, markerImageOption);
+    return storeMapState.markerImage;
+}
+
+function setSidebarActive(index) {
+    var items = document.querySelectorAll('.store-item');
+
+    items.forEach(function (item) {
+        item.classList.remove('is-active');
+        item.setAttribute('aria-selected', 'false');
+    });
+
+    storeMapState.activeIndex = index;
+
+    if (index < 0) {
+        return;
+    }
+
+    var target = document.querySelector('.store-item[data-index="' + index + '"]');
+    if (target) {
+        target.classList.add('is-active');
+        target.setAttribute('aria-selected', 'true');
+    }
+}
+
+function ensureSidebarShowsStore(index) {
+    if (index < 0 || index >= storeData.length) {
+        setSidebarActive(-1);
+        return;
+    }
+
+    storeMapState.activeIndex = index;
+
+    var indices = getFilteredStoreIndices(storeMapState.filterText);
+    if (indices.indexOf(index) === -1) {
+        storeMapState.filterText = '';
+        var input = document.getElementById('store-search-input');
+        if (input) {
+            input.value = '';
+        }
+        renderSidebarList('');
+        updateMarkerVisibility(getFilteredStoreIndices(''));
+    } else {
+        setSidebarActive(index);
+    }
+
+    var target = document.querySelector('.store-item[data-index="' + index + '"]');
+    if (target) {
+        target.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+}
+
+function syncSidebarWithOpenAccordion() {
+    var openAccordion = document.querySelector('.store-accordion-item.is-open');
+
+    if (!openAccordion) {
+        setSidebarActive(-1);
+        return;
+    }
+
+    var index = parseInt(openAccordion.getAttribute('data-index'), 10);
+    if (!isNaN(index)) {
+        ensureSidebarShowsStore(index);
+    }
+}
+
+function focusStoreOnMap(index, level) {
+    var map = window._kakaoMap;
+    var marker = window._storeMarkers && window._storeMarkers[index];
+
+    if (!map || !marker) {
+        return;
+    }
+
+    map.panTo(marker.getPosition());
+    map.setLevel(level, { animate: true });
+}
+
+function fitMapToIndices(indices) {
+    var map = window._kakaoMap;
+
+    if (!map || !indices.length) {
+        return;
+    }
+
+    if (indices.length === 1) {
+        focusStoreOnMap(indices[0], 5);
+        return;
+    }
+
+    var bounds = new kakao.maps.LatLngBounds();
+
+    indices.forEach(function (index) {
+        var marker = window._storeMarkers[index];
+        if (marker) {
+            bounds.extend(marker.getPosition());
+        }
+    });
+
+    map.setBounds(bounds);
+}
+
+function updateMarkerVisibility(indices) {
+    if (!window._storeMarkers) {
+        return;
+    }
+
+    var map = window._kakaoMap;
+    var visibleSet = {};
+
+    indices.forEach(function (index) {
+        visibleSet[index] = true;
+    });
+
+    window._storeMarkers.forEach(function (marker, index) {
+        marker.setMap(visibleSet[index] ? map : null);
+    });
+}
+
+function renderSidebarList(filterText) {
+    var listEl = document.getElementById('storeSidebarList');
+    var emptyEl = document.getElementById('storeSearchEmpty');
+
+    if (!listEl) {
+        return [];
+    }
+
+    var indices = getFilteredStoreIndices(filterText);
+    listEl.innerHTML = '';
+
+    if (!indices.length) {
+        listEl.hidden = true;
+        if (emptyEl) {
+            emptyEl.hidden = false;
+        }
+        storeMapState.activeIndex = -1;
+        return indices;
+    }
+
+    listEl.hidden = false;
+    if (emptyEl) {
+        emptyEl.hidden = true;
+    }
+
+    var fragment = document.createDocumentFragment();
+
+    indices.forEach(function (index) {
+        var store = storeData[index];
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'store-item';
+        button.setAttribute('data-index', String(index));
+        button.setAttribute('role', 'option');
+        button.setAttribute('aria-selected', 'false');
+
+        button.innerHTML =
+            '<span class="store-item-name">' + store.name + '</span>' +
+            '<span class="store-item-address">' + store.address + '</span>';
+
+        button.addEventListener('click', function () {
+            ensureSidebarShowsStore(index);
+            openAccordionByIndex(index);
+            focusStoreOnMap(index, 3);
+        });
+
+        fragment.appendChild(button);
+    });
+
+    listEl.appendChild(fragment);
+
+    if (storeMapState.activeIndex !== -1 && indices.indexOf(storeMapState.activeIndex) === -1) {
+        storeMapState.activeIndex = -1;
+    }
+
+    if (storeMapState.activeIndex !== -1) {
+        setSidebarActive(storeMapState.activeIndex);
+    }
+
+    return indices;
+}
+
+function bindStoreSearch() {
+    var input = document.getElementById('store-search-input');
+
+    if (!input) {
+        return;
+    }
+
+    input.addEventListener('input', function () {
+        storeMapState.filterText = input.value;
+        var indices = renderSidebarList(storeMapState.filterText);
+        updateMarkerVisibility(indices);
+        fitMapToIndices(indices);
+    });
+}
+
+function initMapPanel() {
+    if (typeof kakao === 'undefined' || !kakao.maps) {
+        return;
+    }
+
     kakao.maps.load(function () {
-        const container = document.getElementById('kakao-map');
-        if (!container) return;
+        var container = document.getElementById('map-container');
+        if (!container) {
+            return;
+        }
 
-        const options = {
-            center: new kakao.maps.LatLng(36.5, 127.8), // 한국 중심
+        var map = new kakao.maps.Map(container, {
+            center: new kakao.maps.LatLng(36.5, 127.8),
             level: 13
-        };
+        });
 
-        const map = new kakao.maps.Map(container, options);
         window._kakaoMap = map;
         window._storeMarkers = [];
 
-        // 커스텀 마커 이미지 — 브랜드 주황색 SVG 핀
-        const svgMarker = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" viewBox="0 0 32 42">
-                <path d="M16 0C7.163 0 0 7.163 0 16c0 10.5 16 26 16 26S32 26.5 32 16C32 7.163 24.837 0 16 0z"
-                    fill="#D4734A"/>
-                <circle cx="16" cy="16" r="6" fill="#fff"/>
-            </svg>
-        `;
-        const svgBlob = new Blob([svgMarker], { type: 'image/svg+xml' });
-        const svgUrl = URL.createObjectURL(svgBlob);
-        const markerImageSize = new kakao.maps.Size(32, 42);
-        const markerImageOption = { offset: new kakao.maps.Point(16, 42) };
-        const markerImage = new kakao.maps.MarkerImage(svgUrl, markerImageSize, markerImageOption);
+        var markerImage = createMarkerImage();
 
-        STORE_DATA.forEach(function (store, index) {
-            const position = new kakao.maps.LatLng(store.lat, store.lng);
-
-            const marker = new kakao.maps.Marker({
+        storeData.forEach(function (store, index) {
+            var position = new kakao.maps.LatLng(store.lat, store.lng);
+            var marker = new kakao.maps.Marker({
                 map: map,
                 position: position,
                 title: store.name,
                 image: markerImage
             });
 
-            // 인포윈도우
-            const infowindow = new kakao.maps.InfoWindow({
+            var infowindow = new kakao.maps.InfoWindow({
                 content:
                     '<div style="' +
                         'padding:8px 12px;' +
@@ -277,27 +552,22 @@ function initKakaoMap() {
                 infowindow.close();
             });
 
-            // 마커 클릭 시 해당 아코디언 열기
             kakao.maps.event.addListener(marker, 'click', function () {
-                const items = document.querySelectorAll('.store-accordion-item');
-                if (items[index]) {
-                    // 다른 항목 닫기
-                    items.forEach(function (other) {
-                        if (other !== items[index] && other.classList.contains('is-open')) {
-                            closeItem(other);
-                        }
-                    });
-                    openItem(items[index]);
-                    items[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
+                ensureSidebarShowsStore(index);
+                openAccordionByIndex(index);
+                focusStoreOnMap(index, 3);
             });
 
             window._storeMarkers.push(marker);
         });
 
-        // 지도 컨트롤 추가
-        const zoomControl = new kakao.maps.ZoomControl();
+        var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+        renderSidebarList('');
+        bindStoreSearch();
+        setSidebarActive(0);
+        fitMapToIndices(getFilteredStoreIndices(''));
     });
 }
 
@@ -306,5 +576,5 @@ function initKakaoMap() {
 ========================================= */
 document.addEventListener('DOMContentLoaded', function () {
     renderAccordion();
-    initKakaoMap();
+    initMapPanel();
 });
