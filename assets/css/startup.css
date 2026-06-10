@@ -1135,7 +1135,7 @@
 .startup-inquiry-file-name {
     box-sizing: border-box;
     width: 100%;
-    border: none;
+    border: 1px solid #D9D9D9;
     border-radius: 0.3125rem;
     background-color: #F6F6F6;
     padding: 0.9375rem 1.5625rem;
@@ -1143,6 +1143,13 @@
     font-size: 1.125rem;
     line-height: 2rem;
     color: #000000;
+    transition: border-color 0.2s ease;
+}
+
+.startup-inquiry-input:focus,
+.startup-inquiry-textarea:focus {
+    border-color: #D4734A;
+    outline: none;
 }
 
 .startup-inquiry-input::placeholder,
@@ -1516,10 +1523,6 @@
 
 .startup-inquiry-file-btn {
     cursor: pointer;
-}
-
-.startup-page .startup-inquiry-file-name:not(.has-file) {
-    opacity: 0.5;
 }
 
 .startup-brand-video {
