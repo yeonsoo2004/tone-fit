@@ -652,22 +652,76 @@ body {
 /* =========================================
    7. FRAME SECTION
 ========================================= */
-.frame-section .section-header {
-    color: #fff;
+.frame-section.bg-deep-base {
+    background-color: #1E2022;
 }
 
-.frame-content {
+.frame-section .title-area {
+    color: #FFFFFF;
+}
+
+.frame-section .title-area .title {
+    margin-top: 0;
+    line-height: 1.25;
+}
+
+.frame-section .title-area p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* 슬라이드는 .inner 밖 — 타이틀 .mb-80만으로 간격 */
+.frame-section .frame-content {
     width: 100%;
-    max-width: 100%;
+    max-width: none;
+    margin-top: 0;
     overflow: hidden;
 }
 
-.frame-swiper {
+.frame-section .frame-content.fade-up {
+    will-change: transform, opacity;
+}
+
+.frame-section .frame-swiper {
+    position: relative;
     width: 100%;
 }
 
-.frame-section .frame.fade-up {
-    will-change: transform, opacity;
+.frame-section .frame-swiper .swiper-button-prev::after,
+.frame-section .frame-swiper .swiper-button-next::after {
+    display: none !important;
+}
+
+.frame-section .frame-swiper .custom-prev,
+.frame-section .frame-swiper .custom-next {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: -1.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.frame-section .frame-swiper .custom-prev {
+    left: 1.25rem;
+}
+
+.frame-section .frame-swiper .custom-next {
+    right: 1.25rem;
+}
+
+.frame-section .frame-swiper .custom-prev svg,
+.frame-section .frame-swiper .custom-next svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.frame-section .frame-swiper .custom-prev:hover,
+.frame-section .frame-swiper .custom-next:hover {
+    background-color: #D4734A;
+    color: #FFFFFF;
+    transform: scale(1.1);
 }
 
 .frame-swiper .swiper-wrapper {
@@ -677,11 +731,13 @@ body {
 .frame-swiper .swiper-slide {
     height: auto;
     min-width: 0;
+    box-sizing: border-box;
 }
 
-.frame {
+.frame-section .frame {
     width: 100%;
     min-width: 0;
+    height: 39.1875rem;
     display: grid;
     position: relative;
     overflow: hidden;
@@ -693,12 +749,14 @@ body {
     grid-area: 1 / 1;
 }
 
-.frame-img {
+.frame-section .frame-img {
     display: block;
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     z-index: 0;
 }
 
@@ -776,6 +834,53 @@ body {
 .frame:hover .topage-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+    .frame-section .frame {
+        height: 28.125rem;
+    }
+
+    .frame-section .frame-swiper .custom-prev,
+    .frame-section .frame-swiper .custom-next {
+        width: 3rem;
+        height: 3rem;
+        margin-top: -1.5rem;
+    }
+
+    .frame-section .frame-swiper .custom-prev svg,
+    .frame-section .frame-swiper .custom-next svg {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* .frame-section .frame {
+        height: 18.75rem;
+    } */
+
+    .frame-section .frame-swiper .custom-prev,
+    .frame-section .frame-swiper .custom-next {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-top: -1.25rem;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .frame-section .frame-swiper .custom-prev {
+        left: 0.625rem;
+    }
+
+    .frame-section .frame-swiper .custom-next {
+        right: 0.625rem;
+    }
+
+    .frame-section .frame-swiper .custom-prev svg,
+    .frame-section .frame-swiper .custom-next svg {
+        width: 1rem;
+        height: 1rem;
+    }
 }
 
 /* =========================================
@@ -1306,7 +1411,7 @@ body {
 
     .viral-content {
         --viral-pad-y: 2.5rem;
-        --viral-gap: 0.625rem;
+        --viral-gap: 1.25rem;
         --viral-flow-max: 9.5rem;
         --viral-flow-min: 7.5rem;
         --viral-flow-flex: 1 1 calc(50% - 0.5rem);
@@ -1335,8 +1440,17 @@ body {
         display: none;
     }
 
-    .viral-userflow:nth-child(even) {
-        flex-direction: row-reverse;
+    .viral-userflow:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: calc(-1 * (var(--viral-gap) + var(--viral-arrow-size)) / 2);
+        width: var(--viral-arrow-size);
+        height: var(--viral-arrow-size);
+        background: url('../images/icon/arrow_right-viral.svg') center / contain no-repeat;
+        transform: translate(-50%, 50%) rotate(90deg);
+        pointer-events: none;
+        z-index: 1;
     }
 
     .userflow-img {
@@ -1555,7 +1669,7 @@ body {
 
     .viral-content {
         --viral-pad-y: 2rem;
-        --viral-gap: 0.5rem;
+        --viral-gap: 1rem;
         --viral-flow-max: 8.5rem;
         --viral-flow-min: 7rem;
         --viral-flow-flex: 1 1 calc(50% - 0.375rem);
