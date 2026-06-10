@@ -653,6 +653,10 @@
                   disableOnInteraction: false,
                   pauseOnMouseEnter: true
               },
+        navigation: {
+            nextEl: '.custom-next',
+            prevEl: '.custom-prev',
+        },
         breakpoints: {
             0: { slidesPerView: 2, spaceBetween: 16 },
             621: { slidesPerView: 3, spaceBetween: 20 },

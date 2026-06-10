@@ -672,6 +672,7 @@ body {
 }
 
 .frame-swiper {
+    position: relative;
     width: 100%;
 }
 
@@ -686,6 +687,44 @@ body {
 .frame-swiper .swiper-slide {
     height: auto;
     min-width: 0;
+}
+
+/* 커스텀 네비게이션 — Font Awesome */
+.frame-section .frame-swiper .swiper-button-prev::after,
+.frame-section .frame-swiper .swiper-button-next::after {
+    display: none !important;
+}
+
+.frame-section .frame-swiper .custom-prev,
+.frame-section .frame-swiper .custom-next {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: -1.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.frame-section .frame-swiper .custom-prev {
+    left: 1.25rem;
+}
+
+.frame-section .frame-swiper .custom-next {
+    right: 1.25rem;
+}
+
+.frame-section .frame-swiper .custom-prev i,
+.frame-section .frame-swiper .custom-next i {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.frame-section .frame-swiper .custom-prev:hover,
+.frame-section .frame-swiper .custom-next:hover {
+    background-color: #D4734A;
+    color: #FFFFFF;
+    transform: scale(1.1);
 }
 
 .frame {
@@ -1083,6 +1122,18 @@ body {
 }
 
 @media (max-width: 1024px) {
+    .frame-section .frame-swiper .custom-prev,
+    .frame-section .frame-swiper .custom-next {
+        width: 3rem;
+        height: 3rem;
+        margin-top: -1.5rem;
+    }
+
+    .frame-section .frame-swiper .custom-prev i,
+    .frame-section .frame-swiper .custom-next i {
+        font-size: 1.125rem;
+    }
+
     .identity-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1331,6 +1382,27 @@ body {
     .frame-section .section-header h3>span::before,
     .ai-pet-section .section-header h3>span::before {
         content: none;
+    }
+
+    .frame-section .frame-swiper .custom-prev,
+    .frame-section .frame-swiper .custom-next {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-top: -1.25rem;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .frame-section .frame-swiper .custom-prev {
+        left: 0.625rem;
+    }
+
+    .frame-section .frame-swiper .custom-next {
+        right: 0.625rem;
+    }
+
+    .frame-section .frame-swiper .custom-prev i,
+    .frame-section .frame-swiper .custom-next i {
+        font-size: 1rem;
     }
 
     .ai-pet-section.inner,
