@@ -1393,21 +1393,27 @@
     height: 1.625rem;
     margin: 0;
     padding: 0;
-    border: none;
+    border: 1px solid #D9D9D9;
     outline: none;
     border-radius: 0.3125rem;
     background-color: #F6F6F6;
     appearance: none;
     -webkit-appearance: none;
     cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .startup-inquiry-checkbox:checked {
+    border-color: #D4734A;
     background-color: #D4734A;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-width='2' d='M1 5l3.5 3.5L11 1'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 12px 10px;
+}
+
+.startup-inquiry-checkbox:focus-visible {
+    border-color: #D4734A;
 }
 
 .startup-inquiry-agree-label {
