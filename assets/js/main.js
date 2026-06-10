@@ -659,7 +659,8 @@
         },
         breakpoints: {
             0: { slidesPerView: 2, spaceBetween: 16 },
-            621: { slidesPerView: 3, spaceBetween: 20 },
+            403: { slidesPerView: 1.2, spaceBetween: 12 },
+            768: { slidesPerView: 3, spaceBetween: 20 },
             1024: { slidesPerView: 4 }
         }
     });
