@@ -84,10 +84,10 @@
 }
 
 /* =========================================
-   LNB 탭 버튼 — component.css lnb-tab-btn 오버라이드
-   (FRAME 전용 크기·색상·인터랙션 차이만 유지)
+   LNB 탭 버튼 — [레거시 보관] FRAME 전용 비주얼 (Space Figma 통일 전)
+   → 최하단 TAB BAR UNIFIED 블록 참고
 ========================================= */
-
+/*
 .frame-tab-btn {
     padding: 10px 36px;
     height: 52px;
@@ -125,6 +125,7 @@
 .frame-tab-btn:focus-visible:not(.active) {
     box-shadow: 0 0 0 2px #D4734A;
 }
+*/
 
 
 /* =========================================
@@ -303,7 +304,7 @@
         min-width: 0;
         height: auto;
         padding: 0.4375rem 0.75rem;
-        font-size: 0.875rem;
+        /* font-size — TAB BAR UNIFIED · ft-20-r 768(16px) */
         line-height: 1.6;
         text-align: center;
         white-space: nowrap;
@@ -345,7 +346,7 @@
 
     .frame-page .frame-tab-btn {
         padding: 0.375rem 0.625rem;
-        font-size: 0.875rem;
+        /* font-size — TAB BAR UNIFIED · ft-20-r 402(16px) */
     }
 }
 
@@ -386,5 +387,107 @@
     .frame-poster-overlay,
     .frame-poster-info {
         transition: none;
+    }
+}
+
+/* =========================================
+   TAB BAR UNIFIED — Space Figma baseline (Frame)
+   · 비주얼·호버·active: 3페이지 공통
+   · 상단 MQ: grid 레이아웃 · 패딩/폰트 가변 축 유지
+========================================= */
+
+.frame-page .lnb-tab-bar .lnb-tab-btn,
+.frame-page .lnb-tab-bar .frame-tab-btn {
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 0.5rem 2.5rem;
+    letter-spacing: 0;
+    font-size: 1.25rem;   /* 20px · ft-20-r PC */
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: #FFFFFF;
+    color: #D4734A;
+    border: 1px solid rgba(51, 52, 70, 0.1);
+    border-radius: 3.125rem;
+    cursor: pointer;
+    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.frame-page .lnb-tab-bar .lnb-tab-btn:hover:not(.active),
+.frame-page .lnb-tab-bar .frame-tab-btn:hover:not(.active) {
+    background-color: #FFFFFF;
+    color: #D4734A;
+    border: 1px solid rgba(51, 52, 70, 0.1);
+    box-shadow: 0 0 3px 0 #D4734A;
+}
+
+.frame-page .lnb-tab-bar .lnb-tab-btn.active,
+.frame-page .lnb-tab-bar .lnb-tab-btn.active:hover,
+.frame-page .lnb-tab-bar .frame-tab-btn.active,
+.frame-page .lnb-tab-bar .frame-tab-btn.active:hover {
+    background-color: #D4734A;
+    color: #FFFFFF;
+    border: 1px solid rgba(51, 52, 70, 0.1);
+    border-radius: 3.125rem;
+    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.frame-page .lnb-tab-bar .lnb-tab-btn:focus,
+.frame-page .lnb-tab-bar .lnb-tab-btn:focus-visible,
+.frame-page .lnb-tab-bar .frame-tab-btn:focus,
+.frame-page .lnb-tab-bar .frame-tab-btn:focus-visible {
+    outline: none;
+}
+
+.frame-page .lnb-tab-bar .lnb-tab-btn:focus-visible:not(.active),
+.frame-page .lnb-tab-bar .frame-tab-btn:focus-visible:not(.active) {
+    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.frame-page .lnb-tab-bar .lnb-tab-btn.active:focus,
+.frame-page .lnb-tab-bar .lnb-tab-btn.active:focus-visible,
+.frame-page .lnb-tab-bar .frame-tab-btn.active:focus,
+.frame-page .lnb-tab-bar .frame-tab-btn.active:focus-visible {
+    color: #FFFFFF;
+    background-color: #D4734A;
+    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+    .frame-page .lnb-tab-bar .lnb-tab-btn,
+    .frame-page .lnb-tab-bar .frame-tab-btn {
+        font-size: 1.125rem;  /* 18px · ft-20-r 1024 */
+        line-height: 1.6;
+        padding: 8px 28px;
+        height: 46px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .frame-page .lnb-tab-bar .lnb-tab-btn,
+    .frame-page .lnb-tab-bar .frame-tab-btn {
+        height: auto;
+        padding: 0.4375rem 0.75rem;
+        font-size: 1rem;      /* 16px · ft-20-r 768 */
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 402px) {
+    .frame-page .lnb-tab-bar .lnb-tab-btn,
+    .frame-page .lnb-tab-bar .frame-tab-btn {
+        padding: 0.375rem 0.625rem;
+        font-size: 1rem;      /* 16px · ft-20-r 402 */
+        line-height: 1.6;
     }
 }
