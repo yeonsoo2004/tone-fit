@@ -650,10 +650,6 @@
     line-height: 1.6;
 }
 
-.kiosk-cta-section .cta-desc-br {
-    display: none;
-}
-
 .kiosk-cta-section .btn-group {
     display: flex;
     flex-wrap: wrap;
@@ -695,10 +691,6 @@
         height: auto;
         min-height: 22rem;
         padding: 3rem 0;
-    }
-
-    .kiosk-cta-section .cta-desc-br {
-        display: inline;
     }
 
     .kiosk-cta-section .btn-group {
