@@ -114,10 +114,13 @@
     display: none;
     position: fixed;
     inset: 0;
+    padding: 3rem 1.25rem;
+    box-sizing: border-box;
     background-color: rgba(70, 70, 70, 0.7);
     z-index: 1000;
     align-items: center;
     justify-content: center;
+    overflow-y: auto;
 }
 
 .news-modal-overlay.is-open {
@@ -129,12 +132,16 @@
 ========================================= */
 .news-modal {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    width: min(80%, 45.1875rem);
+    max-height: min(85vh, calc(100dvh - 6rem));
+    margin: auto;
     background-color: #FFFFFF;
     border-radius: 12px;
-    width: 80%;
-    max-width: 723px;
-    overflow-y: auto;
+    overflow: hidden;
     padding: 0;
+    flex-shrink: 0;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
     animation: modalFadeIn 0.25s ease;
 }
@@ -152,9 +159,13 @@
 
 .news-modal-img-wrap {
     width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
     background-color: #D9D9D9;
     border-radius: 12px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .news-modal-img-wrap img {
@@ -280,6 +291,15 @@
         height: auto;
     }
 
+    .news-modal-overlay {
+        padding: 2rem 1rem;
+    }
+
+    .news-modal {
+        width: min(92%, 45.1875rem);
+        max-height: min(82vh, calc(100dvh - 4rem));
+    }
+
     .news-modal-close {
         width: 36px;
         height: 36px;
@@ -352,6 +372,15 @@
         padding: 0.5625rem 1rem;     /* 9px 16px */
         border-radius: 50px;
         height: auto;
+    }
+
+    .news-modal-overlay {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .news-modal {
+        width: 100%;
+        max-height: min(80vh, calc(100dvh - 2.5rem));
     }
 
     .news-modal-close {

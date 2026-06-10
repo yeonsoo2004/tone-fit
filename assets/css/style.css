@@ -14,6 +14,7 @@ body {
 
 .page-home {
     word-break: keep-all;
+    --promo-circle-size: clamp(18rem, 35vw, 40.625rem);
 }
 
 /* =========================================
@@ -36,16 +37,25 @@ body {
 .hero-bg {
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
 .hero .inner {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content {
@@ -321,8 +331,8 @@ body {
 }
 
 .franchise-mega .franchise-mega-content {
-    width: clamp(360px, 60%, 60%);
-    padding: 40px;
+    width: clamp(25.1875rem, 60%, 60%);
+    padding: clamp(1rem, 2vw, 2.5rem);
     position: relative;
     justify-self: flex-end;
 }
@@ -611,16 +621,8 @@ body {
     align-content: center;
 }
 
-.ai-personal-bg .section-header h3 .ai-personal-bg-title-line2::before {
-    content: ' ';
-    white-space: pre;
-}
-
-.frame-section .section-header h3>span::before {
-    content: ' ';
-    white-space: pre;
-}
-
+.ai-personal-bg .section-header h3 .ai-personal-bg-title-line2::before,
+.frame-section .section-header h3>span::before,
 .ai-pet-section .section-header h3>span::before {
     content: ' ';
     white-space: pre;
@@ -679,10 +681,7 @@ body {
 /* =========================================
    7. FRAME SECTION
 ========================================= */
-.frame-section .section-header .title,
-.frame-section .section-header h3,
-.frame-section .section-header h3 span,
-.frame-section .section-header p {
+.frame-section .section-header {
     color: #fff;
 }
 
@@ -693,6 +692,7 @@ body {
 }
 
 .frame-swiper {
+    position: relative;
     width: 100%;
 }
 
@@ -706,6 +706,44 @@ body {
 
 .frame-swiper .swiper-slide {
     height: auto;
+}
+
+/* 커스텀 네비게이션 — Font Awesome */
+.frame-section .frame-swiper .swiper-button-prev::after,
+.frame-section .frame-swiper .swiper-button-next::after {
+    display: none !important;
+}
+
+.frame-section .frame-swiper .custom-prev,
+.frame-section .frame-swiper .custom-next {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: -1.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.frame-section .frame-swiper .custom-prev {
+    left: 1.25rem;
+}
+
+.frame-section .frame-swiper .custom-next {
+    right: 1.25rem;
+}
+
+.frame-section .frame-swiper .custom-prev i,
+.frame-section .frame-swiper .custom-next i {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.frame-section .frame-swiper .custom-prev:hover,
+.frame-section .frame-swiper .custom-next:hover {
+    background-color: #D4734A;
+    color: #FFFFFF;
+    transform: scale(1.1);
 }
 
 .frame {
@@ -921,22 +959,16 @@ body {
 }
 
 .viral-userflow {
+    position: relative;
     flex: var(--viral-flow-flex);
-    min-width: 0;
-    max-width: var(--viral-flow-max);
+    min-width: calc(var(--viral-flow-min) + var(--viral-arrow-size) + var(--viral-arrow-gap));
+    max-width: calc(var(--viral-flow-max) + var(--viral-arrow-size) + var(--viral-arrow-gap));
+    padding-left: calc(var(--viral-arrow-size) + var(--viral-arrow-gap));
+    box-sizing: border-box;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: var(--viral-flow-inner-gap);
-}
-
-/* 화살표 + 카드를 한 세트로 wrap (첫 번째 단계 제외) */
-.viral-userflow {
-    position: relative;
-    padding-left: calc(var(--viral-arrow-size) + var(--viral-arrow-gap));
-    min-width: calc(var(--viral-flow-min) + var(--viral-arrow-size) + var(--viral-arrow-gap));
-    max-width: calc(var(--viral-flow-max) + var(--viral-arrow-size) + var(--viral-arrow-gap));
-    box-sizing: border-box;
 }
 
 .viral-userflow::before {
@@ -996,17 +1028,12 @@ body {
     color: #1e2022;
 }
 
-
+/* 550px 이하: 그룹 첫 카드에도 투명 화살표 영역으로 너비 정렬 */
+@media (max-width: 550px) {
     .viral-userflow:first-child::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: var(--viral-arrow-size);
-        height: var(--viral-arrow-size);
-        background: url('../images/icon/arrow_right-viral.svg') center / contain no-repeat;
+        opacity: 0;
     }
+}
 
 
 /* =========================================
@@ -1046,18 +1073,15 @@ body {
     color: #fff;
 }
 
+.ai-24hour-section .section-header .color-main {
+    color: #fff;
+}
+
 .ai-24hour-section .fade-up {
     will-change: transform, opacity;
 }
 
-.ai-24hour-section .section-header h3,
-.ai-24hour-section .section-header p,
-.ai-24hour-section .section-header .title,
-.ai-24hour-section .color-main {
-    color: #fff;
-}
-
-.br{
+.br {
     display: none;
 }
 
@@ -1100,7 +1124,7 @@ body {
 @media (max-width: 1280px) {
 
     .franchise-mega .franchise-mega-content {
-        width: clamp(360px, 70%, 70%);
+        width: clamp(22.5rem, 70%, 70%);
     }
 
     .ai-personal-bg-content {
@@ -1139,6 +1163,18 @@ body {
 }
 
 @media (max-width: 1024px) {
+    .frame-section .frame-swiper .custom-prev,
+    .frame-section .frame-swiper .custom-next {
+        width: 3rem;
+        height: 3rem;
+        margin-top: -1.5rem;
+    }
+
+    .frame-section .frame-swiper .custom-prev i,
+    .frame-section .frame-swiper .custom-next i {
+        font-size: 1.125rem;
+    }
+
     .identity-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1178,10 +1214,14 @@ body {
     }
 
     .franchise-mega .franchise-mega-content {
-        width: 60%;
+        width: clamp(22.5rem, 50%, 50%);
         aspect-ratio: 1;
         align-content: center;
         margin: 2rem 0;
+    }
+
+    .franchise-mega-value {
+        font-size: clamp(5rem, 13vw, 6.25rem);
     }
 
     .franchise-divider-v {
@@ -1310,35 +1350,19 @@ body {
         gap: 20px;
     }
 
-}
-
-@media (min-width: 769px) and (max-width: 960px) {
-    .franchise-benefit-circle {
-        width: min(140px, 24vw);
-        height: min(140px, 24vw);
+    .page-home {
+        --promo-circle-size: min(20rem, 70vw);
     }
 
-    .franchise-benefit-line,
-    .franchise-benefit-plus {
-        font-size: 1rem;
+    .page-home .franchise-mega .round {
+        width: 474px;
+        max-width: 100%;
     }
 
-    .franchise-mega-value {
-        font-size: clamp(3.5rem, 10vw, 6.25rem);
+    .ai-tone-finder-divider {
+        display: none;
     }
 
-    .viral-content {
-        --viral-pad-y: 3rem;
-        --viral-gap: 0.75rem;
-        --viral-flow-max: 9.5rem;
-        --viral-flow-flex: 1 1 calc(50% - 0.75rem);
-        --viral-flow-inner-gap: 0.75rem;
-        --viral-icon: min(7rem, 18vw);
-        --viral-label-py: 0.4375rem;
-        --viral-label-px: 0.75rem;
-        --viral-arrow-min: 1rem;
-        --viral-arrow-max: 1.75rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1375,6 +1399,10 @@ body {
         --viral-arrow-max: 1.5rem;
     }
 
+    .identity-header span {
+        display: none;
+    }
+
     .frame-section .section-header h3>span,
     .ai-pet-section .section-header h3>span {
         display: block;
@@ -1383,6 +1411,27 @@ body {
     .frame-section .section-header h3>span::before,
     .ai-pet-section .section-header h3>span::before {
         content: none;
+    }
+
+    .frame-section .frame-swiper .custom-prev,
+    .frame-section .frame-swiper .custom-next {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-top: -1.25rem;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .frame-section .frame-swiper .custom-prev {
+        left: 0.625rem;
+    }
+
+    .frame-section .frame-swiper .custom-next {
+        right: 0.625rem;
+    }
+
+    .frame-section .frame-swiper .custom-prev i,
+    .frame-section .frame-swiper .custom-next i {
+        font-size: 1rem;
     }
 
     .ai-pet-section.inner,
@@ -1435,7 +1484,6 @@ body {
     }
 
     .identity-grid {
-        grid-template-columns: 1fr;
         gap: 20px;
     }
 
@@ -1460,7 +1508,7 @@ body {
     }
 
     .ai-tone-finder-visual {
-        width: 50%;
+        width: 100%;
         top: 0;
         left: 0;
         z-index: 0;
@@ -1487,8 +1535,7 @@ body {
         z-index: 2;
     }
 
-    .ai-tone-finder-aside,
-    .ai-tone-finder-divider {
+    .ai-tone-finder-aside {
         display: none;
     }
 
@@ -1500,10 +1547,6 @@ body {
     .ai-tone-finder-header,
     .ai-tone-finder-lower {
         grid-column: 1;
-    }
-
-    .ai-tone-finder-visual {
-        width: 100%;
     }
 
     .ai-tone-finder-grid .ai-tone-finder-header,
@@ -1541,9 +1584,18 @@ body {
         height: 20.9375rem;
     }
 
-    .br{
+    .br {
         display: block;
     }
+
+    .page-home {
+        --promo-circle-size: min(18rem, 80vw);
+    }
+
+    .page-home .header-mobile-cta .gnb-btn {
+        color: #fff;
+    }
+
 }
 
 @media (max-width: 402px) {
@@ -1579,8 +1631,8 @@ body {
         align-items: flex-start;
     }
 
-    .ai-personal-bg .section-header h3 {
-        font-size: 1.5rem;
+    .ai-pet-content {
+        flex-direction: column;
     }
 
     .ai-personal-bg-content,
@@ -1595,20 +1647,12 @@ body {
         object-fit: cover;
     }
 
-
-    .frame-section .section-header h3 {
-        font-size: 24px;
-    }
-
-    .viral-section .section-header h3 {
-        font-size: 24px;
-    }
-
-    .review-section .section-header{
+    .review-section .section-header {
         text-align: start;
     }
-    .review-section .section-header h3 {
-        font-size: 24px;
+
+    .section-header h3 {
+        font-size: 1.5rem;
     }
 
     /* franchise-layout — 402px 모바일 */
@@ -1643,7 +1687,6 @@ body {
     }
 
     .franchise-benefits {
-        position: absolute;
         justify-content: flex-start;
         flex-wrap: nowrap;
         gap: 0.5rem;
@@ -1683,15 +1726,19 @@ body {
         overflow: visible;
     }
 
+    .page-home {
+        --promo-circle-size: 29.625rem;
+    }
+
     .page-home .franchise-mega .round {
-        width: 29.625rem;
+        width: var(--promo-circle-size);
         max-width: none;
         min-width: 18rem;
         transform: none;
     }
 
-    .franchise-mega-content {
-        width: 62%;
+    .franchise-mega .franchise-mega-content {
+        padding: clamp(2rem, 8vw, 2.5rem);
     }
 
     .franchise-mega-label {
@@ -1712,25 +1759,8 @@ body {
 }
 
 /* =========================================
-   INDEX MOBILE HEADER CTA
-========================================= */
-@media (max-width: 768px) {
-    .page-home .header-mobile-cta .gnb-btn {
-        color: #fff;
-    }
-}
-
-/* =========================================
    PROMO CIRCLE SIZING SYNC (ABOUT 원형 = MEGA 혜택 원)
-   - PC~노트북: fluid downscale
-   - Tablet(1024)부터: 컴팩트 동일 크기
 ========================================= */
-
-.page-home {
-    --promo-circle-size: clamp(18rem, 35vw, 40.625rem);
-    /* 288px ~ 650px */
-}
-
 .page-home .about-circle-wrap {
     max-width: var(--promo-circle-size);
     aspect-ratio: 1 / 1;
@@ -1741,36 +1771,4 @@ body {
     width: var(--promo-circle-size);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-}
-
-@media screen and (max-width: 1024px) {
-    .page-home {
-        --promo-circle-size: min(20rem, 70vw);
-    }
-
-    .page-home .franchise-mega .round {
-        width: 474px;
-        max-width: 100%;
-    }
-
-    .ai-tone-finder-divider {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .page-home {
-        --promo-circle-size: min(18rem, 80vw);
-    }
-}
-
-@media screen and (max-width: 402px) {
-    .page-home {
-        --promo-circle-size: 29.625rem;
-    }
-
-    .page-home .franchise-mega .round {
-        width: var(--promo-circle-size);
-        max-width: none;
-    }
 }
