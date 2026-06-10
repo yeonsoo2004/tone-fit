@@ -215,6 +215,41 @@
         $error.text(message || '');
     }
 
+    function getInquiryScrollOffset() {
+        var $header = $('.header').first();
+
+        return ($header.length ? $header.outerHeight() : 0) + 16;
+    }
+
+    function scrollToInquiryField(field) {
+        if (!field || !field.$input.length) {
+            return;
+        }
+
+        var $row = field.$input.closest('.startup-inquiry-field, .startup-inquiry-agree-row');
+        var targetEl = ($row.length ? $row : field.$input)[0];
+        var scrollTop = targetEl.getBoundingClientRect().top + window.pageYOffset - getInquiryScrollOffset();
+
+        window.scrollTo({
+            top: Math.max(0, scrollTop),
+            behavior: 'smooth'
+        });
+
+        window.setTimeout(function () {
+            var inputEl = field.$input[0];
+
+            if (!inputEl || typeof inputEl.focus !== 'function') {
+                return;
+            }
+
+            try {
+                inputEl.focus({ preventScroll: true });
+            } catch (error) {
+                inputEl.focus();
+            }
+        }, 350);
+    }
+
     function initStartupInquirySubmit() {
         var $page = getInquiryPage();
 
@@ -250,14 +285,22 @@
 
         function validateAll() {
             var isValid = true;
+            var firstInvalid = null;
 
             fields.forEach(function (field) {
                 if (!validateOne(field)) {
                     isValid = false;
+
+                    if (!firstInvalid) {
+                        firstInvalid = field;
+                    }
                 }
             });
 
-            return isValid;
+            return {
+                isValid: isValid,
+                firstInvalid: firstInvalid
+            };
         }
 
         fields.forEach(function (field) {
@@ -273,7 +316,10 @@
         $form.on('submit', function (event) {
             event.preventDefault();
 
-            if (!validateAll()) {
+            var validation = validateAll();
+
+            if (!validation.isValid) {
+                scrollToInquiryField(validation.firstInvalid);
                 return;
             }
 
