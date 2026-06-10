@@ -741,7 +741,7 @@ body {
 .frame-section .frame {
     width: 100%;
     min-width: 0;
-    height: 39.1875rem;
+    /* height: 39.1875rem; */
     display: grid;
     position: relative;
     overflow: hidden;
@@ -758,7 +758,7 @@ body {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    height: 100%;
+    /* height: 100%; */
     object-fit: cover;
     object-position: center;
     z-index: 0;
