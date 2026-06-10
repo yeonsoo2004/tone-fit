@@ -531,7 +531,11 @@ body {
 /* =========================================
    6. AI PERSONAL BG MATCHING SECTION
 ========================================= */
-
+.ai-personal-bg hr{
+    width: clamp(18.75rem,60%,60%);
+    margin-left:auto;
+    margin-right: auto;
+}
 .ai-personal-bg-content:not(.is-content-visible) .fade-up {
     opacity: 0;
 }
