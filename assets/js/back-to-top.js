@@ -117,6 +117,7 @@
 
     function init() {
         btn = document.querySelector('.back-to-top');
+
         if (!btn) {
             return;
         }
