@@ -1,6 +1,8 @@
 (function () {
     'use strict';
 
+    window.ToneFit = window.ToneFit || {};
+
     var scrollThreshold = 200;
     var defaultBottomPx = 40;
     var topSafeMarginPx = 8;
@@ -8,7 +10,7 @@
     var btn = null;
     var footer = null;
     var footerObserver = null;
-    var inited = false;
+    var inited = window.ToneFit._backToTopInited === true;
     var defaultsCached = false;
 
     function getViewportHeight() {
@@ -115,12 +117,14 @@
 
     function init() {
         btn = document.querySelector('.back-to-top');
+
         if (!btn) {
             return;
         }
 
         if (!inited) {
             inited = true;
+            window.ToneFit._backToTopInited = true;
             cacheDefaults();
 
             btn.addEventListener('click', function () {

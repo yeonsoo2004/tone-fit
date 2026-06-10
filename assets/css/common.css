@@ -206,6 +206,11 @@ br.mo-only,
 
 
 
+/* PC: 숨김 · 1024px 이하에서만 지정 줄바꿈 */
+.br-resp {
+   display: none;
+}
+
 /* =========================================
    Responsive Layout System (반응형 레이아웃)
 ========================================= */
@@ -241,6 +246,10 @@ br.mo-only,
 
    .br-none {
       display: none;
+   }
+
+   .br-resp {
+      display: inline;
    }
 }
 

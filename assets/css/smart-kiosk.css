@@ -184,7 +184,46 @@
 }
 
 .kiosk-frame-section .kiosk-frame-swiper {
+    position: relative;
     width: 100%;
+}
+
+/* 커스텀 네비게이션 — Font Awesome */
+.kiosk-frame-section .kiosk-frame-swiper .swiper-button-prev::after,
+.kiosk-frame-section .kiosk-frame-swiper .swiper-button-next::after {
+    display: none !important;
+}
+
+.kiosk-frame-section .kiosk-frame-swiper .custom-prev,
+.kiosk-frame-section .kiosk-frame-swiper .custom-next {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: -1.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.kiosk-frame-section .kiosk-frame-swiper .custom-prev {
+    left: 1.25rem;
+}
+
+.kiosk-frame-section .kiosk-frame-swiper .custom-next {
+    right: 1.25rem;
+}
+
+.kiosk-frame-section .kiosk-frame-swiper .custom-prev i,
+.kiosk-frame-section .kiosk-frame-swiper .custom-next i {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.kiosk-frame-section .kiosk-frame-swiper .custom-prev:hover,
+.kiosk-frame-section .kiosk-frame-swiper .custom-next:hover {
+    background-color: #D4734A;
+    color: #FFFFFF;
+    transform: scale(1.1);
 }
 
 .kiosk-frame-section .kiosk-frame-swiper .swiper-slide {
@@ -221,11 +260,44 @@
     .kiosk-frame-section .frame {
         height: 28.125rem;
     }
+
+    .kiosk-frame-section .kiosk-frame-swiper .custom-prev,
+    .kiosk-frame-section .kiosk-frame-swiper .custom-next {
+        width: 3rem;
+        height: 3rem;
+        margin-top: -1.5rem;
+    }
+
+    .kiosk-frame-section .kiosk-frame-swiper .custom-prev i,
+    .kiosk-frame-section .kiosk-frame-swiper .custom-next i {
+        font-size: 1.125rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .kiosk-frame-section .frame {
         height: 18.75rem;
+    }
+
+    .kiosk-frame-section .kiosk-frame-swiper .custom-prev,
+    .kiosk-frame-section .kiosk-frame-swiper .custom-next {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-top: -1.25rem;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .kiosk-frame-section .kiosk-frame-swiper .custom-prev {
+        left: 0.625rem;
+    }
+
+    .kiosk-frame-section .kiosk-frame-swiper .custom-next {
+        right: 0.625rem;
+    }
+
+    .kiosk-frame-section .kiosk-frame-swiper .custom-prev i,
+    .kiosk-frame-section .kiosk-frame-swiper .custom-next i {
+        font-size: 1rem;
     }
 }
 
@@ -578,10 +650,6 @@
     line-height: 1.6;
 }
 
-.kiosk-cta-section .cta-desc-br {
-    display: none;
-}
-
 .kiosk-cta-section .btn-group {
     display: flex;
     flex-wrap: wrap;
@@ -623,10 +691,6 @@
         height: auto;
         min-height: 22rem;
         padding: 3rem 0;
-    }
-
-    .kiosk-cta-section .cta-desc-br {
-        display: inline;
     }
 
     .kiosk-cta-section .btn-group {

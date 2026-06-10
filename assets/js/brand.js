@@ -499,10 +499,72 @@
         }
     }
 
-    function initKioskFrameSwiper() {
-        if (!document.querySelector('.kiosk-frame-swiper') || typeof Swiper === 'undefined') return;
+    function initComparisonCheckIcons() {
+        const section = document.querySelector('.identity-why-section');
+        const icons = section ? section.querySelectorAll('.ani-check-icon') : [];
+        if (!icons.length || typeof gsap === 'undefined') return;
 
-        new Swiper('.kiosk-frame-swiper', {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        icons.forEach(function (icon) {
+            const bgCircle = icon.querySelector('.bg-circle');
+            const progressCircle = icon.querySelector('.progress-circle');
+            const checkMark = icon.querySelector('.check-mark');
+            if (!bgCircle || !progressCircle || !checkMark) return;
+
+            if (reducedMotion) {
+                gsap.set(progressCircle, { strokeDashoffset: 0 });
+                gsap.set(bgCircle, { attr: { fill: '#D4734A' } });
+                gsap.set(checkMark, { strokeDashoffset: 0 });
+                return;
+            }
+
+            if (typeof ScrollTrigger === 'undefined') {
+                gsap.set(progressCircle, { strokeDashoffset: 0 });
+                gsap.set(bgCircle, { attr: { fill: '#D4734A' } });
+                gsap.set(checkMark, { strokeDashoffset: 0 });
+                return;
+            }
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.set(progressCircle, { strokeDashoffset: 70 });
+            gsap.set(bgCircle, { attr: { fill: '#F6F6F6' } });
+            gsap.set(checkMark, { strokeDashoffset: 20 });
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: icon,
+                    start: 'top 88%',
+                    toggleActions: 'play none none none',
+                },
+                delay: Array.prototype.indexOf.call(icons, icon) * 0.18,
+            })
+                .to(progressCircle, {
+                    strokeDashoffset: 0,
+                    duration: 0.65,
+                    ease: 'power2.out',
+                })
+                .to(
+                    bgCircle,
+                    { attr: { fill: '#D4734A' }, duration: 0.35, ease: 'power1.inOut' },
+                    '-=0.25'
+                )
+                .to(
+                    checkMark,
+                    { strokeDashoffset: 0, duration: 0.4, ease: 'power2.out' },
+                    '-=0.15'
+                );
+        });
+
+        ScrollTrigger.refresh();
+    }
+
+    function initKioskFrameSwiper() {
+        const swiperEl = document.querySelector('.kiosk-frame-swiper');
+        if (!swiperEl || typeof Swiper === 'undefined') return;
+
+        new Swiper(swiperEl, {
             slidesPerView: 2,
             spaceBetween: 16,
             loop: true,
@@ -510,6 +572,10 @@
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.custom-next',
+                prevEl: '.custom-prev',
             },
             breakpoints: {
                 768: {
@@ -534,6 +600,7 @@
             initCounters();
             initSeasonSwiper();
             initSpaceSwiper();
+            initComparisonCheckIcons();
         }
 
         if (kioskPage) {
