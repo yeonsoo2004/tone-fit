@@ -593,11 +593,11 @@
 
 (function () {
     const section = document.querySelector('.frame-section');
-    const fadeEls = section?.querySelectorAll('.frame-swiper .frame.fade-up');
-    if (!section || !fadeEls?.length || typeof gsap === 'undefined') return;
+    const fadeEl = section?.querySelector('.frame-content.fade-up');
+    if (!section || !fadeEl || typeof gsap === 'undefined') return;
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        gsap.set(fadeEls, { opacity: 1, y: 0, clearProps: 'transform' });
+        gsap.set(fadeEl, { opacity: 1, y: 0, clearProps: 'transform' });
         return;
     }
 
@@ -614,12 +614,12 @@
         clearProps: 'transform'
     };
 
-    gsap.set(fadeEls, fadeFrom);
+    gsap.set(fadeEl, fadeFrom);
 
-    gsap.fromTo(fadeEls, fadeFrom, {
+    gsap.fromTo(fadeEl, fadeFrom, {
         ...fadeTo,
         scrollTrigger: {
-            trigger: section.querySelector('.frame-content') || section,
+            trigger: fadeEl,
             start: 'top 70%',
             once: true
         },
@@ -638,11 +638,10 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     new Swiper(frameSwiperEl, {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        autoHeight: true,
+        slidesPerView: 2,
+        spaceBetween: 16,
         loop: true,
-        speed: 600,
+        speed: 800,
         grabCursor: true,
         allowTouchMove: true,
         simulateTouch: true,
@@ -654,15 +653,19 @@
                   pauseOnMouseEnter: true
               },
         navigation: {
-            nextEl: '.custom-next',
-            prevEl: '.custom-prev',
+            nextEl: '.frame-section .custom-next',
+            prevEl: '.frame-section .custom-prev',
         },
         breakpoints: {
-            0: { slidesPerView: 2, spaceBetween: 16 },
-            403: { slidesPerView: 1.2, spaceBetween: 12 },
-            768: { slidesPerView: 3, spaceBetween: 20 },
-            1024: { slidesPerView: 4 }
-        }
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+            },
+        },
     });
 
     if (reducedMotion) {

@@ -7,17 +7,19 @@
     var defaultBottomPx = 40;
     var topSafeMarginPx = 8;
     var ticking = false;
-    var btn = null;
     var footer = null;
     var footerObserver = null;
-    var inited = window.ToneFit._backToTopInited === true;
     var defaultsCached = false;
+
+    function getButtons() {
+        return document.querySelectorAll('.back-to-top');
+    }
 
     function getViewportHeight() {
         return window.visualViewport ? window.visualViewport.height : window.innerHeight;
     }
 
-    function readDefaultBottomOffset() {
+    function readDefaultBottomOffset(btn) {
         if (!btn) {
             return defaultBottomPx;
         }
@@ -44,24 +46,47 @@
         return Number.isFinite(computedBottom) ? computedBottom : defaultBottomPx;
     }
 
-    function cacheDefaults() {
-        if (defaultsCached) {
+    function cacheDefaults(buttons) {
+        if (defaultsCached || !buttons.length) {
             return;
         }
 
-        defaultBottomPx = readDefaultBottomOffset();
+        defaultBottomPx = readDefaultBottomOffset(buttons[0]);
         defaultsCached = true;
     }
 
+    function scrollToTop() {
+        var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (typeof ScrollSmoother !== 'undefined' && typeof ScrollSmoother.get === 'function') {
+            var smoother = ScrollSmoother.get();
+
+            if (smoother) {
+                smoother.scrollTo(0, !reducedMotion);
+                return;
+            }
+        }
+
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: reducedMotion ? 'auto' : 'smooth'
+        });
+    }
+
     function update() {
-        if (!btn) {
+        var buttons = getButtons();
+
+        if (!buttons.length) {
+            ticking = false;
             return;
         }
 
+        cacheDefaults(buttons);
         footer = document.querySelector('.footer');
 
         var viewportHeight = getViewportHeight();
-        var btnHeight = btn.offsetHeight || 56;
+        var btnHeight = buttons[0].offsetHeight || 56;
         var maxBottomPx = Math.max(
             defaultBottomPx,
             viewportHeight - btnHeight - topSafeMarginPx
@@ -82,8 +107,11 @@
 
         bottomPx = Math.min(bottomPx, maxBottomPx);
 
-        btn.style.bottom = bottomPx + 'px';
-        btn.classList.toggle('is-visible', window.scrollY > scrollThreshold);
+        buttons.forEach(function (btn) {
+            btn.style.bottom = bottomPx + 'px';
+            btn.classList.toggle('is-visible', window.scrollY > scrollThreshold);
+        });
+
         ticking = false;
     }
 
@@ -115,29 +143,36 @@
         footerObserver.observe(footer);
     }
 
-    function init() {
-        btn = document.querySelector('.back-to-top');
-
-        if (!btn) {
+    function bindGlobalListeners() {
+        if (window.ToneFit._backToTopListenersBound) {
             return;
         }
 
-        if (!inited) {
-            inited = true;
-            window.ToneFit._backToTopInited = true;
-            cacheDefaults();
+        window.ToneFit._backToTopListenersBound = true;
 
-            btn.addEventListener('click', function () {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            window.addEventListener('scroll', scheduleUpdate, { passive: true });
-            window.addEventListener('resize', scheduleUpdate, { passive: true });
-
-            if (window.visualViewport) {
-                window.visualViewport.addEventListener('resize', scheduleUpdate, { passive: true });
-                window.visualViewport.addEventListener('scroll', scheduleUpdate, { passive: true });
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.back-to-top')) {
+                return;
             }
+
+            event.preventDefault();
+            scrollToTop();
+        });
+
+        window.addEventListener('scroll', scheduleUpdate, { passive: true });
+        window.addEventListener('resize', scheduleUpdate, { passive: true });
+
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener('resize', scheduleUpdate, { passive: true });
+            window.visualViewport.addEventListener('scroll', scheduleUpdate, { passive: true });
+        }
+    }
+
+    function init() {
+        bindGlobalListeners();
+
+        if (!getButtons().length) {
+            return;
         }
 
         bindFooterObserver();
