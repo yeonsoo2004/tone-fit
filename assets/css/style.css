@@ -142,7 +142,7 @@ body {
     top: 50%;
     left: 50%;
     width: 115%;
-    height: 115%;
+    height: auto;
     transform-origin: center center;
     animation: rotate 8s linear infinite;
     will-change: transform;
@@ -342,8 +342,10 @@ body {
 }
 
 .franchise-mega .franchise-mega-content {
-    width: clamp(25.1875rem, 60%, 60%);
-    height: clamp(25.1875rem, 60%, 60%);
+     --box-size: clamp(25.1875rem, 60%, 60%);
+
+    width: var(--box-size);
+    height: var(--box-size);
     padding: clamp(1rem, 2vw, 2.5rem);
     position: relative;
     justify-self: flex-end;
