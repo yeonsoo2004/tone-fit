@@ -172,7 +172,7 @@ function bindAccordion() {
             if (isOpen) {
                 closeItem(item);
             } else {
-                openItem(item, { scrollToMap: true });
+                openItem(item);
             }
         });
 
@@ -186,80 +186,45 @@ function bindAccordion() {
     });
 }
 
-function scrollToMapSection() {
-    var mapSection = document.querySelector('.store-map-section');
-    if (!mapSection) {
+function revealAccordionPanel(item) {
+    var panel = item.querySelector('.store-accordion-panel');
+    if (!panel) {
         return;
     }
 
-    var header = document.querySelector('.header');
-    var headerOffset = header ? header.offsetHeight : 0;
-    var top = window.scrollY + mapSection.getBoundingClientRect().top - headerOffset;
+    function scrollIfNeeded() {
+        var header = document.querySelector('.header');
+        var headerHeight = header ? header.offsetHeight : 0;
+        var rect = panel.getBoundingClientRect();
 
-    window.scrollTo({
-        top: top,
-        behavior: 'smooth'
-    });
-}
-
-function openItem(item, options) {
-    options = options || {};
-    const trigger = item.querySelector('.store-accordion-trigger');
-    item.classList.add('is-open');
-    trigger.setAttribute('aria-expanded', 'true');
-
-    // 해당 매장 마커로 지도 이동 + 확대 · 좌측 목록 동기화
-    const index = parseInt(item.getAttribute('data-index'), 10);
-    if (!isNaN(index)) {
-        ensureSidebarShowsStore(index);
-
-        if (window._storeMarkers && window._storeMarkers[index]) {
-            const marker = window._storeMarkers[index];
-            const map = window._kakaoMap;
-            if (map) {
-                map.setLevel(4, { animate: true });
-                map.panTo(marker.getPosition());
-            }
+        if (rect.top < headerHeight + 8 || rect.bottom > window.innerHeight - 16) {
+            item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
         }
     }
 
-    if (options.scrollToMap) {
-        scrollToMapSection();
-    }
+    panel.addEventListener('transitionend', function onEnd(e) {
+        if (e.propertyName !== 'max-height') {
+            return;
+        }
+
+        panel.removeEventListener('transitionend', onEnd);
+        scrollIfNeeded();
+    });
+
+    requestAnimationFrame(scrollIfNeeded);
+}
+
+function openItem(item) {
+    const trigger = item.querySelector('.store-accordion-trigger');
+    item.classList.add('is-open');
+    trigger.setAttribute('aria-expanded', 'true');
+    revealAccordionPanel(item);
 }
 
 function closeItem(item) {
     const trigger = item.querySelector('.store-accordion-trigger');
     item.classList.remove('is-open');
     trigger.setAttribute('aria-expanded', 'false');
-
-    syncSidebarWithOpenAccordion();
-
-    // 열린 항목이 하나도 없으면 전국 뷰로 복귀
-    const anyOpen = document.querySelector('.store-accordion-item.is-open');
-    if (!anyOpen && window._kakaoMap) {
-        window._kakaoMap.setLevel(13, { animate: true });
-        window._kakaoMap.panTo(new kakao.maps.LatLng(36.5, 127.8));
-    }
-}
-
-function openAccordionByIndex(index) {
-    var items = document.querySelectorAll('.store-accordion-item');
-    var target = items[index];
-
-    if (!target) {
-        return;
-    }
-
-    items.forEach(function (other) {
-        if (other !== target && other.classList.contains('is-open')) {
-            closeItem(other);
-        }
-    });
-
-    if (!target.classList.contains('is-open')) {
-        openItem(target);
-    }
 }
 
 /* =========================================
@@ -359,20 +324,6 @@ function ensureSidebarShowsStore(index) {
     }
 }
 
-function syncSidebarWithOpenAccordion() {
-    var openAccordion = document.querySelector('.store-accordion-item.is-open');
-
-    if (!openAccordion) {
-        setSidebarActive(-1);
-        return;
-    }
-
-    var index = parseInt(openAccordion.getAttribute('data-index'), 10);
-    if (!isNaN(index)) {
-        ensureSidebarShowsStore(index);
-    }
-}
-
 function focusStoreOnMap(index, level) {
     var map = window._kakaoMap;
     var marker = window._storeMarkers && window._storeMarkers[index];
@@ -468,7 +419,6 @@ function renderSidebarList(filterText) {
 
         button.addEventListener('click', function () {
             ensureSidebarShowsStore(index);
-            openAccordionByIndex(index);
             focusStoreOnMap(index, 3);
         });
 
@@ -554,7 +504,6 @@ function initMapPanel() {
 
             kakao.maps.event.addListener(marker, 'click', function () {
                 ensureSidebarShowsStore(index);
-                openAccordionByIndex(index);
                 focusStoreOnMap(index, 3);
             });
 
