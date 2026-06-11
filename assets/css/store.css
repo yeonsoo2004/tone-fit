@@ -462,10 +462,6 @@
         padding: 5rem 0 3.75rem;
     }
 
-    .store-page-title {
-        font-size: 2.5rem;      /* 54px → 40px */
-    }
-
     .store-map-wrap,
     .store-list-wrap {
         padding: 0 1rem;
