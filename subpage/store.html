@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="../assets/css/component.css">
     <link rel="stylesheet" href="../assets/css/store.css">
 </head>
+
 <body class="page-store">
     <script src="../assets/js/libs/jquery.min.js"></script>
     <script src="../assets/js/libs/gsap.min.js"></script>
@@ -24,14 +26,29 @@
         <!-- 페이지 타이틀 -->
         <section class="store-title-section">
             <div class="inner">
-                <h2 class="store-page-title title ft-48-r">매장 안내</h2>
+                <h2 class="store-page-title title ft-48-r color-point">매장 안내</h2>
             </div>
         </section>
 
-        <!-- 카카오맵 -->
+        <!-- 지점 검색 + 카카오맵 -->
         <section class="store-map-section">
             <div class="store-map-wrap">
-                <div id="kakao-map" role="region" aria-label="TONE:FIT 매장 위치 지도"></div>
+                <div class="store-map-layout">
+                    <aside class="store-sidebar" aria-label="매장 검색 및 목록">
+                        <div class="store-search-wrap">
+                            <label class="visually-hidden" for="store-search-input">지점 검색</label>
+                            <div class="store-search-field">
+                                <input type="search" id="store-search-input" class="store-search-input ft-18-r"
+                                    placeholder="지점 검색" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="store-sidebar-list" id="storeSidebarList" role="listbox" aria-label="매장 목록">
+                            <!-- JS로 렌더링 -->
+                        </div>
+                        <p class="store-search-empty ft-18-r color-main" id="storeSearchEmpty" hidden>검색 결과가 없습니다.</p>
+                    </aside>
+                    <div id="map-container" role="region" aria-label="TONE:FIT 매장 위치 지도"></div>
+                </div>
             </div>
         </section>
 
@@ -39,8 +56,8 @@
         <section class="store-list-section">
             <div class="store-list-wrap">
                 <div class="store-list-header">
-                    <p class="store-list-title ft-32-b color-point">매장 현황</p>
-                    <p class="store-list-count ft-20-r color-main">전체 8호</p>
+                    <p class="store-list-title ft-32-b color-point">매장 정보</p>
+                    <p class="store-list-count ft-20-r color-main">전체 8곳</p>
                 </div>
                 <ul class="store-accordion-list" id="storeAccordionList">
                     <!-- JS로 렌더링 -->
@@ -54,10 +71,11 @@
     <!-- 카카오맵 API -->
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e86b02fa8d9d08e1a6932749d1faefdf&autoload=false">
-    </script>
+        </script>
     <script src="../assets/js/include.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/policy-modal.js"></script>
     <script src="../assets/js/store.js"></script>
 </body>
+
 </html>

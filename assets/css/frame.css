@@ -272,9 +272,26 @@
         column-gap: 20px;
     }
 
-    .frame-tab-btn {
-        padding: 8px 28px;
-        height: 46px;
+    /* 탭바 — 스페이스 1024 패턴 · 3열 · 버튼·텍스트 동시 축소 */
+    .frame-page .lnb-tab-bar {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .frame-page .lnb-tab-bar .lnb-tab-btn,
+    .frame-page .lnb-tab-bar .frame-tab-btn {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+        overflow: hidden;
+        text-align: center;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 }
 
@@ -289,27 +306,27 @@
         column-gap: 12px;
     }
 
-    /* 탭바 — 스페이스 모바일(768) 패턴 · 3열 1줄 · 14px */
+    /* 탭바 — 스페이스 모바일(768) 패턴 · 3열 1줄 */
     .frame-page .lnb-tab-bar {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 0.5rem;
         width: 100%;
         max-width: 100%;
     }
 
-    .frame-page .frame-tab-btn {
+    .frame-page .lnb-tab-bar .lnb-tab-btn,
+    .frame-page .lnb-tab-bar .frame-tab-btn {
         box-sizing: border-box;
         width: 100%;
+        max-width: 100%;
         min-width: 0;
         height: auto;
-        padding: 0.4375rem 0.75rem;
-        /* font-size — TAB BAR UNIFIED · ft-20-r 768(16px) */
-        line-height: 1.6;
+        overflow: hidden;
         text-align: center;
-        white-space: nowrap;
-        overflow: visible;
-        text-overflow: clip;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 
     .frame-poster-card:hover .frame-poster-img-wrap img {
@@ -340,13 +357,8 @@
     }
 
     .frame-page .lnb-tab-bar {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 0.375rem;
-    }
-
-    .frame-page .frame-tab-btn {
-        padding: 0.375rem 0.625rem;
-        /* font-size — TAB BAR UNIFIED · ft-20-r 402(16px) */
     }
 }
 
@@ -403,12 +415,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
     height: auto;
-    padding: 0.5rem 2.5rem;
+    padding: clamp(0.25rem, 0.125rem + 0.4vw, 0.5rem) clamp(0.375rem, 0.125rem + 1.75vw, 2.5rem);
     letter-spacing: 0;
-    font-size: 1.25rem;   /* 20px · ft-20-r PC */
+    font-size: clamp(0.6875rem, 0.4375rem + 0.9vw, 1.25rem); /* 11px ~ 20px · ft-20-r fluid */
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.4;
     background-color: #FFFFFF;
     color: #D4734A;
     border: 1px solid rgba(51, 52, 70, 0.1);
@@ -419,6 +434,7 @@
     white-space: nowrap;
     word-break: keep-all;
     overflow-wrap: normal;
+    overflow: hidden;
     appearance: none;
     -webkit-appearance: none;
 }
@@ -466,28 +482,8 @@
 @media screen and (max-width: 1024px) {
     .frame-page .lnb-tab-bar .lnb-tab-btn,
     .frame-page .lnb-tab-bar .frame-tab-btn {
-        font-size: 1.125rem;  /* 18px · ft-20-r 1024 */
-        line-height: 1.6;
-        padding: 8px 28px;
-        height: 46px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .frame-page .lnb-tab-bar .lnb-tab-btn,
-    .frame-page .lnb-tab-bar .frame-tab-btn {
-        height: auto;
-        padding: 0.4375rem 0.75rem;
-        font-size: 1rem;      /* 16px · ft-20-r 768 */
-        line-height: 1.6;
-    }
-}
-
-@media screen and (max-width: 402px) {
-    .frame-page .lnb-tab-bar .lnb-tab-btn,
-    .frame-page .lnb-tab-bar .frame-tab-btn {
-        padding: 0.375rem 0.625rem;
-        font-size: 1rem;      /* 16px · ft-20-r 402 */
-        line-height: 1.6;
+        width: 100%;
+        white-space: normal;
+        overflow-wrap: break-word;
     }
 }
