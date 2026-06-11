@@ -42,6 +42,7 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    pointer-events: none;
 }
 
 .hero::after {
@@ -141,8 +142,11 @@ body {
     top: 50%;
     left: 50%;
     width: 115%;
+    height: 115%;
     transform-origin: center center;
     animation: rotate 8s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 @keyframes rotate {
@@ -162,6 +166,10 @@ body {
     aspect-ratio: 1;
     overflow: visible;
     justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: auto;
 }
 
 .about-circle {
@@ -327,13 +335,23 @@ body {
     width: 100%;
     height: 188px;
     overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: auto;
 }
 
 .franchise-mega .franchise-mega-content {
     width: clamp(25.1875rem, 60%, 60%);
+    height: clamp(25.1875rem, 60%, 60%);
     padding: clamp(1rem, 2vw, 2.5rem);
     position: relative;
     justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .franchise-mega .franchise-mega-content::before {
@@ -1448,7 +1466,7 @@ body {
     .viral-userflow:not(:last-child)::after {
         content: '';
         position: absolute;
-        left: 50%;
+        left: 75%;
         bottom: calc(-1 * (var(--viral-gap) + var(--viral-arrow-size)) / 2);
         width: var(--viral-arrow-size);
         height: var(--viral-arrow-size);

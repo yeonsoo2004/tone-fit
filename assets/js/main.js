@@ -582,13 +582,18 @@
         }
     }
 
-    marquee.addEventListener('mouseenter', function () {
-        setTargetRate(0);
-    });
+    // 모바일에서는 마퀴가 계속 움직이도록 유지 (마우스 이벤트 미적용)
+    const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    
+    if (!isMobile) {
+        marquee.addEventListener('mouseenter', function () {
+            setTargetRate(0);
+        });
 
-    marquee.addEventListener('mouseleave', function () {
-        setTargetRate(1);
-    });
+        marquee.addEventListener('mouseleave', function () {
+            setTargetRate(1);
+        });
+    }
 })();
 
 (function () {
