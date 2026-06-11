@@ -75,7 +75,6 @@
         var $kvCopy = $page.find('.startup-kv-copy.startup-fade-up');
         var $featureCopy = $page.find('.startup-feature-copy.startup-fade-up');
         var $growthVisual = $page.find('.startup-growth-graphic.startup-fade-up');
-        var $profitMarquee = $page.find('.startup-profit-marquee.startup-fade-up');
         var $profitCaption = $page.find('.startup-profit-caption.startup-fade-up');
         var $franchiseCards = $page.find('.startup-franchise-cards.startup-fade-up');
         var $franchiseAction = $page.find('.startup-franchise-action.startup-fade-up');
@@ -86,6 +85,10 @@
             if ($target && $target.length) {
                 $target.addClass('is-fade-active');
             }
+        }
+
+        function isFadeEntryVisible(entry) {
+            return entry.isIntersecting === true || entry.intersectionRatio > 0;
         }
 
         function observeFadeTargets($targets) {
@@ -101,7 +104,7 @@
             var observer = new IntersectionObserver(
                 function (entries) {
                     entries.forEach(function (entry) {
-                        if (!entry.isIntersecting) {
+                        if (!isFadeEntryVisible(entry)) {
                             return;
                         }
 
@@ -110,7 +113,7 @@
                     });
                 },
                 {
-                    threshold: STARTUP_FADE_THRESHOLD,
+                    threshold: [0, STARTUP_FADE_THRESHOLD],
                     rootMargin: '0px 0px -5% 0px'
                 }
             );
@@ -126,7 +129,6 @@
 
         observeFadeTargets($featureCopy);
         observeFadeTargets($growthVisual);
-        observeFadeTargets($profitMarquee);
         observeFadeTargets($profitCaption);
         observeFadeTargets($franchiseCards);
         observeFadeTargets($franchiseAction);
