@@ -365,6 +365,7 @@
     height: auto;
     display: block;
     object-fit: contain;
+    pointer-events: none;
 }
 
 .identity-market-section .market-graph {

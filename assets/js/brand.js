@@ -590,6 +590,50 @@
         });
     }
 
+    function initFeatureVideo() {
+        const video = document.querySelector('.identity-feature-section .feature-video');
+        if (!video) return;
+
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video.removeAttribute('controls');
+
+        function tryPlay() {
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(function () {});
+            }
+        }
+
+        if (video.readyState >= 2) {
+            tryPlay();
+        } else {
+            video.addEventListener('loadeddata', tryPlay, { once: true });
+            video.addEventListener('canplay', tryPlay, { once: true });
+        }
+
+        if (typeof IntersectionObserver !== 'undefined') {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        tryPlay();
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            observer.observe(video);
+        }
+
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden) {
+                tryPlay();
+            }
+        });
+    }
+
     function initBrandPages() {
         const identityPage = document.querySelector('.identity-main');
         const kioskPage = document.querySelector('.kiosk-main');
@@ -601,6 +645,7 @@
             initSeasonSwiper();
             initSpaceSwiper();
             initComparisonCheckIcons();
+            initFeatureVideo();
         }
 
         if (kioskPage) {
