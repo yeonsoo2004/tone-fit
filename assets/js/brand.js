@@ -594,37 +594,59 @@
         const video = document.querySelector('.identity-feature-section .feature-video');
         if (!video) return;
 
+        const container = video.closest('.img-col') || video.parentElement;
+
         video.muted = true;
         video.defaultMuted = true;
         video.playsInline = true;
+        video.setAttribute('autoplay', '');
+        video.setAttribute('muted', '');
         video.setAttribute('playsinline', '');
         video.setAttribute('webkit-playsinline', '');
         video.removeAttribute('controls');
 
         function tryPlay() {
+            video.muted = true;
             const playPromise = video.play();
             if (playPromise && typeof playPromise.catch === 'function') {
                 playPromise.catch(function () {});
             }
         }
 
-        if (video.readyState >= 2) {
+        function tryPlayWithRetry() {
             tryPlay();
-        } else {
-            video.addEventListener('loadeddata', tryPlay, { once: true });
-            video.addEventListener('canplay', tryPlay, { once: true });
+            [150, 400, 900, 1500].forEach(function (delay) {
+                window.setTimeout(tryPlay, delay);
+            });
         }
 
-        if (typeof IntersectionObserver !== 'undefined') {
+        ['loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough'].forEach(function (eventName) {
+            video.addEventListener(eventName, tryPlay, { once: true });
+        });
+
+        if (typeof IntersectionObserver !== 'undefined' && container) {
             const observer = new IntersectionObserver(function (entries) {
                 entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        tryPlay();
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+                        tryPlayWithRetry();
                     }
                 });
-            }, { threshold: 0.2 });
+            }, { threshold: [0, 0.2, 0.5, 1] });
 
-            observer.observe(video);
+            observer.observe(container);
+        }
+
+        if (typeof ScrollTrigger !== 'undefined' && container && typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            ScrollTrigger.create({
+                trigger: container,
+                start: 'top 88%',
+                once: true,
+                onEnter: function () {
+                    tryPlayWithRetry();
+                    gsap.delayedCall(1, tryPlayWithRetry);
+                },
+            });
         }
 
         document.addEventListener('visibilitychange', function () {
@@ -632,6 +654,11 @@
                 tryPlay();
             }
         });
+
+        document.addEventListener('touchstart', function unlockVideo() {
+            tryPlay();
+            document.removeEventListener('touchstart', unlockVideo);
+        }, { once: true, passive: true });
     }
 
     function initBrandPages() {
@@ -641,11 +668,11 @@
         if (identityPage) {
             initVisionCircles();
             initFadeUp();
+            initFeatureVideo();
             initCounters();
             initSeasonSwiper();
             initSpaceSwiper();
             initComparisonCheckIcons();
-            initFeatureVideo();
         }
 
         if (kioskPage) {
