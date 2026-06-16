@@ -1036,37 +1036,6 @@
 
 
 
-/* =========================================
-
-   Footer — Contact page only (.contact-page)
-
-   font.css 클래스가 style.css 푸터 폰트보다 우선
-
-========================================= */
-
-
-
-.contact-page .footer .footer-logo,
-
-.contact-page .footer .footer-policy,
-
-.contact-page .footer .footer-policy p,
-
-.contact-page .footer .footer-policy-link,
-
-.contact-page .footer .footer-info-contact,
-
-.contact-page .footer .footer-info,
-
-.contact-page .footer .email {
-
-    font-size: unset;
-
-    font-weight: unset;
-
-    line-height: unset;
-
-}
 
 
 

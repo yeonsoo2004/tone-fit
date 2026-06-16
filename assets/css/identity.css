@@ -201,7 +201,7 @@
     }
 
     .identity-vision-section .circle-container {
-        width: 14rem;
+        width: clamp(10rem, 8rem + 10vw, 14rem);
         height: 14rem;
     }
 
@@ -218,7 +218,11 @@
         margin-top: 2.5rem;
     }
 }
-
+@media screen and (max-width: 403px){
+    .identity-vision-section .circle-container{
+        width: 14rem;
+    }
+}
 
 /* =========================================
    Identity – Split Grid Sections (Feature & Market)

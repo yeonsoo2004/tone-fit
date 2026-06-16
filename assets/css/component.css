@@ -344,6 +344,13 @@ body.is-header-nav-open {
     }
 }
 
+@media (max-width: 768px) {
+    :root{
+        --page-gutter-x:32px;
+    }
+    
+}
+
 @media screen and (max-width: 402px) {
     :root {
         --page-gutter-x: 16px;

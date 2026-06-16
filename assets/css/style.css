@@ -342,7 +342,7 @@ body {
 }
 
 .franchise-mega .franchise-mega-content {
-     --box-size: clamp(25.1875rem, 60%, 60%);
+    --box-size: clamp(25.1875rem, 60%, 60%);
 
     width: var(--box-size);
     height: var(--box-size);
@@ -551,11 +551,12 @@ body {
 /* =========================================
    6. AI PERSONAL BG MATCHING SECTION
 ========================================= */
-.ai-personal-bg hr{
-    width: clamp(18.75rem,60%,60%);
-    margin-left:auto;
+.ai-personal-bg hr {
+    width: clamp(18.75rem, 60%, 60%);
+    margin-left: auto;
     margin-right: auto;
 }
+
 .ai-personal-bg-content:not(.is-content-visible) .fade-up {
     opacity: 0;
 }
@@ -813,7 +814,7 @@ body {
     transform: translateZ(0);
 }
 
-.frame-section .frame-hover > p {
+.frame-section .frame-hover>p {
     margin: 0;
     max-width: calc(100% - 2rem);
     font-size: 1rem;
@@ -822,7 +823,7 @@ body {
     color: #fff;
 }
 
-.frame-section .frame-hover > .topage-btn {
+.frame-section .frame-hover>.topage-btn {
     margin: 0;
     max-width: 100%;
     min-width: 0;
@@ -880,7 +881,7 @@ body {
         gap: 0.75rem;
     }
 
-    .frame-section .frame-hover > p {
+    .frame-section .frame-hover>p {
         font-size: 0.8125rem;
         max-width: 100%;
     }
@@ -1220,6 +1221,7 @@ body {
 
     .identity-texts {
         min-width: 0;
+        margin-top: 1.25rem;
     }
 
     /* 태블릿(1024px)부터 데코 레이어 삭제 + 1열 레이아웃 */
@@ -1252,7 +1254,7 @@ body {
     }
 
     .franchise-mega .franchise-mega-content {
-        width: clamp(22.5rem, 50%, 50%);
+        width: clamp(20.5rem, 50%, 50%);
         aspect-ratio: 1;
         align-content: center;
         margin: 2rem 0;
@@ -1497,7 +1499,7 @@ body {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: calc(var(--viral-icon)*1.5) ;
+        width: calc(var(--viral-icon)*1.5);
         aspect-ratio: 1;
         border-radius: 50%;
         background-color: #fff;
@@ -1830,7 +1832,7 @@ body {
     }
 
     .franchise-mega {
-        justify-content: center;
+        justify-content: stretch;
         width: 100%;
         height: auto;
         margin-top: 0.5rem;

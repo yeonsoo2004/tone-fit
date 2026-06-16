@@ -256,7 +256,7 @@ br.mo-only,
 /* 태블릿 (768px 이하) — 좌우 최소 여백 64px 유지 */
 @media screen and (max-width: 768px) {
    :root {
-      --page-gutter-x: 64px;
+      --page-gutter-x: 32px;
    }
 
    .grid-wrap {
