@@ -162,8 +162,6 @@
     .space-page .inner {
         max-width: none;
         width: 100%;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
     }
 
     .space-page .py-130 {
@@ -204,13 +202,11 @@
     }
 }
 
-/* 태블릿 (1024px 이하) — common .inner padding 64px · font 1024 스케일 */
+/* 태블릿 (1024px 이하) — common .inner · --page-gutter-x 64px · grid-wrap 8단 gap 24px */
 @media screen and (max-width: 1024px) {
     .space-page .inner {
         max-width: none;
         width: 100%;
-        padding-left: 4rem;
-        padding-right: 4rem;
     }
 
     .space-page .py-130 {
@@ -279,13 +275,11 @@
     }
 }
 
-/* 모바일 (768px 이하) — common .inner padding 16px · font 768 스케일 */
+/* 모바일 (768px 이하) — 좌우 64px 유지(common) · font 768 스케일 */
 @media screen and (max-width: 768px) {
     .space-page .inner {
         max-width: none;
         width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 
     .space-page .py-130 {
@@ -368,11 +362,20 @@
     }
 }
 
-/* 소형 모바일 (402px 이하) — font.css 402 스케일 */
+/* 태블릿·노트북 (403px ~ 1440px) — common grid gutter 64px */
+@media screen and (min-width: 403px) and (max-width: 1440px) {
+    .space-page .space-main .inner {
+        padding-left: var(--page-gutter-x, 64px);
+        padding-right: var(--page-gutter-x, 64px);
+        box-sizing: border-box;
+    }
+}
+
+/* 소형 모바일 (402px 이하) — common --page-gutter-x 16px · font.css 402 스케일 */
 @media screen and (max-width: 402px) {
-    .space-page .inner {
-        padding-left: 1rem;
-        padding-right: 1rem;
+    .space-page .space-main .inner {
+        padding-left: var(--page-gutter-x, 16px);
+        padding-right: var(--page-gutter-x, 16px);
     }
 
     .space-page .py-130 {

@@ -365,6 +365,27 @@
     height: auto;
     display: block;
     object-fit: contain;
+    background-color: transparent;
+}
+
+/* iOS Safari 기본 재생 버튼 오버레이 숨김 */
+.identity-feature-section .feature-video::-webkit-media-controls {
+    display: none !important;
+}
+
+.identity-feature-section .feature-video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.identity-feature-section .feature-video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 .identity-market-section .market-graph {

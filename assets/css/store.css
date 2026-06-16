@@ -274,6 +274,7 @@
 
 .store-accordion-item {
     border-bottom: 1px solid #D9D9D9;
+    scroll-margin-top: 5.25rem; /* 고정 헤더 높이 — 열림 시 스크롤 여백 */
 }
 
 .store-accordion-trigger {
@@ -425,6 +426,15 @@
 ========================================= */
 
 @media (max-width: 1024px) {
+    /* 태블릿 — common .inner · --page-gutter-x 64px · grid-wrap 8단 gap 24px */
+    .page-store .inner,
+    .store-map-wrap,
+    .store-list-wrap {
+        padding-left: var(--page-gutter-x, 64px);
+        padding-right: var(--page-gutter-x, 64px);
+        box-sizing: border-box;
+    }
+
     .store-map-layout {
         flex-direction: column;
         height: auto;
@@ -462,13 +472,11 @@
         padding: 5rem 0 3.75rem;
     }
 
-    .store-page-title {
-        font-size: 2.5rem;      /* 54px → 40px */
-    }
-
+    .page-store .inner,
     .store-map-wrap,
     .store-list-wrap {
-        padding: 0 1rem;
+        padding-left: var(--page-gutter-x, 64px);
+        padding-right: var(--page-gutter-x, 64px);
     }
 
     #map-container {
@@ -520,5 +528,26 @@
 
     .store-map-link {
         font-size: 1rem;        /* 20px → 16px */
+    }
+}
+
+/* 노트북 (1025px ~ 1440px) — common grid gutter 64px */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .page-store .inner,
+    .store-map-wrap,
+    .store-list-wrap {
+        padding-left: var(--page-gutter-x, 64px);
+        padding-right: var(--page-gutter-x, 64px);
+        box-sizing: border-box;
+    }
+}
+
+/* 소형 모바일 (402px 이하) — common --page-gutter-x 16px */
+@media screen and (max-width: 402px) {
+    .page-store .inner,
+    .store-map-wrap,
+    .store-list-wrap {
+        padding-left: var(--page-gutter-x, 16px);
+        padding-right: var(--page-gutter-x, 16px);
     }
 }
