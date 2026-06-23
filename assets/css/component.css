@@ -868,6 +868,215 @@ body.is-policy-modal-open {
 }
 
 /* ===================================
+   Portfolio Popup
+   =================================== */
+
+body.is-portfolio-popup-open {
+    overflow: hidden;
+}
+
+.portfolio-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.portfolio-popup[hidden] {
+    display: none;
+}
+
+.portfolio-popup__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(30, 32, 34, 0.55);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-popup.is-visible .portfolio-popup__backdrop {
+    opacity: 1;
+}
+
+.portfolio-popup__dialog {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 28rem;
+    padding: 2.5rem 2rem 2rem;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2.5rem rgba(30, 32, 34, 0.18);
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(1rem) scale(0.98);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-popup.is-visible .portfolio-popup__dialog {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.portfolio-popup__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #F6F6F6;
+    color: #1E2022;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.portfolio-popup__close span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.portfolio-popup__close::before,
+.portfolio-popup__close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.75rem;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 1px;
+}
+
+.portfolio-popup__close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.portfolio-popup__close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.portfolio-popup__close:hover,
+.portfolio-popup__close:focus-visible {
+    background-color: #1E2022;
+    color: #FFFFFF;
+}
+
+.portfolio-popup__label {
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #D4734A;
+}
+
+.portfolio-popup__title {
+    margin: 0 0 1rem;
+    line-height: 1.35;
+}
+
+.portfolio-popup__desc {
+    margin: 0 0 1.75rem;
+    line-height: 1.65;
+    word-break: keep-all;
+}
+
+.portfolio-popup__desc strong {
+    font-weight: 600;
+}
+
+.portfolio-popup__team {
+    margin-bottom: 1.75rem;
+}
+
+.portfolio-popup__team-label {
+    margin: 0 0 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.portfolio-popup__team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.portfolio-popup__member {
+    padding: 0.5rem 0.875rem;
+    border-radius: 999px;
+    background-color: #F8F5F0;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: #4C4948;
+}
+
+.portfolio-popup__confirm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 8.75rem;
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 999px;
+    background-color: #D4734A;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.portfolio-popup__confirm:hover,
+.portfolio-popup__confirm:focus-visible {
+    background-color: #BC8F76;
+}
+
+.portfolio-popup__confirm:active {
+    transform: scale(0.98);
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio-popup {
+        padding: 1rem;
+        align-items: center;
+    }
+
+    .portfolio-popup__dialog {
+        max-width: none;
+        padding: 2rem 1.25rem 1.5rem;
+    }
+
+    .portfolio-popup__title {
+        font-size: 1.5rem;
+    }
+
+    .portfolio-popup__desc {
+        font-size: 1rem;
+    }
+
+    .portfolio-popup__member {
+        font-size: 0.875rem;
+    }
+
+    .portfolio-popup__confirm {
+        width: 100%;
+    }
+}
+
+/* ===================================
    Back to Top (플로팅)
    =================================== */
 
